@@ -41,3 +41,7 @@ export function assertBoardSeason(expected: number, world: WorldSummary): void {
 export function targetBoardSeason(current: number, resumed?: WorldSummary): number {
   return resumed?.boardRun && resumed.season !== null ? resumed.season : current
 }
+
+export function seedForRun(seed: string | null, index: number, runs: number, resuming: boolean): string | null {
+  return resuming || runs === 1 ? seed : `${seed}-${index + 1}`
+}

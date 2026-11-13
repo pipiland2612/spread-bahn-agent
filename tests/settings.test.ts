@@ -64,3 +64,10 @@ test('resuming an old ranked world cannot silently switch its remaining runs to 
   assert.equal(expected, 3)
   assert.throws(() => settings.assertBoardSeason(expected, { ...world, season: 4, boardRun: 1 }), /season/i)
 })
+
+test('multi-run resume preserves the original seed on its first world', () => {
+  assert.equal(settings.seedForRun('saved-seed', 0, 3, true), 'saved-seed')
+  assert.equal(settings.seedForRun('fresh', 0, 3, false), 'fresh-1')
+  assert.equal(settings.seedForRun('fresh', 1, 3, false), 'fresh-2')
+  assert.equal(settings.seedForRun('fresh', 0, 1, false), 'fresh')
+})

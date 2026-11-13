@@ -7,7 +7,7 @@ import type { Action, ActionResult, DeskEvent, DeskEventKind, DeskSnapshot, Orde
 import { Model } from './policy.ts'
 import { feeSchedule, targetMultiplier } from './fees.ts'
 import type { FeeMode } from './fees.ts'
-import { assertBoardSeason, resolveSettings, targetBoardSeason } from './settings.ts'
+import { assertBoardSeason, resolveSettings, seedForRun, targetBoardSeason } from './settings.ts'
 
 const WAKE: DeskEventKind[] = ['price_request', 'order_won', 'order_cancelled', 'gig_expired', 'deadline_close', 'no_show', 'gig_dropped', 'visit_failed']
 type TrackedGig = { action: PostAction; status: string; postedAt: number; multiplier: number }
@@ -205,8 +205,8 @@ async function main() {
   if (args.board && activeBoard && !args.world) throw new Error(`Ranking world ${activeBoard.worldId} is already active. Resume with --board --world ${activeBoard.worldId}`)
   const completed = []
   for (let index = 0; index < runs; index++) {
-    const seed = runs === 1 ? settings.seed : `${settings.seed}-${index + 1}`
     const resuming = index === 0 && Boolean(args.world)
+    const seed = seedForRun(settings.seed, index, runs, resuming)
     if (args.board && index > 0 && (await client.board(level)).current?.season !== expectedSeason) throw new Error('Ranking season changed; stopping before creating another attempt')
     const world = resuming ? client.world(args.world!) : await client.create(level, args.board ? { board: true } : { seed: seed ?? undefined })
     const summary = (await client.worlds()).find(w => w.worldId === world.id)!
