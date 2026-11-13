@@ -37,6 +37,8 @@ Each chain uses pickup/delivery for the first car followed by pickup/delivery fo
 
 Track every order/leg in a gig. A first-car delivery must not mark a chain done. Repricing uses the sum of reference fees and the earliest remaining last-pickup deadline. Expiry reposts every undelivered, uncovered order separately. Cancellation outcomes `withdrawn`/`released` remove coverage and repost surviving orders; `shortened`/`continues` remove only cancelled stops and retain the gig's status. Never duplicate surviving coverage on rebuild. Chain mode is an experimental candidate, not a requirement to promote it.
 
+On rebuild, publish uncovered accepted work immediately when its original holding timestamp is unknown; never restart its ten-minute waiting period. Keep an in-flight checkpoint marker until the restored conservative offer block is durably saved, so failed startup reads cannot erase uncertainty.
+
 ## Validation and delivery
 
 First run baseline, offers, and chains on `network-tune-1` through `network-tune-3`. Choose the highest eligible margin total. Compare the winner to baseline on untouched `network-holdout-1` through `network-holdout-3`. Every candidate week must have at least 95% on time, positive aggregate margin, no refused actions, and complete cumulative evidence. Promote only if held-out aggregate margin exceeds baseline. If candidates lose, retain baseline and report that result honestly. If the retained policy passes delivery/evidence gates, play up to five available Level 3 ranked weeks sequentially.

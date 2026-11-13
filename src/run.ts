@@ -72,7 +72,8 @@ export class Desk {
     }
     for (const request of snapshot.openRequests) this.quote(request, true)
     for (const order of snapshot.orders) {
-      if (order.status === 'waiting' && !this.covered(order.id)) this.post(order)
+      // Original collection timestamps may be unavailable after a crash: publish recovery work now.
+      if (order.status === 'waiting' && !this.covered(order.id)) this.post(order, undefined, false)
     }
   }
 
@@ -89,14 +90,14 @@ export class Desk {
     this.outbox.push({ type: 'quote', requestId: request.id, prices: { [option.kind]: option.listPriceCents } })
   }
 
-  post(order: Order, multiplier?: number) {
+  post(order: Order, multiplier?: number, collect = true) {
     const request = this.requests.get(order.id)
     if (!request || order.status === 'cancelled' || order.deliveredAt.every(t => t !== null) || this.covered(order.id)) return
     const action = this.model.post(order, request.referenceFeeCents, this.now, multiplier)
     action.schedule = feeSchedule(this.level, this.mode, this.now, request.referenceFeeCents, {
       ...this.model.policy, openingMultiplier: multiplier ?? this.model.policy.openingMultiplier,
     })
-    if (this.level === 3 && this.networkMode === 'chains') this.heldPosts.push({ action, at: this.now })
+    if (this.level === 3 && this.networkMode === 'chains' && collect) this.heldPosts.push({ action, at: this.now })
     else this.outbox.push(action)
   }
 
@@ -276,13 +277,15 @@ export async function main(argv = process.argv.slice(2)) {
     let networkState: NetworkState | undefined = previous?.networkState
     const persist = async (stats: Statistics, pendingAdvance = false) => writeFile(resultPath, JSON.stringify({ ...record, stats, networkState, pendingAdvance }, null, 2) + '\n')
     const stats = restoreStats(resuming ? previous ?? {} : undefined)
-    await persist(stats)
+    await persist(stats, Boolean(previous?.pendingAdvance))
     if (args.board && !resuming) assertBoardSeason(expectedSeason!, summary)
     console.log(`${summary.boardRun ? `Ranking ${summary.boardRun}/5` : 'Practice'} world ${world.id}`)
     let snapshot = await world.snapshot()
     networkState = restoreNetwork(networkState, snapshot.now, resuming && (!networkState || Boolean(previous?.pendingAdvance)))
     let desk = new Desk(new Model(map, await world.roster(), policy), level, mode, stats, network, networkState)
     networkState = desk.network.state
+    // Only clear an in-flight marker once its conservative offer block is durably recorded.
+    await persist(desk.stats)
     desk.rebuild(snapshot, await world.events())
     let previousDay = Math.floor(desk.now / 1440)
     while (desk.now < snapshot.endsAt) {

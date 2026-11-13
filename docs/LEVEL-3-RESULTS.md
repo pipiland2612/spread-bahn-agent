@@ -46,6 +46,8 @@ Real diagnostic world `w9c28e2681cd356b2df33` paused at minute 800 with 24 succe
 
 The diagnostic used coarse time advances before its pause and is not a policy benchmark. It is excluded from tuning and validation. Historical/missing network counters or uncertain action outcomes suppress offers for the current world day; incomplete action evidence blocks further ranked attempts. Old revision-1 chain manifests require explicit `--network` acknowledgement before resuming with revision 2.
 
+Independent review found two restart hazards. Startup now retains the in-flight marker until conservative offer suppression is durably saved, even if snapshot or roster loading fails. Rebuild publishes uncovered accepted work immediately instead of restarting an unknown ten-minute holding deadline. Both fixes have RED→GREEN regressions, including a full offline CLI startup-failure test.
+
 ## Ranked round
 
 Validation passed; the Level 3 round is now being played. Exact standings and check time will follow. Ranking worlds are never forked, revealed or deleted by this agent.

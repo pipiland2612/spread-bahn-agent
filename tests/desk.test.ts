@@ -166,3 +166,15 @@ test('Level 3 tick plans offers but only successful results consume offer limits
   assert.equal(desk.network.state.attempts.length, 1)
   assert.equal(desk.gigs.get('g1')!.action.schedule[0]!.feeCents, 7500)
 })
+
+test('rebuild flushes uncovered accepted work without resetting an unknown collection deadline', () => {
+  const { desk: old, order, request } = fixture('legacy')
+  const original = new Desk(old.model, 3, 'legacy', undefined, 'chains')
+  original.now = 505; original.requests.set('R1', request); original.orders.set('R1', order); original.post(order)
+  assert.equal(original.nextWake(), 515)
+  const restored = new Desk(old.model, 3, 'legacy', undefined, 'chains')
+  restored.rebuild({ worldId: 'w', now: 514, endsAt: 14280, orders: [order], openRequests: [], gigs: [], driverPositions: [], score: {} as any },
+    [{ kind: 'price_request', seq: 1, at: 490, request }])
+  assert.equal(restored.outbox.filter(a => a.type === 'post').length, 1)
+  assert.equal(restored.heldPosts.length, 0)
+})
