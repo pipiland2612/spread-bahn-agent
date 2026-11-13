@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { Model, latestOpen } from '../src/policy.ts'
+import { DEFAULT_POLICY, Model, latestOpen } from '../src/policy.ts'
 import { Desk } from '../src/run.ts'
 import type { DeskSnapshot, DriverProfile, Order, PriceRequest, WorldMap } from '../vendor/spread/types.ts'
 
@@ -14,7 +14,7 @@ const request = (): PriceRequest => ({
 })
 const map: WorldMap = { places: [], roads: [{ from: 'a', to: 'a', km: 12, minutes: 25 }, { from: 'a', to: 'b', km: 150, minutes: 110 }] }
 const drivers: DriverProfile[] = Array.from({ length: 40 }, (_, i) => ({ id: `d${i}`, homePlaceId: 'a', rating: 5, licence: 'manual', completedGigs: 100, drops: 0 }))
-const model = () => new Model(map, drivers)
+const model = () => new Model(map, drivers, { ...DEFAULT_POLICY, openingMultiplier: 0.85, maxReferenceShare: 0.88 })
 
 test('accepts profitable work with enough driver and deadline buffer', () => {
   assert.deepEqual(model().assess(request(), 490), { accept: true, reason: 'eligible', fee: 5100 })

@@ -9,8 +9,8 @@ export type Policy = {
 }
 
 export const DEFAULT_POLICY: Policy = {
-  openingMultiplier: 0.85,
-  maxReferenceShare: 0.88,
+  openingMultiplier: 0.75,
+  maxReferenceShare: 1.05,
   maxDriveMinutes: 240,
   minLocalDrivers: 15,
   minSlackMinutes: 210,
