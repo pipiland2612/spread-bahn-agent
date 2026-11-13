@@ -1,0 +1,38 @@
+{
+  "worldId": "w868c5f6a77bb9631d70b",
+  "seed": "spread-1",
+  "level": 1,
+  "board": false,
+  "season": null,
+  "boardRun": null,
+  "policy": {
+    "openingMultiplier": 0.95,
+    "maxReferenceShare": 0.78,
+    "maxDriveMinutes": 240,
+    "minLocalDrivers": 15,
+    "minSlackMinutes": 210
+  },
+  "startedAt": "2026-11-13T21:09:06.402Z",
+  "finishedAt": "2026-11-13T21:09:45.554Z",
+  "score": {
+    "marginCents": 141128,
+    "revenueCents": 471500,
+    "marginShare": 0.2993170731707317,
+    "wonOrders": 124,
+    "onTimeShare": 0.9838709677419355,
+    "undeliveredShare": 0,
+    "ranked": true
+  },
+  "stats": {
+    "quoted": 124,
+    "declined": {
+      "thin margin": 717,
+      "private appointment risk": 125,
+      "multi-car: Level 1 supports single-car gigs": 13,
+      "long route": 15,
+      "insufficient booking buffer": 4,
+      "sparse driver coverage": 2
+    },
+    "refused": []
+  }
+}

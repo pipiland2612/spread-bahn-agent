@@ -1,0 +1,13 @@
+{
+  "name": "spread-bahn-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.18.0" },
+  "scripts": {
+    "test": "node --test tests/*.test.ts",
+    "practice": "node --env-file=.env src/run.ts",
+    "board": "node --env-file=.env src/run.ts --board --runs 5",
+    "status": "node --env-file=.env src/run.ts --status"
+  }
+}

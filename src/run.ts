@@ -1,0 +1,217 @@
+import { parseArgs } from 'node:util'
+import { resolve } from 'node:path'
+import { pathToFileURL } from 'node:url'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import { Client, SpreadError, Unreachable } from '../vendor/spread/spread.ts'
+import type { Action, ActionResult, DeskEvent, DeskEventKind, DeskSnapshot, Order, PostAction, PriceRequest, Score, WorldSummary } from '../vendor/spread/types.ts'
+import { DEFAULT_POLICY, Model } from './policy.ts'
+
+const WAKE: DeskEventKind[] = ['price_request', 'order_won', 'order_cancelled', 'gig_expired', 'deadline_close', 'no_show', 'gig_dropped', 'visit_failed']
+type TrackedGig = { action: PostAction; status: string; postedAt: number; multiplier: number }
+const euros = (cents: number) => (cents / 100).toFixed(2)
+const report = (label: string, s: Score) => console.log(`${label}: margin €${euros(s.marginCents)}, revenue €${euros(s.revenueCents)}, ${s.wonOrders} orders, ${(100 * s.onTimeShare).toFixed(2)}% on time, ranked=${s.ranked}`)
+
+export class Desk {
+  now = 0
+  requests = new Map<string, PriceRequest>()
+  orders = new Map<string, Order>()
+  gigs = new Map<string, TrackedGig>()
+  outbox: Action[] = []
+  seen = new Set<number>()
+  stats = { quoted: 0, declined: {} as Record<string, number>, refused: [] as { action: string; reason: string }[] }
+  model: Model
+  constructor(model: Model) { this.model = model }
+
+  rebuild(snapshot: DeskSnapshot, events: DeskEvent[]) {
+    this.now = snapshot.now
+    for (const e of events) {
+      this.seen.add(e.seq)
+      if (e.kind === 'price_request') this.requests.set(e.request.id, e.request)
+    }
+    for (const order of snapshot.orders) this.orders.set(order.id, order)
+    for (const gig of snapshot.gigs) {
+      const reference = this.requests.get(gig.stops[0]!.orderId)?.referenceFeeCents ?? gig.feeCents
+      this.gigs.set(gig.id, { action: { type: 'post', stops: gig.stops, audience: gig.audience, schedule: gig.schedule }, status: gig.status, postedAt: gig.postedAt, multiplier: gig.feeCents / reference })
+    }
+    for (const request of snapshot.openRequests) this.quote(request, true)
+    for (const order of snapshot.orders) {
+      if (order.status === 'waiting' && ![...this.gigs.values()].some(g => g.action.stops[0]?.orderId === order.id && ['open', 'booked', 'working'].includes(g.status))) this.post(order)
+    }
+  }
+
+  quote(request: PriceRequest, replay = false) {
+    if (!replay && this.requests.has(request.id)) return
+    this.requests.set(request.id, request)
+    const decision = this.model.assess(request, this.now)
+    if (!decision.accept) {
+      this.stats.declined[decision.reason] = (this.stats.declined[decision.reason] ?? 0) + 1
+      return
+    }
+    this.stats.quoted++
+    const option = request.options[0]!
+    this.outbox.push({ type: 'quote', requestId: request.id, prices: { [option.kind]: option.listPriceCents } })
+  }
+
+  post(order: Order, multiplier?: number) {
+    const request = this.requests.get(order.id)
+    if (!request || order.status === 'cancelled' || order.deliveredAt.every(t => t !== null)) return
+    this.outbox.push(this.model.post(order, request.referenceFeeCents, this.now, multiplier))
+  }
+
+  handle(e: DeskEvent) {
+    if (this.seen.has(e.seq)) return
+    this.seen.add(e.seq)
+    if (e.kind === 'price_request') this.quote(e.request)
+    else if (e.kind === 'order_won') { this.orders.set(e.order.id, e.order); this.post(e.order) }
+    else if (e.kind === 'order_cancelled') {
+      const order = this.orders.get(e.orderId)
+      if (order) order.status = 'cancelled'
+      this.outbox = this.outbox.filter(a => a.type !== 'post' || !a.stops.some(s => s.orderId === e.orderId))
+      for (const cancelled of e.gigs) {
+        const gig = this.gigs.get(cancelled.gigId)
+        if (gig) gig.status = 'withdrawn'
+      }
+    } else if (e.kind === 'gig_booked' || e.kind === 'gig_started' || e.kind === 'gig_dropped' || e.kind === 'no_show') {
+      const gig = this.gigs.get(e.gigId)
+      if (gig) gig.status = e.kind === 'gig_booked' ? 'booked' : e.kind === 'gig_started' ? 'working' : 'open'
+    } else if (e.kind === 'delivered') {
+      const order = this.orders.get(e.orderId)
+      if (order) { order.deliveredAt[e.leg] = e.at; order.status = 'delivered' }
+      const gig = this.gigs.get(e.gigId)
+      if (gig) gig.status = 'done'
+    } else if (e.kind === 'gig_expired') {
+      const gig = this.gigs.get(e.gigId)
+      if (gig) {
+        gig.status = 'withdrawn'
+        const order = this.orders.get(gig.action.stops[0]!.orderId)
+        if (order) this.post(order, 1.8)
+      }
+    } else if (e.kind === 'deadline_close') {
+      this.raise(e.orderId, 1.65)
+    } else if (e.kind === 'visit_failed') {
+      throw new Error(`Unexpected Level 1 visit failure: ${e.orderId} ${e.reason}; resume this world with --world after inspecting its snapshot`)
+    }
+  }
+
+  raise(orderId: string, multiplier: number) {
+    const request = this.requests.get(orderId)
+    if (!request || this.orders.get(orderId)?.status === 'cancelled') return
+    for (const [gigId, gig] of this.gigs) {
+      if (gig.status !== 'open' || gig.action.stops[0]?.orderId !== orderId || gig.multiplier >= multiplier) continue
+      gig.multiplier = multiplier
+      this.outbox.push({ type: 'reprice', gigId, schedule: [{ at: this.now, feeCents: Math.round(request.referenceFeeCents * multiplier) }] })
+    }
+  }
+
+  tick() {
+    for (const gig of this.gigs.values()) {
+      if (gig.status !== 'open') continue
+      const order = this.orders.get(gig.action.stops[0]!.orderId)
+      if (!order) continue
+      const age = this.now - gig.postedAt
+      const multiplier = order.lastPickupAt - this.now <= 180 ? 1.65 : age >= 120 ? 1.2 : age >= 60 ? 1.05 : this.model.policy.openingMultiplier
+      this.raise(order.id, multiplier)
+    }
+  }
+
+  results(actions: Action[], results: ActionResult[]) {
+    actions.forEach((action, i) => {
+      const result = results[i]
+      if (!result) throw new Error('Missing action result')
+      if (!result.ok) {
+        this.stats.refused.push({ action: action.type, reason: result.reason })
+        console.error(`REFUSED ${action.type}: ${result.reason}`)
+        return
+      }
+      if (action.type === 'post') {
+        const reference = this.requests.get(action.stops[0]!.orderId)!.referenceFeeCents
+        this.gigs.set(result.id, { action, status: 'open', postedAt: this.now, multiplier: action.schedule[0]!.feeCents / reference })
+      }
+    })
+  }
+}
+
+async function main() {
+  const { values: args } = parseArgs({ options: {
+    level: { type: 'string', default: '1' }, seed: { type: 'string', default: 'spread-1' },
+    board: { type: 'boolean' }, runs: { type: 'string', default: '1' },
+    world: { type: 'string' }, status: { type: 'boolean' },
+    opening: { type: 'string' }, 'reference-share': { type: 'string' },
+  } })
+  const level = Number(args.level)
+  if (level !== 1) throw new Error('This baseline is validated for Level 1 only. Extend the policy before entering higher levels.')
+  const runs = Number(args.runs)
+  if (!Number.isInteger(runs) || runs < 1 || runs > 5) throw new Error('--runs must be 1 to 5')
+  const client = new Client()
+  if (args.status) {
+    const board = await client.board(1)
+    console.log(JSON.stringify({ worlds: await client.worlds(), round: board.current?.name, teams: board.current?.teams.filter(t => t.played > 0) }, null, 2))
+    return
+  }
+  const policy = { ...DEFAULT_POLICY, ...(args.opening ? { openingMultiplier: Number(args.opening) } : {}), ...(args['reference-share'] ? { maxReferenceShare: Number(args['reference-share']) } : {}) }
+  if (!Number.isFinite(policy.openingMultiplier) || policy.openingMultiplier <= 0 || !Number.isFinite(policy.maxReferenceShare) || policy.maxReferenceShare <= 0) throw new Error('Policy multipliers must be positive finite numbers')
+  await mkdir('results', { recursive: true })
+  const map = await client.map()
+  const before = args.board ? await client.board(1) : null
+  if (args.board && !before?.current) throw new Error('No ranking round is open')
+  const summaries: WorldSummary[] = await client.worlds()
+  const activeBoard = summaries.find(w => w.level === 1 && w.boardRun && !w.ended)
+  if (args.board && activeBoard && !args.world) throw new Error(`Ranking world ${activeBoard.worldId} is already active. Resume with --board --world ${activeBoard.worldId}`)
+  const completed = []
+  for (let index = 0; index < runs; index++) {
+    const seed = runs === 1 ? args.seed : `${args.seed}-${index + 1}`
+    const resuming = index === 0 && Boolean(args.world)
+    const world = resuming ? client.world(args.world!) : await client.create(1, args.board ? { board: true } : { seed })
+    const summary = (await client.worlds()).find(w => w.worldId === world.id)!
+    if (summary.level !== 1 || summary.kind !== 'practice') throw new Error('Can only play Level 1 practice or ranking worlds')
+    const resultPath = `results/${world.id}.json`
+    const previous = resuming ? await readFile(resultPath, 'utf8').then(text => JSON.parse(text), () => null) : null
+    const record = { worldId: world.id, seed: summary.boardRun ? null : resuming ? previous?.seed ?? null : seed, level, board: Boolean(summary.boardRun), season: summary.season, boardRun: summary.boardRun, policy, startedAt: previous?.startedAt ?? new Date().toISOString() }
+    await writeFile(resultPath, JSON.stringify(record, null, 2) + '\n')
+    console.log(`${summary.boardRun ? `Ranking ${summary.boardRun}/5` : 'Practice'} world ${world.id}`)
+    let desk = new Desk(new Model(map, await world.roster(), policy))
+    let snapshot = await world.snapshot()
+    desk.rebuild(snapshot, await world.events())
+    let previousDay = Math.floor(desk.now / 1440)
+    while (desk.now < snapshot.endsAt) {
+      desk.tick()
+      const actions = desk.outbox.splice(0)
+      try {
+        const step = await world.advance({ untilEvent: WAKE, max: Math.min(snapshot.endsAt, desk.now + 30), actions })
+        desk.results(actions, step.results)
+        desk.now = step.now
+        for (const e of step.events) desk.handle(e)
+      } catch (error) {
+        if (!(error instanceof Unreachable)) throw error
+        console.error(`Connection interrupted for ${world.id}; rebuilding state in 5 seconds`)
+        await new Promise(resolve => setTimeout(resolve, 5000))
+        snapshot = await world.snapshot()
+        desk = new Desk(desk.model)
+        desk.rebuild(snapshot, await world.events())
+      }
+      const day = Math.floor(desk.now / 1440)
+      if (day > previousDay) { report(`Day ${previousDay + 1}`, await world.score()); previousDay = day }
+    }
+    const score = await world.score()
+    report(`End ${world.id}`, score)
+    await writeFile(resultPath, JSON.stringify({ ...record, finishedAt: new Date().toISOString(), score, stats: desk.stats }, null, 2) + '\n')
+    completed.push({ worldId: world.id, season: summary.season, boardRun: summary.boardRun, score })
+    if (args.board && !score.ranked) throw new Error(`Ranking run missed the delivery minimum; pausing before consuming another secret week. Inspect ${resultPath}`)
+  }
+  if (args.board) {
+    await new Promise(resolve => setTimeout(resolve, 2200))
+    const board = await client.board(1)
+    const season = [board.current, board.previous].find(s => s?.season === completed[0]?.season)
+    const ownRuns = completed.filter(r => r.season === season?.season)
+    const teams = season?.teams.filter(t => ownRuns.length > 0 && ownRuns.every(own => t.runs.some(r => r.run === own.boardRun && r.marginCents === own.score.marginCents && r.wonOrders === own.score.wonOrders && r.onTimeShare === own.score.onTimeShare)))
+    const summary = { checkedAt: new Date().toISOString(), round: season?.name, season: season?.season, teams, completed }
+    await writeFile('results/leaderboard-level-1.json', JSON.stringify(summary, null, 2) + '\n')
+    console.log(JSON.stringify(summary, null, 2))
+  }
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) await main().catch(error => {
+  console.error(error instanceof SpreadError ? error.message : error)
+  console.error('Worlds are preserved on errors. Resume with --world WORLD_ID; ranking attempts are never automatically deleted.')
+  process.exitCode = 1
+})

@@ -1,0 +1,120 @@
+{
+  "checkedAt": "2026-11-13T21:15:44.371Z",
+  "round": "Friday 20:01",
+  "season": 3,
+  "teams": [
+    {
+      "rank": 2,
+      "team": "t2",
+      "name": "T2",
+      "played": 5,
+      "ranked": true,
+      "marginCents": 2038915,
+      "onTimeShare": 0.9892857142857143,
+      "runs": [
+        {
+          "run": 1,
+          "marginCents": 396958,
+          "onTimeShare": 0.9777777777777777,
+          "wonOrders": 270,
+          "ranked": true,
+          "deletedAt": null
+        },
+        {
+          "run": 2,
+          "marginCents": 392785,
+          "onTimeShare": 0.9927007299270073,
+          "wonOrders": 274,
+          "ranked": true,
+          "deletedAt": null
+        },
+        {
+          "run": 3,
+          "marginCents": 428083,
+          "onTimeShare": 0.9966216216216216,
+          "wonOrders": 296,
+          "ranked": true,
+          "deletedAt": null
+        },
+        {
+          "run": 4,
+          "marginCents": 458455,
+          "onTimeShare": 0.9901315789473685,
+          "wonOrders": 304,
+          "ranked": true,
+          "deletedAt": null
+        },
+        {
+          "run": 5,
+          "marginCents": 362634,
+          "onTimeShare": 0.98828125,
+          "wonOrders": 256,
+          "ranked": true,
+          "deletedAt": null
+        }
+      ]
+    }
+  ],
+  "completed": [
+    {
+      "worldId": "w7c2ddfb8382049937601",
+      "score": {
+        "marginCents": 396958,
+        "revenueCents": 1486700,
+        "marginShare": 0.2670061209389924,
+        "wonOrders": 270,
+        "onTimeShare": 0.9777777777777777,
+        "undeliveredShare": 0,
+        "ranked": true
+      }
+    },
+    {
+      "worldId": "w6edc45b1326f2636d5d6",
+      "score": {
+        "marginCents": 392785,
+        "revenueCents": 1371000,
+        "marginShare": 0.2864952589350839,
+        "wonOrders": 274,
+        "onTimeShare": 0.9927007299270073,
+        "undeliveredShare": 0,
+        "ranked": true
+      }
+    },
+    {
+      "worldId": "w544c8c76a34e30761e0e",
+      "score": {
+        "marginCents": 428083,
+        "revenueCents": 1536300,
+        "marginShare": 0.2786454468528282,
+        "wonOrders": 296,
+        "onTimeShare": 0.9966216216216216,
+        "undeliveredShare": 0,
+        "ranked": true
+      }
+    },
+    {
+      "worldId": "wf1998111054b4132d71e",
+      "score": {
+        "marginCents": 458455,
+        "revenueCents": 1618400,
+        "marginShare": 0.28327669303015324,
+        "wonOrders": 304,
+        "onTimeShare": 0.9901315789473685,
+        "undeliveredShare": 0,
+        "ranked": true
+      }
+    },
+    {
+      "worldId": "w579dfede75db1f3a29d4",
+      "score": {
+        "marginCents": 362634,
+        "revenueCents": 1318800,
+        "marginShare": 0.2749727024567789,
+        "wonOrders": 256,
+        "onTimeShare": 0.98828125,
+        "undeliveredShare": 0,
+        "ranked": true
+      }
+    }
+  ]
+}
