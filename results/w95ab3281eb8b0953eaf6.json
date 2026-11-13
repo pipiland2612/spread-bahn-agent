@@ -1,0 +1,56 @@
+{
+  "worldId": "w95ab3281eb8b0953eaf6",
+  "seed": "network-tune-2",
+  "level": 3,
+  "feeMode": "legacy",
+  "networkMode": "baseline",
+  "board": false,
+  "season": null,
+  "boardRun": null,
+  "policy": {
+    "openingMultiplier": 0.75,
+    "maxReferenceShare": 1.2,
+    "maxDriveMinutes": 240,
+    "minLocalDrivers": 15,
+    "minSlackMinutes": 210
+  },
+  "originalSettings": {
+    "level": 3,
+    "feeMode": "legacy",
+    "networkMode": "baseline",
+    "seed": "network-tune-2",
+    "policy": {
+      "openingMultiplier": 0.75,
+      "maxReferenceShare": 1.2,
+      "maxDriveMinutes": 240,
+      "minLocalDrivers": 15,
+      "minSlackMinutes": 210
+    }
+  },
+  "startedAt": "2026-11-13T22:01:31.267Z",
+  "resumes": [],
+  "pendingAdvance": false,
+  "finishedAt": "2026-11-13T22:02:20.786Z",
+  "score": {
+    "marginCents": 722542,
+    "revenueCents": 3318900,
+    "marginShare": 0.21770526379222033,
+    "wonOrders": 580,
+    "onTimeShare": 0.996551724137931,
+    "undeliveredShare": 0,
+    "ranked": true
+  },
+  "stats": {
+    "quoted": 586,
+    "declined": {
+      "long route": 178,
+      "private appointment risk": 128,
+      "thin margin": 52,
+      "sparse driver coverage": 18,
+      "multi-car: Level 1 supports single-car gigs": 23,
+      "insufficient booking buffer": 15
+    },
+    "refused": [],
+    "complete": true
+  }
+}

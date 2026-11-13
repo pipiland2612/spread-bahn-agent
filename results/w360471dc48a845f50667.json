@@ -1,0 +1,4984 @@
+{
+  "worldId": "w360471dc48a845f50667",
+  "seed": "network-holdout-1",
+  "level": 3,
+  "feeMode": "legacy",
+  "networkMode": "offers",
+  "networkRevision": 2,
+  "board": false,
+  "season": null,
+  "boardRun": null,
+  "policy": {
+    "openingMultiplier": 0.75,
+    "maxReferenceShare": 1.2,
+    "maxDriveMinutes": 240,
+    "minLocalDrivers": 15,
+    "minSlackMinutes": 210
+  },
+  "originalSettings": {
+    "level": 3,
+    "feeMode": "legacy",
+    "networkMode": "offers",
+    "seed": "network-holdout-1",
+    "policy": {
+      "openingMultiplier": 0.75,
+      "maxReferenceShare": 1.2,
+      "maxDriveMinutes": 240,
+      "minLocalDrivers": 15,
+      "minSlackMinutes": 210
+    }
+  },
+  "startedAt": "2026-11-13T22:09:48.225Z",
+  "resumes": [],
+  "networkState": {
+    "attempts": [
+      {
+        "gigId": "g1",
+        "driverId": "uofh-1507",
+        "at": 578,
+        "expiresAt": 588,
+        "closed": true
+      },
+      {
+        "gigId": "g1",
+        "driverId": "uofh-0890",
+        "at": 580,
+        "expiresAt": 590,
+        "closed": true
+      },
+      {
+        "gigId": "g1",
+        "driverId": "uofh-0051",
+        "at": 582,
+        "expiresAt": 592,
+        "closed": true
+      },
+      {
+        "gigId": "g5",
+        "driverId": "uofh-0809",
+        "at": 611,
+        "expiresAt": 621,
+        "closed": true
+      },
+      {
+        "gigId": "g5",
+        "driverId": "uofh-0848",
+        "at": 613,
+        "expiresAt": 623,
+        "closed": true
+      },
+      {
+        "gigId": "g5",
+        "driverId": "uofh-0909",
+        "at": 616,
+        "expiresAt": 626,
+        "closed": true
+      },
+      {
+        "gigId": "g9",
+        "driverId": "uofh-0043",
+        "at": 625,
+        "expiresAt": 635,
+        "closed": true
+      },
+      {
+        "gigId": "g9",
+        "driverId": "uofh-1349",
+        "at": 626,
+        "expiresAt": 636,
+        "closed": true
+      },
+      {
+        "gigId": "g9",
+        "driverId": "uofh-0631",
+        "at": 627,
+        "expiresAt": 637,
+        "closed": true
+      },
+      {
+        "gigId": "g11",
+        "driverId": "uofh-0057",
+        "at": 631,
+        "expiresAt": 641,
+        "closed": true
+      },
+      {
+        "gigId": "g12",
+        "driverId": "uofh-0483",
+        "at": 631,
+        "expiresAt": 641,
+        "closed": true
+      },
+      {
+        "gigId": "g11",
+        "driverId": "uofh-0631",
+        "at": 634,
+        "expiresAt": 644,
+        "closed": true
+      },
+      {
+        "gigId": "g12",
+        "driverId": "uofh-0560",
+        "at": 634,
+        "expiresAt": 644,
+        "closed": true
+      },
+      {
+        "gigId": "g14",
+        "driverId": "uofh-0365",
+        "at": 634,
+        "expiresAt": 644,
+        "closed": true
+      },
+      {
+        "gigId": "g11",
+        "driverId": "uofh-0909",
+        "at": 636,
+        "expiresAt": 646,
+        "closed": true
+      },
+      {
+        "gigId": "g12",
+        "driverId": "uofh-0641",
+        "at": 636,
+        "expiresAt": 646,
+        "closed": true
+      },
+      {
+        "gigId": "g14",
+        "driverId": "uofh-1369",
+        "at": 636,
+        "expiresAt": 646,
+        "closed": true
+      },
+      {
+        "gigId": "g14",
+        "driverId": "uofh-1428",
+        "at": 637,
+        "expiresAt": 647,
+        "closed": true
+      },
+      {
+        "gigId": "g15",
+        "driverId": "uofh-0641",
+        "at": 641,
+        "expiresAt": 651,
+        "closed": true
+      },
+      {
+        "gigId": "g15",
+        "driverId": "uofh-1369",
+        "at": 642,
+        "expiresAt": 652,
+        "closed": true
+      },
+      {
+        "gigId": "g18",
+        "driverId": "uofh-0344",
+        "at": 659,
+        "expiresAt": 669,
+        "closed": true
+      },
+      {
+        "gigId": "g18",
+        "driverId": "uofh-0484",
+        "at": 660,
+        "expiresAt": 670,
+        "closed": true
+      },
+      {
+        "gigId": "g18",
+        "driverId": "uofh-0488",
+        "at": 661,
+        "expiresAt": 671,
+        "closed": true
+      },
+      {
+        "gigId": "g26",
+        "driverId": "uofh-0577",
+        "at": 693,
+        "expiresAt": 703,
+        "closed": true
+      },
+      {
+        "gigId": "g26",
+        "driverId": "uofh-0690",
+        "at": 696,
+        "expiresAt": 706,
+        "closed": true
+      },
+      {
+        "gigId": "g26",
+        "driverId": "uofh-1517",
+        "at": 698,
+        "expiresAt": 708,
+        "closed": true
+      },
+      {
+        "gigId": "g28",
+        "driverId": "uofh-0187",
+        "at": 700,
+        "expiresAt": 710,
+        "closed": true
+      },
+      {
+        "gigId": "g28",
+        "driverId": "uofh-0531",
+        "at": 701,
+        "expiresAt": 711,
+        "closed": true
+      },
+      {
+        "gigId": "g28",
+        "driverId": "uofh-0582",
+        "at": 702,
+        "expiresAt": 712,
+        "closed": true
+      },
+      {
+        "gigId": "g32",
+        "driverId": "uofh-0039",
+        "at": 708,
+        "expiresAt": 718,
+        "closed": true
+      },
+      {
+        "gigId": "g32",
+        "driverId": "uofh-0488",
+        "at": 710,
+        "expiresAt": 720,
+        "closed": true
+      },
+      {
+        "gigId": "g32",
+        "driverId": "uofh-0510",
+        "at": 711,
+        "expiresAt": 721,
+        "closed": true
+      },
+      {
+        "gigId": "g35",
+        "driverId": "uofh-0238",
+        "at": 742,
+        "expiresAt": 752,
+        "closed": true
+      },
+      {
+        "gigId": "g35",
+        "driverId": "uofh-0837",
+        "at": 744,
+        "expiresAt": 754,
+        "closed": true
+      },
+      {
+        "gigId": "g35",
+        "driverId": "uofh-0089",
+        "at": 745,
+        "expiresAt": 755,
+        "closed": true
+      },
+      {
+        "gigId": "g41",
+        "driverId": "uofh-1018",
+        "at": 764,
+        "expiresAt": 774,
+        "closed": true
+      },
+      {
+        "gigId": "g41",
+        "driverId": "uofh-1245",
+        "at": 765,
+        "expiresAt": 775,
+        "closed": true
+      },
+      {
+        "gigId": "g41",
+        "driverId": "uofh-0890",
+        "at": 770,
+        "expiresAt": 780,
+        "closed": true
+      },
+      {
+        "gigId": "g43",
+        "driverId": "uofh-0806",
+        "at": 772,
+        "expiresAt": 782,
+        "closed": true
+      },
+      {
+        "gigId": "g43",
+        "driverId": "uofh-0892",
+        "at": 773,
+        "expiresAt": 783,
+        "closed": true
+      },
+      {
+        "gigId": "g43",
+        "driverId": "uofh-0954",
+        "at": 774,
+        "expiresAt": 784,
+        "closed": true
+      },
+      {
+        "gigId": "g44",
+        "driverId": "uofh-0628",
+        "at": 774,
+        "expiresAt": 784,
+        "closed": true
+      },
+      {
+        "gigId": "g44",
+        "driverId": "uofh-1743",
+        "at": 775,
+        "expiresAt": 785,
+        "closed": true
+      },
+      {
+        "gigId": "g44",
+        "driverId": "uofh-1852",
+        "at": 776,
+        "expiresAt": 786,
+        "closed": true
+      },
+      {
+        "gigId": "g59",
+        "driverId": "uofh-0249",
+        "at": 828,
+        "expiresAt": 838,
+        "closed": true
+      },
+      {
+        "gigId": "g60",
+        "driverId": "uofh-0199",
+        "at": 828,
+        "expiresAt": 838,
+        "closed": true
+      },
+      {
+        "gigId": "g61",
+        "driverId": "uofh-0157",
+        "at": 828,
+        "expiresAt": 838,
+        "closed": true
+      },
+      {
+        "gigId": "g59",
+        "driverId": "uofh-0642",
+        "at": 836,
+        "expiresAt": 846,
+        "closed": true
+      },
+      {
+        "gigId": "g60",
+        "driverId": "uofh-0953",
+        "at": 836,
+        "expiresAt": 846,
+        "closed": true
+      },
+      {
+        "gigId": "g61",
+        "driverId": "uofh-0284",
+        "at": 836,
+        "expiresAt": 846,
+        "closed": true
+      },
+      {
+        "gigId": "g65",
+        "driverId": "uofh-0157",
+        "at": 836,
+        "expiresAt": 846,
+        "closed": true
+      },
+      {
+        "gigId": "g59",
+        "driverId": "uofh-0658",
+        "at": 840,
+        "expiresAt": 850,
+        "closed": true
+      },
+      {
+        "gigId": "g60",
+        "driverId": "uofh-0104",
+        "at": 840,
+        "expiresAt": 850,
+        "closed": true
+      },
+      {
+        "gigId": "g61",
+        "driverId": "uofh-0642",
+        "at": 840,
+        "expiresAt": 850,
+        "closed": true
+      },
+      {
+        "gigId": "g65",
+        "driverId": "uofh-0642",
+        "at": 840,
+        "expiresAt": 850,
+        "closed": true
+      },
+      {
+        "gigId": "g66",
+        "driverId": "uofh-0287",
+        "at": 840,
+        "expiresAt": 850,
+        "closed": true
+      },
+      {
+        "gigId": "g65",
+        "driverId": "uofh-1262",
+        "at": 841,
+        "expiresAt": 851,
+        "closed": true
+      },
+      {
+        "gigId": "g66",
+        "driverId": "uofh-0303",
+        "at": 841,
+        "expiresAt": 851,
+        "closed": true
+      },
+      {
+        "gigId": "g66",
+        "driverId": "uofh-0449",
+        "at": 842,
+        "expiresAt": 852,
+        "closed": true
+      },
+      {
+        "gigId": "g25",
+        "driverId": "uofh-1218",
+        "at": 844,
+        "expiresAt": 854,
+        "closed": true
+      },
+      {
+        "gigId": "g72",
+        "driverId": "uofh-0104",
+        "at": 844,
+        "expiresAt": 854,
+        "closed": true
+      },
+      {
+        "gigId": "g72",
+        "driverId": "uofh-1747",
+        "at": 845,
+        "expiresAt": 855,
+        "closed": true
+      },
+      {
+        "gigId": "g73",
+        "driverId": "uofh-0284",
+        "at": 845,
+        "expiresAt": 855,
+        "closed": true
+      },
+      {
+        "gigId": "g72",
+        "driverId": "uofh-0405",
+        "at": 846,
+        "expiresAt": 856,
+        "closed": true
+      },
+      {
+        "gigId": "g73",
+        "driverId": "uofh-0825",
+        "at": 846,
+        "expiresAt": 856,
+        "closed": true
+      },
+      {
+        "gigId": "g73",
+        "driverId": "uofh-0964",
+        "at": 847,
+        "expiresAt": 857,
+        "closed": true
+      },
+      {
+        "gigId": "g76",
+        "driverId": "uofh-0284",
+        "at": 855,
+        "expiresAt": 865,
+        "closed": true
+      },
+      {
+        "gigId": "g81",
+        "driverId": "uofh-0318",
+        "at": 874,
+        "expiresAt": 884,
+        "closed": true
+      },
+      {
+        "gigId": "g81",
+        "driverId": "uofh-0411",
+        "at": 876,
+        "expiresAt": 886,
+        "closed": true
+      },
+      {
+        "gigId": "g81",
+        "driverId": "uofh-0427",
+        "at": 879,
+        "expiresAt": 889,
+        "closed": true
+      },
+      {
+        "gigId": "g86",
+        "driverId": "uofh-0427",
+        "at": 890,
+        "expiresAt": 900,
+        "closed": true
+      },
+      {
+        "gigId": "g52",
+        "driverId": "uofh-1404",
+        "at": 893,
+        "expiresAt": 903,
+        "closed": true
+      },
+      {
+        "gigId": "g89",
+        "driverId": "uofh-0318",
+        "at": 898,
+        "expiresAt": 908,
+        "closed": true
+      },
+      {
+        "gigId": "g89",
+        "driverId": "uofh-0848",
+        "at": 899,
+        "expiresAt": 909,
+        "closed": true
+      },
+      {
+        "gigId": "g89",
+        "driverId": "uofh-1580",
+        "at": 900,
+        "expiresAt": 910,
+        "closed": true
+      },
+      {
+        "gigId": "g99",
+        "driverId": "uofh-1080",
+        "at": 931,
+        "expiresAt": 941,
+        "closed": true
+      },
+      {
+        "gigId": "g99",
+        "driverId": "uofh-0021",
+        "at": 932,
+        "expiresAt": 942,
+        "closed": true
+      },
+      {
+        "gigId": "g99",
+        "driverId": "uofh-0054",
+        "at": 933,
+        "expiresAt": 943,
+        "closed": true
+      },
+      {
+        "gigId": "g94",
+        "driverId": "uofh-1343",
+        "at": 949,
+        "expiresAt": 959,
+        "closed": true
+      },
+      {
+        "gigId": "g104",
+        "driverId": "uofh-0050",
+        "at": 950,
+        "expiresAt": 960,
+        "closed": true
+      },
+      {
+        "gigId": "g105",
+        "driverId": "uofh-0806",
+        "at": 950,
+        "expiresAt": 960,
+        "closed": true
+      },
+      {
+        "gigId": "g104",
+        "driverId": "uofh-0238",
+        "at": 954,
+        "expiresAt": 964,
+        "closed": true
+      },
+      {
+        "gigId": "g105",
+        "driverId": "uofh-1781",
+        "at": 954,
+        "expiresAt": 964,
+        "closed": true
+      },
+      {
+        "gigId": "g106",
+        "driverId": "uofh-0238",
+        "at": 954,
+        "expiresAt": 964,
+        "closed": true
+      },
+      {
+        "gigId": "g104",
+        "driverId": "uofh-0303",
+        "at": 956,
+        "expiresAt": 966,
+        "closed": true
+      },
+      {
+        "gigId": "g105",
+        "driverId": "uofh-0151",
+        "at": 956,
+        "expiresAt": 966,
+        "closed": true
+      },
+      {
+        "gigId": "g108",
+        "driverId": "uofh-0704",
+        "at": 964,
+        "expiresAt": 974,
+        "closed": true
+      },
+      {
+        "gigId": "g108",
+        "driverId": "uofh-1372",
+        "at": 965,
+        "expiresAt": 975,
+        "closed": true
+      },
+      {
+        "gigId": "g108",
+        "driverId": "uofh-1708",
+        "at": 966,
+        "expiresAt": 976,
+        "closed": true
+      },
+      {
+        "gigId": "g109",
+        "driverId": "uofh-0003",
+        "at": 995,
+        "expiresAt": 1005,
+        "closed": true
+      },
+      {
+        "gigId": "g109",
+        "driverId": "uofh-0045",
+        "at": 996,
+        "expiresAt": 1006,
+        "closed": true
+      },
+      {
+        "gigId": "g109",
+        "driverId": "uofh-0048",
+        "at": 997,
+        "expiresAt": 1007,
+        "closed": true
+      },
+      {
+        "gigId": "g110",
+        "driverId": "uofh-0102",
+        "at": 1005,
+        "expiresAt": 1015,
+        "closed": true
+      },
+      {
+        "gigId": "g110",
+        "driverId": "uofh-0643",
+        "at": 1007,
+        "expiresAt": 1017,
+        "closed": true
+      },
+      {
+        "gigId": "g110",
+        "driverId": "uofh-1644",
+        "at": 1008,
+        "expiresAt": 1018,
+        "closed": true
+      },
+      {
+        "gigId": "g39",
+        "driverId": "uofh-0129",
+        "at": 1009,
+        "expiresAt": 1019,
+        "closed": true
+      },
+      {
+        "gigId": "g123",
+        "driverId": "uofh-1402",
+        "at": 1048,
+        "expiresAt": 1058,
+        "closed": true
+      },
+      {
+        "gigId": "g123",
+        "driverId": "uofh-1125",
+        "at": 1051,
+        "expiresAt": 1061,
+        "closed": true
+      },
+      {
+        "gigId": "g123",
+        "driverId": "uofh-1300",
+        "at": 1054,
+        "expiresAt": 1064,
+        "closed": true
+      },
+      {
+        "gigId": "g124",
+        "driverId": "uofh-1893",
+        "at": 1059,
+        "expiresAt": 1069,
+        "closed": true
+      },
+      {
+        "gigId": "g124",
+        "driverId": "uofh-0129",
+        "at": 1069,
+        "expiresAt": 1079,
+        "closed": true
+      },
+      {
+        "gigId": "g126",
+        "driverId": "uofh-0263",
+        "at": 1069,
+        "expiresAt": 1079,
+        "closed": true
+      },
+      {
+        "gigId": "g124",
+        "driverId": "uofh-0588",
+        "at": 1072,
+        "expiresAt": 1082,
+        "closed": true
+      },
+      {
+        "gigId": "g126",
+        "driverId": "uofh-0077",
+        "at": 1072,
+        "expiresAt": 1082,
+        "closed": true
+      },
+      {
+        "gigId": "g126",
+        "driverId": "uofh-1580",
+        "at": 1076,
+        "expiresAt": 1086,
+        "closed": true
+      },
+      {
+        "gigId": "g127",
+        "driverId": "uofh-0624",
+        "at": 1109,
+        "expiresAt": 1119,
+        "closed": true
+      },
+      {
+        "gigId": "g130",
+        "driverId": "uofh-0113",
+        "at": 1117,
+        "expiresAt": 1127,
+        "closed": true
+      },
+      {
+        "gigId": "g130",
+        "driverId": "uofh-0719",
+        "at": 1125,
+        "expiresAt": 1135,
+        "closed": true
+      },
+      {
+        "gigId": "g130",
+        "driverId": "uofh-1355",
+        "at": 1127,
+        "expiresAt": 1137,
+        "closed": true
+      },
+      {
+        "gigId": "g55",
+        "driverId": "uofh-0075",
+        "at": 1916,
+        "expiresAt": 1926,
+        "closed": true
+      },
+      {
+        "gigId": "g138",
+        "driverId": "uofh-0787",
+        "at": 1975,
+        "expiresAt": 1985,
+        "closed": true
+      },
+      {
+        "gigId": "g52",
+        "driverId": "uofh-0016",
+        "at": 2094,
+        "expiresAt": 2104,
+        "closed": true
+      },
+      {
+        "gigId": "g150",
+        "driverId": "uofh-0108",
+        "at": 2094,
+        "expiresAt": 2104,
+        "closed": true
+      },
+      {
+        "gigId": "g150",
+        "driverId": "uofh-0130",
+        "at": 2095,
+        "expiresAt": 2105,
+        "closed": true
+      },
+      {
+        "gigId": "g129",
+        "driverId": "uofh-0021",
+        "at": 2096,
+        "expiresAt": 2106,
+        "closed": true
+      },
+      {
+        "gigId": "g150",
+        "driverId": "uofh-0374",
+        "at": 2096,
+        "expiresAt": 2106,
+        "closed": true
+      },
+      {
+        "gigId": "g153",
+        "driverId": "uofh-0510",
+        "at": 2096,
+        "expiresAt": 2106,
+        "closed": true
+      },
+      {
+        "gigId": "g129",
+        "driverId": "uofh-0054",
+        "at": 2098,
+        "expiresAt": 2108,
+        "closed": true
+      },
+      {
+        "gigId": "g153",
+        "driverId": "uofh-0531",
+        "at": 2098,
+        "expiresAt": 2108,
+        "closed": true
+      },
+      {
+        "gigId": "g155",
+        "driverId": "uofh-1568",
+        "at": 2098,
+        "expiresAt": 2108,
+        "closed": true
+      },
+      {
+        "gigId": "g156",
+        "driverId": "uofh-0039",
+        "at": 2098,
+        "expiresAt": 2108,
+        "closed": true
+      },
+      {
+        "gigId": "g157",
+        "driverId": "uofh-0810",
+        "at": 2098,
+        "expiresAt": 2108,
+        "closed": true
+      },
+      {
+        "gigId": "g129",
+        "driverId": "uofh-1369",
+        "at": 2099,
+        "expiresAt": 2109,
+        "closed": true
+      },
+      {
+        "gigId": "g153",
+        "driverId": "uofh-0810",
+        "at": 2099,
+        "expiresAt": 2109,
+        "closed": true
+      },
+      {
+        "gigId": "g155",
+        "driverId": "uofh-1852",
+        "at": 2099,
+        "expiresAt": 2109,
+        "closed": true
+      },
+      {
+        "gigId": "g156",
+        "driverId": "uofh-0116",
+        "at": 2099,
+        "expiresAt": 2109,
+        "closed": true
+      },
+      {
+        "gigId": "g157",
+        "driverId": "uofh-0318",
+        "at": 2099,
+        "expiresAt": 2109,
+        "closed": true
+      },
+      {
+        "gigId": "g155",
+        "driverId": "uofh-1918",
+        "at": 2103,
+        "expiresAt": 2113,
+        "closed": true
+      },
+      {
+        "gigId": "g156",
+        "driverId": "uofh-0318",
+        "at": 2103,
+        "expiresAt": 2113,
+        "closed": true
+      },
+      {
+        "gigId": "g157",
+        "driverId": "uofh-1139",
+        "at": 2103,
+        "expiresAt": 2113,
+        "closed": true
+      },
+      {
+        "gigId": "g158",
+        "driverId": "uofh-0754",
+        "at": 2103,
+        "expiresAt": 2113,
+        "closed": true
+      },
+      {
+        "gigId": "g158",
+        "driverId": "uofh-0936",
+        "at": 2104,
+        "expiresAt": 2114,
+        "closed": true
+      },
+      {
+        "gigId": "g158",
+        "driverId": "uofh-0574",
+        "at": 2105,
+        "expiresAt": 2115,
+        "closed": true
+      },
+      {
+        "gigId": "g161",
+        "driverId": "uofh-0510",
+        "at": 2128,
+        "expiresAt": 2138,
+        "closed": true
+      },
+      {
+        "gigId": "g161",
+        "driverId": "uofh-0555",
+        "at": 2130,
+        "expiresAt": 2140,
+        "closed": true
+      },
+      {
+        "gigId": "g161",
+        "driverId": "uofh-0665",
+        "at": 2134,
+        "expiresAt": 2144,
+        "closed": true
+      },
+      {
+        "gigId": "g170",
+        "driverId": "uofh-0039",
+        "at": 2200,
+        "expiresAt": 2210,
+        "closed": true
+      },
+      {
+        "gigId": "g170",
+        "driverId": "uofh-0893",
+        "at": 2203,
+        "expiresAt": 2213,
+        "closed": true
+      },
+      {
+        "gigId": "g170",
+        "driverId": "uofh-1139",
+        "at": 2204,
+        "expiresAt": 2214,
+        "closed": true
+      },
+      {
+        "gigId": "g171",
+        "driverId": "uofh-0102",
+        "at": 2209,
+        "expiresAt": 2219,
+        "closed": true
+      },
+      {
+        "gigId": "g171",
+        "driverId": "uofh-0108",
+        "at": 2218,
+        "expiresAt": 2228,
+        "closed": true
+      },
+      {
+        "gigId": "g173",
+        "driverId": "uofh-0102",
+        "at": 2218,
+        "expiresAt": 2228,
+        "closed": true
+      },
+      {
+        "gigId": "g174",
+        "driverId": "uofh-0102",
+        "at": 2218,
+        "expiresAt": 2228,
+        "closed": true
+      },
+      {
+        "gigId": "g171",
+        "driverId": "uofh-0439",
+        "at": 2219,
+        "expiresAt": 2229,
+        "closed": true
+      },
+      {
+        "gigId": "g173",
+        "driverId": "uofh-0374",
+        "at": 2219,
+        "expiresAt": 2229,
+        "closed": true
+      },
+      {
+        "gigId": "g174",
+        "driverId": "uofh-0108",
+        "at": 2219,
+        "expiresAt": 2229,
+        "closed": true
+      },
+      {
+        "gigId": "g173",
+        "driverId": "uofh-0628",
+        "at": 2220,
+        "expiresAt": 2230,
+        "closed": true
+      },
+      {
+        "gigId": "g178",
+        "driverId": "uofh-0825",
+        "at": 2255,
+        "expiresAt": 2265,
+        "closed": true
+      },
+      {
+        "gigId": "g178",
+        "driverId": "uofh-1007",
+        "at": 2261,
+        "expiresAt": 2271,
+        "closed": true
+      },
+      {
+        "gigId": "g178",
+        "driverId": "uofh-0004",
+        "at": 2262,
+        "expiresAt": 2272,
+        "closed": true
+      },
+      {
+        "gigId": "g182",
+        "driverId": "uofh-0483",
+        "at": 2283,
+        "expiresAt": 2293,
+        "closed": true
+      },
+      {
+        "gigId": "g182",
+        "driverId": "uofh-1465",
+        "at": 2284,
+        "expiresAt": 2294,
+        "closed": true
+      },
+      {
+        "gigId": "g182",
+        "driverId": "uofh-0021",
+        "at": 2286,
+        "expiresAt": 2296,
+        "closed": true
+      },
+      {
+        "gigId": "g186",
+        "driverId": "uofh-0138",
+        "at": 2295,
+        "expiresAt": 2305,
+        "closed": true
+      },
+      {
+        "gigId": "g186",
+        "driverId": "uofh-0614",
+        "at": 2298,
+        "expiresAt": 2308,
+        "closed": true
+      },
+      {
+        "gigId": "g188",
+        "driverId": "uofh-0032",
+        "at": 2298,
+        "expiresAt": 2308,
+        "closed": true
+      },
+      {
+        "gigId": "g186",
+        "driverId": "uofh-0909",
+        "at": 2301,
+        "expiresAt": 2311,
+        "closed": true
+      },
+      {
+        "gigId": "g188",
+        "driverId": "uofh-0076",
+        "at": 2301,
+        "expiresAt": 2311,
+        "closed": true
+      },
+      {
+        "gigId": "g188",
+        "driverId": "uofh-0368",
+        "at": 2302,
+        "expiresAt": 2312,
+        "closed": true
+      },
+      {
+        "gigId": "g190",
+        "driverId": "uofh-0193",
+        "at": 2311,
+        "expiresAt": 2321,
+        "closed": true
+      },
+      {
+        "gigId": "g191",
+        "driverId": "uofh-0732",
+        "at": 2311,
+        "expiresAt": 2321,
+        "closed": true
+      },
+      {
+        "gigId": "g192",
+        "driverId": "uofh-0662",
+        "at": 2311,
+        "expiresAt": 2321,
+        "closed": true
+      },
+      {
+        "gigId": "g190",
+        "driverId": "uofh-0443",
+        "at": 2314,
+        "expiresAt": 2324,
+        "closed": true
+      },
+      {
+        "gigId": "g191",
+        "driverId": "uofh-0510",
+        "at": 2314,
+        "expiresAt": 2324,
+        "closed": true
+      },
+      {
+        "gigId": "g192",
+        "driverId": "uofh-1019",
+        "at": 2314,
+        "expiresAt": 2324,
+        "closed": true
+      },
+      {
+        "gigId": "g193",
+        "driverId": "uofh-1595",
+        "at": 2314,
+        "expiresAt": 2324,
+        "closed": true
+      },
+      {
+        "gigId": "g190",
+        "driverId": "uofh-0543",
+        "at": 2315,
+        "expiresAt": 2325,
+        "closed": true
+      },
+      {
+        "gigId": "g191",
+        "driverId": "uofh-0674",
+        "at": 2315,
+        "expiresAt": 2325,
+        "closed": true
+      },
+      {
+        "gigId": "g192",
+        "driverId": "uofh-1845",
+        "at": 2315,
+        "expiresAt": 2325,
+        "closed": true
+      },
+      {
+        "gigId": "g193",
+        "driverId": "uofh-0725",
+        "at": 2315,
+        "expiresAt": 2325,
+        "closed": true
+      },
+      {
+        "gigId": "g193",
+        "driverId": "uofh-0732",
+        "at": 2316,
+        "expiresAt": 2326,
+        "closed": true
+      },
+      {
+        "gigId": "g198",
+        "driverId": "uofh-0307",
+        "at": 2331,
+        "expiresAt": 2341,
+        "closed": true
+      },
+      {
+        "gigId": "g198",
+        "driverId": "uofh-0401",
+        "at": 2332,
+        "expiresAt": 2342,
+        "closed": true
+      },
+      {
+        "gigId": "g198",
+        "driverId": "uofh-0047",
+        "at": 2333,
+        "expiresAt": 2343,
+        "closed": true
+      },
+      {
+        "gigId": "g194",
+        "driverId": "uofh-0543",
+        "at": 2345,
+        "expiresAt": 2355,
+        "closed": true
+      },
+      {
+        "gigId": "g194",
+        "driverId": "uofh-0039",
+        "at": 2346,
+        "expiresAt": 2356,
+        "closed": true
+      },
+      {
+        "gigId": "g194",
+        "driverId": "uofh-0116",
+        "at": 2348,
+        "expiresAt": 2358,
+        "closed": true
+      },
+      {
+        "gigId": "g201",
+        "driverId": "uofh-0773",
+        "at": 2351,
+        "expiresAt": 2361,
+        "closed": true
+      },
+      {
+        "gigId": "g201",
+        "driverId": "uofh-1822",
+        "at": 2355,
+        "expiresAt": 2365,
+        "closed": true
+      },
+      {
+        "gigId": "g201",
+        "driverId": "uofh-0732",
+        "at": 2356,
+        "expiresAt": 2366,
+        "closed": true
+      },
+      {
+        "gigId": "g202",
+        "driverId": "uofh-0284",
+        "at": 2356,
+        "expiresAt": 2366,
+        "closed": true
+      },
+      {
+        "gigId": "g202",
+        "driverId": "uofh-1262",
+        "at": 2358,
+        "expiresAt": 2368,
+        "closed": true
+      },
+      {
+        "gigId": "g202",
+        "driverId": "uofh-0339",
+        "at": 2363,
+        "expiresAt": 2373,
+        "closed": true
+      },
+      {
+        "gigId": "g204",
+        "driverId": "uofh-1256",
+        "at": 2363,
+        "expiresAt": 2373,
+        "closed": true
+      },
+      {
+        "gigId": "g204",
+        "driverId": "uofh-0004",
+        "at": 2368,
+        "expiresAt": 2378,
+        "closed": true
+      },
+      {
+        "gigId": "g208",
+        "driverId": "uofh-0157",
+        "at": 2368,
+        "expiresAt": 2378,
+        "closed": true
+      },
+      {
+        "gigId": "g209",
+        "driverId": "uofh-0659",
+        "at": 2368,
+        "expiresAt": 2378,
+        "closed": true
+      },
+      {
+        "gigId": "g204",
+        "driverId": "uofh-0058",
+        "at": 2369,
+        "expiresAt": 2379,
+        "closed": true
+      },
+      {
+        "gigId": "g208",
+        "driverId": "uofh-0284",
+        "at": 2369,
+        "expiresAt": 2379,
+        "closed": true
+      },
+      {
+        "gigId": "g209",
+        "driverId": "uofh-1800",
+        "at": 2369,
+        "expiresAt": 2379,
+        "closed": true
+      },
+      {
+        "gigId": "g208",
+        "driverId": "uofh-0825",
+        "at": 2372,
+        "expiresAt": 2382,
+        "closed": true
+      },
+      {
+        "gigId": "g209",
+        "driverId": "uofh-0672",
+        "at": 2372,
+        "expiresAt": 2382,
+        "closed": true
+      },
+      {
+        "gigId": "g212",
+        "driverId": "uofh-0658",
+        "at": 2372,
+        "expiresAt": 2382,
+        "closed": true
+      },
+      {
+        "gigId": "g213",
+        "driverId": "uofh-0284",
+        "at": 2372,
+        "expiresAt": 2382,
+        "closed": true
+      },
+      {
+        "gigId": "g212",
+        "driverId": "uofh-0917",
+        "at": 2374,
+        "expiresAt": 2384,
+        "closed": true
+      },
+      {
+        "gigId": "g213",
+        "driverId": "uofh-0339",
+        "at": 2374,
+        "expiresAt": 2384,
+        "closed": true
+      },
+      {
+        "gigId": "g214",
+        "driverId": "uofh-0564",
+        "at": 2374,
+        "expiresAt": 2384,
+        "closed": true
+      },
+      {
+        "gigId": "g212",
+        "driverId": "uofh-1256",
+        "at": 2378,
+        "expiresAt": 2388,
+        "closed": true
+      },
+      {
+        "gigId": "g213",
+        "driverId": "uofh-0964",
+        "at": 2378,
+        "expiresAt": 2388,
+        "closed": true
+      },
+      {
+        "gigId": "g214",
+        "driverId": "uofh-0157",
+        "at": 2378,
+        "expiresAt": 2388,
+        "closed": true
+      },
+      {
+        "gigId": "g215",
+        "driverId": "uofh-0339",
+        "at": 2378,
+        "expiresAt": 2388,
+        "closed": true
+      },
+      {
+        "gigId": "g214",
+        "driverId": "uofh-0658",
+        "at": 2383,
+        "expiresAt": 2393,
+        "closed": true
+      },
+      {
+        "gigId": "g215",
+        "driverId": "uofh-0940",
+        "at": 2383,
+        "expiresAt": 2393,
+        "closed": true
+      },
+      {
+        "gigId": "g218",
+        "driverId": "uofh-0157",
+        "at": 2383,
+        "expiresAt": 2393,
+        "closed": true
+      },
+      {
+        "gigId": "g215",
+        "driverId": "uofh-1256",
+        "at": 2387,
+        "expiresAt": 2397,
+        "closed": true
+      },
+      {
+        "gigId": "g218",
+        "driverId": "uofh-0658",
+        "at": 2387,
+        "expiresAt": 2397,
+        "closed": true
+      },
+      {
+        "gigId": "g219",
+        "driverId": "uofh-0387",
+        "at": 2387,
+        "expiresAt": 2397,
+        "closed": true
+      },
+      {
+        "gigId": "g218",
+        "driverId": "uofh-0940",
+        "at": 2392,
+        "expiresAt": 2402,
+        "closed": true
+      },
+      {
+        "gigId": "g219",
+        "driverId": "uofh-0004",
+        "at": 2392,
+        "expiresAt": 2402,
+        "closed": true
+      },
+      {
+        "gigId": "g222",
+        "driverId": "uofh-1517",
+        "at": 2392,
+        "expiresAt": 2402,
+        "closed": true
+      },
+      {
+        "gigId": "g219",
+        "driverId": "uofh-0058",
+        "at": 2393,
+        "expiresAt": 2403,
+        "closed": true
+      },
+      {
+        "gigId": "g222",
+        "driverId": "uofh-1698",
+        "at": 2393,
+        "expiresAt": 2403,
+        "closed": true
+      },
+      {
+        "gigId": "g222",
+        "driverId": "uofh-0674",
+        "at": 2395,
+        "expiresAt": 2405,
+        "closed": true
+      },
+      {
+        "gigId": "g223",
+        "driverId": "uofh-1830",
+        "at": 2408,
+        "expiresAt": 2418,
+        "closed": true
+      },
+      {
+        "gigId": "g223",
+        "driverId": "uofh-0104",
+        "at": 2410,
+        "expiresAt": 2420,
+        "closed": true
+      },
+      {
+        "gigId": "g223",
+        "driverId": "uofh-1328",
+        "at": 2413,
+        "expiresAt": 2423,
+        "closed": true
+      },
+      {
+        "gigId": "g224",
+        "driverId": "uofh-0020",
+        "at": 2413,
+        "expiresAt": 2423,
+        "closed": true
+      },
+      {
+        "gigId": "g224",
+        "driverId": "uofh-1181",
+        "at": 2415,
+        "expiresAt": 2425,
+        "closed": true
+      },
+      {
+        "gigId": "g224",
+        "driverId": "uofh-1337",
+        "at": 2420,
+        "expiresAt": 2430,
+        "closed": true
+      },
+      {
+        "gigId": "g225",
+        "driverId": "uofh-1580",
+        "at": 2420,
+        "expiresAt": 2430,
+        "closed": true
+      },
+      {
+        "gigId": "g225",
+        "driverId": "uofh-0709",
+        "at": 2423,
+        "expiresAt": 2433,
+        "closed": true
+      },
+      {
+        "gigId": "g225",
+        "driverId": "uofh-0972",
+        "at": 2425,
+        "expiresAt": 2435,
+        "closed": true
+      },
+      {
+        "gigId": "g227",
+        "driverId": "uofh-0488",
+        "at": 2443,
+        "expiresAt": 2453,
+        "closed": true
+      },
+      {
+        "gigId": "g227",
+        "driverId": "uofh-0816",
+        "at": 2444,
+        "expiresAt": 2454,
+        "closed": true
+      },
+      {
+        "gigId": "g227",
+        "driverId": "uofh-0909",
+        "at": 2446,
+        "expiresAt": 2456,
+        "closed": true
+      },
+      {
+        "gigId": "g228",
+        "driverId": "uofh-0555",
+        "at": 2450,
+        "expiresAt": 2460,
+        "closed": true
+      },
+      {
+        "gigId": "g228",
+        "driverId": "uofh-0809",
+        "at": 2451,
+        "expiresAt": 2461,
+        "closed": true
+      },
+      {
+        "gigId": "g228",
+        "driverId": "uofh-1008",
+        "at": 2452,
+        "expiresAt": 2462,
+        "closed": true
+      },
+      {
+        "gigId": "g229",
+        "driverId": "uofh-0116",
+        "at": 2453,
+        "expiresAt": 2463,
+        "closed": true
+      },
+      {
+        "gigId": "g229",
+        "driverId": "uofh-0443",
+        "at": 2454,
+        "expiresAt": 2464,
+        "closed": true
+      },
+      {
+        "gigId": "g229",
+        "driverId": "uofh-0888",
+        "at": 2455,
+        "expiresAt": 2465,
+        "closed": true
+      },
+      {
+        "gigId": "g231",
+        "driverId": "uofh-0809",
+        "at": 2477,
+        "expiresAt": 2487,
+        "closed": true
+      },
+      {
+        "gigId": "g231",
+        "driverId": "uofh-1139",
+        "at": 2479,
+        "expiresAt": 2489,
+        "closed": true
+      },
+      {
+        "gigId": "g231",
+        "driverId": "uofh-1271",
+        "at": 2482,
+        "expiresAt": 2492,
+        "closed": true
+      },
+      {
+        "gigId": "g236",
+        "driverId": "uofh-0669",
+        "at": 2483,
+        "expiresAt": 2493,
+        "closed": true
+      },
+      {
+        "gigId": "g236",
+        "driverId": "uofh-1289",
+        "at": 2484,
+        "expiresAt": 2494,
+        "closed": true
+      },
+      {
+        "gigId": "g236",
+        "driverId": "uofh-1654",
+        "at": 2485,
+        "expiresAt": 2495,
+        "closed": true
+      },
+      {
+        "gigId": "g240",
+        "driverId": "uofh-0705",
+        "at": 2488,
+        "expiresAt": 2498,
+        "closed": true
+      },
+      {
+        "gigId": "g240",
+        "driverId": "uofh-0909",
+        "at": 2492,
+        "expiresAt": 2502,
+        "closed": true
+      },
+      {
+        "gigId": "g240",
+        "driverId": "uofh-0924",
+        "at": 2494,
+        "expiresAt": 2504,
+        "closed": true
+      },
+      {
+        "gigId": "g242",
+        "driverId": "uofh-0007",
+        "at": 2500,
+        "expiresAt": 2510,
+        "closed": true
+      },
+      {
+        "gigId": "g242",
+        "driverId": "uofh-0575",
+        "at": 2501,
+        "expiresAt": 2511,
+        "closed": true
+      },
+      {
+        "gigId": "g242",
+        "driverId": "uofh-0744",
+        "at": 2505,
+        "expiresAt": 2515,
+        "closed": true
+      },
+      {
+        "gigId": "g243",
+        "driverId": "uofh-1241",
+        "at": 2509,
+        "expiresAt": 2519,
+        "closed": true
+      },
+      {
+        "gigId": "g243",
+        "driverId": "uofh-1747",
+        "at": 2513,
+        "expiresAt": 2523,
+        "closed": true
+      },
+      {
+        "gigId": "g243",
+        "driverId": "uofh-0541",
+        "at": 2514,
+        "expiresAt": 2524,
+        "closed": true
+      },
+      {
+        "gigId": "g245",
+        "driverId": "uofh-0677",
+        "at": 2524,
+        "expiresAt": 2534,
+        "closed": true
+      },
+      {
+        "gigId": "g245",
+        "driverId": "uofh-0263",
+        "at": 2530,
+        "expiresAt": 2540,
+        "closed": true
+      },
+      {
+        "gigId": "g247",
+        "driverId": "uofh-1372",
+        "at": 2530,
+        "expiresAt": 2540,
+        "closed": true
+      },
+      {
+        "gigId": "g245",
+        "driverId": "uofh-1854",
+        "at": 2534,
+        "expiresAt": 2544,
+        "closed": true
+      },
+      {
+        "gigId": "g247",
+        "driverId": "uofh-0624",
+        "at": 2534,
+        "expiresAt": 2544,
+        "closed": true
+      },
+      {
+        "gigId": "g247",
+        "driverId": "uofh-1300",
+        "at": 2553,
+        "expiresAt": 2563,
+        "closed": true
+      },
+      {
+        "gigId": "g248",
+        "driverId": "uofh-0484",
+        "at": 2553,
+        "expiresAt": 2563,
+        "closed": true
+      },
+      {
+        "gigId": "g248",
+        "driverId": "uofh-0525",
+        "at": 2568,
+        "expiresAt": 2578,
+        "closed": true
+      },
+      {
+        "gigId": "g248",
+        "driverId": "uofh-0555",
+        "at": 2573,
+        "expiresAt": 2583,
+        "closed": true
+      },
+      {
+        "gigId": "g253",
+        "driverId": "uofh-0219",
+        "at": 2742,
+        "expiresAt": 2752,
+        "closed": true
+      },
+      {
+        "gigId": "g257",
+        "driverId": "uofh-0126",
+        "at": 3483,
+        "expiresAt": 3493,
+        "closed": true
+      },
+      {
+        "gigId": "g257",
+        "driverId": "uofh-0960",
+        "at": 3484,
+        "expiresAt": 3494,
+        "closed": true
+      },
+      {
+        "gigId": "g257",
+        "driverId": "uofh-1447",
+        "at": 3489,
+        "expiresAt": 3499,
+        "closed": true
+      },
+      {
+        "gigId": "g259",
+        "driverId": "uofh-0203",
+        "at": 3500,
+        "expiresAt": 3510,
+        "closed": true
+      },
+      {
+        "gigId": "g259",
+        "driverId": "uofh-0267",
+        "at": 3507,
+        "expiresAt": 3517,
+        "closed": true
+      },
+      {
+        "gigId": "g261",
+        "driverId": "uofh-1184",
+        "at": 3507,
+        "expiresAt": 3517,
+        "closed": true
+      },
+      {
+        "gigId": "g259",
+        "driverId": "uofh-0316",
+        "at": 3510,
+        "expiresAt": 3520,
+        "closed": true
+      },
+      {
+        "gigId": "g261",
+        "driverId": "uofh-1245",
+        "at": 3510,
+        "expiresAt": 3520,
+        "closed": true
+      },
+      {
+        "gigId": "g263",
+        "driverId": "uofh-0235",
+        "at": 3510,
+        "expiresAt": 3520,
+        "closed": true
+      },
+      {
+        "gigId": "g263",
+        "driverId": "uofh-1184",
+        "at": 3514,
+        "expiresAt": 3524,
+        "closed": true
+      },
+      {
+        "gigId": "g264",
+        "driverId": "uofh-0085",
+        "at": 3514,
+        "expiresAt": 3524,
+        "closed": true
+      },
+      {
+        "gigId": "g263",
+        "driverId": "uofh-1787",
+        "at": 3515,
+        "expiresAt": 3525,
+        "closed": true
+      },
+      {
+        "gigId": "g264",
+        "driverId": "uofh-0129",
+        "at": 3515,
+        "expiresAt": 3525,
+        "closed": true
+      },
+      {
+        "gigId": "g264",
+        "driverId": "uofh-0628",
+        "at": 3521,
+        "expiresAt": 3531,
+        "closed": true
+      },
+      {
+        "gigId": "g266",
+        "driverId": "uofh-0535",
+        "at": 3521,
+        "expiresAt": 3531,
+        "closed": true
+      },
+      {
+        "gigId": "g266",
+        "driverId": "uofh-0708",
+        "at": 3522,
+        "expiresAt": 3532,
+        "closed": true
+      },
+      {
+        "gigId": "g268",
+        "driverId": "uofh-0250",
+        "at": 3525,
+        "expiresAt": 3535,
+        "closed": true
+      },
+      {
+        "gigId": "g268",
+        "driverId": "uofh-0462",
+        "at": 3527,
+        "expiresAt": 3537,
+        "closed": true
+      },
+      {
+        "gigId": "g271",
+        "driverId": "uofh-1840",
+        "at": 3552,
+        "expiresAt": 3562,
+        "closed": true
+      },
+      {
+        "gigId": "g217",
+        "driverId": "uofh-0004",
+        "at": 3555,
+        "expiresAt": 3565,
+        "closed": true
+      },
+      {
+        "gigId": "g271",
+        "driverId": "uofh-0486",
+        "at": 3555,
+        "expiresAt": 3565,
+        "closed": true
+      },
+      {
+        "gigId": "g271",
+        "driverId": "uofh-1330",
+        "at": 3556,
+        "expiresAt": 3566,
+        "closed": true
+      },
+      {
+        "gigId": "g278",
+        "driverId": "uofh-0039",
+        "at": 3604,
+        "expiresAt": 3614,
+        "closed": true
+      },
+      {
+        "gigId": "g278",
+        "driverId": "uofh-0653",
+        "at": 3608,
+        "expiresAt": 3618,
+        "closed": true
+      },
+      {
+        "gigId": "g278",
+        "driverId": "uofh-0665",
+        "at": 3610,
+        "expiresAt": 3620,
+        "closed": true
+      },
+      {
+        "gigId": "g282",
+        "driverId": "uofh-0116",
+        "at": 3640,
+        "expiresAt": 3650,
+        "closed": true
+      },
+      {
+        "gigId": "g283",
+        "driverId": "uofh-0076",
+        "at": 3640,
+        "expiresAt": 3650,
+        "closed": true
+      },
+      {
+        "gigId": "g282",
+        "driverId": "uofh-0311",
+        "at": 3644,
+        "expiresAt": 3654,
+        "closed": true
+      },
+      {
+        "gigId": "g282",
+        "driverId": "uofh-0510",
+        "at": 3646,
+        "expiresAt": 3656,
+        "closed": true
+      },
+      {
+        "gigId": "g289",
+        "driverId": "uofh-0273",
+        "at": 3660,
+        "expiresAt": 3670,
+        "closed": true
+      },
+      {
+        "gigId": "g289",
+        "driverId": "uofh-0404",
+        "at": 3662,
+        "expiresAt": 3672,
+        "closed": true
+      },
+      {
+        "gigId": "g280",
+        "driverId": "uofh-1531",
+        "at": 3669,
+        "expiresAt": 3679,
+        "closed": true
+      },
+      {
+        "gigId": "g280",
+        "driverId": "uofh-1721",
+        "at": 3670,
+        "expiresAt": 3680,
+        "closed": true
+      },
+      {
+        "gigId": "g296",
+        "driverId": "uofh-1595",
+        "at": 3705,
+        "expiresAt": 3715,
+        "closed": true
+      },
+      {
+        "gigId": "g296",
+        "driverId": "uofh-1632",
+        "at": 3707,
+        "expiresAt": 3717,
+        "closed": true
+      },
+      {
+        "gigId": "g297",
+        "driverId": "uofh-0893",
+        "at": 3707,
+        "expiresAt": 3717,
+        "closed": true
+      },
+      {
+        "gigId": "g296",
+        "driverId": "uofh-1372",
+        "at": 3709,
+        "expiresAt": 3719,
+        "closed": true
+      },
+      {
+        "gigId": "g297",
+        "driverId": "uofh-1663",
+        "at": 3709,
+        "expiresAt": 3719,
+        "closed": true
+      },
+      {
+        "gigId": "g297",
+        "driverId": "uofh-1632",
+        "at": 3710,
+        "expiresAt": 3720,
+        "closed": true
+      },
+      {
+        "gigId": "g298",
+        "driverId": "uofh-0003",
+        "at": 3727,
+        "expiresAt": 3737,
+        "closed": true
+      },
+      {
+        "gigId": "g298",
+        "driverId": "uofh-0045",
+        "at": 3730,
+        "expiresAt": 3740,
+        "closed": true
+      },
+      {
+        "gigId": "g298",
+        "driverId": "uofh-0048",
+        "at": 3734,
+        "expiresAt": 3744,
+        "closed": true
+      },
+      {
+        "gigId": "g302",
+        "driverId": "uofh-1647",
+        "at": 3752,
+        "expiresAt": 3762,
+        "closed": true
+      },
+      {
+        "gigId": "g304",
+        "driverId": "uofh-0068",
+        "at": 3760,
+        "expiresAt": 3770,
+        "closed": true
+      },
+      {
+        "gigId": "g304",
+        "driverId": "uofh-0323",
+        "at": 3761,
+        "expiresAt": 3771,
+        "closed": true
+      },
+      {
+        "gigId": "g304",
+        "driverId": "uofh-0503",
+        "at": 3762,
+        "expiresAt": 3772,
+        "closed": true
+      },
+      {
+        "gigId": "g306",
+        "driverId": "uofh-0538",
+        "at": 3771,
+        "expiresAt": 3781,
+        "closed": true
+      },
+      {
+        "gigId": "g307",
+        "driverId": "uofh-0892",
+        "at": 3771,
+        "expiresAt": 3781,
+        "closed": true
+      },
+      {
+        "gigId": "g306",
+        "driverId": "uofh-0682",
+        "at": 3772,
+        "expiresAt": 3782,
+        "closed": true
+      },
+      {
+        "gigId": "g307",
+        "driverId": "uofh-1766",
+        "at": 3772,
+        "expiresAt": 3782,
+        "closed": true
+      },
+      {
+        "gigId": "g306",
+        "driverId": "uofh-1346",
+        "at": 3775,
+        "expiresAt": 3785,
+        "closed": true
+      },
+      {
+        "gigId": "g307",
+        "driverId": "uofh-0151",
+        "at": 3775,
+        "expiresAt": 3785,
+        "closed": true
+      },
+      {
+        "gigId": "g308",
+        "driverId": "uofh-0754",
+        "at": 3782,
+        "expiresAt": 3792,
+        "closed": true
+      },
+      {
+        "gigId": "g308",
+        "driverId": "uofh-0003",
+        "at": 3783,
+        "expiresAt": 3793,
+        "closed": true
+      },
+      {
+        "gigId": "g308",
+        "driverId": "uofh-0045",
+        "at": 3784,
+        "expiresAt": 3794,
+        "closed": true
+      },
+      {
+        "gigId": "g309",
+        "driverId": "uofh-0255",
+        "at": 3787,
+        "expiresAt": 3797,
+        "closed": true
+      },
+      {
+        "gigId": "g309",
+        "driverId": "uofh-0427",
+        "at": 3788,
+        "expiresAt": 3798,
+        "closed": true
+      },
+      {
+        "gigId": "g310",
+        "driverId": "uofh-0816",
+        "at": 3788,
+        "expiresAt": 3798,
+        "closed": true
+      },
+      {
+        "gigId": "g309",
+        "driverId": "uofh-0555",
+        "at": 3789,
+        "expiresAt": 3799,
+        "closed": true
+      },
+      {
+        "gigId": "g310",
+        "driverId": "uofh-0874",
+        "at": 3789,
+        "expiresAt": 3799,
+        "closed": true
+      },
+      {
+        "gigId": "g310",
+        "driverId": "uofh-0893",
+        "at": 3790,
+        "expiresAt": 3800,
+        "closed": true
+      },
+      {
+        "gigId": "g314",
+        "driverId": "uofh-0037",
+        "at": 3806,
+        "expiresAt": 3816,
+        "closed": true
+      },
+      {
+        "gigId": "g314",
+        "driverId": "uofh-0427",
+        "at": 3807,
+        "expiresAt": 3817,
+        "closed": true
+      },
+      {
+        "gigId": "g314",
+        "driverId": "uofh-0653",
+        "at": 3809,
+        "expiresAt": 3819,
+        "closed": true
+      },
+      {
+        "gigId": "g315",
+        "driverId": "uofh-0003",
+        "at": 3819,
+        "expiresAt": 3829,
+        "closed": true
+      },
+      {
+        "gigId": "g316",
+        "driverId": "uofh-0045",
+        "at": 3819,
+        "expiresAt": 3829,
+        "closed": true
+      },
+      {
+        "gigId": "g315",
+        "driverId": "uofh-0048",
+        "at": 3821,
+        "expiresAt": 3831,
+        "closed": true
+      },
+      {
+        "gigId": "g316",
+        "driverId": "uofh-0048",
+        "at": 3821,
+        "expiresAt": 3831,
+        "closed": true
+      },
+      {
+        "gigId": "g317",
+        "driverId": "uofh-0083",
+        "at": 3821,
+        "expiresAt": 3831,
+        "closed": true
+      },
+      {
+        "gigId": "g315",
+        "driverId": "uofh-0083",
+        "at": 3822,
+        "expiresAt": 3832,
+        "closed": true
+      },
+      {
+        "gigId": "g316",
+        "driverId": "uofh-0083",
+        "at": 3822,
+        "expiresAt": 3832,
+        "closed": true
+      },
+      {
+        "gigId": "g317",
+        "driverId": "uofh-0100",
+        "at": 3822,
+        "expiresAt": 3832,
+        "closed": true
+      },
+      {
+        "gigId": "g318",
+        "driverId": "uofh-0100",
+        "at": 3822,
+        "expiresAt": 3832,
+        "closed": true
+      },
+      {
+        "gigId": "g319",
+        "driverId": "uofh-0385",
+        "at": 3822,
+        "expiresAt": 3832,
+        "closed": true
+      },
+      {
+        "gigId": "g317",
+        "driverId": "uofh-0105",
+        "at": 3824,
+        "expiresAt": 3834,
+        "closed": true
+      },
+      {
+        "gigId": "g318",
+        "driverId": "uofh-0105",
+        "at": 3824,
+        "expiresAt": 3834,
+        "closed": true
+      },
+      {
+        "gigId": "g319",
+        "driverId": "uofh-0515",
+        "at": 3824,
+        "expiresAt": 3834,
+        "closed": true
+      },
+      {
+        "gigId": "g318",
+        "driverId": "uofh-0246",
+        "at": 3826,
+        "expiresAt": 3836,
+        "closed": true
+      },
+      {
+        "gigId": "g319",
+        "driverId": "uofh-0715",
+        "at": 3826,
+        "expiresAt": 3836,
+        "closed": true
+      },
+      {
+        "gigId": "g322",
+        "driverId": "uofh-0802",
+        "at": 3842,
+        "expiresAt": 3852,
+        "closed": true
+      },
+      {
+        "gigId": "g322",
+        "driverId": "uofh-0018",
+        "at": 3845,
+        "expiresAt": 3855,
+        "closed": true
+      },
+      {
+        "gigId": "g322",
+        "driverId": "uofh-0874",
+        "at": 3846,
+        "expiresAt": 3856,
+        "closed": true
+      },
+      {
+        "gigId": "g325",
+        "driverId": "uofh-1595",
+        "at": 3853,
+        "expiresAt": 3863,
+        "closed": true
+      },
+      {
+        "gigId": "g326",
+        "driverId": "uofh-0290",
+        "at": 3853,
+        "expiresAt": 3863,
+        "closed": true
+      },
+      {
+        "gigId": "g325",
+        "driverId": "uofh-0490",
+        "at": 3854,
+        "expiresAt": 3864,
+        "closed": true
+      },
+      {
+        "gigId": "g326",
+        "driverId": "uofh-0018",
+        "at": 3854,
+        "expiresAt": 3864,
+        "closed": true
+      },
+      {
+        "gigId": "g328",
+        "driverId": "uofh-1256",
+        "at": 3854,
+        "expiresAt": 3864,
+        "closed": true
+      },
+      {
+        "gigId": "g329",
+        "driverId": "uofh-1009",
+        "at": 3854,
+        "expiresAt": 3864,
+        "closed": true
+      },
+      {
+        "gigId": "g325",
+        "driverId": "uofh-1271",
+        "at": 3859,
+        "expiresAt": 3869,
+        "closed": true
+      },
+      {
+        "gigId": "g326",
+        "driverId": "uofh-0311",
+        "at": 3859,
+        "expiresAt": 3869,
+        "closed": true
+      },
+      {
+        "gigId": "g328",
+        "driverId": "uofh-1840",
+        "at": 3859,
+        "expiresAt": 3869,
+        "closed": true
+      },
+      {
+        "gigId": "g329",
+        "driverId": "uofh-0498",
+        "at": 3859,
+        "expiresAt": 3869,
+        "closed": true
+      },
+      {
+        "gigId": "g330",
+        "driverId": "uofh-0816",
+        "at": 3859,
+        "expiresAt": 3869,
+        "closed": true
+      },
+      {
+        "gigId": "g328",
+        "driverId": "uofh-0004",
+        "at": 3860,
+        "expiresAt": 3870,
+        "closed": true
+      },
+      {
+        "gigId": "g329",
+        "driverId": "uofh-1361",
+        "at": 3860,
+        "expiresAt": 3870,
+        "closed": true
+      },
+      {
+        "gigId": "g330",
+        "driverId": "uofh-1271",
+        "at": 3860,
+        "expiresAt": 3870,
+        "closed": true
+      },
+      {
+        "gigId": "g330",
+        "driverId": "uofh-1602",
+        "at": 3861,
+        "expiresAt": 3871,
+        "closed": true
+      },
+      {
+        "gigId": "g337",
+        "driverId": "uofh-0843",
+        "at": 3885,
+        "expiresAt": 3895,
+        "closed": true
+      },
+      {
+        "gigId": "g337",
+        "driverId": "uofh-1644",
+        "at": 3886,
+        "expiresAt": 3896,
+        "closed": true
+      },
+      {
+        "gigId": "g337",
+        "driverId": "uofh-1120",
+        "at": 3888,
+        "expiresAt": 3898,
+        "closed": true
+      },
+      {
+        "gigId": "g340",
+        "driverId": "uofh-1647",
+        "at": 3899,
+        "expiresAt": 3909,
+        "closed": true
+      },
+      {
+        "gigId": "g340",
+        "driverId": "uofh-1800",
+        "at": 3900,
+        "expiresAt": 3910,
+        "closed": true
+      },
+      {
+        "gigId": "g349",
+        "driverId": "uofh-0116",
+        "at": 3924,
+        "expiresAt": 3934,
+        "closed": true
+      },
+      {
+        "gigId": "g350",
+        "driverId": "uofh-0318",
+        "at": 3924,
+        "expiresAt": 3934,
+        "closed": true
+      },
+      {
+        "gigId": "g349",
+        "driverId": "uofh-0473",
+        "at": 3927,
+        "expiresAt": 3937,
+        "closed": true
+      },
+      {
+        "gigId": "g350",
+        "driverId": "uofh-0484",
+        "at": 3927,
+        "expiresAt": 3937,
+        "closed": true
+      },
+      {
+        "gigId": "g349",
+        "driverId": "uofh-0840",
+        "at": 3932,
+        "expiresAt": 3942,
+        "closed": true
+      },
+      {
+        "gigId": "g350",
+        "driverId": "uofh-0262",
+        "at": 3932,
+        "expiresAt": 3942,
+        "closed": true
+      },
+      {
+        "gigId": "g355",
+        "driverId": "uofh-1231",
+        "at": 3942,
+        "expiresAt": 3952,
+        "closed": true
+      },
+      {
+        "gigId": "g237",
+        "driverId": "uofh-0053",
+        "at": 3953,
+        "expiresAt": 3963,
+        "closed": true
+      },
+      {
+        "gigId": "g355",
+        "driverId": "uofh-0840",
+        "at": 3953,
+        "expiresAt": 3963,
+        "closed": true
+      },
+      {
+        "gigId": "g357",
+        "driverId": "uofh-0455",
+        "at": 3953,
+        "expiresAt": 3963,
+        "closed": true
+      },
+      {
+        "gigId": "g237",
+        "driverId": "uofh-0117",
+        "at": 3954,
+        "expiresAt": 3964,
+        "closed": true
+      },
+      {
+        "gigId": "g355",
+        "driverId": "uofh-1611",
+        "at": 3954,
+        "expiresAt": 3964,
+        "closed": true
+      },
+      {
+        "gigId": "g357",
+        "driverId": "uofh-0662",
+        "at": 3954,
+        "expiresAt": 3964,
+        "closed": true
+      },
+      {
+        "gigId": "g237",
+        "driverId": "uofh-0186",
+        "at": 3955,
+        "expiresAt": 3965,
+        "closed": true
+      },
+      {
+        "gigId": "g357",
+        "driverId": "uofh-0915",
+        "at": 3955,
+        "expiresAt": 3965,
+        "closed": true
+      },
+      {
+        "gigId": "g359",
+        "driverId": "uofh-1191",
+        "at": 3963,
+        "expiresAt": 3973,
+        "closed": true
+      },
+      {
+        "gigId": "g359",
+        "driverId": "uofh-1348",
+        "at": 3964,
+        "expiresAt": 3974,
+        "closed": true
+      },
+      {
+        "gigId": "g359",
+        "driverId": "uofh-1611",
+        "at": 3967,
+        "expiresAt": 3977,
+        "closed": true
+      },
+      {
+        "gigId": "g360",
+        "driverId": "uofh-0427",
+        "at": 3967,
+        "expiresAt": 3977,
+        "closed": true
+      },
+      {
+        "gigId": "g360",
+        "driverId": "uofh-0840",
+        "at": 3978,
+        "expiresAt": 3988,
+        "closed": true
+      },
+      {
+        "gigId": "g361",
+        "driverId": "uofh-0138",
+        "at": 3978,
+        "expiresAt": 3988,
+        "closed": true
+      },
+      {
+        "gigId": "g362",
+        "driverId": "uofh-0742",
+        "at": 3978,
+        "expiresAt": 3988,
+        "closed": true
+      },
+      {
+        "gigId": "g360",
+        "driverId": "uofh-0899",
+        "at": 3979,
+        "expiresAt": 3989,
+        "closed": true
+      },
+      {
+        "gigId": "g361",
+        "driverId": "uofh-0653",
+        "at": 3979,
+        "expiresAt": 3989,
+        "closed": true
+      },
+      {
+        "gigId": "g362",
+        "driverId": "uofh-0567",
+        "at": 3979,
+        "expiresAt": 3989,
+        "closed": true
+      },
+      {
+        "gigId": "g361",
+        "driverId": "uofh-0742",
+        "at": 3982,
+        "expiresAt": 3992,
+        "closed": true
+      },
+      {
+        "gigId": "g362",
+        "driverId": "uofh-1297",
+        "at": 3982,
+        "expiresAt": 3992,
+        "closed": true
+      },
+      {
+        "gigId": "g347",
+        "driverId": "uofh-0075",
+        "at": 4014,
+        "expiresAt": 4024,
+        "closed": true
+      },
+      {
+        "gigId": "g347",
+        "driverId": "uofh-1231",
+        "at": 4016,
+        "expiresAt": 4026,
+        "closed": true
+      },
+      {
+        "gigId": "g265",
+        "driverId": "uofh-0075",
+        "at": 4746,
+        "expiresAt": 4756,
+        "closed": true
+      },
+      {
+        "gigId": "g334",
+        "driverId": "uofh-0279",
+        "at": 4804,
+        "expiresAt": 4814,
+        "closed": true
+      },
+      {
+        "gigId": "g371",
+        "driverId": "uofh-0127",
+        "at": 4921,
+        "expiresAt": 4931,
+        "closed": true
+      },
+      {
+        "gigId": "g372",
+        "driverId": "uofh-0596",
+        "at": 4925,
+        "expiresAt": 4935,
+        "closed": true
+      },
+      {
+        "gigId": "g372",
+        "driverId": "uofh-1655",
+        "at": 4927,
+        "expiresAt": 4937,
+        "closed": true
+      },
+      {
+        "gigId": "g372",
+        "driverId": "uofh-1721",
+        "at": 4928,
+        "expiresAt": 4938,
+        "closed": true
+      },
+      {
+        "gigId": "g374",
+        "driverId": "uofh-0116",
+        "at": 4970,
+        "expiresAt": 4980,
+        "closed": true
+      },
+      {
+        "gigId": "g374",
+        "driverId": "uofh-0810",
+        "at": 4972,
+        "expiresAt": 4982,
+        "closed": true
+      },
+      {
+        "gigId": "g376",
+        "driverId": "uofh-0550",
+        "at": 4972,
+        "expiresAt": 4982,
+        "closed": true
+      },
+      {
+        "gigId": "g376",
+        "driverId": "uofh-0825",
+        "at": 4974,
+        "expiresAt": 4984,
+        "closed": true
+      },
+      {
+        "gigId": "g376",
+        "driverId": "uofh-0829",
+        "at": 4976,
+        "expiresAt": 4986,
+        "closed": true
+      },
+      {
+        "gigId": "g379",
+        "driverId": "uofh-0318",
+        "at": 4976,
+        "expiresAt": 4986,
+        "closed": true
+      },
+      {
+        "gigId": "g379",
+        "driverId": "uofh-0484",
+        "at": 4977,
+        "expiresAt": 4987,
+        "closed": true
+      },
+      {
+        "gigId": "g379",
+        "driverId": "uofh-0543",
+        "at": 4979,
+        "expiresAt": 4989,
+        "closed": true
+      },
+      {
+        "gigId": "g384",
+        "driverId": "uofh-0290",
+        "at": 4997,
+        "expiresAt": 5007,
+        "closed": true
+      },
+      {
+        "gigId": "g384",
+        "driverId": "uofh-0767",
+        "at": 4998,
+        "expiresAt": 5008,
+        "closed": true
+      },
+      {
+        "gigId": "g384",
+        "driverId": "uofh-1635",
+        "at": 4999,
+        "expiresAt": 5009,
+        "closed": true
+      },
+      {
+        "gigId": "g390",
+        "driverId": "uofh-0075",
+        "at": 5007,
+        "expiresAt": 5017,
+        "closed": true
+      },
+      {
+        "gigId": "g390",
+        "driverId": "uofh-0290",
+        "at": 5008,
+        "expiresAt": 5018,
+        "closed": true
+      },
+      {
+        "gigId": "g390",
+        "driverId": "uofh-0767",
+        "at": 5010,
+        "expiresAt": 5020,
+        "closed": true
+      },
+      {
+        "gigId": "g391",
+        "driverId": "uofh-0659",
+        "at": 5011,
+        "expiresAt": 5021,
+        "closed": true
+      },
+      {
+        "gigId": "g392",
+        "driverId": "uofh-0802",
+        "at": 5011,
+        "expiresAt": 5021,
+        "closed": true
+      },
+      {
+        "gigId": "g391",
+        "driverId": "uofh-0767",
+        "at": 5014,
+        "expiresAt": 5024,
+        "closed": true
+      },
+      {
+        "gigId": "g392",
+        "driverId": "uofh-0541",
+        "at": 5014,
+        "expiresAt": 5024,
+        "closed": true
+      },
+      {
+        "gigId": "g391",
+        "driverId": "uofh-0773",
+        "at": 5019,
+        "expiresAt": 5029,
+        "closed": true
+      },
+      {
+        "gigId": "g392",
+        "driverId": "uofh-0732",
+        "at": 5019,
+        "expiresAt": 5029,
+        "closed": true
+      },
+      {
+        "gigId": "g393",
+        "driverId": "uofh-0659",
+        "at": 5019,
+        "expiresAt": 5029,
+        "closed": true
+      },
+      {
+        "gigId": "g393",
+        "driverId": "uofh-0773",
+        "at": 5022,
+        "expiresAt": 5032,
+        "closed": true
+      },
+      {
+        "gigId": "g393",
+        "driverId": "uofh-1647",
+        "at": 5025,
+        "expiresAt": 5035,
+        "closed": true
+      },
+      {
+        "gigId": "g401",
+        "driverId": "uofh-1800",
+        "at": 5029,
+        "expiresAt": 5039,
+        "closed": true
+      },
+      {
+        "gigId": "g401",
+        "driverId": "uofh-1698",
+        "at": 5032,
+        "expiresAt": 5042,
+        "closed": true
+      },
+      {
+        "gigId": "g401",
+        "driverId": "uofh-0541",
+        "at": 5034,
+        "expiresAt": 5044,
+        "closed": true
+      },
+      {
+        "gigId": "g404",
+        "driverId": "uofh-0802",
+        "at": 5034,
+        "expiresAt": 5044,
+        "closed": true
+      },
+      {
+        "gigId": "g404",
+        "driverId": "uofh-1372",
+        "at": 5039,
+        "expiresAt": 5049,
+        "closed": true
+      },
+      {
+        "gigId": "g405",
+        "driverId": "uofh-1517",
+        "at": 5039,
+        "expiresAt": 5049,
+        "closed": true
+      },
+      {
+        "gigId": "g404",
+        "driverId": "uofh-0345",
+        "at": 5043,
+        "expiresAt": 5053,
+        "closed": true
+      },
+      {
+        "gigId": "g405",
+        "driverId": "uofh-0677",
+        "at": 5043,
+        "expiresAt": 5053,
+        "closed": true
+      },
+      {
+        "gigId": "g405",
+        "driverId": "uofh-0159",
+        "at": 5045,
+        "expiresAt": 5055,
+        "closed": true
+      },
+      {
+        "gigId": "g410",
+        "driverId": "uofh-1647",
+        "at": 5045,
+        "expiresAt": 5055,
+        "closed": true
+      },
+      {
+        "gigId": "g410",
+        "driverId": "uofh-1822",
+        "at": 5046,
+        "expiresAt": 5056,
+        "closed": true
+      },
+      {
+        "gigId": "g410",
+        "driverId": "uofh-1698",
+        "at": 5049,
+        "expiresAt": 5059,
+        "closed": true
+      },
+      {
+        "gigId": "g411",
+        "driverId": "uofh-0577",
+        "at": 5052,
+        "expiresAt": 5062,
+        "closed": true
+      },
+      {
+        "gigId": "g411",
+        "driverId": "uofh-1517",
+        "at": 5054,
+        "expiresAt": 5064,
+        "closed": true
+      },
+      {
+        "gigId": "g411",
+        "driverId": "uofh-1647",
+        "at": 5058,
+        "expiresAt": 5068,
+        "closed": true
+      },
+      {
+        "gigId": "g412",
+        "driverId": "uofh-0614",
+        "at": 5058,
+        "expiresAt": 5068,
+        "closed": true
+      },
+      {
+        "gigId": "g413",
+        "driverId": "uofh-0313",
+        "at": 5058,
+        "expiresAt": 5068,
+        "closed": true
+      },
+      {
+        "gigId": "g412",
+        "driverId": "uofh-0719",
+        "at": 5063,
+        "expiresAt": 5073,
+        "closed": true
+      },
+      {
+        "gigId": "g413",
+        "driverId": "uofh-0699",
+        "at": 5063,
+        "expiresAt": 5073,
+        "closed": true
+      },
+      {
+        "gigId": "g412",
+        "driverId": "uofh-1348",
+        "at": 5064,
+        "expiresAt": 5074,
+        "closed": true
+      },
+      {
+        "gigId": "g413",
+        "driverId": "uofh-1019",
+        "at": 5064,
+        "expiresAt": 5074,
+        "closed": true
+      },
+      {
+        "gigId": "g416",
+        "driverId": "uofh-0023",
+        "at": 5084,
+        "expiresAt": 5094,
+        "closed": true
+      },
+      {
+        "gigId": "g416",
+        "driverId": "uofh-0385",
+        "at": 5088,
+        "expiresAt": 5098,
+        "closed": true
+      },
+      {
+        "gigId": "g417",
+        "driverId": "uofh-0223",
+        "at": 5088,
+        "expiresAt": 5098,
+        "closed": true
+      },
+      {
+        "gigId": "g416",
+        "driverId": "uofh-0455",
+        "at": 5091,
+        "expiresAt": 5101,
+        "closed": true
+      },
+      {
+        "gigId": "g417",
+        "driverId": "uofh-0445",
+        "at": 5091,
+        "expiresAt": 5101,
+        "closed": true
+      },
+      {
+        "gigId": "g417",
+        "driverId": "uofh-0020",
+        "at": 5095,
+        "expiresAt": 5105,
+        "closed": true
+      },
+      {
+        "gigId": "g418",
+        "driverId": "uofh-0126",
+        "at": 5103,
+        "expiresAt": 5113,
+        "closed": true
+      },
+      {
+        "gigId": "g418",
+        "driverId": "uofh-0278",
+        "at": 5104,
+        "expiresAt": 5114,
+        "closed": true
+      },
+      {
+        "gigId": "g418",
+        "driverId": "uofh-1241",
+        "at": 5106,
+        "expiresAt": 5116,
+        "closed": true
+      },
+      {
+        "gigId": "g420",
+        "driverId": "uofh-0484",
+        "at": 5113,
+        "expiresAt": 5123,
+        "closed": true
+      },
+      {
+        "gigId": "g420",
+        "driverId": "uofh-1386",
+        "at": 5114,
+        "expiresAt": 5124,
+        "closed": true
+      },
+      {
+        "gigId": "g420",
+        "driverId": "uofh-0104",
+        "at": 5115,
+        "expiresAt": 5125,
+        "closed": true
+      },
+      {
+        "gigId": "g426",
+        "driverId": "uofh-0641",
+        "at": 5152,
+        "expiresAt": 5162,
+        "closed": true
+      },
+      {
+        "gigId": "g427",
+        "driverId": "uofh-0255",
+        "at": 5152,
+        "expiresAt": 5162,
+        "closed": true
+      },
+      {
+        "gigId": "g429",
+        "driverId": "uofh-0816",
+        "at": 5152,
+        "expiresAt": 5162,
+        "closed": true
+      },
+      {
+        "gigId": "g426",
+        "driverId": "uofh-1206",
+        "at": 5153,
+        "expiresAt": 5163,
+        "closed": true
+      },
+      {
+        "gigId": "g427",
+        "driverId": "uofh-0545",
+        "at": 5153,
+        "expiresAt": 5163,
+        "closed": true
+      },
+      {
+        "gigId": "g429",
+        "driverId": "uofh-0969",
+        "at": 5153,
+        "expiresAt": 5163,
+        "closed": true
+      },
+      {
+        "gigId": "g426",
+        "driverId": "uofh-0621",
+        "at": 5154,
+        "expiresAt": 5164,
+        "closed": true
+      },
+      {
+        "gigId": "g427",
+        "driverId": "uofh-0611",
+        "at": 5154,
+        "expiresAt": 5164,
+        "closed": true
+      },
+      {
+        "gigId": "g429",
+        "driverId": "uofh-1721",
+        "at": 5154,
+        "expiresAt": 5164,
+        "closed": true
+      },
+      {
+        "gigId": "g432",
+        "driverId": "uofh-0337",
+        "at": 5163,
+        "expiresAt": 5173,
+        "closed": true
+      },
+      {
+        "gigId": "g433",
+        "driverId": "uofh-0009",
+        "at": 5163,
+        "expiresAt": 5173,
+        "closed": true
+      },
+      {
+        "gigId": "g434",
+        "driverId": "uofh-0484",
+        "at": 5163,
+        "expiresAt": 5173,
+        "closed": true
+      },
+      {
+        "gigId": "g432",
+        "driverId": "uofh-0614",
+        "at": 5167,
+        "expiresAt": 5177,
+        "closed": true
+      },
+      {
+        "gigId": "g433",
+        "driverId": "uofh-0313",
+        "at": 5167,
+        "expiresAt": 5177,
+        "closed": true
+      },
+      {
+        "gigId": "g434",
+        "driverId": "uofh-0705",
+        "at": 5167,
+        "expiresAt": 5177,
+        "closed": true
+      },
+      {
+        "gigId": "g432",
+        "driverId": "uofh-0193",
+        "at": 5170,
+        "expiresAt": 5180,
+        "closed": true
+      },
+      {
+        "gigId": "g433",
+        "driverId": "uofh-0323",
+        "at": 5170,
+        "expiresAt": 5180,
+        "closed": true
+      },
+      {
+        "gigId": "g434",
+        "driverId": "uofh-1692",
+        "at": 5170,
+        "expiresAt": 5180,
+        "closed": true
+      },
+      {
+        "gigId": "g437",
+        "driverId": "uofh-0776",
+        "at": 5189,
+        "expiresAt": 5199,
+        "closed": true
+      },
+      {
+        "gigId": "g437",
+        "driverId": "uofh-1372",
+        "at": 5191,
+        "expiresAt": 5201,
+        "closed": true
+      },
+      {
+        "gigId": "g437",
+        "driverId": "uofh-0933",
+        "at": 5193,
+        "expiresAt": 5203,
+        "closed": true
+      },
+      {
+        "gigId": "g438",
+        "driverId": "uofh-0041",
+        "at": 5199,
+        "expiresAt": 5209,
+        "closed": true
+      },
+      {
+        "gigId": "g438",
+        "driverId": "uofh-0255",
+        "at": 5204,
+        "expiresAt": 5214,
+        "closed": true
+      },
+      {
+        "gigId": "g438",
+        "driverId": "uofh-0918",
+        "at": 5208,
+        "expiresAt": 5218,
+        "closed": true
+      },
+      {
+        "gigId": "g385",
+        "driverId": "uofh-0075",
+        "at": 5213,
+        "expiresAt": 5223,
+        "closed": true
+      },
+      {
+        "gigId": "g385",
+        "driverId": "uofh-1721",
+        "at": 5214,
+        "expiresAt": 5224,
+        "closed": true
+      },
+      {
+        "gigId": "g385",
+        "driverId": "uofh-0101",
+        "at": 5215,
+        "expiresAt": 5225,
+        "closed": true
+      },
+      {
+        "gigId": "g444",
+        "driverId": "uofh-0021",
+        "at": 5238,
+        "expiresAt": 5248,
+        "closed": true
+      },
+      {
+        "gigId": "g444",
+        "driverId": "uofh-0002",
+        "at": 5239,
+        "expiresAt": 5249,
+        "closed": true
+      },
+      {
+        "gigId": "g444",
+        "driverId": "uofh-0054",
+        "at": 5240,
+        "expiresAt": 5250,
+        "closed": true
+      },
+      {
+        "gigId": "g448",
+        "driverId": "uofh-1679",
+        "at": 5255,
+        "expiresAt": 5265,
+        "closed": true
+      },
+      {
+        "gigId": "g448",
+        "driverId": "uofh-1632",
+        "at": 5257,
+        "expiresAt": 5267,
+        "closed": true
+      },
+      {
+        "gigId": "g448",
+        "driverId": "uofh-1689",
+        "at": 5258,
+        "expiresAt": 5268,
+        "closed": true
+      },
+      {
+        "gigId": "g452",
+        "driverId": "uofh-0200",
+        "at": 5277,
+        "expiresAt": 5287,
+        "closed": true
+      },
+      {
+        "gigId": "g453",
+        "driverId": "uofh-0142",
+        "at": 5277,
+        "expiresAt": 5287,
+        "closed": true
+      },
+      {
+        "gigId": "g452",
+        "driverId": "uofh-0648",
+        "at": 5278,
+        "expiresAt": 5288,
+        "closed": true
+      },
+      {
+        "gigId": "g453",
+        "driverId": "uofh-1417",
+        "at": 5278,
+        "expiresAt": 5288,
+        "closed": true
+      },
+      {
+        "gigId": "g454",
+        "driverId": "uofh-1417",
+        "at": 5278,
+        "expiresAt": 5288,
+        "closed": true
+      },
+      {
+        "gigId": "g452",
+        "driverId": "uofh-1417",
+        "at": 5279,
+        "expiresAt": 5289,
+        "closed": true
+      },
+      {
+        "gigId": "g453",
+        "driverId": "uofh-0606",
+        "at": 5279,
+        "expiresAt": 5289,
+        "closed": true
+      },
+      {
+        "gigId": "g454",
+        "driverId": "uofh-1408",
+        "at": 5279,
+        "expiresAt": 5289,
+        "closed": true
+      },
+      {
+        "gigId": "g455",
+        "driverId": "uofh-0123",
+        "at": 5284,
+        "expiresAt": 5294,
+        "closed": true
+      },
+      {
+        "gigId": "g455",
+        "driverId": "uofh-0179",
+        "at": 5285,
+        "expiresAt": 5295,
+        "closed": true
+      },
+      {
+        "gigId": "g455",
+        "driverId": "uofh-0215",
+        "at": 5288,
+        "expiresAt": 5298,
+        "closed": true
+      },
+      {
+        "gigId": "g459",
+        "driverId": "uofh-0460",
+        "at": 5291,
+        "expiresAt": 5301,
+        "closed": true
+      },
+      {
+        "gigId": "g459",
+        "driverId": "uofh-0879",
+        "at": 5292,
+        "expiresAt": 5302,
+        "closed": true
+      },
+      {
+        "gigId": "g459",
+        "driverId": "uofh-1369",
+        "at": 5293,
+        "expiresAt": 5303,
+        "closed": true
+      },
+      {
+        "gigId": "g462",
+        "driverId": "uofh-0411",
+        "at": 5293,
+        "expiresAt": 5303,
+        "closed": true
+      },
+      {
+        "gigId": "g462",
+        "driverId": "uofh-0510",
+        "at": 5294,
+        "expiresAt": 5304,
+        "closed": true
+      },
+      {
+        "gigId": "g462",
+        "driverId": "uofh-0742",
+        "at": 5297,
+        "expiresAt": 5307,
+        "closed": true
+      },
+      {
+        "gigId": "g463",
+        "driverId": "uofh-0560",
+        "at": 5297,
+        "expiresAt": 5307,
+        "closed": true
+      },
+      {
+        "gigId": "g397",
+        "driverId": "uofh-0101",
+        "at": 5299,
+        "expiresAt": 5309,
+        "closed": true
+      },
+      {
+        "gigId": "g463",
+        "driverId": "uofh-1369",
+        "at": 5299,
+        "expiresAt": 5309,
+        "closed": true
+      },
+      {
+        "gigId": "g397",
+        "driverId": "uofh-1563",
+        "at": 5300,
+        "expiresAt": 5310,
+        "closed": true
+      },
+      {
+        "gigId": "g463",
+        "driverId": "uofh-0002",
+        "at": 5300,
+        "expiresAt": 5310,
+        "closed": true
+      },
+      {
+        "gigId": "g397",
+        "driverId": "uofh-1800",
+        "at": 5306,
+        "expiresAt": 5316,
+        "closed": true
+      },
+      {
+        "gigId": "g466",
+        "driverId": "uofh-1261",
+        "at": 5308,
+        "expiresAt": 5318,
+        "closed": true
+      },
+      {
+        "gigId": "g466",
+        "driverId": "uofh-1608",
+        "at": 5309,
+        "expiresAt": 5319,
+        "closed": true
+      },
+      {
+        "gigId": "g468",
+        "driverId": "uofh-0518",
+        "at": 5318,
+        "expiresAt": 5328,
+        "closed": true
+      },
+      {
+        "gigId": "g468",
+        "driverId": "uofh-0575",
+        "at": 5325,
+        "expiresAt": 5335,
+        "closed": true
+      },
+      {
+        "gigId": "g468",
+        "driverId": "uofh-1356",
+        "at": 5327,
+        "expiresAt": 5337,
+        "closed": true
+      },
+      {
+        "gigId": "g471",
+        "driverId": "uofh-1878",
+        "at": 5329,
+        "expiresAt": 5339,
+        "closed": true
+      },
+      {
+        "gigId": "g471",
+        "driverId": "uofh-1669",
+        "at": 5330,
+        "expiresAt": 5340,
+        "closed": true
+      },
+      {
+        "gigId": "g472",
+        "driverId": "uofh-0118",
+        "at": 5330,
+        "expiresAt": 5340,
+        "closed": true
+      },
+      {
+        "gigId": "g471",
+        "driverId": "uofh-0010",
+        "at": 5332,
+        "expiresAt": 5342,
+        "closed": true
+      },
+      {
+        "gigId": "g472",
+        "driverId": "uofh-1669",
+        "at": 5332,
+        "expiresAt": 5342,
+        "closed": true
+      },
+      {
+        "gigId": "g472",
+        "driverId": "uofh-0479",
+        "at": 5333,
+        "expiresAt": 5343,
+        "closed": true
+      },
+      {
+        "gigId": "g474",
+        "driverId": "uofh-0455",
+        "at": 5336,
+        "expiresAt": 5346,
+        "closed": true
+      },
+      {
+        "gigId": "g474",
+        "driverId": "uofh-0673",
+        "at": 5340,
+        "expiresAt": 5350,
+        "closed": true
+      },
+      {
+        "gigId": "g476",
+        "driverId": "uofh-0117",
+        "at": 5340,
+        "expiresAt": 5350,
+        "closed": true
+      },
+      {
+        "gigId": "g474",
+        "driverId": "uofh-0074",
+        "at": 5343,
+        "expiresAt": 5353,
+        "closed": true
+      },
+      {
+        "gigId": "g484",
+        "driverId": "uofh-0290",
+        "at": 5362,
+        "expiresAt": 5372,
+        "closed": true
+      },
+      {
+        "gigId": "g484",
+        "driverId": "uofh-0690",
+        "at": 5363,
+        "expiresAt": 5373,
+        "closed": true
+      },
+      {
+        "gigId": "g484",
+        "driverId": "uofh-0773",
+        "at": 5364,
+        "expiresAt": 5374,
+        "closed": true
+      },
+      {
+        "gigId": "g489",
+        "driverId": "uofh-1635",
+        "at": 5374,
+        "expiresAt": 5384,
+        "closed": true
+      },
+      {
+        "gigId": "g490",
+        "driverId": "uofh-0918",
+        "at": 5374,
+        "expiresAt": 5384,
+        "closed": true
+      },
+      {
+        "gigId": "g490",
+        "driverId": "uofh-0987",
+        "at": 5376,
+        "expiresAt": 5386,
+        "closed": true
+      },
+      {
+        "gigId": "g490",
+        "driverId": "uofh-1632",
+        "at": 5385,
+        "expiresAt": 5395,
+        "closed": true
+      },
+      {
+        "gigId": "g492",
+        "driverId": "uofh-1628",
+        "at": 5393,
+        "expiresAt": 5403,
+        "closed": true
+      },
+      {
+        "gigId": "g492",
+        "driverId": "uofh-1766",
+        "at": 5394,
+        "expiresAt": 5404,
+        "closed": true
+      },
+      {
+        "gigId": "g492",
+        "driverId": "uofh-0081",
+        "at": 5402,
+        "expiresAt": 5412,
+        "closed": true
+      },
+      {
+        "gigId": "g493",
+        "driverId": "uofh-0000",
+        "at": 5402,
+        "expiresAt": 5412,
+        "closed": true
+      },
+      {
+        "gigId": "g493",
+        "driverId": "uofh-0076",
+        "at": 5408,
+        "expiresAt": 5418,
+        "closed": true
+      },
+      {
+        "gigId": "g494",
+        "driverId": "uofh-0460",
+        "at": 5408,
+        "expiresAt": 5418,
+        "closed": true
+      },
+      {
+        "gigId": "g493",
+        "driverId": "uofh-0428",
+        "at": 5409,
+        "expiresAt": 5419,
+        "closed": true
+      },
+      {
+        "gigId": "g380",
+        "driverId": "uofh-0173",
+        "at": 5428,
+        "expiresAt": 5438,
+        "closed": true
+      },
+      {
+        "gigId": "g496",
+        "driverId": "uofh-0439",
+        "at": 5454,
+        "expiresAt": 5464,
+        "closed": true
+      },
+      {
+        "gigId": "g497",
+        "driverId": "uofh-0130",
+        "at": 5454,
+        "expiresAt": 5464,
+        "closed": true
+      },
+      {
+        "gigId": "g496",
+        "driverId": "uofh-1743",
+        "at": 5460,
+        "expiresAt": 5470,
+        "closed": true
+      },
+      {
+        "gigId": "g497",
+        "driverId": "uofh-0643",
+        "at": 5460,
+        "expiresAt": 5470,
+        "closed": true
+      },
+      {
+        "gigId": "g496",
+        "driverId": "uofh-0803",
+        "at": 5463,
+        "expiresAt": 5473,
+        "closed": true
+      },
+      {
+        "gigId": "g497",
+        "driverId": "uofh-0664",
+        "at": 5463,
+        "expiresAt": 5473,
+        "closed": true
+      },
+      {
+        "gigId": "g481",
+        "driverId": "uofh-0051",
+        "at": 5526,
+        "expiresAt": 5536,
+        "closed": true
+      },
+      {
+        "gigId": "g464",
+        "driverId": "uofh-0016",
+        "at": 6232,
+        "expiresAt": 6242,
+        "closed": true
+      },
+      {
+        "gigId": "g439",
+        "driverId": "uofh-0523",
+        "at": 6255,
+        "expiresAt": 6265,
+        "closed": true
+      },
+      {
+        "gigId": "g507",
+        "driverId": "uofh-0173",
+        "at": 6348,
+        "expiresAt": 6358,
+        "closed": true
+      },
+      {
+        "gigId": "g507",
+        "driverId": "uofh-0527",
+        "at": 6352,
+        "expiresAt": 6362,
+        "closed": true
+      },
+      {
+        "gigId": "g507",
+        "driverId": "uofh-0949",
+        "at": 6354,
+        "expiresAt": 6364,
+        "closed": true
+      },
+      {
+        "gigId": "g523",
+        "driverId": "uofh-0138",
+        "at": 6421,
+        "expiresAt": 6431,
+        "closed": true
+      },
+      {
+        "gigId": "g523",
+        "driverId": "uofh-0614",
+        "at": 6422,
+        "expiresAt": 6432,
+        "closed": true
+      },
+      {
+        "gigId": "g523",
+        "driverId": "uofh-0745",
+        "at": 6423,
+        "expiresAt": 6433,
+        "closed": true
+      },
+      {
+        "gigId": "g524",
+        "driverId": "uofh-1734",
+        "at": 6437,
+        "expiresAt": 6447,
+        "closed": true
+      },
+      {
+        "gigId": "g524",
+        "driverId": "uofh-1644",
+        "at": 6444,
+        "expiresAt": 6454,
+        "closed": true
+      },
+      {
+        "gigId": "g524",
+        "driverId": "uofh-0930",
+        "at": 6445,
+        "expiresAt": 6455,
+        "closed": true
+      },
+      {
+        "gigId": "g528",
+        "driverId": "uofh-0193",
+        "at": 6455,
+        "expiresAt": 6465,
+        "closed": true
+      },
+      {
+        "gigId": "g528",
+        "driverId": "uofh-0700",
+        "at": 6459,
+        "expiresAt": 6469,
+        "closed": true
+      },
+      {
+        "gigId": "g528",
+        "driverId": "uofh-0705",
+        "at": 6460,
+        "expiresAt": 6470,
+        "closed": true
+      },
+      {
+        "gigId": "g531",
+        "driverId": "uofh-0614",
+        "at": 6490,
+        "expiresAt": 6500,
+        "closed": true
+      },
+      {
+        "gigId": "g531",
+        "driverId": "uofh-0909",
+        "at": 6491,
+        "expiresAt": 6501,
+        "closed": true
+      },
+      {
+        "gigId": "g531",
+        "driverId": "uofh-0555",
+        "at": 6492,
+        "expiresAt": 6502,
+        "closed": true
+      },
+      {
+        "gigId": "g535",
+        "driverId": "uofh-0116",
+        "at": 6509,
+        "expiresAt": 6519,
+        "closed": true
+      },
+      {
+        "gigId": "g535",
+        "driverId": "uofh-0193",
+        "at": 6511,
+        "expiresAt": 6521,
+        "closed": true
+      },
+      {
+        "gigId": "g535",
+        "driverId": "uofh-0510",
+        "at": 6512,
+        "expiresAt": 6522,
+        "closed": true
+      },
+      {
+        "gigId": "g538",
+        "driverId": "uofh-0708",
+        "at": 6535,
+        "expiresAt": 6545,
+        "closed": true
+      },
+      {
+        "gigId": "g538",
+        "driverId": "uofh-0975",
+        "at": 6536,
+        "expiresAt": 6546,
+        "closed": true
+      },
+      {
+        "gigId": "g538",
+        "driverId": "uofh-1124",
+        "at": 6537,
+        "expiresAt": 6547,
+        "closed": true
+      },
+      {
+        "gigId": "g540",
+        "driverId": "uofh-0802",
+        "at": 6542,
+        "expiresAt": 6552,
+        "closed": true
+      },
+      {
+        "gigId": "g540",
+        "driverId": "uofh-0484",
+        "at": 6545,
+        "expiresAt": 6555,
+        "closed": true
+      },
+      {
+        "gigId": "g540",
+        "driverId": "uofh-0490",
+        "at": 6552,
+        "expiresAt": 6562,
+        "closed": true
+      },
+      {
+        "gigId": "g541",
+        "driverId": "uofh-0043",
+        "at": 6552,
+        "expiresAt": 6562,
+        "closed": true
+      },
+      {
+        "gigId": "g541",
+        "driverId": "uofh-0344",
+        "at": 6554,
+        "expiresAt": 6564,
+        "closed": true
+      },
+      {
+        "gigId": "g541",
+        "driverId": "uofh-0510",
+        "at": 6555,
+        "expiresAt": 6565,
+        "closed": true
+      },
+      {
+        "gigId": "g543",
+        "driverId": "uofh-0212",
+        "at": 6560,
+        "expiresAt": 6570,
+        "closed": true
+      },
+      {
+        "gigId": "g544",
+        "driverId": "uofh-1027",
+        "at": 6560,
+        "expiresAt": 6570,
+        "closed": true
+      },
+      {
+        "gigId": "g545",
+        "driverId": "uofh-0125",
+        "at": 6560,
+        "expiresAt": 6570,
+        "closed": true
+      },
+      {
+        "gigId": "g543",
+        "driverId": "uofh-0313",
+        "at": 6561,
+        "expiresAt": 6571,
+        "closed": true
+      },
+      {
+        "gigId": "g544",
+        "driverId": "uofh-1372",
+        "at": 6561,
+        "expiresAt": 6571,
+        "closed": true
+      },
+      {
+        "gigId": "g545",
+        "driverId": "uofh-0182",
+        "at": 6561,
+        "expiresAt": 6571,
+        "closed": true
+      },
+      {
+        "gigId": "g543",
+        "driverId": "uofh-0503",
+        "at": 6562,
+        "expiresAt": 6572,
+        "closed": true
+      },
+      {
+        "gigId": "g544",
+        "driverId": "uofh-0776",
+        "at": 6562,
+        "expiresAt": 6572,
+        "closed": true
+      },
+      {
+        "gigId": "g545",
+        "driverId": "uofh-0188",
+        "at": 6562,
+        "expiresAt": 6572,
+        "closed": true
+      },
+      {
+        "gigId": "g546",
+        "driverId": "uofh-0096",
+        "at": 6569,
+        "expiresAt": 6579,
+        "closed": true
+      },
+      {
+        "gigId": "g547",
+        "driverId": "uofh-0076",
+        "at": 6569,
+        "expiresAt": 6579,
+        "closed": true
+      },
+      {
+        "gigId": "g548",
+        "driverId": "uofh-0039",
+        "at": 6569,
+        "expiresAt": 6579,
+        "closed": true
+      },
+      {
+        "gigId": "g549",
+        "driverId": "uofh-0039",
+        "at": 6569,
+        "expiresAt": 6579,
+        "closed": true
+      },
+      {
+        "gigId": "g546",
+        "driverId": "uofh-0182",
+        "at": 6576,
+        "expiresAt": 6586,
+        "closed": true
+      },
+      {
+        "gigId": "g547",
+        "driverId": "uofh-0612",
+        "at": 6576,
+        "expiresAt": 6586,
+        "closed": true
+      },
+      {
+        "gigId": "g548",
+        "driverId": "uofh-0043",
+        "at": 6576,
+        "expiresAt": 6586,
+        "closed": true
+      },
+      {
+        "gigId": "g549",
+        "driverId": "uofh-0043",
+        "at": 6576,
+        "expiresAt": 6586,
+        "closed": true
+      },
+      {
+        "gigId": "g550",
+        "driverId": "uofh-0000",
+        "at": 6576,
+        "expiresAt": 6586,
+        "closed": true
+      },
+      {
+        "gigId": "g546",
+        "driverId": "uofh-0188",
+        "at": 6579,
+        "expiresAt": 6589,
+        "closed": true
+      },
+      {
+        "gigId": "g547",
+        "driverId": "uofh-0662",
+        "at": 6579,
+        "expiresAt": 6589,
+        "closed": true
+      },
+      {
+        "gigId": "g548",
+        "driverId": "uofh-0096",
+        "at": 6579,
+        "expiresAt": 6589,
+        "closed": true
+      },
+      {
+        "gigId": "g549",
+        "driverId": "uofh-0665",
+        "at": 6579,
+        "expiresAt": 6589,
+        "closed": true
+      },
+      {
+        "gigId": "g550",
+        "driverId": "uofh-0076",
+        "at": 6579,
+        "expiresAt": 6589,
+        "closed": true
+      },
+      {
+        "gigId": "g552",
+        "driverId": "uofh-0055",
+        "at": 6591,
+        "expiresAt": 6601,
+        "closed": true
+      },
+      {
+        "gigId": "g552",
+        "driverId": "uofh-0313",
+        "at": 6593,
+        "expiresAt": 6603,
+        "closed": true
+      },
+      {
+        "gigId": "g552",
+        "driverId": "uofh-0352",
+        "at": 6595,
+        "expiresAt": 6605,
+        "closed": true
+      },
+      {
+        "gigId": "g553",
+        "driverId": "uofh-0510",
+        "at": 6599,
+        "expiresAt": 6609,
+        "closed": true
+      },
+      {
+        "gigId": "g553",
+        "driverId": "uofh-0525",
+        "at": 6603,
+        "expiresAt": 6613,
+        "closed": true
+      },
+      {
+        "gigId": "g553",
+        "driverId": "uofh-0531",
+        "at": 6606,
+        "expiresAt": 6616,
+        "closed": true
+      },
+      {
+        "gigId": "g555",
+        "driverId": "uofh-0104",
+        "at": 6630,
+        "expiresAt": 6640,
+        "closed": true
+      },
+      {
+        "gigId": "g555",
+        "driverId": "uofh-0624",
+        "at": 6631,
+        "expiresAt": 6641,
+        "closed": true
+      },
+      {
+        "gigId": "g555",
+        "driverId": "uofh-1503",
+        "at": 6632,
+        "expiresAt": 6642,
+        "closed": true
+      },
+      {
+        "gigId": "g556",
+        "driverId": "uofh-0188",
+        "at": 6633,
+        "expiresAt": 6643,
+        "closed": true
+      },
+      {
+        "gigId": "g556",
+        "driverId": "uofh-0545",
+        "at": 6635,
+        "expiresAt": 6645,
+        "closed": true
+      },
+      {
+        "gigId": "g556",
+        "driverId": "uofh-1523",
+        "at": 6636,
+        "expiresAt": 6646,
+        "closed": true
+      },
+      {
+        "gigId": "g557",
+        "driverId": "uofh-0543",
+        "at": 6636,
+        "expiresAt": 6646,
+        "closed": true
+      },
+      {
+        "gigId": "g557",
+        "driverId": "uofh-1686",
+        "at": 6637,
+        "expiresAt": 6647,
+        "closed": true
+      },
+      {
+        "gigId": "g557",
+        "driverId": "uofh-1780",
+        "at": 6638,
+        "expiresAt": 6648,
+        "closed": true
+      },
+      {
+        "gigId": "g558",
+        "driverId": "uofh-0293",
+        "at": 6638,
+        "expiresAt": 6648,
+        "closed": true
+      },
+      {
+        "gigId": "g558",
+        "driverId": "uofh-0443",
+        "at": 6639,
+        "expiresAt": 6649,
+        "closed": true
+      },
+      {
+        "gigId": "g558",
+        "driverId": "uofh-0543",
+        "at": 6641,
+        "expiresAt": 6651,
+        "closed": true
+      },
+      {
+        "gigId": "g559",
+        "driverId": "uofh-0312",
+        "at": 6651,
+        "expiresAt": 6661,
+        "closed": true
+      },
+      {
+        "gigId": "g559",
+        "driverId": "uofh-0451",
+        "at": 6652,
+        "expiresAt": 6662,
+        "closed": true
+      },
+      {
+        "gigId": "g559",
+        "driverId": "uofh-0599",
+        "at": 6654,
+        "expiresAt": 6664,
+        "closed": true
+      },
+      {
+        "gigId": "g560",
+        "driverId": "uofh-1662",
+        "at": 6657,
+        "expiresAt": 6667,
+        "closed": true
+      },
+      {
+        "gigId": "g562",
+        "driverId": "uofh-0527",
+        "at": 6657,
+        "expiresAt": 6667,
+        "closed": true
+      },
+      {
+        "gigId": "g560",
+        "driverId": "uofh-0727",
+        "at": 6658,
+        "expiresAt": 6668,
+        "closed": true
+      },
+      {
+        "gigId": "g562",
+        "driverId": "uofh-0248",
+        "at": 6658,
+        "expiresAt": 6668,
+        "closed": true
+      },
+      {
+        "gigId": "g560",
+        "driverId": "uofh-0486",
+        "at": 6660,
+        "expiresAt": 6670,
+        "closed": true
+      },
+      {
+        "gigId": "g562",
+        "driverId": "uofh-0250",
+        "at": 6660,
+        "expiresAt": 6670,
+        "closed": true
+      },
+      {
+        "gigId": "g564",
+        "driverId": "uofh-0173",
+        "at": 6664,
+        "expiresAt": 6674,
+        "closed": true
+      },
+      {
+        "gigId": "g564",
+        "driverId": "uofh-0441",
+        "at": 6665,
+        "expiresAt": 6675,
+        "closed": true
+      },
+      {
+        "gigId": "g564",
+        "driverId": "uofh-0658",
+        "at": 6667,
+        "expiresAt": 6677,
+        "closed": true
+      },
+      {
+        "gigId": "g565",
+        "driverId": "uofh-0157",
+        "at": 6667,
+        "expiresAt": 6677,
+        "closed": true
+      },
+      {
+        "gigId": "g565",
+        "driverId": "uofh-0339",
+        "at": 6669,
+        "expiresAt": 6679,
+        "closed": true
+      },
+      {
+        "gigId": "g565",
+        "driverId": "uofh-0625",
+        "at": 6670,
+        "expiresAt": 6680,
+        "closed": true
+      },
+      {
+        "gigId": "g570",
+        "driverId": "uofh-0125",
+        "at": 6678,
+        "expiresAt": 6688,
+        "closed": true
+      },
+      {
+        "gigId": "g571",
+        "driverId": "uofh-0490",
+        "at": 6678,
+        "expiresAt": 6688,
+        "closed": true
+      },
+      {
+        "gigId": "g570",
+        "driverId": "uofh-0525",
+        "at": 6679,
+        "expiresAt": 6689,
+        "closed": true
+      },
+      {
+        "gigId": "g571",
+        "driverId": "uofh-0848",
+        "at": 6679,
+        "expiresAt": 6689,
+        "closed": true
+      },
+      {
+        "gigId": "g570",
+        "driverId": "uofh-1006",
+        "at": 6682,
+        "expiresAt": 6692,
+        "closed": true
+      },
+      {
+        "gigId": "g571",
+        "driverId": "uofh-0552",
+        "at": 6682,
+        "expiresAt": 6692,
+        "closed": true
+      },
+      {
+        "gigId": "g573",
+        "driverId": "uofh-0108",
+        "at": 6682,
+        "expiresAt": 6692,
+        "closed": true
+      },
+      {
+        "gigId": "g573",
+        "driverId": "uofh-0849",
+        "at": 6683,
+        "expiresAt": 6693,
+        "closed": true
+      },
+      {
+        "gigId": "g573",
+        "driverId": "uofh-0407",
+        "at": 6685,
+        "expiresAt": 6695,
+        "closed": true
+      },
+      {
+        "gigId": "g575",
+        "driverId": "uofh-1009",
+        "at": 6688,
+        "expiresAt": 6698,
+        "closed": true
+      },
+      {
+        "gigId": "g575",
+        "driverId": "uofh-0015",
+        "at": 6691,
+        "expiresAt": 6701,
+        "closed": true
+      },
+      {
+        "gigId": "g575",
+        "driverId": "uofh-0173",
+        "at": 6693,
+        "expiresAt": 6703,
+        "closed": true
+      },
+      {
+        "gigId": "g579",
+        "driverId": "uofh-0246",
+        "at": 6699,
+        "expiresAt": 6709,
+        "closed": true
+      },
+      {
+        "gigId": "g580",
+        "driverId": "uofh-0527",
+        "at": 6699,
+        "expiresAt": 6709,
+        "closed": true
+      },
+      {
+        "gigId": "g579",
+        "driverId": "uofh-0691",
+        "at": 6701,
+        "expiresAt": 6711,
+        "closed": true
+      },
+      {
+        "gigId": "g580",
+        "driverId": "uofh-0949",
+        "at": 6701,
+        "expiresAt": 6711,
+        "closed": true
+      },
+      {
+        "gigId": "g579",
+        "driverId": "uofh-0936",
+        "at": 6706,
+        "expiresAt": 6716,
+        "closed": true
+      },
+      {
+        "gigId": "g580",
+        "driverId": "uofh-1610",
+        "at": 6706,
+        "expiresAt": 6716,
+        "closed": true
+      },
+      {
+        "gigId": "g582",
+        "driverId": "uofh-1166",
+        "at": 6713,
+        "expiresAt": 6723,
+        "closed": true
+      },
+      {
+        "gigId": "g582",
+        "driverId": "uofh-1811",
+        "at": 6714,
+        "expiresAt": 6724,
+        "closed": true
+      },
+      {
+        "gigId": "g582",
+        "driverId": "uofh-1874",
+        "at": 6716,
+        "expiresAt": 6726,
+        "closed": true
+      },
+      {
+        "gigId": "g584",
+        "driverId": "uofh-0246",
+        "at": 6716,
+        "expiresAt": 6726,
+        "closed": true
+      },
+      {
+        "gigId": "g584",
+        "driverId": "uofh-0607",
+        "at": 6719,
+        "expiresAt": 6729,
+        "closed": true
+      },
+      {
+        "gigId": "g584",
+        "driverId": "uofh-0691",
+        "at": 6727,
+        "expiresAt": 6737,
+        "closed": true
+      },
+      {
+        "gigId": "g585",
+        "driverId": "uofh-0754",
+        "at": 6727,
+        "expiresAt": 6737,
+        "closed": true
+      },
+      {
+        "gigId": "g586",
+        "driverId": "uofh-1073",
+        "at": 6727,
+        "expiresAt": 6737,
+        "closed": true
+      },
+      {
+        "gigId": "g587",
+        "driverId": "uofh-0870",
+        "at": 6727,
+        "expiresAt": 6737,
+        "closed": true
+      },
+      {
+        "gigId": "g585",
+        "driverId": "uofh-0003",
+        "at": 6730,
+        "expiresAt": 6740,
+        "closed": true
+      },
+      {
+        "gigId": "g586",
+        "driverId": "uofh-0003",
+        "at": 6730,
+        "expiresAt": 6740,
+        "closed": true
+      },
+      {
+        "gigId": "g587",
+        "driverId": "uofh-0754",
+        "at": 6730,
+        "expiresAt": 6740,
+        "closed": true
+      },
+      {
+        "gigId": "g585",
+        "driverId": "uofh-0045",
+        "at": 6731,
+        "expiresAt": 6741,
+        "closed": true
+      },
+      {
+        "gigId": "g586",
+        "driverId": "uofh-0045",
+        "at": 6731,
+        "expiresAt": 6741,
+        "closed": true
+      },
+      {
+        "gigId": "g587",
+        "driverId": "uofh-0941",
+        "at": 6731,
+        "expiresAt": 6741,
+        "closed": true
+      },
+      {
+        "gigId": "g588",
+        "driverId": "uofh-0030",
+        "at": 6731,
+        "expiresAt": 6741,
+        "closed": true
+      },
+      {
+        "gigId": "g588",
+        "driverId": "uofh-1854",
+        "at": 6732,
+        "expiresAt": 6742,
+        "closed": true
+      },
+      {
+        "gigId": "g588",
+        "driverId": "uofh-0481",
+        "at": 6734,
+        "expiresAt": 6744,
+        "closed": true
+      },
+      {
+        "gigId": "g589",
+        "driverId": "uofh-0512",
+        "at": 6737,
+        "expiresAt": 6747,
+        "closed": true
+      },
+      {
+        "gigId": "g590",
+        "driverId": "uofh-0030",
+        "at": 6737,
+        "expiresAt": 6747,
+        "closed": true
+      },
+      {
+        "gigId": "g589",
+        "driverId": "uofh-1073",
+        "at": 6740,
+        "expiresAt": 6750,
+        "closed": true
+      },
+      {
+        "gigId": "g590",
+        "driverId": "uofh-0313",
+        "at": 6740,
+        "expiresAt": 6750,
+        "closed": true
+      },
+      {
+        "gigId": "g589",
+        "driverId": "uofh-0269",
+        "at": 6743,
+        "expiresAt": 6753,
+        "closed": true
+      },
+      {
+        "gigId": "g590",
+        "driverId": "uofh-0398",
+        "at": 6743,
+        "expiresAt": 6753,
+        "closed": true
+      },
+      {
+        "gigId": "g591",
+        "driverId": "uofh-0003",
+        "at": 6745,
+        "expiresAt": 6755,
+        "closed": true
+      },
+      {
+        "gigId": "g591",
+        "driverId": "uofh-0045",
+        "at": 6746,
+        "expiresAt": 6756,
+        "closed": true
+      },
+      {
+        "gigId": "g591",
+        "driverId": "uofh-0048",
+        "at": 6750,
+        "expiresAt": 6760,
+        "closed": true
+      },
+      {
+        "gigId": "g594",
+        "driverId": "uofh-0032",
+        "at": 6781,
+        "expiresAt": 6791,
+        "closed": true
+      },
+      {
+        "gigId": "g594",
+        "driverId": "uofh-0777",
+        "at": 6784,
+        "expiresAt": 6794,
+        "closed": true
+      },
+      {
+        "gigId": "g594",
+        "driverId": "uofh-1091",
+        "at": 6788,
+        "expiresAt": 6798,
+        "closed": true
+      },
+      {
+        "gigId": "g595",
+        "driverId": "uofh-1878",
+        "at": 6804,
+        "expiresAt": 6814,
+        "closed": true
+      },
+      {
+        "gigId": "g595",
+        "driverId": "uofh-0010",
+        "at": 6805,
+        "expiresAt": 6815,
+        "closed": true
+      },
+      {
+        "gigId": "g595",
+        "driverId": "uofh-0118",
+        "at": 6806,
+        "expiresAt": 6816,
+        "closed": true
+      },
+      {
+        "gigId": "g598",
+        "driverId": "uofh-0227",
+        "at": 6814,
+        "expiresAt": 6824,
+        "closed": true
+      },
+      {
+        "gigId": "g598",
+        "driverId": "uofh-0279",
+        "at": 6815,
+        "expiresAt": 6825,
+        "closed": true
+      },
+      {
+        "gigId": "g598",
+        "driverId": "uofh-0815",
+        "at": 6819,
+        "expiresAt": 6829,
+        "closed": true
+      },
+      {
+        "gigId": "g600",
+        "driverId": "uofh-0010",
+        "at": 6851,
+        "expiresAt": 6861,
+        "closed": true
+      },
+      {
+        "gigId": "g601",
+        "driverId": "uofh-0994",
+        "at": 6851,
+        "expiresAt": 6861,
+        "closed": true
+      },
+      {
+        "gigId": "g602",
+        "driverId": "uofh-0096",
+        "at": 6851,
+        "expiresAt": 6861,
+        "closed": true
+      },
+      {
+        "gigId": "g600",
+        "driverId": "uofh-0118",
+        "at": 6854,
+        "expiresAt": 6864,
+        "closed": true
+      },
+      {
+        "gigId": "g601",
+        "driverId": "uofh-1811",
+        "at": 6854,
+        "expiresAt": 6864,
+        "closed": true
+      },
+      {
+        "gigId": "g602",
+        "driverId": "uofh-0449",
+        "at": 6854,
+        "expiresAt": 6864,
+        "closed": true
+      },
+      {
+        "gigId": "g600",
+        "driverId": "uofh-0192",
+        "at": 6884,
+        "expiresAt": 6894,
+        "closed": true
+      },
+      {
+        "gigId": "g601",
+        "driverId": "uofh-1005",
+        "at": 6884,
+        "expiresAt": 6894,
+        "closed": true
+      },
+      {
+        "gigId": "g602",
+        "driverId": "uofh-0631",
+        "at": 6884,
+        "expiresAt": 6894,
+        "closed": true
+      },
+      {
+        "gigId": "g603",
+        "driverId": "uofh-0138",
+        "at": 6884,
+        "expiresAt": 6894,
+        "closed": true
+      },
+      {
+        "gigId": "g604",
+        "driverId": "uofh-0181",
+        "at": 6884,
+        "expiresAt": 6894,
+        "closed": true
+      },
+      {
+        "gigId": "g605",
+        "driverId": "uofh-0421",
+        "at": 6884,
+        "expiresAt": 6894,
+        "closed": true
+      },
+      {
+        "gigId": "g606",
+        "driverId": "uofh-0526",
+        "at": 6884,
+        "expiresAt": 6894,
+        "closed": true
+      },
+      {
+        "gigId": "g608",
+        "driverId": "uofh-0002",
+        "at": 6884,
+        "expiresAt": 6894,
+        "closed": true
+      },
+      {
+        "gigId": "g603",
+        "driverId": "uofh-0885",
+        "at": 6914,
+        "expiresAt": 6924,
+        "closed": true
+      },
+      {
+        "gigId": "g604",
+        "driverId": "uofh-0987",
+        "at": 6914,
+        "expiresAt": 6924,
+        "closed": true
+      },
+      {
+        "gigId": "g605",
+        "driverId": "uofh-0650",
+        "at": 6914,
+        "expiresAt": 6924,
+        "closed": true
+      },
+      {
+        "gigId": "g606",
+        "driverId": "uofh-1585",
+        "at": 6914,
+        "expiresAt": 6924,
+        "closed": true
+      },
+      {
+        "gigId": "g608",
+        "driverId": "uofh-0264",
+        "at": 6914,
+        "expiresAt": 6924,
+        "closed": true
+      },
+      {
+        "gigId": "g604",
+        "driverId": "uofh-1478",
+        "at": 6944,
+        "expiresAt": 6954,
+        "closed": true
+      },
+      {
+        "gigId": "g605",
+        "driverId": "uofh-1907",
+        "at": 6944,
+        "expiresAt": 6954,
+        "closed": true
+      },
+      {
+        "gigId": "g606",
+        "driverId": "uofh-1918",
+        "at": 6944,
+        "expiresAt": 6954,
+        "closed": true
+      }
+    ],
+    "blockedDay": -1
+  },
+  "pendingAdvance": false,
+  "finishedAt": "2026-11-13T22:10:38.899Z",
+  "score": {
+    "marginCents": 610046,
+    "revenueCents": 3382200,
+    "marginShare": 0.180369581928922,
+    "wonOrders": 602,
+    "onTimeShare": 0.9916943521594684,
+    "undeliveredShare": 0,
+    "ranked": true
+  },
+  "stats": {
+    "quoted": 607,
+    "declined": {
+      "long route": 180,
+      "sparse driver coverage": 18,
+      "multi-car: Level 1 supports single-car gigs": 22,
+      "private appointment risk": 126,
+      "thin margin": 36,
+      "insufficient booking buffer": 11
+    },
+    "refused": [],
+    "chainsPosted": 0,
+    "complete": true
+  }
+}

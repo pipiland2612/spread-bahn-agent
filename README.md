@@ -1,12 +1,14 @@
 # Spread by Bahn Express
 
-Dispatch agent for the Spread hackathon: run a car transport company for one simulated week in Finland. Supports Levels 1 and 2.
+Dispatch agent for the Spread hackathon: run a car transport company for one simulated week in Finland. Supports Levels 1–3.
 
 **First result:** team **T2**, **#2** in the Level 1 round `Friday 20:01` when checked on 13 November 2026. Five qualifying weeks: **€20,389.15 margin**, **98.93% on time**, **1,400 orders**. [Results and evidence](docs/RESULTS.md). Live standings can change.
 
 **Optimization:** Level 1 held-out margin improved **72.92%**, from €11,468.85 to €19,832.27 over three matched weeks. Worst candidate week: 98.94% on time. [Experiment details](docs/MARGIN-OPTIMIZATION.md).
 
 **Level 2:** **#2** in the same named round when checked at 23:48 Helsinki time. Five qualifying weeks: **€31,612.14 margin**, **99.16% on time**, **2,972 orders**. The selected policy improved matched holdout margin by **2.23%**. [Measurements and ranked evidence](docs/LEVEL-2-RESULTS.md).
+
+**Level 3:** direct offers passed validation at **€19,084.13 versus €19,032.19 (+0.27%)**, with **98.35% worst-week on time** and zero refused actions. This is a small aggregate gain; two validation weeks earned less than baseline. New Level 3 worlds use offers; chains remain experimental. [Measurements](docs/LEVEL-3-RESULTS.md).
 
 ## Goal
 
@@ -54,6 +56,14 @@ npm run board
 # Level 2 ranking round, after validation and team coordination
 npm run board:level2
 
+# Level 3 experiments on the same seed
+npm run practice:level3 -- --seed network-example --network baseline
+npm run practice:level3 -- --seed network-example --network offers
+npm run practice:level3 -- --seed network-example --network chains
+
+# Level 3 ranking round, only after validation
+npm run board:level3
+
 # Inspect active worlds and teams with completed attempts
 npm run status
 
@@ -63,9 +73,9 @@ npm run practice -- --world WORLD_ID
 
 Run summaries are saved as `results/WORLD_ID.json`. A rank requires all five weeks to meet the 90% delivery minimum. Ranked attempts are limited: coordinate with teammates before launching them. Interrupted worlds are preserved, and the agent never automatically deletes a ranking attempt.
 
-Resume restores saved level, fee mode, policy, and seed. Explicit fee overrides are recorded. Without a local manifest, supply `--level`, `--opening`, `--reference-share`, and `--fee-mode` explicitly. A world and its manifest must match. Keep per-world JSON files when moving the agent to another machine.
+Resume restores saved level, fee mode, network mode, policy, seed, cumulative statistics and offer counters. Explicit overrides retain effective settings. Without a local manifest, supply `--level`, `--opening`, `--reference-share`, and `--fee-mode` explicitly; Level 3 also requires `--network`. Missing offer counters suppress offers until the next world day. Unknown action outcomes mark evidence incomplete and stop further ranked attempts. A world and its manifest must match. Keep per-world JSON files when moving the agent to another machine.
 
-This is a rule-based Level 1/2 agent. The runner refuses Levels 3–8; the final is Level 8 and needs further work. [Level 2 measurements](docs/LEVEL-2-RESULTS.md).
+This is a rule-based Level 1–3 agent. Level 3 adds direct offers and optional two-order chains; it still declines trade-in requests. See [Level 3 measurements and limitations](docs/LEVEL-3-RESULTS.md). The runner refuses Levels 4–8; the final is Level 8 and needs further work.
 
 ## Team workflow
 

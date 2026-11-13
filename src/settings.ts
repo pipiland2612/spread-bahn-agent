@@ -20,7 +20,7 @@ export function resolveSettings(args: Record<string, string | boolean | undefine
   if (world && manifest?.networkMode === 'chains' && manifest.networkRevision !== 2 && args.network === undefined) throw new Error('Old chain revision: explicitly choose --network to acknowledge the changed dispatch policy')
   const mode = args['fee-mode'] ?? manifest?.feeMode ?? 'legacy'
   if (mode !== 'legacy' && mode !== 'stable' && mode !== 'delayed') throw new Error('fee-mode must be legacy, stable or delayed')
-  const network = args.network ?? manifest?.networkMode ?? 'baseline'
+  const network = args.network ?? manifest?.networkMode ?? (level === 3 && !manifest ? 'offers' : 'baseline')
   if (!['baseline', 'offers', 'chains'].includes(network as string) || (level < 3 && network !== 'baseline')) throw new Error('network must be baseline, offers or chains; offers/chains require Level 3')
   const policy = { ...DEFAULT_POLICY, ...(level >= 2 ? { maxReferenceShare: 1.2 } : {}), ...manifest?.policy }
   const overrides: string[] = []
