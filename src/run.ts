@@ -270,7 +270,7 @@ async function main() {
     const previous = resuming ? saved : undefined
     const effectiveSettings = { level, feeMode: mode, networkMode: network, seed, policy }
     const record = { ...previous, worldId: world.id, seed: summary.boardRun ? null : seed, level, feeMode: mode, networkMode: network, networkRevision: 2, board: Boolean(summary.boardRun), season: summary.season, boardRun: summary.boardRun, policy,
-      originalSettings: previous?.originalSettings ?? (previous ? { level: previous.level, feeMode: previous.feeMode, seed: previous.seed, policy: previous.policy } : effectiveSettings),
+      originalSettings: previous?.originalSettings ?? (previous ? { level: previous.level, feeMode: previous.feeMode, networkMode: previous.networkMode, networkRevision: previous.networkRevision, seed: previous.seed, policy: previous.policy } : effectiveSettings),
       startedAt: previous?.startedAt ?? new Date().toISOString(), resumes: resuming ? [...(previous?.resumes ?? []), { at: new Date().toISOString(), overrides: settings.overrides, settings: effectiveSettings }] : [] }
     let networkState: NetworkState | undefined = previous?.networkState
     const persist = async (stats: Statistics, pendingAdvance = false) => writeFile(resultPath, JSON.stringify({ ...record, stats, networkState, pendingAdvance }, null, 2) + '\n')

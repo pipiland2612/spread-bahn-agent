@@ -4,7 +4,7 @@ import type { FeeMode } from './fees.ts'
 import type { WorldSummary } from '../vendor/spread/types.ts'
 import type { NetworkMode } from './network.ts'
 
-export type SavedSettings = { worldId?: string; level: number; feeMode?: string; networkMode?: string; seed?: string | null; policy: Policy }
+export type SavedSettings = { worldId?: string; level: number; feeMode?: string; networkMode?: string; networkRevision?: number; seed?: string | null; policy: Policy }
 export type RunSettings = { level: 1 | 2 | 3; mode: FeeMode; network: NetworkMode; seed: string | null; policy: Policy; overrides: string[] }
 
 export function resolveSettings(args: Record<string, string | boolean | undefined>, manifest?: SavedSettings, world?: WorldSummary): RunSettings {
@@ -16,6 +16,8 @@ export function resolveSettings(args: Record<string, string | boolean | undefine
   if (world && !manifest && ['level', 'opening', 'reference-share', 'fee-mode'].some(key => args[key] === undefined)) {
     throw new Error('Missing local manifest: supply --level, --opening, --reference-share and --fee-mode to explicitly restore policy')
   }
+  if (world && !manifest && level === 3 && args.network === undefined) throw new Error('Missing Level 3 manifest: also supply --network explicitly')
+  if (world && manifest?.networkMode === 'chains' && manifest.networkRevision !== 2 && args.network === undefined) throw new Error('Old chain revision: explicitly choose --network to acknowledge the changed dispatch policy')
   const mode = args['fee-mode'] ?? manifest?.feeMode ?? 'legacy'
   if (mode !== 'legacy' && mode !== 'stable' && mode !== 'delayed') throw new Error('fee-mode must be legacy, stable or delayed')
   const network = args.network ?? manifest?.networkMode ?? 'baseline'
