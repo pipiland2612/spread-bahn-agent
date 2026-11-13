@@ -1,6 +1,6 @@
 # Spread by Bahn Express
 
-Dispatch agent for the Spread hackathon: run a car transport company for one simulated week in Finland. Supports Levels 1–3.
+Dispatch agent for the Spread hackathon: run a car transport company for one simulated week in Finland. Supports Levels 1–4.
 
 **First result:** team **T2**, **#2** in the Level 1 round `Friday 20:01` when checked on 13 November 2026. Five qualifying weeks: **€20,389.15 margin**, **98.93% on time**, **1,400 orders**. [Results and evidence](docs/RESULTS.md). Live standings can change.
 
@@ -66,6 +66,13 @@ npm run practice:level3 -- --seed network-example --network chains
 # Level 3 ranking round, only after validation
 npm run board:level3
 
+# Level 4 quote comparison (same seed and dispatch settings)
+npm run practice:level4 -- --seed quotes-example --quote-mode first --quote-multiplier 1
+npm run practice:level4 -- --seed quotes-example --quote-mode options --quote-multiplier 1.1
+
+# Level 4 ranking round, after practice validation
+npm run board:level4
+
 # Inspect active worlds and teams with completed attempts
 npm run status
 
@@ -75,9 +82,9 @@ npm run practice -- --world WORLD_ID
 
 Run summaries are saved as `results/WORLD_ID.json`. A rank requires all five weeks to meet the 90% delivery minimum. Ranked attempts are limited: coordinate with teammates before launching them. Interrupted worlds are preserved, and the agent never automatically deletes a ranking attempt.
 
-Resume restores saved level, fee mode, network mode, policy, seed, cumulative statistics and offer counters. Explicit overrides retain effective settings. Without a local manifest, supply `--level`, `--opening`, `--reference-share`, and `--fee-mode` explicitly; Level 3 also requires `--network`. Missing offer counters suppress offers until the next world day. Unknown action outcomes mark evidence incomplete and stop further ranked attempts. A world and its manifest must match. Keep per-world JSON files when moving the agent to another machine.
+Resume restores saved level, fee mode, network mode, policy, seed, cumulative statistics and offer counters. Explicit overrides retain effective settings. Without a local manifest, supply `--level`, `--opening`, `--reference-share`, and `--fee-mode` explicitly; Levels 3–4 also require `--network`. Level 4 requires `--quote-mode` and `--quote-multiplier` when saved quote settings are missing. Missing offer counters suppress offers until the next world day. Unknown action outcomes mark evidence incomplete and stop further ranked attempts. A world and its manifest must match. Keep per-world JSON files when moving the agent to another machine.
 
-This is a rule-based Level 1–3 agent. Level 3 adds direct offers and optional two-order chains; it still declines trade-in requests. See [Level 3 measurements and limitations](docs/LEVEL-3-RESULTS.md). The runner refuses Levels 4–8; the final is Level 8 and needs further work.
+This is a rule-based Level 1–4 agent. Level 3 adds direct offers and optional two-order chains. Level 4 compares competitive quotes across feasible delivery options. Trade-ins remain excluded from eligible work; an unexpected win of a deliberately high decline quote triggers separate rescue gigs for all its legs. See [Level 3 measurements and limitations](docs/LEVEL-3-RESULTS.md). The runner refuses Levels 5–8; the final is Level 8 and needs further work.
 
 ## Team workflow
 

@@ -1,4 +1,4 @@
-# Level 1–3 strategy
+# Level 1–4 strategy
 
 ## Goal and approach
 
@@ -32,8 +32,17 @@ Use the official rate-aware client. Advance to actionable events or a 30-minute 
 
 Practice and ranking worlds are preserved on errors. Resume a world with `--world WORLD_ID`. Recovery restores its saved level, policy, fee mode, seed, and active schedule. It rebuilds from authoritative snapshot and history rather than assuming a failed network request had no effect. Do not run two agents on one world. The runner stops before consuming the next ranking attempt when a week misses the delivery minimum, and stops before mixing rounds.
 
+## Level 4 competitive quotes
+
+Level 4 adds the competitor and dealer choice among delivery options. Quote mode `first` assesses the first option only; `options` assesses each option using its own deadline and actual quoted price. A configurable multiplier applies to that option's list price. Feasibility, driver coverage, legacy fees and direct offers are held fixed during matched quote experiments. The reference/price threshold therefore changes the accepted workload when the multiplier changes; these are combined policy comparisons, not isolated price effects.
+
+When no option qualifies, Level 4 sends a deliberately high quote as the official rules recommend to avoid an unquoted goodwill penalty. This does not guarantee rejection. A rare unexpected win is dispatched, with per-leg coverage and conservative rescue fees. Levels 1–3 still decline by sending no quote. Hidden competitor prices are never read or inferred as exact values. Adaptive learning remains future work.
+
+Quote mode and multiplier are checkpointed with the rest of the policy. Incomplete Level 4 quote settings require explicit restoration rather than silently using defaults. See the Level 4 execution record and results for validation evidence before using ranked attempts.
+
 ## Team work areas
 
+- `src/quotes.ts`: option-specific Level 4 prices and decline quotes.
 - `src/policy.ts`: request selection, driver coverage, and fee model.
 - `src/fees.ts`: Level 1–3 schedules and rescue targets.
 - `src/network.ts`: Level 3 offer planning, persistent budgets and chain feasibility.
@@ -48,7 +57,7 @@ Practice and ranking worlds are preserved on errors. Resume a world with `--worl
 1. Extend paired comparisons beyond three held-out seeds; track margin, worst on-time share, and rejected actions.
 2. Level 2: refine lane-specific fees and study drops using the completed practice worlds and official CSV exporter.
 3. Level 3: expand paired evidence for offers; improve chains beyond the current sparse, unprofitable grouping. Study return routes from observed driver positions without assuming hidden availability.
-4. Level 4: learn quote acceptance per dealer/lane/day; support later delivery options and competitive prices.
+4. Level 4: extend fixed quote comparisons with adaptive acceptance estimates per dealer/lane/day; validate beyond three holdout weeks.
 5. Levels 5–6: implement and measure multilingual note parsing, changes, weather, and failed-visit recovery.
 6. Levels 7–8: adapt to local driver shortages, trust, price war, and unannounced events. Validate across 10–20 weeks.
 7. Add the live stream runner and test it in a scheduled test final before entering the Level 8 final.
