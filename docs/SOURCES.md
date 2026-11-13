@@ -19,6 +19,8 @@ The [repository investigation](REPOSITORY-INVESTIGATION.md) records a 14 Novembe
 | [Leaderboard](https://spread.bahnexpress.com/leaderboard) | Ranking rounds and final standings |
 | [Run viewer](https://spread.bahnexpress.com/viewer/) | Order economics and replay |
 
+The [Level 4 report](LEVEL-4-RESULTS.md) records competitive quote experiments, clean holdout validation, and ranked evidence.
+
 ## Rules that affect the first implementation
 
 - Level 1 permits one car and one fee step per gig. Unbooked gigs can be repriced.
