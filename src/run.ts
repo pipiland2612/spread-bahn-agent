@@ -10,6 +10,8 @@ import type { FeeMode } from './fees.ts'
 import { assertBoardSeason, resolveSettings, seedForRun, targetBoardSeason } from './settings.ts'
 import { restoreStats } from './recovery.ts'
 import type { Statistics } from './recovery.ts'
+import { OfferPlanner, chainPosts, restoreNetwork } from './network.ts'
+import type { NetworkMode, NetworkState } from './network.ts'
 
 const WAKE: DeskEventKind[] = ['price_request', 'order_won', 'order_cancelled', 'gig_expired', 'deadline_close', 'no_show', 'gig_dropped', 'visit_failed']
 type TrackedGig = { action: PostAction; status: string; postedAt: number; multiplier: number }
@@ -27,9 +29,21 @@ export class Desk {
   model: Model
   readonly level: 1 | 2 | 3
   readonly mode: FeeMode
-  constructor(model: Model, level: 1 | 2 | 3 = 1, mode: FeeMode = level === 1 ? 'legacy' : 'stable', stats = restoreStats()) {
+  readonly networkMode: NetworkMode
+  network: OfferPlanner
+  constructor(model: Model, level: 1 | 2 | 3 = 1, mode: FeeMode = level === 1 ? 'legacy' : 'stable', stats = restoreStats(), networkMode: NetworkMode = 'baseline', networkState?: NetworkState) {
     this.model = model; this.level = level; this.mode = mode
     this.stats = stats
+    this.networkMode = networkMode; this.network = new OfferPlanner(networkState)
+  }
+
+  private reference(action: PostAction): number {
+    return [...new Set(action.stops.map(s => s.orderId))].reduce((sum, id) => sum + (this.requests.get(id)?.referenceFeeCents ?? 0), 0)
+  }
+
+  private covered(orderId: string): boolean {
+    return [...this.gigs.values()].some(g => ['open', 'booked', 'working'].includes(g.status) && g.action.stops.some(s => s.orderId === orderId)) ||
+      this.outbox.some(a => a.type === 'post' && a.stops.some(s => s.orderId === orderId))
   }
 
   private activeFee(action: PostAction): number {
@@ -48,13 +62,13 @@ export class Desk {
     }
     for (const order of snapshot.orders) this.orders.set(order.id, order)
     for (const gig of snapshot.gigs) {
-      const reference = this.requests.get(gig.stops[0]!.orderId)?.referenceFeeCents ?? gig.feeCents
       const action: PostAction = { type: 'post', stops: gig.stops, audience: gig.audience, schedule: gig.schedule }
+      const reference = this.reference(action) || gig.feeCents
       this.gigs.set(gig.id, { action, status: gig.status, postedAt: gig.postedAt, multiplier: this.activeFee(action) / reference })
     }
     for (const request of snapshot.openRequests) this.quote(request, true)
     for (const order of snapshot.orders) {
-      if (order.status === 'waiting' && ![...this.gigs.values()].some(g => g.action.stops[0]?.orderId === order.id && ['open', 'booked', 'working'].includes(g.status))) this.post(order)
+      if (order.status === 'waiting' && !this.covered(order.id)) this.post(order)
     }
   }
 
@@ -73,7 +87,7 @@ export class Desk {
 
   post(order: Order, multiplier?: number) {
     const request = this.requests.get(order.id)
-    if (!request || order.status === 'cancelled' || order.deliveredAt.every(t => t !== null)) return
+    if (!request || order.status === 'cancelled' || order.deliveredAt.every(t => t !== null) || this.covered(order.id)) return
     const action = this.model.post(order, request.referenceFeeCents, this.now, multiplier)
     action.schedule = feeSchedule(this.level, this.mode, this.now, request.referenceFeeCents, {
       ...this.model.policy, openingMultiplier: multiplier ?? this.model.policy.openingMultiplier,
@@ -85,6 +99,8 @@ export class Desk {
     if (this.seen.has(e.seq)) return
     this.seen.add(e.seq)
     if (e.kind === 'price_request') this.quote(e.request)
+    else if (e.kind === 'gig_viewed') this.network.viewed(e.gigId, e.driverId, e.at)
+    else if (e.kind === 'offer_answered') this.network.answered(e.gigId, e.driverId)
     else if (e.kind === 'order_won') { this.orders.set(e.order.id, e.order); this.post(e.order) }
     else if (e.kind === 'order_cancelled') {
       const order = this.orders.get(e.orderId)
@@ -93,7 +109,13 @@ export class Desk {
       for (const cancelled of e.gigs) {
         this.discardGigActions(cancelled.gigId)
         const gig = this.gigs.get(cancelled.gigId)
-        if (gig) gig.status = 'withdrawn'
+        if (gig) {
+          const survivors = [...new Set(gig.action.stops.map(s => s.orderId))].filter(id => id !== e.orderId)
+          if (cancelled.outcome === 'withdrawn' || cancelled.outcome === 'released') {
+            gig.status = 'withdrawn'
+            for (const id of survivors) { const survivor = this.orders.get(id); if (survivor) this.post(survivor) }
+          } else gig.action = { ...gig.action, stops: gig.action.stops.filter(s => s.orderId !== e.orderId) }
+        }
       }
     } else if (e.kind === 'gig_booked' || e.kind === 'gig_started' || e.kind === 'gig_dropped' || e.kind === 'no_show') {
       const gig = this.gigs.get(e.gigId)
@@ -101,17 +123,22 @@ export class Desk {
       if (e.kind === 'gig_booked' || e.kind === 'gig_started') this.discardGigActions(e.gigId)
     } else if (e.kind === 'delivered') {
       const order = this.orders.get(e.orderId)
-      if (order) { order.deliveredAt[e.leg] = e.at; order.status = 'delivered' }
+      if (order) { order.deliveredAt[e.leg] = e.at; if (order.deliveredAt.every(t => t !== null)) order.status = 'delivered' }
       const gig = this.gigs.get(e.gigId)
-      if (gig) gig.status = 'done'
+      if (gig && gig.action.stops.filter(s => s.kind === 'delivery').every(s => {
+        const covered = this.orders.get(s.orderId)
+        return covered?.status === 'cancelled' || covered?.deliveredAt[s.leg] != null
+      })) gig.status = 'done'
       this.discardGigActions(e.gigId)
     } else if (e.kind === 'gig_expired') {
       const gig = this.gigs.get(e.gigId)
       if (gig) {
         this.discardGigActions(e.gigId)
         gig.status = 'withdrawn'
-        const order = this.orders.get(gig.action.stops[0]!.orderId)
-        if (order) this.post(order, 1.8)
+        for (const id of new Set(gig.action.stops.map(s => s.orderId))) {
+          const order = this.orders.get(id)
+          if (order) this.post(order, 1.8)
+        }
       }
     } else if (e.kind === 'deadline_close') {
       this.raise(e.orderId, 1.65)
@@ -124,8 +151,8 @@ export class Desk {
     const request = this.requests.get(orderId)
     if (!request || this.orders.get(orderId)?.status === 'cancelled') return
     for (const [gigId, gig] of this.gigs) {
-      if (gig.status !== 'open' || gig.action.stops[0]?.orderId !== orderId) continue
-      const cents = Math.max(1, Math.round(request.referenceFeeCents * multiplier))
+      if (gig.status !== 'open' || !gig.action.stops.some(s => s.orderId === orderId)) continue
+      const cents = Math.max(1, Math.round(this.reference(gig.action) * multiplier))
       const pending = this.outbox.find(action => action.type === 'reprice' && action.gigId === gigId)
       const pendingFee = pending?.type === 'reprice' ? pending.schedule[0]!.feeCents : 0
       if (cents <= Math.max(this.activeFee(gig.action), pendingFee)) continue
@@ -140,10 +167,20 @@ export class Desk {
       const order = this.orders.get(gig.action.stops[0]!.orderId)
       if (!order) continue
       const age = this.now - gig.postedAt
-      const reference = this.requests.get(order.id)!.referenceFeeCents
+      const reference = this.reference(gig.action)
       gig.multiplier = this.activeFee(gig.action) / reference
-      const multiplier = targetMultiplier(this.mode, age, order.lastPickupAt - this.now, this.model.policy.openingMultiplier)
+      const remaining = gig.action.stops.filter(s => s.kind === 'pickup' && this.orders.get(s.orderId)?.deliveredAt[s.leg] == null)
+      const lastPickupAt = Math.min(...remaining.map(s => this.orders.get(s.orderId)!.lastPickupAt))
+      const multiplier = targetMultiplier(this.mode, age, lastPickupAt - this.now, this.model.policy.openingMultiplier)
       this.raise(order.id, multiplier)
+    }
+    if (this.level === 3 && this.networkMode === 'chains') {
+      const posts = this.outbox.filter((a): a is PostAction => a.type === 'post')
+      this.outbox = [...this.outbox.filter(a => a.type !== 'post'), ...chainPosts(posts, this.orders, this.requests, this.model, this.now, 3, this.mode)]
+    }
+    if (this.level === 3 && this.networkMode !== 'baseline') {
+      const alreadyQueued = new Set(this.outbox.filter(a => a.type === 'offer').map(a => a.gigId))
+      this.outbox.push(...this.network.plan(this.gigs, this.orders, this.requests, this.model, this.now).filter(a => !alreadyQueued.has(a.gigId)))
     }
   }
 
@@ -157,13 +194,15 @@ export class Desk {
         return
       }
       if (action.type === 'post') {
-        const reference = this.requests.get(action.stops[0]!.orderId)!.referenceFeeCents
+        if (action.stops.filter(s => s.kind === 'pickup').length > 1) this.stats.chainsPosted++
+        const reference = this.reference(action)
         this.gigs.set(result.id, { action, status: 'open', postedAt: this.now, multiplier: action.schedule[0]!.feeCents / reference })
-      } else if (action.type === 'reprice') {
+      } else if (action.type === 'offer') this.network.sent(action, this.now)
+      else if (action.type === 'reprice') {
         const gig = this.gigs.get(action.gigId)
         if (gig) {
           gig.action = { ...gig.action, schedule: action.schedule }
-          gig.multiplier = this.activeFee(gig.action) / this.requests.get(gig.action.stops[0]!.orderId)!.referenceFeeCents
+          gig.multiplier = this.activeFee(gig.action) / this.reference(gig.action)
         }
       }
     })
@@ -221,13 +260,16 @@ async function main() {
     const record = { ...previous, worldId: world.id, seed: summary.boardRun ? null : seed, level, feeMode: mode, networkMode: network, board: Boolean(summary.boardRun), season: summary.season, boardRun: summary.boardRun, policy,
       originalSettings: previous?.originalSettings ?? (previous ? { level: previous.level, feeMode: previous.feeMode, seed: previous.seed, policy: previous.policy } : effectiveSettings),
       startedAt: previous?.startedAt ?? new Date().toISOString(), resumes: resuming ? [...(previous?.resumes ?? []), { at: new Date().toISOString(), overrides: settings.overrides, settings: effectiveSettings }] : [] }
-    const persist = async (stats: Statistics, pendingAdvance = false) => writeFile(resultPath, JSON.stringify({ ...record, stats, pendingAdvance }, null, 2) + '\n')
+    let networkState: NetworkState | undefined = previous?.networkState
+    const persist = async (stats: Statistics, pendingAdvance = false) => writeFile(resultPath, JSON.stringify({ ...record, stats, networkState, pendingAdvance }, null, 2) + '\n')
     const stats = restoreStats(resuming ? previous ?? {} : undefined)
     await persist(stats)
     if (args.board && !resuming) assertBoardSeason(expectedSeason!, summary)
     console.log(`${summary.boardRun ? `Ranking ${summary.boardRun}/5` : 'Practice'} world ${world.id}`)
-    let desk = new Desk(new Model(map, await world.roster(), policy), level, mode, stats)
     let snapshot = await world.snapshot()
+    networkState = restoreNetwork(networkState, snapshot.now, resuming && (!networkState || Boolean(previous?.pendingAdvance)))
+    let desk = new Desk(new Model(map, await world.roster(), policy), level, mode, stats, network, networkState)
+    networkState = desk.network.state
     desk.rebuild(snapshot, await world.events())
     let previousDay = Math.floor(desk.now / 1440)
     while (desk.now < snapshot.endsAt) {
@@ -245,7 +287,8 @@ async function main() {
         console.error(`Connection interrupted for ${world.id}; rebuilding state in 5 seconds`)
         await new Promise(resolve => setTimeout(resolve, 5000))
         snapshot = await world.snapshot()
-        desk = new Desk(desk.model, level, mode, restoreStats({ stats: desk.stats }, true))
+        desk = new Desk(desk.model, level, mode, restoreStats({ stats: desk.stats }, true), network, restoreNetwork(desk.network.state, snapshot.now, true))
+        networkState = desk.network.state
         desk.rebuild(snapshot, await world.events())
       }
       const day = Math.floor(desk.now / 1440)
@@ -253,7 +296,7 @@ async function main() {
     }
     const score = await world.score()
     report(`End ${world.id}`, score)
-    await writeFile(resultPath, JSON.stringify({ ...record, pendingAdvance: false, finishedAt: new Date().toISOString(), score, stats: desk.stats }, null, 2) + '\n')
+    await writeFile(resultPath, JSON.stringify({ ...record, networkState: desk.network.state, pendingAdvance: false, finishedAt: new Date().toISOString(), score, stats: desk.stats }, null, 2) + '\n')
     completed.push({ worldId: world.id, season: summary.season, boardRun: summary.boardRun, score })
     if (summary.boardRun && !score.ranked) throw new Error(`Ranking run missed the delivery minimum; pausing before consuming another secret week. Inspect ${resultPath}`)
     if (summary.boardRun && (!desk.stats.complete || desk.stats.refused.length)) throw new Error(`Ranking evidence is incomplete or contains refused actions; inspect ${resultPath} before another attempt`)

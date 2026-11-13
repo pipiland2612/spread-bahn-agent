@@ -1,9 +1,68 @@
 import type { OfferAction, Order, PostAction, PriceRequest } from '../vendor/spread/types.ts'
 import type { Model } from './policy.ts'
+import type { FeeMode } from './fees.ts'
+import { feeSchedule } from './fees.ts'
+
+export function chainPosts(posts: PostAction[], orders: Map<string, Order>, requests: Map<string, PriceRequest>, model: Model, now: number, level: 3, mode: FeeMode): PostAction[] {
+  const road = (from: string, to: string) => model.roads.get(`${from}/${to}`)?.minutes ?? Infinity
+  const feasible = (stops: PostAction['stops'], start: number): boolean => {
+    let time = start
+    let previous: string | undefined
+    const day = Math.floor(now / 1440)
+    for (const stop of stops) {
+      const order = orders.get(stop.orderId)
+      const leg = order?.legs[stop.leg]
+      if (!order || !leg || order.status === 'cancelled') return false
+      const place = leg[stop.kind]
+      if (place.privateAddress) return false
+      if (previous) time += road(previous, place.placeId)
+      time = Math.max(time, place.window.from, stop.window?.from ?? 0)
+      const hours = place.hours && (day % 7 === 5 ? place.hours.saturday : place.hours.weekdays.includes(day % 7) ? place.hours : null)
+      if (place.hours && !hours) return false
+      if (hours) time = Math.max(time, day * 1440 + hours.opens)
+      const last = Math.min(place.window.to, stop.window?.to ?? Infinity, order.deadline, hours ? day * 1440 + hours.closes - 1 : Infinity)
+      if (time > last || Math.floor(time / 1440) !== day) return false
+      time += 15 + (stop.withCharging ? 40 : 0)
+      previous = place.placeId
+    }
+    return Math.floor(time / 1440) === day
+  }
+  const combine = (a: PostAction, b: PostAction): PostAction | null => {
+    if (a.stops.length !== 2 || b.stops.length !== 2 || a.stops[0]!.orderId === b.stops[0]!.orderId) return null
+    const stops = [...a.stops, ...b.stops]
+    const places = stops.map(s => orders.get(s.orderId)?.legs[s.leg]?.[s.kind].placeId)
+    if (places.some(p => !p) || road(places[1]!, places[2]!) > 15) return null
+    const minutes = places.slice(1).reduce((sum, p, i) => sum + road(places[i]!, p!), 0)
+    if (minutes > 360 || !feasible(stops, now + 55) || !feasible(stops, now + 55 + 210)) return null
+    const reference = [...new Set(stops.map(s => s.orderId))].reduce((sum, id) => sum + (requests.get(id)?.referenceFeeCents ?? 0), 0)
+    if (!reference) return null
+    return { type: 'post', stops, audience: { experienced: a.audience.experienced || b.audience.experienced, manualLicence: a.audience.manualLicence || b.audience.manualLicence },
+      schedule: feeSchedule(level, mode, now, Math.max(1, Math.round(reference * 0.90)), model.policy) }
+  }
+  const used = new Set<number>()
+  const result: PostAction[] = []
+  for (let i = 0; i < posts.length; i++) {
+    if (used.has(i)) continue
+    let chain: PostAction | null = null
+    for (let j = i + 1; j < posts.length; j++) {
+      if (used.has(j)) continue
+      chain = combine(posts[i]!, posts[j]!) ?? combine(posts[j]!, posts[i]!)
+      if (chain) { used.add(j); break }
+    }
+    result.push(chain ?? posts[i]!)
+  }
+  return result
+}
 
 export type NetworkMode = 'baseline' | 'offers' | 'chains'
 export type NetworkGig = { action: PostAction; status: string; postedAt: number }
 export type NetworkState = { attempts: { gigId: string; driverId: string; at: number; expiresAt: number; closed: boolean }[]; blockedDay: number }
+
+export function restoreNetwork(state?: NetworkState, now = 0, uncertain = false): NetworkState {
+  const restored = structuredClone(state ?? { attempts: [], blockedDay: -1 })
+  if (uncertain) restored.blockedDay = Math.max(restored.blockedDay, Math.floor(now / 1440))
+  return restored
+}
 
 export class OfferPlanner {
   state: NetworkState

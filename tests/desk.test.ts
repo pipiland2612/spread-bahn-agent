@@ -82,3 +82,51 @@ test('restart derives the active scheduled fee from world time', () => {
   restored.tick()
   assert.deepEqual(restored.outbox, [])
 })
+
+function chainedDesk() {
+  const { desk: old, request, order, post } = fixture('legacy')
+  const desk = new Desk(old.model, 3, 'legacy', undefined, 'offers')
+  const second = { ...structuredClone(order), id: 'R2' }
+  desk.now = 550; desk.requests.set('R1', request); desk.requests.set('R2', { ...request, id: 'R2' })
+  desk.orders.set('R1', order); desk.orders.set('R2', second)
+  const action = { ...post, stops: [...post.stops, ...post.stops.map(s => ({ ...s, orderId: 'R2' }))] }
+  desk.results([action], [{ ok: true, id: 'chain' }]); desk.gigs.get('chain')!.status = 'working'
+  return { desk, order, second, request, action }
+}
+test('first delivery in a chain keeps gig working and reprices remain pruned', () => {
+  const { desk } = chainedDesk()
+  assert.equal(desk.stats.chainsPosted, 1)
+  desk.handle({ kind: 'delivered', seq: 50, at: 600, gigId: 'chain', orderId: 'R1', leg: 0 })
+  assert.equal(desk.gigs.get('chain')!.status, 'working')
+  desk.handle({ kind: 'delivered', seq: 51, at: 650, gigId: 'chain', orderId: 'R2', leg: 0 })
+  assert.equal(desk.gigs.get('chain')!.status, 'done')
+})
+test('withdrawn chain cancellation reposts surviving work but shortened chains retain coverage', () => {
+  const { desk } = chainedDesk(); desk.gigs.get('chain')!.status = 'open'
+  desk.handle({ kind: 'order_cancelled', seq: 50, at: 600, orderId: 'R1', gigs: [{ gigId: 'chain', outcome: 'withdrawn' }] })
+  assert.deepEqual(desk.outbox.filter(a => a.type === 'post').map(a => a.stops[0]!.orderId), ['R2'])
+  const other = chainedDesk().desk
+  other.handle({ kind: 'order_cancelled', seq: 50, at: 600, orderId: 'R1', gigs: [{ gigId: 'chain', outcome: 'shortened' }] })
+  assert.equal(other.gigs.get('chain')!.status, 'working')
+  assert.deepEqual(other.gigs.get('chain')!.action.stops.map(s => s.orderId), ['R2', 'R2'])
+  assert.deepEqual(other.outbox, [])
+})
+test('expired chain reposts every undelivered uncovered order', () => {
+  const { desk } = chainedDesk(); desk.gigs.get('chain')!.status = 'open'
+  desk.handle({ kind: 'gig_expired', seq: 50, at: 600, gigId: 'chain' })
+  assert.deepEqual(desk.outbox.filter(a => a.type === 'post').map(a => a.stops[0]!.orderId), ['R1', 'R2'])
+})
+test('rebuild recognizes a second order covered by an existing chain', () => {
+  const { desk, order, second, request, action } = chainedDesk()
+  const restored = new Desk(desk.model, 3, 'legacy')
+  restored.rebuild({ now: 550, endsAt: 14280, worldId: 'w', orders: [order, second], openRequests: [], driverPositions: [], score: {} as any,
+    gigs: [{ id: 'chain', ...action, feeCents: 15000, status: 'open', postedAt: 500, driverId: null }] },
+  [{ kind: 'price_request', seq: 1, at: 490, request }, { kind: 'price_request', seq: 2, at: 490, request: { ...request, id: 'R2' } }])
+  assert.deepEqual(restored.outbox, [])
+})
+test('booking prunes queued direct offers just like reprices', () => {
+  const { desk } = chainedDesk()
+  desk.outbox.push({ type: 'offer', gigId: 'chain', driverId: 'D1', feeCents: 15000 })
+  desk.handle({ kind: 'gig_booked', seq: 51, at: 550, gigId: 'chain', driverId: 'D1', feeCents: 15000 })
+  assert.deepEqual(desk.outbox, [])
+})
