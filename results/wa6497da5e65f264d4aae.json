@@ -1,0 +1,43 @@
+{
+  "worldId": "wa6497da5e65f264d4aae",
+  "seed": "margin-tune-2",
+  "level": 1,
+  "board": false,
+  "season": null,
+  "boardRun": null,
+  "policy": {
+    "openingMultiplier": 0.65,
+    "maxReferenceShare": 0.95,
+    "maxDriveMinutes": 240,
+    "minLocalDrivers": 15,
+    "minSlackMinutes": 210
+  },
+  "startedAt": "2026-11-13T21:22:11.990Z",
+  "finishedAt": "2026-11-13T21:22:55.089Z",
+  "score": {
+    "marginCents": 485103,
+    "revenueCents": 2435900,
+    "marginShare": 0.1991473377396445,
+    "wonOrders": 433,
+    "onTimeShare": 0.9884526558891455,
+    "undeliveredShare": 0,
+    "ranked": true
+  },
+  "stats": {
+    "quoted": 437,
+    "declined": {
+      "thin margin": 286,
+      "long route": 121,
+      "private appointment risk": 109,
+      "multi-car: Level 1 supports single-car gigs": 19,
+      "insufficient booking buffer": 17,
+      "sparse driver coverage": 11
+    },
+    "refused": [
+      {
+        "action": "reprice",
+        "reason": "Gig g413 is not open"
+      }
+    ]
+  }
+}

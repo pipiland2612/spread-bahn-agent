@@ -4,7 +4,12 @@ import { pathToFileURL } from 'node:url'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { Client, SpreadError, Unreachable } from '../vendor/spread/spread.ts'
 import type { Action, ActionResult, DeskEvent, DeskEventKind, DeskSnapshot, Order, PostAction, PriceRequest, Score, WorldSummary } from '../vendor/spread/types.ts'
-import { DEFAULT_POLICY, Model } from './policy.ts'
+import { Model } from './policy.ts'
+import { feeSchedule, targetMultiplier } from './fees.ts'
+import type { FeeMode } from './fees.ts'
+import { assertBoardSeason, resolveSettings, seedForRun, targetBoardSeason } from './settings.ts'
+import { restoreStats } from './recovery.ts'
+import type { Statistics } from './recovery.ts'
 
 const WAKE: DeskEventKind[] = ['price_request', 'order_won', 'order_cancelled', 'gig_expired', 'deadline_close', 'no_show', 'gig_dropped', 'visit_failed']
 type TrackedGig = { action: PostAction; status: string; postedAt: number; multiplier: number }
@@ -18,9 +23,22 @@ export class Desk {
   gigs = new Map<string, TrackedGig>()
   outbox: Action[] = []
   seen = new Set<number>()
-  stats = { quoted: 0, declined: {} as Record<string, number>, refused: [] as { action: string; reason: string }[] }
+  stats: Statistics
   model: Model
-  constructor(model: Model) { this.model = model }
+  readonly level: 1 | 2
+  readonly mode: FeeMode
+  constructor(model: Model, level: 1 | 2 = 1, mode: FeeMode = level === 1 ? 'legacy' : 'stable', stats = restoreStats()) {
+    this.model = model; this.level = level; this.mode = mode
+    this.stats = stats
+  }
+
+  private activeFee(action: PostAction): number {
+    return (action.schedule.filter(step => step.at <= this.now).at(-1) ?? action.schedule[0])!.feeCents
+  }
+
+  private discardGigActions(gigId: string) {
+    this.outbox = this.outbox.filter(action => !('gigId' in action) || action.gigId !== gigId)
+  }
 
   rebuild(snapshot: DeskSnapshot, events: DeskEvent[]) {
     this.now = snapshot.now
@@ -31,7 +49,8 @@ export class Desk {
     for (const order of snapshot.orders) this.orders.set(order.id, order)
     for (const gig of snapshot.gigs) {
       const reference = this.requests.get(gig.stops[0]!.orderId)?.referenceFeeCents ?? gig.feeCents
-      this.gigs.set(gig.id, { action: { type: 'post', stops: gig.stops, audience: gig.audience, schedule: gig.schedule }, status: gig.status, postedAt: gig.postedAt, multiplier: gig.feeCents / reference })
+      const action: PostAction = { type: 'post', stops: gig.stops, audience: gig.audience, schedule: gig.schedule }
+      this.gigs.set(gig.id, { action, status: gig.status, postedAt: gig.postedAt, multiplier: this.activeFee(action) / reference })
     }
     for (const request of snapshot.openRequests) this.quote(request, true)
     for (const order of snapshot.orders) {
@@ -55,7 +74,11 @@ export class Desk {
   post(order: Order, multiplier?: number) {
     const request = this.requests.get(order.id)
     if (!request || order.status === 'cancelled' || order.deliveredAt.every(t => t !== null)) return
-    this.outbox.push(this.model.post(order, request.referenceFeeCents, this.now, multiplier))
+    const action = this.model.post(order, request.referenceFeeCents, this.now, multiplier)
+    action.schedule = feeSchedule(this.level, this.mode, this.now, request.referenceFeeCents, {
+      ...this.model.policy, openingMultiplier: multiplier ?? this.model.policy.openingMultiplier,
+    })
+    this.outbox.push(action)
   }
 
   handle(e: DeskEvent) {
@@ -68,20 +91,24 @@ export class Desk {
       if (order) order.status = 'cancelled'
       this.outbox = this.outbox.filter(a => a.type !== 'post' || !a.stops.some(s => s.orderId === e.orderId))
       for (const cancelled of e.gigs) {
+        this.discardGigActions(cancelled.gigId)
         const gig = this.gigs.get(cancelled.gigId)
         if (gig) gig.status = 'withdrawn'
       }
     } else if (e.kind === 'gig_booked' || e.kind === 'gig_started' || e.kind === 'gig_dropped' || e.kind === 'no_show') {
       const gig = this.gigs.get(e.gigId)
       if (gig) gig.status = e.kind === 'gig_booked' ? 'booked' : e.kind === 'gig_started' ? 'working' : 'open'
+      if (e.kind === 'gig_booked' || e.kind === 'gig_started') this.discardGigActions(e.gigId)
     } else if (e.kind === 'delivered') {
       const order = this.orders.get(e.orderId)
       if (order) { order.deliveredAt[e.leg] = e.at; order.status = 'delivered' }
       const gig = this.gigs.get(e.gigId)
       if (gig) gig.status = 'done'
+      this.discardGigActions(e.gigId)
     } else if (e.kind === 'gig_expired') {
       const gig = this.gigs.get(e.gigId)
       if (gig) {
+        this.discardGigActions(e.gigId)
         gig.status = 'withdrawn'
         const order = this.orders.get(gig.action.stops[0]!.orderId)
         if (order) this.post(order, 1.8)
@@ -89,7 +116,7 @@ export class Desk {
     } else if (e.kind === 'deadline_close') {
       this.raise(e.orderId, 1.65)
     } else if (e.kind === 'visit_failed') {
-      throw new Error(`Unexpected Level 1 visit failure: ${e.orderId} ${e.reason}; resume this world with --world after inspecting its snapshot`)
+      throw new Error(`Unexpected Level ${this.level} visit failure: ${e.orderId} ${e.reason}; resume this world with --world after inspecting its snapshot`)
     }
   }
 
@@ -97,9 +124,13 @@ export class Desk {
     const request = this.requests.get(orderId)
     if (!request || this.orders.get(orderId)?.status === 'cancelled') return
     for (const [gigId, gig] of this.gigs) {
-      if (gig.status !== 'open' || gig.action.stops[0]?.orderId !== orderId || gig.multiplier >= multiplier) continue
-      gig.multiplier = multiplier
-      this.outbox.push({ type: 'reprice', gigId, schedule: [{ at: this.now, feeCents: Math.round(request.referenceFeeCents * multiplier) }] })
+      if (gig.status !== 'open' || gig.action.stops[0]?.orderId !== orderId) continue
+      const cents = Math.max(1, Math.round(request.referenceFeeCents * multiplier))
+      const pending = this.outbox.find(action => action.type === 'reprice' && action.gigId === gigId)
+      const pendingFee = pending?.type === 'reprice' ? pending.schedule[0]!.feeCents : 0
+      if (cents <= Math.max(this.activeFee(gig.action), pendingFee)) continue
+      this.discardGigActions(gigId)
+      this.outbox.push({ type: 'reprice', gigId, schedule: [{ at: this.now, feeCents: cents }] })
     }
   }
 
@@ -109,7 +140,9 @@ export class Desk {
       const order = this.orders.get(gig.action.stops[0]!.orderId)
       if (!order) continue
       const age = this.now - gig.postedAt
-      const multiplier = order.lastPickupAt - this.now <= 180 ? 1.65 : age >= 120 ? 1.2 : age >= 60 ? 1.05 : this.model.policy.openingMultiplier
+      const reference = this.requests.get(order.id)!.referenceFeeCents
+      gig.multiplier = this.activeFee(gig.action) / reference
+      const multiplier = targetMultiplier(this.mode, age, order.lastPickupAt - this.now, this.model.policy.openingMultiplier)
       this.raise(order.id, multiplier)
     }
   }
@@ -126,6 +159,12 @@ export class Desk {
       if (action.type === 'post') {
         const reference = this.requests.get(action.stops[0]!.orderId)!.referenceFeeCents
         this.gigs.set(result.id, { action, status: 'open', postedAt: this.now, multiplier: action.schedule[0]!.feeCents / reference })
+      } else if (action.type === 'reprice') {
+        const gig = this.gigs.get(action.gigId)
+        if (gig) {
+          gig.action = { ...gig.action, schedule: action.schedule }
+          gig.multiplier = this.activeFee(gig.action) / this.requests.get(gig.action.stops[0]!.orderId)!.referenceFeeCents
+        }
       }
     })
   }
@@ -133,52 +172,71 @@ export class Desk {
 
 async function main() {
   const { values: args } = parseArgs({ options: {
-    level: { type: 'string', default: '1' }, seed: { type: 'string', default: 'spread-1' },
+    level: { type: 'string' }, seed: { type: 'string' },
     board: { type: 'boolean' }, runs: { type: 'string', default: '1' },
     world: { type: 'string' }, status: { type: 'boolean' },
-    opening: { type: 'string' }, 'reference-share': { type: 'string' },
+    opening: { type: 'string' }, 'reference-share': { type: 'string' }, 'fee-mode': { type: 'string' },
   } })
-  const level = Number(args.level)
-  if (level !== 1) throw new Error('This baseline is validated for Level 1 only. Extend the policy before entering higher levels.')
+  let settings = resolveSettings(args)
   const runs = Number(args.runs)
   if (!Number.isInteger(runs) || runs < 1 || runs > 5) throw new Error('--runs must be 1 to 5')
   const client = new Client()
   if (args.status) {
-    const board = await client.board(1)
+    const board = await client.board(settings.level)
     console.log(JSON.stringify({ worlds: await client.worlds(), round: board.current?.name, teams: board.current?.teams.filter(t => t.played > 0) }, null, 2))
     return
   }
-  const policy = { ...DEFAULT_POLICY, ...(args.opening ? { openingMultiplier: Number(args.opening) } : {}), ...(args['reference-share'] ? { maxReferenceShare: Number(args['reference-share']) } : {}) }
-  if (!Number.isFinite(policy.openingMultiplier) || policy.openingMultiplier <= 0 || !Number.isFinite(policy.maxReferenceShare) || policy.maxReferenceShare <= 0) throw new Error('Policy multipliers must be positive finite numbers')
   await mkdir('results', { recursive: true })
   const map = await client.map()
-  const before = args.board ? await client.board(1) : null
-  if (args.board && !before?.current) throw new Error('No ranking round is open')
   const summaries: WorldSummary[] = await client.worlds()
-  const activeBoard = summaries.find(w => w.level === 1 && w.boardRun && !w.ended)
+  let saved: any
+  if (args.world) {
+    const summary = summaries.find(w => w.worldId === args.world)
+    if (!summary) throw new Error('Requested world was not found on the team key')
+    saved = await readFile(`results/${summary.worldId}.json`, 'utf8').then(text => JSON.parse(text), error => {
+      if (error.code !== 'ENOENT') throw error
+      return undefined
+    })
+    settings = resolveSettings(args, saved, summary)
+    if (args.board && !summary.boardRun) throw new Error('--board cannot resume an unranked practice world')
+  }
+  const { level, mode, policy } = settings
+  const before = args.board ? await client.board(level) : null
+  if (args.board && !before?.current) throw new Error('No ranking round is open')
+  const expectedSeason = args.board ? targetBoardSeason(before!.current!.season, args.world ? summaries.find(w => w.worldId === args.world) : undefined) : null
+  const activeBoard = summaries.find(w => w.level === level && w.boardRun && !w.ended)
   if (args.board && activeBoard && !args.world) throw new Error(`Ranking world ${activeBoard.worldId} is already active. Resume with --board --world ${activeBoard.worldId}`)
   const completed = []
   for (let index = 0; index < runs; index++) {
-    const seed = runs === 1 ? args.seed : `${args.seed}-${index + 1}`
     const resuming = index === 0 && Boolean(args.world)
-    const world = resuming ? client.world(args.world!) : await client.create(1, args.board ? { board: true } : { seed })
+    const seed = seedForRun(settings.seed, index, runs, resuming)
+    if (args.board && index > 0 && (await client.board(level)).current?.season !== expectedSeason) throw new Error('Ranking season changed; stopping before creating another attempt')
+    const world = resuming ? client.world(args.world!) : await client.create(level, args.board ? { board: true } : { seed: seed ?? undefined })
     const summary = (await client.worlds()).find(w => w.worldId === world.id)!
-    if (summary.level !== 1 || summary.kind !== 'practice') throw new Error('Can only play Level 1 practice or ranking worlds')
+    if (summary.level !== level || summary.kind !== 'practice') throw new Error(`Can only play Level ${level} practice or ranking worlds`)
     const resultPath = `results/${world.id}.json`
-    const previous = resuming ? await readFile(resultPath, 'utf8').then(text => JSON.parse(text), () => null) : null
-    const record = { worldId: world.id, seed: summary.boardRun ? null : resuming ? previous?.seed ?? null : seed, level, board: Boolean(summary.boardRun), season: summary.season, boardRun: summary.boardRun, policy, startedAt: previous?.startedAt ?? new Date().toISOString() }
-    await writeFile(resultPath, JSON.stringify(record, null, 2) + '\n')
+    const previous = resuming ? saved : undefined
+    const effectiveSettings = { level, feeMode: mode, seed, policy }
+    const record = { ...previous, worldId: world.id, seed: summary.boardRun ? null : seed, level, feeMode: mode, board: Boolean(summary.boardRun), season: summary.season, boardRun: summary.boardRun, policy,
+      originalSettings: previous?.originalSettings ?? (previous ? { level: previous.level, feeMode: previous.feeMode, seed: previous.seed, policy: previous.policy } : effectiveSettings),
+      startedAt: previous?.startedAt ?? new Date().toISOString(), resumes: resuming ? [...(previous?.resumes ?? []), { at: new Date().toISOString(), overrides: settings.overrides, settings: effectiveSettings }] : [] }
+    const persist = async (stats: Statistics, pendingAdvance = false) => writeFile(resultPath, JSON.stringify({ ...record, stats, pendingAdvance }, null, 2) + '\n')
+    const stats = restoreStats(resuming ? previous ?? {} : undefined)
+    await persist(stats)
+    if (args.board && !resuming) assertBoardSeason(expectedSeason!, summary)
     console.log(`${summary.boardRun ? `Ranking ${summary.boardRun}/5` : 'Practice'} world ${world.id}`)
-    let desk = new Desk(new Model(map, await world.roster(), policy))
+    let desk = new Desk(new Model(map, await world.roster(), policy), level, mode, stats)
     let snapshot = await world.snapshot()
     desk.rebuild(snapshot, await world.events())
     let previousDay = Math.floor(desk.now / 1440)
     while (desk.now < snapshot.endsAt) {
       desk.tick()
       const actions = desk.outbox.splice(0)
+      await persist(desk.stats, true)
       try {
         const step = await world.advance({ untilEvent: WAKE, max: Math.min(snapshot.endsAt, desk.now + 30), actions })
         desk.results(actions, step.results)
+        await persist(desk.stats)
         desk.now = step.now
         for (const e of step.events) desk.handle(e)
       } catch (error) {
@@ -186,7 +244,7 @@ async function main() {
         console.error(`Connection interrupted for ${world.id}; rebuilding state in 5 seconds`)
         await new Promise(resolve => setTimeout(resolve, 5000))
         snapshot = await world.snapshot()
-        desk = new Desk(desk.model)
+        desk = new Desk(desk.model, level, mode, restoreStats({ stats: desk.stats }, true))
         desk.rebuild(snapshot, await world.events())
       }
       const day = Math.floor(desk.now / 1440)
@@ -194,18 +252,19 @@ async function main() {
     }
     const score = await world.score()
     report(`End ${world.id}`, score)
-    await writeFile(resultPath, JSON.stringify({ ...record, finishedAt: new Date().toISOString(), score, stats: desk.stats }, null, 2) + '\n')
+    await writeFile(resultPath, JSON.stringify({ ...record, pendingAdvance: false, finishedAt: new Date().toISOString(), score, stats: desk.stats }, null, 2) + '\n')
     completed.push({ worldId: world.id, season: summary.season, boardRun: summary.boardRun, score })
-    if (args.board && !score.ranked) throw new Error(`Ranking run missed the delivery minimum; pausing before consuming another secret week. Inspect ${resultPath}`)
+    if (summary.boardRun && !score.ranked) throw new Error(`Ranking run missed the delivery minimum; pausing before consuming another secret week. Inspect ${resultPath}`)
+    if (summary.boardRun && (!desk.stats.complete || desk.stats.refused.length)) throw new Error(`Ranking evidence is incomplete or contains refused actions; inspect ${resultPath} before another attempt`)
   }
   if (args.board) {
     await new Promise(resolve => setTimeout(resolve, 2200))
-    const board = await client.board(1)
+    const board = await client.board(level)
     const season = [board.current, board.previous].find(s => s?.season === completed[0]?.season)
     const ownRuns = completed.filter(r => r.season === season?.season)
     const teams = season?.teams.filter(t => ownRuns.length > 0 && ownRuns.every(own => t.runs.some(r => r.run === own.boardRun && r.marginCents === own.score.marginCents && r.wonOrders === own.score.wonOrders && r.onTimeShare === own.score.onTimeShare)))
     const summary = { checkedAt: new Date().toISOString(), round: season?.name, season: season?.season, teams, completed }
-    await writeFile('results/leaderboard-level-1.json', JSON.stringify(summary, null, 2) + '\n')
+    await writeFile(`results/leaderboard-level-${level}-season-${season?.season}.json`, JSON.stringify(summary, null, 2) + '\n')
     console.log(JSON.stringify(summary, null, 2))
   }
 }

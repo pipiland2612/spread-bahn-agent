@@ -7,7 +7,9 @@
   "scripts": {
     "test": "node --test tests/*.test.ts",
     "practice": "node --env-file=.env src/run.ts",
+    "practice:level2": "node --env-file=.env src/run.ts --level 2",
     "board": "node --env-file=.env src/run.ts --board --runs 5",
+    "board:level2": "node --env-file=.env src/run.ts --level 2 --board --runs 5",
     "status": "node --env-file=.env src/run.ts --status"
   }
 }

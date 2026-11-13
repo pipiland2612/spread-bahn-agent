@@ -1,0 +1,43 @@
+{
+  "worldId": "w8f8ff36a291f63ded544",
+  "seed": "margin-holdout-1",
+  "level": 1,
+  "board": false,
+  "season": null,
+  "boardRun": null,
+  "policy": {
+    "openingMultiplier": 0.85,
+    "maxReferenceShare": 0.88,
+    "maxDriveMinutes": 240,
+    "minLocalDrivers": 15,
+    "minSlackMinutes": 210
+  },
+  "startedAt": "2026-11-13T21:24:00.843Z",
+  "finishedAt": "2026-11-13T21:24:41.186Z",
+  "score": {
+    "marginCents": 386553,
+    "revenueCents": 1542700,
+    "marginShare": 0.25056913204122644,
+    "wonOrders": 273,
+    "onTimeShare": 0.9926739926739927,
+    "undeliveredShare": 0,
+    "ranked": true
+  },
+  "stats": {
+    "quoted": 278,
+    "declined": {
+      "thin margin": 526,
+      "long route": 46,
+      "private appointment risk": 116,
+      "multi-car: Level 1 supports single-car gigs": 20,
+      "insufficient booking buffer": 11,
+      "sparse driver coverage": 3
+    },
+    "refused": [
+      {
+        "action": "reprice",
+        "reason": "Gig g22 is not open"
+      }
+    ]
+  }
+}
