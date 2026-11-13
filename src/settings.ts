@@ -15,9 +15,9 @@ export function resolveSettings(args: Record<string, string | boolean | undefine
   if (world && !manifest && ['level', 'opening', 'reference-share', 'fee-mode'].some(key => args[key] === undefined)) {
     throw new Error('Missing local manifest: supply --level, --opening, --reference-share and --fee-mode to explicitly restore policy')
   }
-  const mode = args['fee-mode'] ?? manifest?.feeMode ?? (manifest || level === 1 ? 'legacy' : 'stable')
+  const mode = args['fee-mode'] ?? manifest?.feeMode ?? 'legacy'
   if (mode !== 'legacy' && mode !== 'stable' && mode !== 'delayed') throw new Error('fee-mode must be legacy, stable or delayed')
-  const policy = { ...DEFAULT_POLICY, ...manifest?.policy }
+  const policy = { ...DEFAULT_POLICY, ...(level === 2 ? { maxReferenceShare: 1.2 } : {}), ...manifest?.policy }
   const overrides: string[] = []
   for (const [argument, field] of [['opening', 'openingMultiplier'], ['reference-share', 'maxReferenceShare']] as const) {
     const raw = args[argument]

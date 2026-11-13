@@ -9,7 +9,7 @@ const manifest = { worldId: 'w1', level: 2, feeMode: 'delayed', seed: 'saved-see
 
 test('Level 2 can be selected while unsupported levels are refused', () => {
   assert.equal(settings.resolveSettings({ level: '2' }).level, 2)
-  assert.equal(settings.resolveSettings({ level: '2' }).mode, 'stable')
+  assert.equal(settings.resolveSettings({ level: '2', 'fee-mode': 'stable' }).mode, 'stable')
   assert.throws(() => settings.resolveSettings({ level: '3' }), /level/i)
 })
 test('resume restores the saved level, fee mode, complete policy and seed', () => {

@@ -1,8 +1,10 @@
 # Spread by Bahn Express
 
-Dispatch agent for the Spread hackathon: run a car transport company for one simulated week in Finland. The first implemented policy targets Level 1.
+Dispatch agent for the Spread hackathon: run a car transport company for one simulated week in Finland. Supports Levels 1 and 2.
 
 **First result:** team **T2**, **#2** in the Level 1 round `Friday 20:01` when checked on 13 November 2026. Five qualifying weeks: **€20,389.15 margin**, **98.93% on time**, **1,400 orders**. [Results and evidence](docs/RESULTS.md). Live standings can change.
+
+**Optimization:** Level 1 held-out margin improved **72.92%**, from €11,468.85 to €19,832.27 over three matched weeks. Worst candidate week: 98.94% on time. [Experiment details](docs/MARGIN-OPTIMIZATION.md).
 
 ## Goal
 
@@ -39,8 +41,16 @@ npm run practice -- --seed validation-1
 # Compare configurable fees and selection on the same seed
 npm run practice -- --seed validation-1 --opening 0.85 --reference-share 0.88
 
+# Level 2, with explicit fee behavior for reproducible experiments
+npm run practice:level2 -- --seed market-example --fee-mode legacy
+npm run practice:level2 -- --seed market-example --fee-mode stable
+npm run practice:level2 -- --seed market-example --fee-mode delayed
+
 # Complete up to five secret weeks in the current Level 1 ranking round
 npm run board
+
+# Level 2 ranking round, after validation and team coordination
+npm run board:level2
 
 # Inspect active worlds and teams with completed attempts
 npm run status
@@ -51,7 +61,9 @@ npm run practice -- --world WORLD_ID
 
 Run summaries are saved as `results/WORLD_ID.json`. A rank requires all five weeks to meet the 90% delivery minimum. Ranked attempts are limited: coordinate with teammates before launching them. Interrupted worlds are preserved, and the agent never automatically deletes a ranking attempt.
 
-This is a rule-based Level 1 baseline. The custom runner refuses higher levels; the final is Level 8 and needs further work.
+Resume restores saved level, fee mode, policy, and seed. Explicit fee overrides are recorded. Without a local manifest, supply `--level`, `--opening`, `--reference-share`, and `--fee-mode` explicitly. A world and its manifest must match. Keep per-world JSON files when moving the agent to another machine.
+
+This is a rule-based Level 1/2 agent. The runner refuses Levels 3–8; the final is Level 8 and needs further work. [Level 2 measurements](docs/LEVEL-2-RESULTS.md).
 
 ## Team workflow
 

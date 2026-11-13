@@ -2,6 +2,7 @@ import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { DEFAULT_POLICY, Model, latestOpen } from '../src/policy.ts'
 import { Desk } from '../src/run.ts'
+import { resolveSettings } from '../src/settings.ts'
 import type { DeskSnapshot, DriverProfile, Order, PriceRequest, WorldMap } from '../vendor/spread/types.ts'
 
 const hours = { opens: 420, closes: 1200, weekdays: [0, 1, 2, 3, 4], saturday: null }
@@ -61,4 +62,19 @@ test('cancellation removes pending posts and prevents subsequent repricing', () 
   desk.handle({ kind: 'order_won', seq: 1, at: 505, order })
   desk.handle({ kind: 'order_cancelled', seq: 2, at: 506, orderId: r.id, gigs: [] })
   assert.equal(desk.outbox.filter(a => a.type === 'post').length, 0)
+})
+
+test('validated Level 2 defaults accept broader work and retain the winning fee behavior', () => {
+  const r = request(); r.referenceFeeCents = 11000
+  const first = resolveSettings({ level: '1' })
+  const second = resolveSettings({ level: '2' })
+  assert.equal(new Model(map, drivers, first.policy).assess(r, 490).accept, false)
+  const model = new Model(map, drivers, second.policy)
+  assert.deepEqual(model.assess(r, 490), { accept: true, reason: 'eligible', fee: 8250 })
+  const order = { ...r, option: 'same_day', priceCents: 10000, deadline: 1200, status: 'waiting', deliveredAt: [null], lastPickupAt: 1000 } as Order
+  const desk = new Desk(model, second.level, second.mode)
+  desk.now = 505; desk.requests.set(r.id, r); desk.orders.set(order.id, order); desk.post(order)
+  desk.results(desk.outbox.splice(0), [{ ok: true, id: 'g1' }])
+  desk.now = 570; desk.tick()
+  assert.deepEqual(desk.outbox, [{ type: 'reprice', gigId: 'g1', schedule: [{ at: 570, feeCents: 11550 }] }])
 })
