@@ -16,6 +16,16 @@ export const DEFAULT_POLICY: Policy = {
   minSlackMinutes: 210,
 }
 
+export function validatePolicy(policy: Policy): void {
+  for (const key of ['openingMultiplier', 'maxReferenceShare'] as const) {
+    if (!Number.isFinite(policy[key]) || policy[key] <= 0) throw new Error(`${key} must be positive and finite`)
+  }
+  for (const key of ['maxDriveMinutes', 'minLocalDrivers', 'minSlackMinutes'] as const) {
+    const minimum = key === 'minSlackMinutes' ? 0 : 1
+    if (!Number.isInteger(policy[key]) || policy[key] < minimum) throw new Error(`${key} must be an integer >= ${minimum}`)
+  }
+}
+
 /** Latest minute at which a site can receive a car before its contractual deadline. */
 export function latestOpen(stop: StopPlace, deadline: number): number {
   const end = Math.min(deadline, stop.window.to)
@@ -35,6 +45,7 @@ export class Model {
   readonly drivers: DriverProfile[]
   readonly policy: Policy
   constructor(map: WorldMap, drivers: DriverProfile[], policy = DEFAULT_POLICY) {
+    validatePolicy(policy)
     this.roads = new Map(map.roads.map(r => [`${r.from}/${r.to}`, r]))
     this.drivers = drivers
     this.policy = policy
