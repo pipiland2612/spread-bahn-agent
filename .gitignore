@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+
+node_modules/
+dist/
+build/
+coverage/
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# Local editor and agent state
+.vscode/
+.idea/
+.codex/
+.agents/
