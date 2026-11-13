@@ -53,3 +53,13 @@ test('incomplete Level 4 manifests cannot silently reset quote policy',()=>{
  assert.throws(()=>resolveSettings({}, {...manifest,quoteSettings:{mode:'options'} as any},world),/quote/i)
  assert.deepEqual(resolveSettings({'quote-mode':'options','quote-multiplier':'1.1'},manifest,world).quotes,{mode:'options',multiplier:1.1})
 })
+test('an unexpected win of a declined trade-in dispatches and recovers every leg',()=>{
+ const r=request(); r.legs.push(structuredClone(r.legs[0]!))
+ const desk=new Desk(model,4,'legacy');desk.now=900;desk.quote(r);desk.outbox=[]
+ const order={id:r.id,dealerId:r.dealerId,option:'next_day' as const,priceCents:1000100,deadline:2640,legs:r.legs,status:'waiting' as const,deliveredAt:[null,null],lastPickupAt:2300}
+ desk.handle({kind:'order_won',seq:1,at:915,order})
+ assert.deepEqual(desk.outbox.map(a=>a.type==='post'?a.stops.map(s=>s.leg):[]),[[0,0],[1,1]])
+ desk.results(desk.outbox.splice(0),[{ok:true,id:'g1'},{ok:true,id:'g2'}])
+ desk.handle({kind:'gig_expired',seq:2,at:920,gigId:'g1'} as any)
+ assert.deepEqual(desk.outbox.map(a=>a.type==='post'?a.stops.map(s=>s.leg):[]),[[0,0]])
+})

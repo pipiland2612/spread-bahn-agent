@@ -46,10 +46,10 @@ export class Desk {
     return [...new Set(action.stops.map(s => s.orderId))].reduce((sum, id) => sum + (this.requests.get(id)?.referenceFeeCents ?? 0), 0)
   }
 
-  private covered(orderId: string): boolean {
-    return [...this.gigs.values()].some(g => ['open', 'booked', 'working'].includes(g.status) && g.action.stops.some(s => s.orderId === orderId)) ||
-      this.outbox.some(a => a.type === 'post' && a.stops.some(s => s.orderId === orderId)) ||
-      this.heldPosts.some(p => p.action.stops.some(s => s.orderId === orderId))
+  private covered(orderId: string, leg = 0): boolean {
+    const matches = (action: PostAction) => action.stops.some(s => s.orderId === orderId && s.leg === leg)
+    return [...this.gigs.values()].some(g => ['open', 'booked', 'working'].includes(g.status) && matches(g.action)) ||
+      this.outbox.some(a => a.type === 'post' && matches(a)) || this.heldPosts.some(p => matches(p.action))
   }
 
   nextWake(): number { return Math.min(this.now + 30, ...this.heldPosts.map(p => p.at + 10)) }
@@ -77,7 +77,7 @@ export class Desk {
     for (const request of snapshot.openRequests) this.quote(request, true)
     for (const order of snapshot.orders) {
       // Original collection timestamps may be unavailable after a crash: publish recovery work now.
-      if (order.status === 'waiting' && !this.covered(order.id)) this.post(order, undefined, false)
+      if (order.status === 'waiting') this.post(order, undefined, false)
     }
   }
 
@@ -101,13 +101,20 @@ export class Desk {
 
   post(order: Order, multiplier?: number, collect = true) {
     const request = this.requests.get(order.id)
-    if (!request || order.status === 'cancelled' || order.deliveredAt.every(t => t !== null) || this.covered(order.id)) return
-    const action = this.model.post(order, request.referenceFeeCents, this.now, multiplier)
-    action.schedule = feeSchedule(this.level, this.mode, this.now, request.referenceFeeCents, {
-      ...this.model.policy, openingMultiplier: multiplier ?? this.model.policy.openingMultiplier,
-    })
-    if (this.level >= 3 && this.networkMode === 'chains' && collect) this.heldPosts.push({ action, at: this.now })
-    else this.outbox.push(action)
+    if (!request || order.status === 'cancelled') return
+    for (let leg = 0; leg < order.legs.length; leg++) {
+      if (order.deliveredAt[leg] !== null || this.covered(order.id, leg)) continue
+      // Deliberately losing quotes can theoretically win excluded multi-leg work.
+      // Dispatch each uncovered car separately at the full reference as a rescue.
+      const single = { ...order, legs: [order.legs[leg]!] }
+      const action = this.model.post(single, request.referenceFeeCents, this.now, multiplier)
+      action.stops = action.stops.map(stop => ({ ...stop, leg }))
+      action.schedule = feeSchedule(this.level, this.mode, this.now, request.referenceFeeCents, {
+        ...this.model.policy, openingMultiplier: multiplier ?? this.model.policy.openingMultiplier,
+      })
+      if (this.level >= 3 && this.networkMode === 'chains' && collect && order.legs.length === 1) this.heldPosts.push({ action, at: this.now })
+      else this.outbox.push(action)
+    }
   }
 
   handle(e: DeskEvent) {
