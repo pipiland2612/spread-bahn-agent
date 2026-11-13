@@ -2,6 +2,8 @@
 
 Retrieved on 13 November 2026. The organisers can update these documents; refresh before a new event phase. Where documents disagree, RULES.md takes precedence.
 
+The [repository investigation](REPOSITORY-INVESTIGATION.md) records a 14 November documentation refresh, implementation overview, test results, and leaderboard snapshot.
+
 | Source | Local copy / purpose |
 | --- | --- |
 | [Agent entry point](https://spread.bahnexpress.com/llms.txt) | Index of official resources |

@@ -34,6 +34,8 @@ npm run practice -- --seed spread-1
 
 Read [the source index](docs/SOURCES.md) for all official docs and [the strategy](docs/STRATEGY.md) for the policy, assumptions, and roadmap.
 
+See the [repository investigation](docs/REPOSITORY-INVESTIGATION.md) for the verified project overview, leaderboard snapshot, and next steps toward the final.
+
 Never commit `.env` or API keys. Teammates using the same team key share practice limits and ranking attempts.
 
 ## Run and inspect
