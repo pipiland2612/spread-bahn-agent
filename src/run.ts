@@ -5,6 +5,8 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { Client, SpreadError, Unreachable } from '../vendor/spread/spread.ts'
 import type { Action, ActionResult, DeskEvent, DeskEventKind, DeskSnapshot, Order, PostAction, PriceRequest, Score, WorldSummary } from '../vendor/spread/types.ts'
 import { DEFAULT_POLICY, Model } from './policy.ts'
+import { feeSchedule, targetMultiplier } from './fees.ts'
+import type { FeeMode } from './fees.ts'
 
 const WAKE: DeskEventKind[] = ['price_request', 'order_won', 'order_cancelled', 'gig_expired', 'deadline_close', 'no_show', 'gig_dropped', 'visit_failed']
 type TrackedGig = { action: PostAction; status: string; postedAt: number; multiplier: number }
@@ -20,7 +22,19 @@ export class Desk {
   seen = new Set<number>()
   stats = { quoted: 0, declined: {} as Record<string, number>, refused: [] as { action: string; reason: string }[] }
   model: Model
-  constructor(model: Model) { this.model = model }
+  readonly level: 1 | 2
+  readonly mode: FeeMode
+  constructor(model: Model, level: 1 | 2 = 1, mode: FeeMode = level === 1 ? 'legacy' : 'stable') {
+    this.model = model; this.level = level; this.mode = mode
+  }
+
+  private activeFee(action: PostAction): number {
+    return (action.schedule.filter(step => step.at <= this.now).at(-1) ?? action.schedule[0])!.feeCents
+  }
+
+  private discardGigActions(gigId: string) {
+    this.outbox = this.outbox.filter(action => !('gigId' in action) || action.gigId !== gigId)
+  }
 
   rebuild(snapshot: DeskSnapshot, events: DeskEvent[]) {
     this.now = snapshot.now
@@ -31,7 +45,8 @@ export class Desk {
     for (const order of snapshot.orders) this.orders.set(order.id, order)
     for (const gig of snapshot.gigs) {
       const reference = this.requests.get(gig.stops[0]!.orderId)?.referenceFeeCents ?? gig.feeCents
-      this.gigs.set(gig.id, { action: { type: 'post', stops: gig.stops, audience: gig.audience, schedule: gig.schedule }, status: gig.status, postedAt: gig.postedAt, multiplier: gig.feeCents / reference })
+      const action: PostAction = { type: 'post', stops: gig.stops, audience: gig.audience, schedule: gig.schedule }
+      this.gigs.set(gig.id, { action, status: gig.status, postedAt: gig.postedAt, multiplier: this.activeFee(action) / reference })
     }
     for (const request of snapshot.openRequests) this.quote(request, true)
     for (const order of snapshot.orders) {
@@ -55,7 +70,11 @@ export class Desk {
   post(order: Order, multiplier?: number) {
     const request = this.requests.get(order.id)
     if (!request || order.status === 'cancelled' || order.deliveredAt.every(t => t !== null)) return
-    this.outbox.push(this.model.post(order, request.referenceFeeCents, this.now, multiplier))
+    const action = this.model.post(order, request.referenceFeeCents, this.now, multiplier)
+    action.schedule = feeSchedule(this.level, this.mode, this.now, request.referenceFeeCents, {
+      ...this.model.policy, openingMultiplier: multiplier ?? this.model.policy.openingMultiplier,
+    })
+    this.outbox.push(action)
   }
 
   handle(e: DeskEvent) {
@@ -68,20 +87,24 @@ export class Desk {
       if (order) order.status = 'cancelled'
       this.outbox = this.outbox.filter(a => a.type !== 'post' || !a.stops.some(s => s.orderId === e.orderId))
       for (const cancelled of e.gigs) {
+        this.discardGigActions(cancelled.gigId)
         const gig = this.gigs.get(cancelled.gigId)
         if (gig) gig.status = 'withdrawn'
       }
     } else if (e.kind === 'gig_booked' || e.kind === 'gig_started' || e.kind === 'gig_dropped' || e.kind === 'no_show') {
       const gig = this.gigs.get(e.gigId)
       if (gig) gig.status = e.kind === 'gig_booked' ? 'booked' : e.kind === 'gig_started' ? 'working' : 'open'
+      if (e.kind === 'gig_booked' || e.kind === 'gig_started') this.discardGigActions(e.gigId)
     } else if (e.kind === 'delivered') {
       const order = this.orders.get(e.orderId)
       if (order) { order.deliveredAt[e.leg] = e.at; order.status = 'delivered' }
       const gig = this.gigs.get(e.gigId)
       if (gig) gig.status = 'done'
+      this.discardGigActions(e.gigId)
     } else if (e.kind === 'gig_expired') {
       const gig = this.gigs.get(e.gigId)
       if (gig) {
+        this.discardGigActions(e.gigId)
         gig.status = 'withdrawn'
         const order = this.orders.get(gig.action.stops[0]!.orderId)
         if (order) this.post(order, 1.8)
@@ -89,7 +112,7 @@ export class Desk {
     } else if (e.kind === 'deadline_close') {
       this.raise(e.orderId, 1.65)
     } else if (e.kind === 'visit_failed') {
-      throw new Error(`Unexpected Level 1 visit failure: ${e.orderId} ${e.reason}; resume this world with --world after inspecting its snapshot`)
+      throw new Error(`Unexpected Level ${this.level} visit failure: ${e.orderId} ${e.reason}; resume this world with --world after inspecting its snapshot`)
     }
   }
 
@@ -97,9 +120,13 @@ export class Desk {
     const request = this.requests.get(orderId)
     if (!request || this.orders.get(orderId)?.status === 'cancelled') return
     for (const [gigId, gig] of this.gigs) {
-      if (gig.status !== 'open' || gig.action.stops[0]?.orderId !== orderId || gig.multiplier >= multiplier) continue
-      gig.multiplier = multiplier
-      this.outbox.push({ type: 'reprice', gigId, schedule: [{ at: this.now, feeCents: Math.round(request.referenceFeeCents * multiplier) }] })
+      if (gig.status !== 'open' || gig.action.stops[0]?.orderId !== orderId) continue
+      const cents = Math.max(1, Math.round(request.referenceFeeCents * multiplier))
+      const pending = this.outbox.find(action => action.type === 'reprice' && action.gigId === gigId)
+      const pendingFee = pending?.type === 'reprice' ? pending.schedule[0]!.feeCents : 0
+      if (cents <= Math.max(this.activeFee(gig.action), pendingFee)) continue
+      this.discardGigActions(gigId)
+      this.outbox.push({ type: 'reprice', gigId, schedule: [{ at: this.now, feeCents: cents }] })
     }
   }
 
@@ -109,7 +136,9 @@ export class Desk {
       const order = this.orders.get(gig.action.stops[0]!.orderId)
       if (!order) continue
       const age = this.now - gig.postedAt
-      const multiplier = order.lastPickupAt - this.now <= 180 ? 1.65 : age >= 120 ? 1.2 : age >= 60 ? 1.05 : this.model.policy.openingMultiplier
+      const reference = this.requests.get(order.id)!.referenceFeeCents
+      gig.multiplier = this.activeFee(gig.action) / reference
+      const multiplier = targetMultiplier(this.mode, age, order.lastPickupAt - this.now, this.model.policy.openingMultiplier)
       this.raise(order.id, multiplier)
     }
   }
@@ -126,6 +155,12 @@ export class Desk {
       if (action.type === 'post') {
         const reference = this.requests.get(action.stops[0]!.orderId)!.referenceFeeCents
         this.gigs.set(result.id, { action, status: 'open', postedAt: this.now, multiplier: action.schedule[0]!.feeCents / reference })
+      } else if (action.type === 'reprice') {
+        const gig = this.gigs.get(action.gigId)
+        if (gig) {
+          gig.action = { ...gig.action, schedule: action.schedule }
+          gig.multiplier = this.activeFee(gig.action) / this.requests.get(gig.action.stops[0]!.orderId)!.referenceFeeCents
+        }
       }
     })
   }
