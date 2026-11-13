@@ -37,3 +37,7 @@ export function resolveSettings(args: Record<string, string | boolean | undefine
 export function assertBoardSeason(expected: number, world: WorldSummary): void {
   if (world.season !== expected || !world.boardRun) throw new Error(`Ranking season changed: expected ${expected}, world ${world.worldId} is in season ${world.season}. World is preserved.`)
 }
+
+export function targetBoardSeason(current: number, resumed?: WorldSummary): number {
+  return resumed?.boardRun && resumed.season !== null ? resumed.season : current
+}

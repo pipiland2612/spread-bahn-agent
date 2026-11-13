@@ -7,7 +7,7 @@ import type { Action, ActionResult, DeskEvent, DeskEventKind, DeskSnapshot, Orde
 import { Model } from './policy.ts'
 import { feeSchedule, targetMultiplier } from './fees.ts'
 import type { FeeMode } from './fees.ts'
-import { assertBoardSeason, resolveSettings } from './settings.ts'
+import { assertBoardSeason, resolveSettings, targetBoardSeason } from './settings.ts'
 
 const WAKE: DeskEventKind[] = ['price_request', 'order_won', 'order_cancelled', 'gig_expired', 'deadline_close', 'no_show', 'gig_dropped', 'visit_failed']
 type TrackedGig = { action: PostAction; status: string; postedAt: number; multiplier: number }
@@ -200,13 +200,14 @@ async function main() {
   const { level, mode, policy } = settings
   const before = args.board ? await client.board(level) : null
   if (args.board && !before?.current) throw new Error('No ranking round is open')
+  const expectedSeason = args.board ? targetBoardSeason(before!.current!.season, args.world ? summaries.find(w => w.worldId === args.world) : undefined) : null
   const activeBoard = summaries.find(w => w.level === level && w.boardRun && !w.ended)
   if (args.board && activeBoard && !args.world) throw new Error(`Ranking world ${activeBoard.worldId} is already active. Resume with --board --world ${activeBoard.worldId}`)
   const completed = []
   for (let index = 0; index < runs; index++) {
     const seed = runs === 1 ? settings.seed : `${settings.seed}-${index + 1}`
     const resuming = index === 0 && Boolean(args.world)
-    if (args.board && index > 0 && (await client.board(level)).current?.season !== before!.current!.season) throw new Error('Ranking season changed; stopping before creating another attempt')
+    if (args.board && index > 0 && (await client.board(level)).current?.season !== expectedSeason) throw new Error('Ranking season changed; stopping before creating another attempt')
     const world = resuming ? client.world(args.world!) : await client.create(level, args.board ? { board: true } : { seed: seed ?? undefined })
     const summary = (await client.worlds()).find(w => w.worldId === world.id)!
     if (summary.level !== level || summary.kind !== 'practice') throw new Error(`Can only play Level ${level} practice or ranking worlds`)
@@ -215,7 +216,7 @@ async function main() {
     const record = { worldId: world.id, seed: summary.boardRun ? null : seed, level, feeMode: mode, board: Boolean(summary.boardRun), season: summary.season, boardRun: summary.boardRun, policy,
       startedAt: previous?.startedAt ?? new Date().toISOString(), resumes: resuming ? [...(previous?.resumes ?? []), { at: new Date().toISOString(), overrides: settings.overrides }] : [] }
     await writeFile(resultPath, JSON.stringify(record, null, 2) + '\n')
-    if (args.board && !resuming) assertBoardSeason(before!.current!.season, summary)
+    if (args.board && !resuming) assertBoardSeason(expectedSeason!, summary)
     console.log(`${summary.boardRun ? `Ranking ${summary.boardRun}/5` : 'Practice'} world ${world.id}`)
     let desk = new Desk(new Model(map, await world.roster(), policy), level, mode)
     let snapshot = await world.snapshot()

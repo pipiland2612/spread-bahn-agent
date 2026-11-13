@@ -57,3 +57,10 @@ test('ranking guard rejects a world from another season', () => {
   assert.doesNotThrow(() => settings.assertBoardSeason(3, { ...world, season: 3, boardRun: 1 }))
   assert.throws(() => settings.assertBoardSeason(3, { ...world, season: 4, boardRun: 1 }), /season/i)
 })
+
+test('resuming an old ranked world cannot silently switch its remaining runs to a new season', () => {
+  const old = { ...world, season: 3, boardRun: 4 }
+  const expected = settings.targetBoardSeason(4, old)
+  assert.equal(expected, 3)
+  assert.throws(() => settings.assertBoardSeason(expected, { ...world, season: 4, boardRun: 1 }), /season/i)
+})
