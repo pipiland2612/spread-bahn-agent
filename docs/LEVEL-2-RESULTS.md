@@ -33,7 +33,19 @@ Aggregate margin improved **2.23%**. The first seed earned €36.79 less than ba
 
 ## Ranked round
 
-The selected policy meets the independent validation gate. Ranked results pending.
+T2 completed all five Level 2 weeks of season 3, **Friday 20:01**. The API reported **rank 2** at 23:48 Helsinki time on 13 November 2026.
+
+**Total margin: €31,612.14. On time: 99.16%, across 2,972 orders.** Every week qualified. All cars were eventually delivered, and no API actions were refused in these runs.
+
+| Ranked week | Margin | On time | Orders | World |
+| --- | ---: | ---: | ---: | --- |
+| 1 | €7,190.04 | 99.65% | 578 | `wf0c6cb50294ff1098f1e` |
+| 2 | €5,791.31 | 98.36% | 611 | `w6169611bb6c1e15d4452` |
+| 3 | €5,999.79 | 99.33% | 594 | `w5f17ceae64244b596f54` |
+| 4 | €6,003.30 | 98.85% | 608 | `waf3e7a276b1797f61e5a` |
+| 5 | €6,627.70 | 99.66% | 581 | `w268394fd574e266c052a` |
+
+The [saved leaderboard response](../results/leaderboard-level-2-season-3.json) records this check. Live rank can change. Level 1 and Level 2 use different worlds, so their ranked totals are not a causal before/after comparison.
 
 ## Implementation checks
 

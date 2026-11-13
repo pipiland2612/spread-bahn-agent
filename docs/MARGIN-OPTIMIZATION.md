@@ -36,7 +36,7 @@ The weaker candidate and one baseline holdout week exposed a refused reprice. In
 - `gig_started`, seq 26508, starts it.
 - The queued reprice survives until the next API request, which correctly refuses it because the gig is no longer open.
 
-The fix must remove queued reprices when later events in the same batch book, start, finish, expire, or cancel that gig. A regression test must reproduce the observed event ordering. Do not hide refusals or count a proposed fee as confirmed before the API accepts it.
+The implemented fix removes queued reprices when later events in the same batch book, start, finish, expire, or cancel that gig. Regression tests reproduce the observed event ordering. Proposed fees remain separate from confirmed state until API acceptance. The subsequent Level 2 comparisons, validation, and ranked weeks had zero refused actions.
 
 ## Ranking limitation
 

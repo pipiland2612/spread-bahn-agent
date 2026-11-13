@@ -6,6 +6,8 @@ Dispatch agent for the Spread hackathon: run a car transport company for one sim
 
 **Optimization:** Level 1 held-out margin improved **72.92%**, from €11,468.85 to €19,832.27 over three matched weeks. Worst candidate week: 98.94% on time. [Experiment details](docs/MARGIN-OPTIMIZATION.md).
 
+**Level 2:** **#2** in the same named round when checked at 23:48 Helsinki time. Five qualifying weeks: **€31,612.14 margin**, **99.16% on time**, **2,972 orders**. The selected policy improved matched holdout margin by **2.23%**. [Measurements and ranked evidence](docs/LEVEL-2-RESULTS.md).
+
 ## Goal
 
 Maximize gross margin while delivering at least 90% of cars by their deadlines.
