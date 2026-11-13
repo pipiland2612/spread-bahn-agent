@@ -1,0 +1,45 @@
+{
+  "worldId": "w046e76b924e2bcb405f3",
+  "seed": "resume-smoke",
+  "level": 2,
+  "feeMode": "delayed",
+  "board": false,
+  "season": null,
+  "boardRun": null,
+  "policy": {
+    "openingMultiplier": 0.82,
+    "maxReferenceShare": 1.1,
+    "maxDriveMinutes": 240,
+    "minLocalDrivers": 15,
+    "minSlackMinutes": 210
+  },
+  "startedAt": "2026-11-13T21:48:28.412Z",
+  "resumes": [
+    {
+      "at": "2026-11-13T21:49:45.601Z",
+      "overrides": []
+    }
+  ],
+  "finishedAt": "2026-11-13T21:50:28.868Z",
+  "score": {
+    "marginCents": 700523,
+    "revenueCents": 3510900,
+    "marginShare": 0.19952804124298612,
+    "wonOrders": 593,
+    "onTimeShare": 0.9915682967959528,
+    "undeliveredShare": 0,
+    "ranked": true
+  },
+  "stats": {
+    "quoted": 548,
+    "declined": {
+      "private appointment risk": 95,
+      "long route": 129,
+      "insufficient booking buffer": 28,
+      "thin margin": 80,
+      "multi-car: Level 1 supports single-car gigs": 10,
+      "sparse driver coverage": 17
+    },
+    "refused": []
+  }
+}

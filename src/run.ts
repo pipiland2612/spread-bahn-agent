@@ -8,6 +8,8 @@ import { Model } from './policy.ts'
 import { feeSchedule, targetMultiplier } from './fees.ts'
 import type { FeeMode } from './fees.ts'
 import { assertBoardSeason, resolveSettings, seedForRun, targetBoardSeason } from './settings.ts'
+import { restoreStats } from './recovery.ts'
+import type { Statistics } from './recovery.ts'
 
 const WAKE: DeskEventKind[] = ['price_request', 'order_won', 'order_cancelled', 'gig_expired', 'deadline_close', 'no_show', 'gig_dropped', 'visit_failed']
 type TrackedGig = { action: PostAction; status: string; postedAt: number; multiplier: number }
@@ -21,12 +23,13 @@ export class Desk {
   gigs = new Map<string, TrackedGig>()
   outbox: Action[] = []
   seen = new Set<number>()
-  stats = { quoted: 0, declined: {} as Record<string, number>, refused: [] as { action: string; reason: string }[] }
+  stats: Statistics
   model: Model
   readonly level: 1 | 2
   readonly mode: FeeMode
-  constructor(model: Model, level: 1 | 2 = 1, mode: FeeMode = level === 1 ? 'legacy' : 'stable') {
+  constructor(model: Model, level: 1 | 2 = 1, mode: FeeMode = level === 1 ? 'legacy' : 'stable', stats = restoreStats()) {
     this.model = model; this.level = level; this.mode = mode
+    this.stats = stats
   }
 
   private activeFee(action: PostAction): number {
@@ -213,21 +216,27 @@ async function main() {
     if (summary.level !== level || summary.kind !== 'practice') throw new Error(`Can only play Level ${level} practice or ranking worlds`)
     const resultPath = `results/${world.id}.json`
     const previous = resuming ? saved : undefined
-    const record = { worldId: world.id, seed: summary.boardRun ? null : seed, level, feeMode: mode, board: Boolean(summary.boardRun), season: summary.season, boardRun: summary.boardRun, policy,
-      startedAt: previous?.startedAt ?? new Date().toISOString(), resumes: resuming ? [...(previous?.resumes ?? []), { at: new Date().toISOString(), overrides: settings.overrides }] : [] }
-    await writeFile(resultPath, JSON.stringify(record, null, 2) + '\n')
+    const effectiveSettings = { level, feeMode: mode, seed, policy }
+    const record = { ...previous, worldId: world.id, seed: summary.boardRun ? null : seed, level, feeMode: mode, board: Boolean(summary.boardRun), season: summary.season, boardRun: summary.boardRun, policy,
+      originalSettings: previous?.originalSettings ?? (previous ? { level: previous.level, feeMode: previous.feeMode, seed: previous.seed, policy: previous.policy } : effectiveSettings),
+      startedAt: previous?.startedAt ?? new Date().toISOString(), resumes: resuming ? [...(previous?.resumes ?? []), { at: new Date().toISOString(), overrides: settings.overrides, settings: effectiveSettings }] : [] }
+    const persist = async (stats: Statistics, pendingAdvance = false) => writeFile(resultPath, JSON.stringify({ ...record, stats, pendingAdvance }, null, 2) + '\n')
+    const stats = restoreStats(resuming ? previous ?? {} : undefined)
+    await persist(stats)
     if (args.board && !resuming) assertBoardSeason(expectedSeason!, summary)
     console.log(`${summary.boardRun ? `Ranking ${summary.boardRun}/5` : 'Practice'} world ${world.id}`)
-    let desk = new Desk(new Model(map, await world.roster(), policy), level, mode)
+    let desk = new Desk(new Model(map, await world.roster(), policy), level, mode, stats)
     let snapshot = await world.snapshot()
     desk.rebuild(snapshot, await world.events())
     let previousDay = Math.floor(desk.now / 1440)
     while (desk.now < snapshot.endsAt) {
       desk.tick()
       const actions = desk.outbox.splice(0)
+      await persist(desk.stats, true)
       try {
         const step = await world.advance({ untilEvent: WAKE, max: Math.min(snapshot.endsAt, desk.now + 30), actions })
         desk.results(actions, step.results)
+        await persist(desk.stats)
         desk.now = step.now
         for (const e of step.events) desk.handle(e)
       } catch (error) {
@@ -235,7 +244,7 @@ async function main() {
         console.error(`Connection interrupted for ${world.id}; rebuilding state in 5 seconds`)
         await new Promise(resolve => setTimeout(resolve, 5000))
         snapshot = await world.snapshot()
-        desk = new Desk(desk.model, level, mode)
+        desk = new Desk(desk.model, level, mode, restoreStats({ stats: desk.stats }, true))
         desk.rebuild(snapshot, await world.events())
       }
       const day = Math.floor(desk.now / 1440)
@@ -243,9 +252,10 @@ async function main() {
     }
     const score = await world.score()
     report(`End ${world.id}`, score)
-    await writeFile(resultPath, JSON.stringify({ ...record, finishedAt: new Date().toISOString(), score, stats: desk.stats }, null, 2) + '\n')
+    await writeFile(resultPath, JSON.stringify({ ...record, pendingAdvance: false, finishedAt: new Date().toISOString(), score, stats: desk.stats }, null, 2) + '\n')
     completed.push({ worldId: world.id, season: summary.season, boardRun: summary.boardRun, score })
     if (summary.boardRun && !score.ranked) throw new Error(`Ranking run missed the delivery minimum; pausing before consuming another secret week. Inspect ${resultPath}`)
+    if (summary.boardRun && (!desk.stats.complete || desk.stats.refused.length)) throw new Error(`Ranking evidence is incomplete or contains refused actions; inspect ${resultPath} before another attempt`)
   }
   if (args.board) {
     await new Promise(resolve => setTimeout(resolve, 2200))

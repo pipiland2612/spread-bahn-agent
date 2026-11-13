@@ -51,4 +51,8 @@ The [saved leaderboard response](../results/leaderboard-level-2-season-3.json) r
 
 The local suite covers fee schedules, configuration validation, stale reprices after booking/cancellation/expiry, dropped bookings, no-shows, confirmed versus proposed fees, active schedule restoration, policy-preserving resume, and ranking-season changes. Official client and generated types remain unmodified.
 
+Independent review found that recovery could reset cumulative refusal statistics. The fix retains statistics across rebuilds and explicit resumes, checkpoints before and after advances, and marks unknown action outcomes as incomplete. Incomplete evidence or refused actions stops subsequent ranked attempts. All 37 tests pass, including three recovery regressions. Resume entries now retain effective settings and the original configuration for future auditability.
+
+A separate real pause/resume diagnostic, `w046e76b924e2bcb405f3`, resumed from minute 800 using only `--world`. It retained Level 2, delayed fees, seed `resume-smoke`, opening 0.82, and reference share 1.10. It completed with €7,005.23 margin, 99.16% on time, 593 orders, and zero refused actions. This diagnostic is excluded from all tuning and validation totals. It predates cumulative-statistics checkpointing; only its resumed-session counts were recorded.
+
 Level 2 is a practice milestone. Levels 3–8 and the live final remain outside this implementation.
