@@ -4,9 +4,10 @@ import { pathToFileURL } from 'node:url'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { Client, SpreadError, Unreachable } from '../vendor/spread/spread.ts'
 import type { Action, ActionResult, DeskEvent, DeskEventKind, DeskSnapshot, Order, PostAction, PriceRequest, Score, WorldSummary } from '../vendor/spread/types.ts'
-import { DEFAULT_POLICY, Model } from './policy.ts'
+import { Model } from './policy.ts'
 import { feeSchedule, targetMultiplier } from './fees.ts'
 import type { FeeMode } from './fees.ts'
+import { assertBoardSeason, resolveSettings } from './settings.ts'
 
 const WAKE: DeskEventKind[] = ['price_request', 'order_won', 'order_cancelled', 'gig_expired', 'deadline_close', 'no_show', 'gig_dropped', 'visit_failed']
 type TrackedGig = { action: PostAction; status: string; postedAt: number; multiplier: number }
@@ -168,43 +169,55 @@ export class Desk {
 
 async function main() {
   const { values: args } = parseArgs({ options: {
-    level: { type: 'string', default: '1' }, seed: { type: 'string', default: 'spread-1' },
+    level: { type: 'string' }, seed: { type: 'string' },
     board: { type: 'boolean' }, runs: { type: 'string', default: '1' },
     world: { type: 'string' }, status: { type: 'boolean' },
-    opening: { type: 'string' }, 'reference-share': { type: 'string' },
+    opening: { type: 'string' }, 'reference-share': { type: 'string' }, 'fee-mode': { type: 'string' },
   } })
-  const level = Number(args.level)
-  if (level !== 1) throw new Error('This baseline is validated for Level 1 only. Extend the policy before entering higher levels.')
+  let settings = resolveSettings(args)
   const runs = Number(args.runs)
   if (!Number.isInteger(runs) || runs < 1 || runs > 5) throw new Error('--runs must be 1 to 5')
   const client = new Client()
   if (args.status) {
-    const board = await client.board(1)
+    const board = await client.board(settings.level)
     console.log(JSON.stringify({ worlds: await client.worlds(), round: board.current?.name, teams: board.current?.teams.filter(t => t.played > 0) }, null, 2))
     return
   }
-  const policy = { ...DEFAULT_POLICY, ...(args.opening ? { openingMultiplier: Number(args.opening) } : {}), ...(args['reference-share'] ? { maxReferenceShare: Number(args['reference-share']) } : {}) }
-  if (!Number.isFinite(policy.openingMultiplier) || policy.openingMultiplier <= 0 || !Number.isFinite(policy.maxReferenceShare) || policy.maxReferenceShare <= 0) throw new Error('Policy multipliers must be positive finite numbers')
   await mkdir('results', { recursive: true })
   const map = await client.map()
-  const before = args.board ? await client.board(1) : null
-  if (args.board && !before?.current) throw new Error('No ranking round is open')
   const summaries: WorldSummary[] = await client.worlds()
-  const activeBoard = summaries.find(w => w.level === 1 && w.boardRun && !w.ended)
+  let saved: any
+  if (args.world) {
+    const summary = summaries.find(w => w.worldId === args.world)
+    if (!summary) throw new Error('Requested world was not found on the team key')
+    saved = await readFile(`results/${summary.worldId}.json`, 'utf8').then(text => JSON.parse(text), error => {
+      if (error.code !== 'ENOENT') throw error
+      return undefined
+    })
+    settings = resolveSettings(args, saved, summary)
+    if (args.board && !summary.boardRun) throw new Error('--board cannot resume an unranked practice world')
+  }
+  const { level, mode, policy } = settings
+  const before = args.board ? await client.board(level) : null
+  if (args.board && !before?.current) throw new Error('No ranking round is open')
+  const activeBoard = summaries.find(w => w.level === level && w.boardRun && !w.ended)
   if (args.board && activeBoard && !args.world) throw new Error(`Ranking world ${activeBoard.worldId} is already active. Resume with --board --world ${activeBoard.worldId}`)
   const completed = []
   for (let index = 0; index < runs; index++) {
-    const seed = runs === 1 ? args.seed : `${args.seed}-${index + 1}`
+    const seed = runs === 1 ? settings.seed : `${settings.seed}-${index + 1}`
     const resuming = index === 0 && Boolean(args.world)
-    const world = resuming ? client.world(args.world!) : await client.create(1, args.board ? { board: true } : { seed })
+    if (args.board && index > 0 && (await client.board(level)).current?.season !== before!.current!.season) throw new Error('Ranking season changed; stopping before creating another attempt')
+    const world = resuming ? client.world(args.world!) : await client.create(level, args.board ? { board: true } : { seed: seed ?? undefined })
     const summary = (await client.worlds()).find(w => w.worldId === world.id)!
-    if (summary.level !== 1 || summary.kind !== 'practice') throw new Error('Can only play Level 1 practice or ranking worlds')
+    if (summary.level !== level || summary.kind !== 'practice') throw new Error(`Can only play Level ${level} practice or ranking worlds`)
     const resultPath = `results/${world.id}.json`
-    const previous = resuming ? await readFile(resultPath, 'utf8').then(text => JSON.parse(text), () => null) : null
-    const record = { worldId: world.id, seed: summary.boardRun ? null : resuming ? previous?.seed ?? null : seed, level, board: Boolean(summary.boardRun), season: summary.season, boardRun: summary.boardRun, policy, startedAt: previous?.startedAt ?? new Date().toISOString() }
+    const previous = resuming ? saved : undefined
+    const record = { worldId: world.id, seed: summary.boardRun ? null : seed, level, feeMode: mode, board: Boolean(summary.boardRun), season: summary.season, boardRun: summary.boardRun, policy,
+      startedAt: previous?.startedAt ?? new Date().toISOString(), resumes: resuming ? [...(previous?.resumes ?? []), { at: new Date().toISOString(), overrides: settings.overrides }] : [] }
     await writeFile(resultPath, JSON.stringify(record, null, 2) + '\n')
+    if (args.board && !resuming) assertBoardSeason(before!.current!.season, summary)
     console.log(`${summary.boardRun ? `Ranking ${summary.boardRun}/5` : 'Practice'} world ${world.id}`)
-    let desk = new Desk(new Model(map, await world.roster(), policy))
+    let desk = new Desk(new Model(map, await world.roster(), policy), level, mode)
     let snapshot = await world.snapshot()
     desk.rebuild(snapshot, await world.events())
     let previousDay = Math.floor(desk.now / 1440)
@@ -221,7 +234,7 @@ async function main() {
         console.error(`Connection interrupted for ${world.id}; rebuilding state in 5 seconds`)
         await new Promise(resolve => setTimeout(resolve, 5000))
         snapshot = await world.snapshot()
-        desk = new Desk(desk.model)
+        desk = new Desk(desk.model, level, mode)
         desk.rebuild(snapshot, await world.events())
       }
       const day = Math.floor(desk.now / 1440)
@@ -231,16 +244,16 @@ async function main() {
     report(`End ${world.id}`, score)
     await writeFile(resultPath, JSON.stringify({ ...record, finishedAt: new Date().toISOString(), score, stats: desk.stats }, null, 2) + '\n')
     completed.push({ worldId: world.id, season: summary.season, boardRun: summary.boardRun, score })
-    if (args.board && !score.ranked) throw new Error(`Ranking run missed the delivery minimum; pausing before consuming another secret week. Inspect ${resultPath}`)
+    if (summary.boardRun && !score.ranked) throw new Error(`Ranking run missed the delivery minimum; pausing before consuming another secret week. Inspect ${resultPath}`)
   }
   if (args.board) {
     await new Promise(resolve => setTimeout(resolve, 2200))
-    const board = await client.board(1)
+    const board = await client.board(level)
     const season = [board.current, board.previous].find(s => s?.season === completed[0]?.season)
     const ownRuns = completed.filter(r => r.season === season?.season)
     const teams = season?.teams.filter(t => ownRuns.length > 0 && ownRuns.every(own => t.runs.some(r => r.run === own.boardRun && r.marginCents === own.score.marginCents && r.wonOrders === own.score.wonOrders && r.onTimeShare === own.score.onTimeShare)))
     const summary = { checkedAt: new Date().toISOString(), round: season?.name, season: season?.season, teams, completed }
-    await writeFile('results/leaderboard-level-1.json', JSON.stringify(summary, null, 2) + '\n')
+    await writeFile(`results/leaderboard-level-${level}-season-${season?.season}.json`, JSON.stringify(summary, null, 2) + '\n')
     console.log(JSON.stringify(summary, null, 2))
   }
 }
