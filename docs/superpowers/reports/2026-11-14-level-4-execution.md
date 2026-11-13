@@ -18,3 +18,9 @@ Ruling: fixes to incomplete-manifest recovery and unexpected two-leg rescue were
 ## Experiments
 
 Matched tuning and independent holdout results will be recorded in `docs/LEVEL-4-RESULTS.md` once complete. Do not treat intermediate week scores as final results. Ranking entry requires the design's promotion gates.
+
+## Network diagnostic during tuning
+
+Two 1.10× tuning worlds rebuilt after interrupted advances and ended with incomplete statistics. They were excluded by the original gate despite their higher raw aggregate margin. These historical manifests are not rewritten or reclassified.
+
+Inspection exposed an existing conservative false negative: even an advance with zero actions marked action evidence uncertain. A full CLI regression failed (`false !== true`) before the fix and passed after it. Empty advances now preserve known evidence; nonempty interrupted batches retain the incomplete-evidence guard. This also avoids writing an in-flight action marker for an empty action list. Final suite: 71 passing. Network recovery still conservatively blocks offers for the current day. Running experiments retain their loaded code version; no historical evidence is relabeled.
