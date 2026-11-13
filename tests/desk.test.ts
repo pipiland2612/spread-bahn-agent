@@ -130,3 +130,21 @@ test('booking prunes queued direct offers just like reprices', () => {
   desk.handle({ kind: 'gig_booked', seq: 51, at: 550, gigId: 'chain', driverId: 'D1', feeCents: 15000 })
   assert.deepEqual(desk.outbox, [])
 })
+
+test('chain mode collects posts for ten minutes and never duplicates held coverage', () => {
+  const { desk: old, request, order } = fixture('legacy')
+  const desk = new Desk(old.model, 3, 'legacy', undefined, 'chains')
+  desk.now = 505; desk.requests.set('R1', request); desk.orders.set('R1', order)
+  desk.post(order); desk.post(order); desk.tick()
+  assert.deepEqual(desk.outbox, [])
+  desk.now = 515; desk.tick()
+  assert.equal(desk.outbox.filter(a => a.type === 'post').length, 1)
+})
+test('cancellation clears held chain posts before they can be sent', () => {
+  const { desk: old, request, order } = fixture('legacy')
+  const desk = new Desk(old.model, 3, 'legacy', undefined, 'chains')
+  desk.now = 505; desk.requests.set('R1', request); desk.orders.set('R1', order); desk.post(order)
+  desk.handle({ kind: 'order_cancelled', seq: 99, at: 510, orderId: 'R1', gigs: [] })
+  desk.now = 515; desk.tick()
+  assert.deepEqual(desk.outbox, [])
+})

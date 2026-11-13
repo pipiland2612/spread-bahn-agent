@@ -24,6 +24,7 @@ export class Desk {
   orders = new Map<string, Order>()
   gigs = new Map<string, TrackedGig>()
   outbox: Action[] = []
+  heldPosts: { action: PostAction; at: number }[] = []
   seen = new Set<number>()
   stats: Statistics
   model: Model
@@ -43,8 +44,11 @@ export class Desk {
 
   private covered(orderId: string): boolean {
     return [...this.gigs.values()].some(g => ['open', 'booked', 'working'].includes(g.status) && g.action.stops.some(s => s.orderId === orderId)) ||
-      this.outbox.some(a => a.type === 'post' && a.stops.some(s => s.orderId === orderId))
+      this.outbox.some(a => a.type === 'post' && a.stops.some(s => s.orderId === orderId)) ||
+      this.heldPosts.some(p => p.action.stops.some(s => s.orderId === orderId))
   }
+
+  nextWake(): number { return Math.min(this.now + 30, ...this.heldPosts.map(p => p.at + 10)) }
 
   private activeFee(action: PostAction): number {
     return (action.schedule.filter(step => step.at <= this.now).at(-1) ?? action.schedule[0])!.feeCents
@@ -92,7 +96,8 @@ export class Desk {
     action.schedule = feeSchedule(this.level, this.mode, this.now, request.referenceFeeCents, {
       ...this.model.policy, openingMultiplier: multiplier ?? this.model.policy.openingMultiplier,
     })
-    this.outbox.push(action)
+    if (this.level === 3 && this.networkMode === 'chains') this.heldPosts.push({ action, at: this.now })
+    else this.outbox.push(action)
   }
 
   handle(e: DeskEvent) {
@@ -106,6 +111,7 @@ export class Desk {
       const order = this.orders.get(e.orderId)
       if (order) order.status = 'cancelled'
       this.outbox = this.outbox.filter(a => a.type !== 'post' || !a.stops.some(s => s.orderId === e.orderId))
+      this.heldPosts = this.heldPosts.filter(p => !p.action.stops.some(s => s.orderId === e.orderId))
       for (const cancelled of e.gigs) {
         this.discardGigActions(cancelled.gigId)
         const gig = this.gigs.get(cancelled.gigId)
@@ -162,6 +168,12 @@ export class Desk {
   }
 
   tick() {
+    if (this.heldPosts.some(p => this.now >= p.at + 10 || p.action.stops.some(s => (this.orders.get(s.orderId)?.lastPickupAt ?? Infinity) - this.now <= 210))) {
+      for (const pending of this.heldPosts.splice(0)) {
+        const delta = this.now - pending.at
+        this.outbox.push({ ...pending.action, schedule: pending.action.schedule.map(step => ({ ...step, at: step.at + delta })) })
+      }
+    }
     for (const gig of this.gigs.values()) {
       if (gig.status !== 'open') continue
       const order = this.orders.get(gig.action.stops[0]!.orderId)
@@ -257,7 +269,7 @@ async function main() {
     const resultPath = `results/${world.id}.json`
     const previous = resuming ? saved : undefined
     const effectiveSettings = { level, feeMode: mode, networkMode: network, seed, policy }
-    const record = { ...previous, worldId: world.id, seed: summary.boardRun ? null : seed, level, feeMode: mode, networkMode: network, board: Boolean(summary.boardRun), season: summary.season, boardRun: summary.boardRun, policy,
+    const record = { ...previous, worldId: world.id, seed: summary.boardRun ? null : seed, level, feeMode: mode, networkMode: network, networkRevision: 2, board: Boolean(summary.boardRun), season: summary.season, boardRun: summary.boardRun, policy,
       originalSettings: previous?.originalSettings ?? (previous ? { level: previous.level, feeMode: previous.feeMode, seed: previous.seed, policy: previous.policy } : effectiveSettings),
       startedAt: previous?.startedAt ?? new Date().toISOString(), resumes: resuming ? [...(previous?.resumes ?? []), { at: new Date().toISOString(), overrides: settings.overrides, settings: effectiveSettings }] : [] }
     let networkState: NetworkState | undefined = previous?.networkState
@@ -277,7 +289,7 @@ async function main() {
       const actions = desk.outbox.splice(0)
       await persist(desk.stats, true)
       try {
-        const step = await world.advance({ untilEvent: WAKE, max: Math.min(snapshot.endsAt, desk.now + 30), actions })
+        const step = await world.advance({ untilEvent: WAKE, max: Math.min(snapshot.endsAt, desk.nextWake()), actions })
         desk.results(actions, step.results)
         await persist(desk.stats)
         desk.now = step.now
