@@ -25,9 +25,9 @@ export class Desk {
   seen = new Set<number>()
   stats: Statistics
   model: Model
-  readonly level: 1 | 2
+  readonly level: 1 | 2 | 3
   readonly mode: FeeMode
-  constructor(model: Model, level: 1 | 2 = 1, mode: FeeMode = level === 1 ? 'legacy' : 'stable', stats = restoreStats()) {
+  constructor(model: Model, level: 1 | 2 | 3 = 1, mode: FeeMode = level === 1 ? 'legacy' : 'stable', stats = restoreStats()) {
     this.model = model; this.level = level; this.mode = mode
     this.stats = stats
   }
@@ -176,6 +176,7 @@ async function main() {
     board: { type: 'boolean' }, runs: { type: 'string', default: '1' },
     world: { type: 'string' }, status: { type: 'boolean' },
     opening: { type: 'string' }, 'reference-share': { type: 'string' }, 'fee-mode': { type: 'string' },
+    network: { type: 'string' },
   } })
   let settings = resolveSettings(args)
   const runs = Number(args.runs)
@@ -200,7 +201,7 @@ async function main() {
     settings = resolveSettings(args, saved, summary)
     if (args.board && !summary.boardRun) throw new Error('--board cannot resume an unranked practice world')
   }
-  const { level, mode, policy } = settings
+  const { level, mode, policy, network } = settings
   const before = args.board ? await client.board(level) : null
   if (args.board && !before?.current) throw new Error('No ranking round is open')
   const expectedSeason = args.board ? targetBoardSeason(before!.current!.season, args.world ? summaries.find(w => w.worldId === args.world) : undefined) : null
@@ -216,8 +217,8 @@ async function main() {
     if (summary.level !== level || summary.kind !== 'practice') throw new Error(`Can only play Level ${level} practice or ranking worlds`)
     const resultPath = `results/${world.id}.json`
     const previous = resuming ? saved : undefined
-    const effectiveSettings = { level, feeMode: mode, seed, policy }
-    const record = { ...previous, worldId: world.id, seed: summary.boardRun ? null : seed, level, feeMode: mode, board: Boolean(summary.boardRun), season: summary.season, boardRun: summary.boardRun, policy,
+    const effectiveSettings = { level, feeMode: mode, networkMode: network, seed, policy }
+    const record = { ...previous, worldId: world.id, seed: summary.boardRun ? null : seed, level, feeMode: mode, networkMode: network, board: Boolean(summary.boardRun), season: summary.season, boardRun: summary.boardRun, policy,
       originalSettings: previous?.originalSettings ?? (previous ? { level: previous.level, feeMode: previous.feeMode, seed: previous.seed, policy: previous.policy } : effectiveSettings),
       startedAt: previous?.startedAt ?? new Date().toISOString(), resumes: resuming ? [...(previous?.resumes ?? []), { at: new Date().toISOString(), overrides: settings.overrides, settings: effectiveSettings }] : [] }
     const persist = async (stats: Statistics, pendingAdvance = false) => writeFile(resultPath, JSON.stringify({ ...record, stats, pendingAdvance }, null, 2) + '\n')

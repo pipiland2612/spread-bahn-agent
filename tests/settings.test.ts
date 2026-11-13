@@ -10,7 +10,14 @@ const manifest = { worldId: 'w1', level: 2, feeMode: 'delayed', seed: 'saved-see
 test('Level 2 can be selected while unsupported levels are refused', () => {
   assert.equal(settings.resolveSettings({ level: '2' }).level, 2)
   assert.equal(settings.resolveSettings({ level: '2', 'fee-mode': 'stable' }).mode, 'stable')
-  assert.throws(() => settings.resolveSettings({ level: '3' }), /level/i)
+  assert.throws(() => settings.resolveSettings({ level: '4' }), /level/i)
+})
+test('Level 3 preserves explicit network mode while older manifests remain baseline', () => {
+  assert.equal(settings.resolveSettings({ level: '3', network: 'offers' }).network, 'offers')
+  assert.equal(settings.resolveSettings({}, { ...manifest, level: 3, networkMode: 'chains' }, { ...world, level: 3 }).network, 'chains')
+  assert.equal(settings.resolveSettings({}, manifest, world).network, 'baseline')
+  assert.throws(() => settings.resolveSettings({ level: '2', network: 'offers' }), /network/i)
+  assert.throws(() => settings.resolveSettings({ level: '3', network: 'unknown' }), /network/i)
 })
 test('resume restores the saved level, fee mode, complete policy and seed', () => {
   const actual = settings.resolveSettings({}, manifest, world)
