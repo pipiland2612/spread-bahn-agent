@@ -28,7 +28,7 @@ export function resolveSettings(args: Record<string, string | boolean | undefine
   if (level < 4 && (args['quote-mode'] !== undefined || args['quote-multiplier'] !== undefined)) throw new Error('Quote settings require Level 4')
   const quoteRaw = args['quote-multiplier']
   if (quoteRaw !== undefined && (typeof quoteRaw !== 'string' || !/^(?:\d+(?:\.\d*)?|\.\d+)$/.test(quoteRaw))) throw new Error('quote-multiplier must be a positive finite decimal')
-  const quotes = { mode: args['quote-mode'] ?? manifest?.quoteSettings?.mode ?? 'first', multiplier: quoteRaw === undefined ? manifest?.quoteSettings?.multiplier ?? 1 : Number(quoteRaw) } as QuoteSettings
+  const quotes = { mode: args['quote-mode'] ?? manifest?.quoteSettings?.mode ?? (level === 4 && !world ? 'options' : 'first'), multiplier: quoteRaw === undefined ? manifest?.quoteSettings?.multiplier ?? 1 : Number(quoteRaw) } as QuoteSettings
   validateQuotes(quotes)
   const policy = { ...DEFAULT_POLICY, ...(level >= 2 ? { maxReferenceShare: 1.2 } : {}), ...manifest?.policy }
   const overrides: string[] = []

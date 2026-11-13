@@ -63,3 +63,12 @@ test('an unexpected win of a declined trade-in dispatches and recovers every leg
  desk.handle({kind:'gig_expired',seq:2,at:920,gigId:'g1'} as any)
  assert.deepEqual(desk.outbox.map(a=>a.type==='post'?a.stops.map(s=>s.leg):[]),[[0,0]])
 })
+test('validated Level 4 defaults offer feasible later work while saved first mode is retained',()=>{
+ const config=resolveSettings({level:'4'})
+ const desk=new Desk(model,config.level,config.mode,undefined,config.network,undefined,config.quotes)
+ desk.now=900;desk.quote(request())
+ assert.deepEqual(desk.outbox,[{type:'quote',requestId:'r1',prices:{next_day:9001}}])
+ const world={worldId:'w4',kind:'practice',level:4,parent:null,season:null,boardRun:null,ended:false} as const
+ const saved={worldId:'w4',level:4,feeMode:'legacy',networkMode:'offers',policy:config.policy,quoteSettings:{mode:'first' as const,multiplier:1}}
+ assert.deepEqual(resolveSettings({},saved,world).quotes,{mode:'first',multiplier:1})
+})
