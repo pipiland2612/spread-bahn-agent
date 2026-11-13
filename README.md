@@ -8,7 +8,7 @@ Dispatch agent for the Spread hackathon: run a car transport company for one sim
 
 **Level 2:** **#2** in the same named round when checked at 23:48 Helsinki time. Five qualifying weeks: **€31,612.14 margin**, **99.16% on time**, **2,972 orders**. The selected policy improved matched holdout margin by **2.23%**. [Measurements and ranked evidence](docs/LEVEL-2-RESULTS.md).
 
-**Level 3:** direct offers passed validation at **€19,084.13 versus €19,032.19 (+0.27%)**, with **98.35% worst-week on time** and zero refused actions. This is a small aggregate gain; two validation weeks earned less than baseline. New Level 3 worlds use offers; chains remain experimental. [Measurements](docs/LEVEL-3-RESULTS.md).
+**Level 3:** **#1** in `Saturday 00:00` when checked at 00:18 Helsinki time on 14 November 2026: **€32,576.83 margin**, **99.03% on time**, **2,988 orders**, zero refused actions. Offers improved held-out margin by only **0.27%**; two validation weeks earned less than baseline. New Level 3 worlds use offers; chains remain experimental. [Measurements and ranked evidence](docs/LEVEL-3-RESULTS.md).
 
 ## Goal
 

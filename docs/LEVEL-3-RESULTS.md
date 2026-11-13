@@ -50,8 +50,20 @@ Independent review found two restart hazards. Startup now retains the in-flight 
 
 ## Ranked round
 
-Validation passed; the Level 3 round is now being played. Exact standings and check time will follow. Ranking worlds are never forked, revealed or deleted by this agent.
+T2 completed all five Level 3 weeks of season 4, **Saturday 00:00**. The API reported **rank 1** at **00:18 Helsinki time on 14 November 2026** (`2026-11-13T22:18:03.107Z`). Live standings can change.
+
+**Total margin: €32,576.83. On time: 99.03%, across 2,988 orders.** Every week exceeded 95% on time and qualified. All cars were eventually delivered. All 3,587 offer actions were valid; no API actions were refused, and every run has complete cumulative evidence.
+
+| Ranked week | Margin | On time | Orders | World |
+| --- | ---: | ---: | ---: | --- |
+| 1 | €6,000.37 | 99.68% | 627 | `w60b6baddc6d9d6cdf263` |
+| 2 | €5,823.35 | 99.15% | 585 | `w097db9a574686270b3ab` |
+| 3 | €6,428.43 | 98.48% | 594 | `wd8af516bbf7949d88a5f` |
+| 4 | €6,832.57 | 98.49% | 597 | `w81cecec512f6bd63f789` |
+| 5 | €7,492.11 | 99.32% | 585 | `w635a9eeadfe482cc89e0` |
+
+The [saved leaderboard response](../results/leaderboard-level-3-season-4.json) contains the server's rank and matching run fingerprints. These secret weeks differ from the prior Level 2 season, so ranked totals are not a causal measure of improvement. Ranking worlds were not forked, revealed or deleted. No unfinished practice worlds remain at handoff.
 
 ## Limits
 
-The suite covers offer budgets, restart counters, no-night sends, eligibility, multi-car completion, cancellation survivors, expiry, rebuild coverage, holding windows and policy restoration. Hidden driver locations, availability and costs remain unknown. Levels 4–8, multilingual notes, weather and the live final remain unimplemented.
+All **60 tests pass**, including the two important review findings and the full CLI resume regressions. Pure modules pass TypeScript checks; the runner passes syntax checks. The suite covers offer budgets, restart counters, no-night sends, eligibility, multi-car completion, cancellation survivors, expiry, rebuild coverage, holding windows and policy restoration. Hidden driver locations, availability and costs remain unknown. Levels 4–8, multilingual notes, weather and the live final remain unimplemented.

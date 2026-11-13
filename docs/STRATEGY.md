@@ -35,7 +35,7 @@ Practice and ranking worlds are preserved on errors. Resume a world with `--worl
 ## Team work areas
 
 - `src/policy.ts`: request selection, driver coverage, and fee model.
-- `src/fees.ts`: Level 1/2 schedules and rescue targets.
+- `src/fees.ts`: Level 1–3 schedules and rescue targets.
 - `src/network.ts`: Level 3 offer planning, persistent budgets and chain feasibility.
 - `src/settings.ts`: strict CLI policy settings, resume restoration, and season checks.
 - `src/run.ts`: event handling, batching, recovery, and result collection.
