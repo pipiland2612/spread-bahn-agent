@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=22.18.0" },
+  "engines": {
+    "node": ">=22.18.0"
+  },
   "scripts": {
     "practice:level3": "node --env-file=.env src/run.ts --level 3",
     "board:level3": "node --env-file=.env src/run.ts --level 3 --board --runs 5",
@@ -12,6 +14,8 @@
     "practice:level2": "node --env-file=.env src/run.ts --level 2",
     "board": "node --env-file=.env src/run.ts --board --runs 5",
     "board:level2": "node --env-file=.env src/run.ts --level 2 --board --runs 5",
-    "status": "node --env-file=.env src/run.ts --status"
+    "status": "node --env-file=.env src/run.ts --status",
+    "practice:level4": "node --env-file=.env src/run.ts --level 4",
+    "board:level4": "node --env-file=.env src/run.ts --level 4 --board --runs 5"
   }
 }
