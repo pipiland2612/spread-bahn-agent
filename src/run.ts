@@ -307,7 +307,7 @@ export async function main(argv = process.argv.slice(2)) {
     while (desk.now < snapshot.endsAt) {
       desk.tick()
       const actions = desk.outbox.splice(0)
-      await persist(desk.stats, true)
+      await persist(desk.stats, actions.length > 0)
       try {
         const step = await world.advance({ untilEvent: WAKE, max: Math.min(snapshot.endsAt, desk.nextWake()), actions })
         desk.results(actions, step.results)
@@ -319,7 +319,7 @@ export async function main(argv = process.argv.slice(2)) {
         console.error(`Connection interrupted for ${world.id}; rebuilding state in 5 seconds`)
         await new Promise(resolve => setTimeout(resolve, 5000))
         snapshot = await world.snapshot()
-        desk = new Desk(desk.model, level, mode, restoreStats({ stats: desk.stats }, true), network, restoreNetwork(desk.network.state, snapshot.now, true), quotes)
+        desk = new Desk(desk.model, level, mode, restoreStats({ stats: desk.stats }, actions.length > 0), network, restoreNetwork(desk.network.state, snapshot.now, true), quotes)
         networkState = desk.network.state
         desk.rebuild(snapshot, await world.events())
       }
