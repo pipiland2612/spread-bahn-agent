@@ -45,3 +45,11 @@ test('Level 4 settings preserve quote settings on resume and reject higher level
  for(const value of ['','0','1.1junk','Infinity']) assert.throws(()=>resolveSettings({level:'4','quote-multiplier':value}))
  assert.throws(()=>resolveSettings({level:'4',opening:'.75','reference-share':'1.2','fee-mode':'legacy',network:'offers'},undefined,world),/quote/)
 })
+test('incomplete Level 4 manifests cannot silently reset quote policy',()=>{
+ const config=resolveSettings({level:'4'})
+ const world={worldId:'w4',kind:'practice',level:4,parent:null,season:null,boardRun:null,ended:false} as const
+ const manifest={worldId:'w4',level:4,feeMode:'legacy',networkMode:'offers',policy:config.policy}
+ assert.throws(()=>resolveSettings({},manifest,world),/quote/i)
+ assert.throws(()=>resolveSettings({}, {...manifest,quoteSettings:{mode:'options'} as any},world),/quote/i)
+ assert.deepEqual(resolveSettings({'quote-mode':'options','quote-multiplier':'1.1'},manifest,world).quotes,{mode:'options',multiplier:1.1})
+})

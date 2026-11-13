@@ -24,7 +24,7 @@ export function resolveSettings(args: Record<string, string | boolean | undefine
   if (mode !== 'legacy' && mode !== 'stable' && mode !== 'delayed') throw new Error('fee-mode must be legacy, stable or delayed')
   const network = args.network ?? manifest?.networkMode ?? (level >= 3 && !manifest ? 'offers' : 'baseline')
   if (!['baseline', 'offers', 'chains'].includes(network as string) || (level < 3 && network !== 'baseline')) throw new Error('network must be baseline, offers or chains; offers/chains require Level 3')
-  if (world && !manifest && level === 4 && (args['quote-mode'] === undefined || args['quote-multiplier'] === undefined)) throw new Error('Missing Level 4 manifest: supply quote-mode and quote-multiplier')
+  if (world && level === 4 && ((manifest?.quoteSettings?.mode === undefined && args['quote-mode'] === undefined) || (manifest?.quoteSettings?.multiplier === undefined && args['quote-multiplier'] === undefined))) throw new Error('Missing Level 4 quote settings: supply quote-mode and quote-multiplier')
   if (level < 4 && (args['quote-mode'] !== undefined || args['quote-multiplier'] !== undefined)) throw new Error('Quote settings require Level 4')
   const quoteRaw = args['quote-multiplier']
   if (quoteRaw !== undefined && (typeof quoteRaw !== 'string' || !/^(?:\d+(?:\.\d*)?|\.\d+)$/.test(quoteRaw))) throw new Error('quote-multiplier must be a positive finite decimal')
