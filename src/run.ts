@@ -316,7 +316,7 @@ export async function main(argv = process.argv.slice(2)) {
         for (const e of step.events) desk.handle(e)
       } catch (error) {
         if (!(error instanceof Unreachable)) throw error
-        console.error(`Connection interrupted for ${world.id}; rebuilding state in 5 seconds`)
+        console.error(`Connection interrupted for ${world.id}: ${error.message}; rebuilding state in 5 seconds`)
         await new Promise(resolve => setTimeout(resolve, 5000))
         snapshot = await world.snapshot()
         desk = new Desk(desk.model, level, mode, restoreStats({ stats: desk.stats }, actions.length > 0), network, restoreNetwork(desk.network.state, snapshot.now, true), quotes)
