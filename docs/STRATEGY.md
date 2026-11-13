@@ -1,4 +1,4 @@
-# Level 1 and Level 2 strategy
+# Level 1–3 strategy
 
 ## Goal and approach
 
@@ -26,6 +26,8 @@ Fee raises can sacrifice an individual order's margin to protect the delivery mi
 
 ## Execution and recovery
 
+Level 3 adds explicit `baseline`, `offers` and `chains` modes. Offers target qualified nearby drivers, prioritize recent local viewers, respect daily and concurrent limits, and preserve confirmed public fees. Chains combine two pending eligible orders only when both same-day plans retain conservative booking slack. They wait at most ten minutes to collect a batch. Trade-ins remain excluded. [Level 3 experiments](LEVEL-3-RESULTS.md) distinguish immediate and delayed chain revisions; no chain variant is promoted without held-out gains.
+
 Use the official rate-aware client. Advance to actionable events or a 30-minute policy check, batching actions with the next advance. Deduplicate events by sequence number. Track cancellations, bookings, deliveries, and expired gigs. Save the world ID before playing it and final score afterward.
 
 Practice and ranking worlds are preserved on errors. Resume a world with `--world WORLD_ID`. Recovery restores its saved level, policy, fee mode, seed, and active schedule. It rebuilds from authoritative snapshot and history rather than assuming a failed network request had no effect. Do not run two agents on one world. The runner stops before consuming the next ranking attempt when a week misses the delivery minimum, and stops before mixing rounds.
@@ -33,7 +35,8 @@ Practice and ranking worlds are preserved on errors. Resume a world with `--worl
 ## Team work areas
 
 - `src/policy.ts`: request selection, driver coverage, and fee model.
-- `src/fees.ts`: Level 1/2 schedules and rescue targets.
+- `src/fees.ts`: Level 1–3 schedules and rescue targets.
+- `src/network.ts`: Level 3 offer planning, persistent budgets and chain feasibility.
 - `src/settings.ts`: strict CLI policy settings, resume restoration, and season checks.
 - `src/run.ts`: event handling, batching, recovery, and result collection.
 - `tests/`: calendar, feasibility, charging, replay, and cancellation checks.
@@ -44,7 +47,7 @@ Practice and ranking worlds are preserved on errors. Resume a world with `--worl
 
 1. Extend paired comparisons beyond three held-out seeds; track margin, worst on-time share, and rejected actions.
 2. Level 2: refine lane-specific fees and study drops using the completed practice worlds and official CSV exporter.
-3. Level 3: add linked routes and direct offers based on actual driver positions and future pickups.
+3. Level 3: expand paired evidence for offers; improve chains beyond the current sparse, unprofitable grouping. Study return routes from observed driver positions without assuming hidden availability.
 4. Level 4: learn quote acceptance per dealer/lane/day; support later delivery options and competitive prices.
 5. Levels 5–6: implement and measure multilingual note parsing, changes, weather, and failed-visit recovery.
 6. Levels 7–8: adapt to local driver shortages, trust, price war, and unannounced events. Validate across 10–20 weeks.

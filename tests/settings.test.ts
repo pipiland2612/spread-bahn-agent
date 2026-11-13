@@ -10,7 +10,27 @@ const manifest = { worldId: 'w1', level: 2, feeMode: 'delayed', seed: 'saved-see
 test('Level 2 can be selected while unsupported levels are refused', () => {
   assert.equal(settings.resolveSettings({ level: '2' }).level, 2)
   assert.equal(settings.resolveSettings({ level: '2', 'fee-mode': 'stable' }).mode, 'stable')
-  assert.throws(() => settings.resolveSettings({ level: '3' }), /level/i)
+  assert.throws(() => settings.resolveSettings({ level: '4' }), /level/i)
+})
+test('Level 3 preserves explicit network mode while older manifests remain baseline', () => {
+  assert.equal(settings.resolveSettings({ level: '3', network: 'offers' }).network, 'offers')
+  assert.equal(settings.resolveSettings({}, { ...manifest, level: 3, networkMode: 'chains', networkRevision: 2 }, { ...world, level: 3 }).network, 'chains')
+  assert.equal(settings.resolveSettings({}, manifest, world).network, 'baseline')
+  assert.throws(() => settings.resolveSettings({ level: '2', network: 'offers' }), /network/i)
+  assert.throws(() => settings.resolveSettings({ level: '3', network: 'unknown' }), /network/i)
+})
+test('missing Level 3 manifests require explicit network choice and old chain revisions require consent', () => {
+  const args = { level: '3', opening: '0.75', 'reference-share': '1.2', 'fee-mode': 'legacy' }
+  assert.throws(() => settings.resolveSettings(args, undefined, { ...world, level: 3 }), /network/i)
+  assert.equal(settings.resolveSettings({ ...args, network: 'offers' }, undefined, { ...world, level: 3 }).network, 'offers')
+  const old = { ...manifest, level: 3, networkMode: 'chains' }
+  assert.throws(() => settings.resolveSettings({}, old, { ...world, level: 3 }), /revision/i)
+  assert.deepEqual(settings.resolveSettings({ network: 'chains' }, old, { ...world, level: 3 }).overrides, ['network'])
+})
+test('validated Level 3 defaults enable offers only for new Level 3 worlds', () => {
+  assert.equal(settings.resolveSettings({ level: '3' }).network, 'offers')
+  assert.equal(settings.resolveSettings({ level: '2' }).network, 'baseline')
+  assert.equal(settings.resolveSettings({}, { ...manifest, level: 3 }, { ...world, level: 3 }).network, 'baseline')
 })
 test('resume restores the saved level, fee mode, complete policy and seed', () => {
   const actual = settings.resolveSettings({}, manifest, world)

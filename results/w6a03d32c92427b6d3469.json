@@ -1,0 +1,4508 @@
+{
+  "worldId": "w6a03d32c92427b6d3469",
+  "seed": "network-holdout-2",
+  "level": 3,
+  "feeMode": "legacy",
+  "networkMode": "offers",
+  "networkRevision": 2,
+  "board": false,
+  "season": null,
+  "boardRun": null,
+  "policy": {
+    "openingMultiplier": 0.75,
+    "maxReferenceShare": 1.2,
+    "maxDriveMinutes": 240,
+    "minLocalDrivers": 15,
+    "minSlackMinutes": 210
+  },
+  "originalSettings": {
+    "level": 3,
+    "feeMode": "legacy",
+    "networkMode": "offers",
+    "seed": "network-holdout-2",
+    "policy": {
+      "openingMultiplier": 0.75,
+      "maxReferenceShare": 1.2,
+      "maxDriveMinutes": 240,
+      "minLocalDrivers": 15,
+      "minSlackMinutes": 210
+    }
+  },
+  "startedAt": "2026-11-13T22:10:39.061Z",
+  "resumes": [],
+  "networkState": {
+    "attempts": [
+      {
+        "gigId": "g11",
+        "driverId": "6m0h-1926",
+        "at": 630,
+        "expiresAt": 640,
+        "closed": true
+      },
+      {
+        "gigId": "g13",
+        "driverId": "6m0h-1657",
+        "at": 630,
+        "expiresAt": 640,
+        "closed": true
+      },
+      {
+        "gigId": "g11",
+        "driverId": "6m0h-0481",
+        "at": 632,
+        "expiresAt": 642,
+        "closed": true
+      },
+      {
+        "gigId": "g13",
+        "driverId": "6m0h-0987",
+        "at": 632,
+        "expiresAt": 642,
+        "closed": true
+      },
+      {
+        "gigId": "g11",
+        "driverId": "6m0h-1657",
+        "at": 636,
+        "expiresAt": 646,
+        "closed": true
+      },
+      {
+        "gigId": "g13",
+        "driverId": "6m0h-1066",
+        "at": 636,
+        "expiresAt": 646,
+        "closed": true
+      },
+      {
+        "gigId": "g18",
+        "driverId": "6m0h-0371",
+        "at": 655,
+        "expiresAt": 665,
+        "closed": true
+      },
+      {
+        "gigId": "g18",
+        "driverId": "6m0h-0464",
+        "at": 656,
+        "expiresAt": 666,
+        "closed": true
+      },
+      {
+        "gigId": "g18",
+        "driverId": "6m0h-0424",
+        "at": 658,
+        "expiresAt": 668,
+        "closed": true
+      },
+      {
+        "gigId": "g31",
+        "driverId": "6m0h-0003",
+        "at": 709,
+        "expiresAt": 719,
+        "closed": true
+      },
+      {
+        "gigId": "g31",
+        "driverId": "6m0h-0973",
+        "at": 714,
+        "expiresAt": 724,
+        "closed": true
+      },
+      {
+        "gigId": "g34",
+        "driverId": "6m0h-0048",
+        "at": 714,
+        "expiresAt": 724,
+        "closed": true
+      },
+      {
+        "gigId": "g31",
+        "driverId": "6m0h-0987",
+        "at": 717,
+        "expiresAt": 727,
+        "closed": true
+      },
+      {
+        "gigId": "g34",
+        "driverId": "6m0h-0174",
+        "at": 717,
+        "expiresAt": 727,
+        "closed": true
+      },
+      {
+        "gigId": "g36",
+        "driverId": "6m0h-0013",
+        "at": 717,
+        "expiresAt": 727,
+        "closed": true
+      },
+      {
+        "gigId": "g34",
+        "driverId": "6m0h-0374",
+        "at": 719,
+        "expiresAt": 729,
+        "closed": true
+      },
+      {
+        "gigId": "g36",
+        "driverId": "6m0h-0051",
+        "at": 719,
+        "expiresAt": 729,
+        "closed": true
+      },
+      {
+        "gigId": "g36",
+        "driverId": "6m0h-0360",
+        "at": 720,
+        "expiresAt": 730,
+        "closed": true
+      },
+      {
+        "gigId": "g38",
+        "driverId": "6m0h-0034",
+        "at": 725,
+        "expiresAt": 735,
+        "closed": true
+      },
+      {
+        "gigId": "g26",
+        "driverId": "6m0h-0337",
+        "at": 726,
+        "expiresAt": 736,
+        "closed": true
+      },
+      {
+        "gigId": "g38",
+        "driverId": "6m0h-0052",
+        "at": 726,
+        "expiresAt": 736,
+        "closed": true
+      },
+      {
+        "gigId": "g38",
+        "driverId": "6m0h-0174",
+        "at": 728,
+        "expiresAt": 738,
+        "closed": true
+      },
+      {
+        "gigId": "g44",
+        "driverId": "6m0h-1926",
+        "at": 739,
+        "expiresAt": 749,
+        "closed": true
+      },
+      {
+        "gigId": "g44",
+        "driverId": "6m0h-1341",
+        "at": 740,
+        "expiresAt": 750,
+        "closed": true
+      },
+      {
+        "gigId": "g44",
+        "driverId": "6m0h-0569",
+        "at": 741,
+        "expiresAt": 751,
+        "closed": true
+      },
+      {
+        "gigId": "g47",
+        "driverId": "6m0h-0070",
+        "at": 752,
+        "expiresAt": 762,
+        "closed": true
+      },
+      {
+        "gigId": "g47",
+        "driverId": "6m0h-0347",
+        "at": 753,
+        "expiresAt": 763,
+        "closed": true
+      },
+      {
+        "gigId": "g47",
+        "driverId": "6m0h-0720",
+        "at": 754,
+        "expiresAt": 764,
+        "closed": true
+      },
+      {
+        "gigId": "g56",
+        "driverId": "6m0h-0359",
+        "at": 779,
+        "expiresAt": 789,
+        "closed": true
+      },
+      {
+        "gigId": "g56",
+        "driverId": "6m0h-1062",
+        "at": 782,
+        "expiresAt": 792,
+        "closed": true
+      },
+      {
+        "gigId": "g58",
+        "driverId": "6m0h-0376",
+        "at": 782,
+        "expiresAt": 792,
+        "closed": true
+      },
+      {
+        "gigId": "g56",
+        "driverId": "6m0h-1450",
+        "at": 783,
+        "expiresAt": 793,
+        "closed": true
+      },
+      {
+        "gigId": "g58",
+        "driverId": "6m0h-1637",
+        "at": 783,
+        "expiresAt": 793,
+        "closed": true
+      },
+      {
+        "gigId": "g58",
+        "driverId": "6m0h-0675",
+        "at": 784,
+        "expiresAt": 794,
+        "closed": true
+      },
+      {
+        "gigId": "g59",
+        "driverId": "6m0h-1353",
+        "at": 784,
+        "expiresAt": 794,
+        "closed": true
+      },
+      {
+        "gigId": "g62",
+        "driverId": "6m0h-2228",
+        "at": 829,
+        "expiresAt": 839,
+        "closed": true
+      },
+      {
+        "gigId": "g67",
+        "driverId": "6m0h-0474",
+        "at": 846,
+        "expiresAt": 856,
+        "closed": true
+      },
+      {
+        "gigId": "g68",
+        "driverId": "6m0h-0341",
+        "at": 853,
+        "expiresAt": 863,
+        "closed": true
+      },
+      {
+        "gigId": "g69",
+        "driverId": "6m0h-0330",
+        "at": 853,
+        "expiresAt": 863,
+        "closed": true
+      },
+      {
+        "gigId": "g68",
+        "driverId": "6m0h-1508",
+        "at": 855,
+        "expiresAt": 865,
+        "closed": true
+      },
+      {
+        "gigId": "g69",
+        "driverId": "6m0h-1308",
+        "at": 855,
+        "expiresAt": 865,
+        "closed": true
+      },
+      {
+        "gigId": "g68",
+        "driverId": "6m0h-1961",
+        "at": 857,
+        "expiresAt": 867,
+        "closed": true
+      },
+      {
+        "gigId": "g69",
+        "driverId": "6m0h-1508",
+        "at": 857,
+        "expiresAt": 867,
+        "closed": true
+      },
+      {
+        "gigId": "g78",
+        "driverId": "6m0h-0801",
+        "at": 885,
+        "expiresAt": 895,
+        "closed": true
+      },
+      {
+        "gigId": "g78",
+        "driverId": "6m0h-1045",
+        "at": 887,
+        "expiresAt": 897,
+        "closed": true
+      },
+      {
+        "gigId": "g78",
+        "driverId": "6m0h-1367",
+        "at": 888,
+        "expiresAt": 898,
+        "closed": true
+      },
+      {
+        "gigId": "g86",
+        "driverId": "6m0h-2289",
+        "at": 963,
+        "expiresAt": 973,
+        "closed": true
+      },
+      {
+        "gigId": "g87",
+        "driverId": "6m0h-2531",
+        "at": 963,
+        "expiresAt": 973,
+        "closed": true
+      },
+      {
+        "gigId": "g86",
+        "driverId": "6m0h-2531",
+        "at": 965,
+        "expiresAt": 975,
+        "closed": true
+      },
+      {
+        "gigId": "g87",
+        "driverId": "6m0h-0569",
+        "at": 965,
+        "expiresAt": 975,
+        "closed": true
+      },
+      {
+        "gigId": "g86",
+        "driverId": "6m0h-0901",
+        "at": 972,
+        "expiresAt": 982,
+        "closed": true
+      },
+      {
+        "gigId": "g87",
+        "driverId": "6m0h-0430",
+        "at": 972,
+        "expiresAt": 982,
+        "closed": true
+      },
+      {
+        "gigId": "g89",
+        "driverId": "6m0h-0895",
+        "at": 972,
+        "expiresAt": 982,
+        "closed": true
+      },
+      {
+        "gigId": "g89",
+        "driverId": "6m0h-0790",
+        "at": 978,
+        "expiresAt": 988,
+        "closed": true
+      },
+      {
+        "gigId": "g89",
+        "driverId": "6m0h-0185",
+        "at": 979,
+        "expiresAt": 989,
+        "closed": true
+      },
+      {
+        "gigId": "g95",
+        "driverId": "6m0h-1505",
+        "at": 988,
+        "expiresAt": 998,
+        "closed": true
+      },
+      {
+        "gigId": "g96",
+        "driverId": "6m0h-0051",
+        "at": 988,
+        "expiresAt": 998,
+        "closed": true
+      },
+      {
+        "gigId": "g95",
+        "driverId": "6m0h-1724",
+        "at": 991,
+        "expiresAt": 1001,
+        "closed": true
+      },
+      {
+        "gigId": "g96",
+        "driverId": "6m0h-0258",
+        "at": 991,
+        "expiresAt": 1001,
+        "closed": true
+      },
+      {
+        "gigId": "g95",
+        "driverId": "6m0h-1177",
+        "at": 994,
+        "expiresAt": 1004,
+        "closed": true
+      },
+      {
+        "gigId": "g96",
+        "driverId": "6m0h-0415",
+        "at": 994,
+        "expiresAt": 1004,
+        "closed": true
+      },
+      {
+        "gigId": "g102",
+        "driverId": "6m0h-0316",
+        "at": 1010,
+        "expiresAt": 1020,
+        "closed": true
+      },
+      {
+        "gigId": "g102",
+        "driverId": "6m0h-0987",
+        "at": 1011,
+        "expiresAt": 1021,
+        "closed": true
+      },
+      {
+        "gigId": "g104",
+        "driverId": "6m0h-1160",
+        "at": 1025,
+        "expiresAt": 1035,
+        "closed": true
+      },
+      {
+        "gigId": "g104",
+        "driverId": "6m0h-1552",
+        "at": 1026,
+        "expiresAt": 1036,
+        "closed": true
+      },
+      {
+        "gigId": "g104",
+        "driverId": "6m0h-1534",
+        "at": 1029,
+        "expiresAt": 1039,
+        "closed": true
+      },
+      {
+        "gigId": "g106",
+        "driverId": "6m0h-0034",
+        "at": 1040,
+        "expiresAt": 1050,
+        "closed": true
+      },
+      {
+        "gigId": "g106",
+        "driverId": "6m0h-0036",
+        "at": 1045,
+        "expiresAt": 1055,
+        "closed": true
+      },
+      {
+        "gigId": "g106",
+        "driverId": "6m0h-0048",
+        "at": 1046,
+        "expiresAt": 1056,
+        "closed": true
+      },
+      {
+        "gigId": "g109",
+        "driverId": "6m0h-2189",
+        "at": 1046,
+        "expiresAt": 1056,
+        "closed": true
+      },
+      {
+        "gigId": "g109",
+        "driverId": "6m0h-2529",
+        "at": 1047,
+        "expiresAt": 1057,
+        "closed": true
+      },
+      {
+        "gigId": "g109",
+        "driverId": "6m0h-0298",
+        "at": 1049,
+        "expiresAt": 1059,
+        "closed": true
+      },
+      {
+        "gigId": "g112",
+        "driverId": "6m0h-0316",
+        "at": 1057,
+        "expiresAt": 1067,
+        "closed": true
+      },
+      {
+        "gigId": "g112",
+        "driverId": "6m0h-0388",
+        "at": 1059,
+        "expiresAt": 1069,
+        "closed": true
+      },
+      {
+        "gigId": "g113",
+        "driverId": "6m0h-0034",
+        "at": 1059,
+        "expiresAt": 1069,
+        "closed": true
+      },
+      {
+        "gigId": "g112",
+        "driverId": "6m0h-0649",
+        "at": 1060,
+        "expiresAt": 1070,
+        "closed": true
+      },
+      {
+        "gigId": "g113",
+        "driverId": "6m0h-0427",
+        "at": 1060,
+        "expiresAt": 1070,
+        "closed": true
+      },
+      {
+        "gigId": "g113",
+        "driverId": "6m0h-1349",
+        "at": 1061,
+        "expiresAt": 1071,
+        "closed": true
+      },
+      {
+        "gigId": "g118",
+        "driverId": "6m0h-2175",
+        "at": 1080,
+        "expiresAt": 1090,
+        "closed": true
+      },
+      {
+        "gigId": "g118",
+        "driverId": "6m0h-2484",
+        "at": 1081,
+        "expiresAt": 1091,
+        "closed": true
+      },
+      {
+        "gigId": "g118",
+        "driverId": "6m0h-0180",
+        "at": 1082,
+        "expiresAt": 1092,
+        "closed": true
+      },
+      {
+        "gigId": "g121",
+        "driverId": "6m0h-0641",
+        "at": 1092,
+        "expiresAt": 1102,
+        "closed": true
+      },
+      {
+        "gigId": "g124",
+        "driverId": "6m0h-0477",
+        "at": 1092,
+        "expiresAt": 1102,
+        "closed": true
+      },
+      {
+        "gigId": "g121",
+        "driverId": "6m0h-0844",
+        "at": 1093,
+        "expiresAt": 1103,
+        "closed": true
+      },
+      {
+        "gigId": "g124",
+        "driverId": "6m0h-0705",
+        "at": 1093,
+        "expiresAt": 1103,
+        "closed": true
+      },
+      {
+        "gigId": "g124",
+        "driverId": "6m0h-1120",
+        "at": 1094,
+        "expiresAt": 1104,
+        "closed": true
+      },
+      {
+        "gigId": "g129",
+        "driverId": "6m0h-0187",
+        "at": 1131,
+        "expiresAt": 1141,
+        "closed": true
+      },
+      {
+        "gigId": "g130",
+        "driverId": "6m0h-0110",
+        "at": 1131,
+        "expiresAt": 1141,
+        "closed": true
+      },
+      {
+        "gigId": "g132",
+        "driverId": "6m0h-0512",
+        "at": 1131,
+        "expiresAt": 1141,
+        "closed": true
+      },
+      {
+        "gigId": "g133",
+        "driverId": "6m0h-2469",
+        "at": 1131,
+        "expiresAt": 1141,
+        "closed": true
+      },
+      {
+        "gigId": "g134",
+        "driverId": "6m0h-0492",
+        "at": 1131,
+        "expiresAt": 1141,
+        "closed": true
+      },
+      {
+        "gigId": "g137",
+        "driverId": "6m0h-0427",
+        "at": 1131,
+        "expiresAt": 1141,
+        "closed": true
+      },
+      {
+        "gigId": "g129",
+        "driverId": "6m0h-0297",
+        "at": 1137,
+        "expiresAt": 1147,
+        "closed": true
+      },
+      {
+        "gigId": "g130",
+        "driverId": "6m0h-0114",
+        "at": 1137,
+        "expiresAt": 1147,
+        "closed": true
+      },
+      {
+        "gigId": "g132",
+        "driverId": "6m0h-0603",
+        "at": 1137,
+        "expiresAt": 1147,
+        "closed": true
+      },
+      {
+        "gigId": "g133",
+        "driverId": "6m0h-0500",
+        "at": 1137,
+        "expiresAt": 1147,
+        "closed": true
+      },
+      {
+        "gigId": "g134",
+        "driverId": "6m0h-0500",
+        "at": 1137,
+        "expiresAt": 1147,
+        "closed": true
+      },
+      {
+        "gigId": "g137",
+        "driverId": "6m0h-2631",
+        "at": 1137,
+        "expiresAt": 1147,
+        "closed": true
+      },
+      {
+        "gigId": "g129",
+        "driverId": "6m0h-0880",
+        "at": 1152,
+        "expiresAt": 1162,
+        "closed": true
+      },
+      {
+        "gigId": "g130",
+        "driverId": "6m0h-1251",
+        "at": 1152,
+        "expiresAt": 1162,
+        "closed": true
+      },
+      {
+        "gigId": "g132",
+        "driverId": "6m0h-0419",
+        "at": 1152,
+        "expiresAt": 1162,
+        "closed": true
+      },
+      {
+        "gigId": "g133",
+        "driverId": "6m0h-1153",
+        "at": 1152,
+        "expiresAt": 1162,
+        "closed": true
+      },
+      {
+        "gigId": "g134",
+        "driverId": "6m0h-2170",
+        "at": 1152,
+        "expiresAt": 1162,
+        "closed": true
+      },
+      {
+        "gigId": "g137",
+        "driverId": "6m0h-1125",
+        "at": 1152,
+        "expiresAt": 1162,
+        "closed": true
+      },
+      {
+        "gigId": "g37",
+        "driverId": "6m0h-0000",
+        "at": 1232,
+        "expiresAt": 1242,
+        "closed": true
+      },
+      {
+        "gigId": "g142",
+        "driverId": "6m0h-0340",
+        "at": 2062,
+        "expiresAt": 2072,
+        "closed": true
+      },
+      {
+        "gigId": "g142",
+        "driverId": "6m0h-0365",
+        "at": 2066,
+        "expiresAt": 2076,
+        "closed": true
+      },
+      {
+        "gigId": "g142",
+        "driverId": "6m0h-0414",
+        "at": 2068,
+        "expiresAt": 2078,
+        "closed": true
+      },
+      {
+        "gigId": "g146",
+        "driverId": "6m0h-0495",
+        "at": 2076,
+        "expiresAt": 2086,
+        "closed": true
+      },
+      {
+        "gigId": "g147",
+        "driverId": "6m0h-0629",
+        "at": 2076,
+        "expiresAt": 2086,
+        "closed": true
+      },
+      {
+        "gigId": "g146",
+        "driverId": "6m0h-0716",
+        "at": 2077,
+        "expiresAt": 2087,
+        "closed": true
+      },
+      {
+        "gigId": "g147",
+        "driverId": "6m0h-0965",
+        "at": 2077,
+        "expiresAt": 2087,
+        "closed": true
+      },
+      {
+        "gigId": "g148",
+        "driverId": "6m0h-0459",
+        "at": 2077,
+        "expiresAt": 2087,
+        "closed": true
+      },
+      {
+        "gigId": "g149",
+        "driverId": "6m0h-0629",
+        "at": 2077,
+        "expiresAt": 2087,
+        "closed": true
+      },
+      {
+        "gigId": "g146",
+        "driverId": "6m0h-0930",
+        "at": 2081,
+        "expiresAt": 2091,
+        "closed": true
+      },
+      {
+        "gigId": "g147",
+        "driverId": "6m0h-2093",
+        "at": 2081,
+        "expiresAt": 2091,
+        "closed": true
+      },
+      {
+        "gigId": "g148",
+        "driverId": "6m0h-0079",
+        "at": 2081,
+        "expiresAt": 2091,
+        "closed": true
+      },
+      {
+        "gigId": "g149",
+        "driverId": "6m0h-0118",
+        "at": 2081,
+        "expiresAt": 2091,
+        "closed": true
+      },
+      {
+        "gigId": "g150",
+        "driverId": "6m0h-0629",
+        "at": 2081,
+        "expiresAt": 2091,
+        "closed": true
+      },
+      {
+        "gigId": "g148",
+        "driverId": "6m0h-0163",
+        "at": 2083,
+        "expiresAt": 2093,
+        "closed": true
+      },
+      {
+        "gigId": "g149",
+        "driverId": "6m0h-0205",
+        "at": 2083,
+        "expiresAt": 2093,
+        "closed": true
+      },
+      {
+        "gigId": "g150",
+        "driverId": "6m0h-0965",
+        "at": 2083,
+        "expiresAt": 2093,
+        "closed": true
+      },
+      {
+        "gigId": "g150",
+        "driverId": "6m0h-1224",
+        "at": 2085,
+        "expiresAt": 2095,
+        "closed": true
+      },
+      {
+        "gigId": "g151",
+        "driverId": "6m0h-0888",
+        "at": 2092,
+        "expiresAt": 2102,
+        "closed": true
+      },
+      {
+        "gigId": "g151",
+        "driverId": "6m0h-1868",
+        "at": 2096,
+        "expiresAt": 2106,
+        "closed": true
+      },
+      {
+        "gigId": "g151",
+        "driverId": "6m0h-0266",
+        "at": 2097,
+        "expiresAt": 2107,
+        "closed": true
+      },
+      {
+        "gigId": "g159",
+        "driverId": "6m0h-0043",
+        "at": 2132,
+        "expiresAt": 2142,
+        "closed": true
+      },
+      {
+        "gigId": "g160",
+        "driverId": "6m0h-0379",
+        "at": 2132,
+        "expiresAt": 2142,
+        "closed": true
+      },
+      {
+        "gigId": "g159",
+        "driverId": "6m0h-0059",
+        "at": 2134,
+        "expiresAt": 2144,
+        "closed": true
+      },
+      {
+        "gigId": "g159",
+        "driverId": "6m0h-0295",
+        "at": 2136,
+        "expiresAt": 2146,
+        "closed": true
+      },
+      {
+        "gigId": "g173",
+        "driverId": "6m0h-0598",
+        "at": 2201,
+        "expiresAt": 2211,
+        "closed": true
+      },
+      {
+        "gigId": "g173",
+        "driverId": "6m0h-1265",
+        "at": 2204,
+        "expiresAt": 2214,
+        "closed": true
+      },
+      {
+        "gigId": "g173",
+        "driverId": "6m0h-1721",
+        "at": 2205,
+        "expiresAt": 2215,
+        "closed": true
+      },
+      {
+        "gigId": "g180",
+        "driverId": "6m0h-0428",
+        "at": 2235,
+        "expiresAt": 2245,
+        "closed": true
+      },
+      {
+        "gigId": "g180",
+        "driverId": "6m0h-0119",
+        "at": 2237,
+        "expiresAt": 2247,
+        "closed": true
+      },
+      {
+        "gigId": "g180",
+        "driverId": "6m0h-0460",
+        "at": 2238,
+        "expiresAt": 2248,
+        "closed": true
+      },
+      {
+        "gigId": "g184",
+        "driverId": "6m0h-0816",
+        "at": 2250,
+        "expiresAt": 2260,
+        "closed": true
+      },
+      {
+        "gigId": "g185",
+        "driverId": "6m0h-0621",
+        "at": 2250,
+        "expiresAt": 2260,
+        "closed": true
+      },
+      {
+        "gigId": "g184",
+        "driverId": "6m0h-0095",
+        "at": 2252,
+        "expiresAt": 2262,
+        "closed": true
+      },
+      {
+        "gigId": "g185",
+        "driverId": "6m0h-0925",
+        "at": 2252,
+        "expiresAt": 2262,
+        "closed": true
+      },
+      {
+        "gigId": "g184",
+        "driverId": "6m0h-0925",
+        "at": 2253,
+        "expiresAt": 2263,
+        "closed": true
+      },
+      {
+        "gigId": "g185",
+        "driverId": "6m0h-1156",
+        "at": 2253,
+        "expiresAt": 2263,
+        "closed": true
+      },
+      {
+        "gigId": "g186",
+        "driverId": "6m0h-0816",
+        "at": 2260,
+        "expiresAt": 2270,
+        "closed": true
+      },
+      {
+        "gigId": "g186",
+        "driverId": "6m0h-0032",
+        "at": 2261,
+        "expiresAt": 2271,
+        "closed": true
+      },
+      {
+        "gigId": "g186",
+        "driverId": "6m0h-0033",
+        "at": 2262,
+        "expiresAt": 2272,
+        "closed": true
+      },
+      {
+        "gigId": "g187",
+        "driverId": "6m0h-0599",
+        "at": 2275,
+        "expiresAt": 2285,
+        "closed": true
+      },
+      {
+        "gigId": "g187",
+        "driverId": "6m0h-2148",
+        "at": 2290,
+        "expiresAt": 2300,
+        "closed": true
+      },
+      {
+        "gigId": "g188",
+        "driverId": "6m0h-0035",
+        "at": 2290,
+        "expiresAt": 2300,
+        "closed": true
+      },
+      {
+        "gigId": "g190",
+        "driverId": "6m0h-0034",
+        "at": 2290,
+        "expiresAt": 2300,
+        "closed": true
+      },
+      {
+        "gigId": "g191",
+        "driverId": "6m0h-1622",
+        "at": 2290,
+        "expiresAt": 2300,
+        "closed": true
+      },
+      {
+        "gigId": "g192",
+        "driverId": "6m0h-0258",
+        "at": 2290,
+        "expiresAt": 2300,
+        "closed": true
+      },
+      {
+        "gigId": "g195",
+        "driverId": "6m0h-0107",
+        "at": 2290,
+        "expiresAt": 2300,
+        "closed": true
+      },
+      {
+        "gigId": "g187",
+        "driverId": "6m0h-2446",
+        "at": 2291,
+        "expiresAt": 2301,
+        "closed": true
+      },
+      {
+        "gigId": "g188",
+        "driverId": "6m0h-0051",
+        "at": 2291,
+        "expiresAt": 2301,
+        "closed": true
+      },
+      {
+        "gigId": "g190",
+        "driverId": "6m0h-0038",
+        "at": 2291,
+        "expiresAt": 2301,
+        "closed": true
+      },
+      {
+        "gigId": "g191",
+        "driverId": "6m0h-1946",
+        "at": 2291,
+        "expiresAt": 2301,
+        "closed": true
+      },
+      {
+        "gigId": "g192",
+        "driverId": "6m0h-0517",
+        "at": 2291,
+        "expiresAt": 2301,
+        "closed": true
+      },
+      {
+        "gigId": "g195",
+        "driverId": "6m0h-0423",
+        "at": 2291,
+        "expiresAt": 2301,
+        "closed": true
+      },
+      {
+        "gigId": "g198",
+        "driverId": "6m0h-0569",
+        "at": 2291,
+        "expiresAt": 2301,
+        "closed": true
+      },
+      {
+        "gigId": "g188",
+        "driverId": "6m0h-0115",
+        "at": 2293,
+        "expiresAt": 2303,
+        "closed": true
+      },
+      {
+        "gigId": "g190",
+        "driverId": "6m0h-0048",
+        "at": 2293,
+        "expiresAt": 2303,
+        "closed": true
+      },
+      {
+        "gigId": "g191",
+        "driverId": "6m0h-2114",
+        "at": 2293,
+        "expiresAt": 2303,
+        "closed": true
+      },
+      {
+        "gigId": "g192",
+        "driverId": "6m0h-0858",
+        "at": 2293,
+        "expiresAt": 2303,
+        "closed": true
+      },
+      {
+        "gigId": "g195",
+        "driverId": "6m0h-0512",
+        "at": 2293,
+        "expiresAt": 2303,
+        "closed": true
+      },
+      {
+        "gigId": "g198",
+        "driverId": "6m0h-1028",
+        "at": 2293,
+        "expiresAt": 2303,
+        "closed": true
+      },
+      {
+        "gigId": "g198",
+        "driverId": "6m0h-0829",
+        "at": 2294,
+        "expiresAt": 2304,
+        "closed": true
+      },
+      {
+        "gigId": "g193",
+        "driverId": "6m0h-2517",
+        "at": 2317,
+        "expiresAt": 2327,
+        "closed": true
+      },
+      {
+        "gigId": "g202",
+        "driverId": "6m0h-1158",
+        "at": 2343,
+        "expiresAt": 2353,
+        "closed": true
+      },
+      {
+        "gigId": "g202",
+        "driverId": "6m0h-2526",
+        "at": 2346,
+        "expiresAt": 2356,
+        "closed": true
+      },
+      {
+        "gigId": "g202",
+        "driverId": "6m0h-0024",
+        "at": 2349,
+        "expiresAt": 2359,
+        "closed": true
+      },
+      {
+        "gigId": "g205",
+        "driverId": "6m0h-0569",
+        "at": 2361,
+        "expiresAt": 2371,
+        "closed": true
+      },
+      {
+        "gigId": "g205",
+        "driverId": "6m0h-1345",
+        "at": 2364,
+        "expiresAt": 2374,
+        "closed": true
+      },
+      {
+        "gigId": "g207",
+        "driverId": "6m0h-0481",
+        "at": 2364,
+        "expiresAt": 2374,
+        "closed": true
+      },
+      {
+        "gigId": "g205",
+        "driverId": "6m0h-2117",
+        "at": 2365,
+        "expiresAt": 2375,
+        "closed": true
+      },
+      {
+        "gigId": "g207",
+        "driverId": "6m0h-0022",
+        "at": 2365,
+        "expiresAt": 2375,
+        "closed": true
+      },
+      {
+        "gigId": "g207",
+        "driverId": "6m0h-1882",
+        "at": 2367,
+        "expiresAt": 2377,
+        "closed": true
+      },
+      {
+        "gigId": "g199",
+        "driverId": "6m0h-0314",
+        "at": 2395,
+        "expiresAt": 2405,
+        "closed": true
+      },
+      {
+        "gigId": "g213",
+        "driverId": "6m0h-0005",
+        "at": 2412,
+        "expiresAt": 2422,
+        "closed": true
+      },
+      {
+        "gigId": "g213",
+        "driverId": "6m0h-0513",
+        "at": 2413,
+        "expiresAt": 2423,
+        "closed": true
+      },
+      {
+        "gigId": "g213",
+        "driverId": "6m0h-0746",
+        "at": 2415,
+        "expiresAt": 2425,
+        "closed": true
+      },
+      {
+        "gigId": "g218",
+        "driverId": "6m0h-1361",
+        "at": 2415,
+        "expiresAt": 2425,
+        "closed": true
+      },
+      {
+        "gigId": "g219",
+        "driverId": "6m0h-2445",
+        "at": 2415,
+        "expiresAt": 2425,
+        "closed": true
+      },
+      {
+        "gigId": "g218",
+        "driverId": "6m0h-2531",
+        "at": 2418,
+        "expiresAt": 2428,
+        "closed": true
+      },
+      {
+        "gigId": "g219",
+        "driverId": "6m0h-2531",
+        "at": 2418,
+        "expiresAt": 2428,
+        "closed": true
+      },
+      {
+        "gigId": "g223",
+        "driverId": "6m0h-0534",
+        "at": 2418,
+        "expiresAt": 2428,
+        "closed": true
+      },
+      {
+        "gigId": "g218",
+        "driverId": "6m0h-0569",
+        "at": 2426,
+        "expiresAt": 2436,
+        "closed": true
+      },
+      {
+        "gigId": "g219",
+        "driverId": "6m0h-1665",
+        "at": 2426,
+        "expiresAt": 2436,
+        "closed": true
+      },
+      {
+        "gigId": "g223",
+        "driverId": "6m0h-0795",
+        "at": 2426,
+        "expiresAt": 2436,
+        "closed": true
+      },
+      {
+        "gigId": "g224",
+        "driverId": "6m0h-1153",
+        "at": 2426,
+        "expiresAt": 2436,
+        "closed": true
+      },
+      {
+        "gigId": "g225",
+        "driverId": "6m0h-1361",
+        "at": 2426,
+        "expiresAt": 2436,
+        "closed": true
+      },
+      {
+        "gigId": "g223",
+        "driverId": "6m0h-1062",
+        "at": 2428,
+        "expiresAt": 2438,
+        "closed": true
+      },
+      {
+        "gigId": "g224",
+        "driverId": "6m0h-1790",
+        "at": 2428,
+        "expiresAt": 2438,
+        "closed": true
+      },
+      {
+        "gigId": "g225",
+        "driverId": "6m0h-2531",
+        "at": 2428,
+        "expiresAt": 2438,
+        "closed": true
+      },
+      {
+        "gigId": "g224",
+        "driverId": "6m0h-1860",
+        "at": 2430,
+        "expiresAt": 2440,
+        "closed": true
+      },
+      {
+        "gigId": "g225",
+        "driverId": "6m0h-1783",
+        "at": 2430,
+        "expiresAt": 2440,
+        "closed": true
+      },
+      {
+        "gigId": "g238",
+        "driverId": "6m0h-0035",
+        "at": 2495,
+        "expiresAt": 2505,
+        "closed": true
+      },
+      {
+        "gigId": "g238",
+        "driverId": "6m0h-0115",
+        "at": 2498,
+        "expiresAt": 2508,
+        "closed": true
+      },
+      {
+        "gigId": "g238",
+        "driverId": "6m0h-0162",
+        "at": 2500,
+        "expiresAt": 2510,
+        "closed": true
+      },
+      {
+        "gigId": "g243",
+        "driverId": "6m0h-1241",
+        "at": 2508,
+        "expiresAt": 2518,
+        "closed": true
+      },
+      {
+        "gigId": "g245",
+        "driverId": "6m0h-1241",
+        "at": 2508,
+        "expiresAt": 2518,
+        "closed": true
+      },
+      {
+        "gigId": "g246",
+        "driverId": "6m0h-0175",
+        "at": 2508,
+        "expiresAt": 2518,
+        "closed": true
+      },
+      {
+        "gigId": "g243",
+        "driverId": "6m0h-0391",
+        "at": 2510,
+        "expiresAt": 2520,
+        "closed": true
+      },
+      {
+        "gigId": "g245",
+        "driverId": "6m0h-1567",
+        "at": 2510,
+        "expiresAt": 2520,
+        "closed": true
+      },
+      {
+        "gigId": "g246",
+        "driverId": "6m0h-0286",
+        "at": 2510,
+        "expiresAt": 2520,
+        "closed": true
+      },
+      {
+        "gigId": "g243",
+        "driverId": "6m0h-0427",
+        "at": 2511,
+        "expiresAt": 2521,
+        "closed": true
+      },
+      {
+        "gigId": "g245",
+        "driverId": "6m0h-1979",
+        "at": 2511,
+        "expiresAt": 2521,
+        "closed": true
+      },
+      {
+        "gigId": "g246",
+        "driverId": "6m0h-0460",
+        "at": 2511,
+        "expiresAt": 2521,
+        "closed": true
+      },
+      {
+        "gigId": "g249",
+        "driverId": "6m0h-0119",
+        "at": 2514,
+        "expiresAt": 2524,
+        "closed": true
+      },
+      {
+        "gigId": "g249",
+        "driverId": "6m0h-0803",
+        "at": 2518,
+        "expiresAt": 2528,
+        "closed": true
+      },
+      {
+        "gigId": "g250",
+        "driverId": "6m0h-1567",
+        "at": 2518,
+        "expiresAt": 2528,
+        "closed": true
+      },
+      {
+        "gigId": "g249",
+        "driverId": "6m0h-1076",
+        "at": 2520,
+        "expiresAt": 2530,
+        "closed": true
+      },
+      {
+        "gigId": "g250",
+        "driverId": "6m0h-0391",
+        "at": 2520,
+        "expiresAt": 2530,
+        "closed": true
+      },
+      {
+        "gigId": "g250",
+        "driverId": "6m0h-2358",
+        "at": 2523,
+        "expiresAt": 2533,
+        "closed": true
+      },
+      {
+        "gigId": "g251",
+        "driverId": "6m0h-0305",
+        "at": 2541,
+        "expiresAt": 2551,
+        "closed": true
+      },
+      {
+        "gigId": "g251",
+        "driverId": "6m0h-0427",
+        "at": 2547,
+        "expiresAt": 2557,
+        "closed": true
+      },
+      {
+        "gigId": "g251",
+        "driverId": "6m0h-1049",
+        "at": 2562,
+        "expiresAt": 2572,
+        "closed": true
+      },
+      {
+        "gigId": "g257",
+        "driverId": "6m0h-0036",
+        "at": 2562,
+        "expiresAt": 2572,
+        "closed": true
+      },
+      {
+        "gigId": "g257",
+        "driverId": "6m0h-0110",
+        "at": 2592,
+        "expiresAt": 2602,
+        "closed": true
+      },
+      {
+        "gigId": "g259",
+        "driverId": "6m0h-0350",
+        "at": 2592,
+        "expiresAt": 2602,
+        "closed": true
+      },
+      {
+        "gigId": "g257",
+        "driverId": "6m0h-0297",
+        "at": 2617,
+        "expiresAt": 2627,
+        "closed": true
+      },
+      {
+        "gigId": "g259",
+        "driverId": "6m0h-2168",
+        "at": 2617,
+        "expiresAt": 2627,
+        "closed": true
+      },
+      {
+        "gigId": "g259",
+        "driverId": "6m0h-0901",
+        "at": 2631,
+        "expiresAt": 2641,
+        "closed": true
+      },
+      {
+        "gigId": "g272",
+        "driverId": "6m0h-1361",
+        "at": 3498,
+        "expiresAt": 3508,
+        "closed": true
+      },
+      {
+        "gigId": "g272",
+        "driverId": "6m0h-2531",
+        "at": 3499,
+        "expiresAt": 3509,
+        "closed": true
+      },
+      {
+        "gigId": "g272",
+        "driverId": "6m0h-0569",
+        "at": 3500,
+        "expiresAt": 3510,
+        "closed": true
+      },
+      {
+        "gigId": "g278",
+        "driverId": "6m0h-0256",
+        "at": 3507,
+        "expiresAt": 3517,
+        "closed": true
+      },
+      {
+        "gigId": "g278",
+        "driverId": "6m0h-0379",
+        "at": 3508,
+        "expiresAt": 3518,
+        "closed": true
+      },
+      {
+        "gigId": "g278",
+        "driverId": "6m0h-0534",
+        "at": 3509,
+        "expiresAt": 3519,
+        "closed": true
+      },
+      {
+        "gigId": "g265",
+        "driverId": "6m0h-0070",
+        "at": 3510,
+        "expiresAt": 3520,
+        "closed": true
+      },
+      {
+        "gigId": "g277",
+        "driverId": "6m0h-0077",
+        "at": 3538,
+        "expiresAt": 3548,
+        "closed": true
+      },
+      {
+        "gigId": "g277",
+        "driverId": "6m0h-2657",
+        "at": 3539,
+        "expiresAt": 3549,
+        "closed": true
+      },
+      {
+        "gigId": "g292",
+        "driverId": "6m0h-0111",
+        "at": 3541,
+        "expiresAt": 3551,
+        "closed": true
+      },
+      {
+        "gigId": "g292",
+        "driverId": "6m0h-1163",
+        "at": 3543,
+        "expiresAt": 3553,
+        "closed": true
+      },
+      {
+        "gigId": "g292",
+        "driverId": "6m0h-1321",
+        "at": 3545,
+        "expiresAt": 3555,
+        "closed": true
+      },
+      {
+        "gigId": "g295",
+        "driverId": "6m0h-0289",
+        "at": 3545,
+        "expiresAt": 3555,
+        "closed": true
+      },
+      {
+        "gigId": "g295",
+        "driverId": "6m0h-1199",
+        "at": 3546,
+        "expiresAt": 3556,
+        "closed": true
+      },
+      {
+        "gigId": "g295",
+        "driverId": "6m0h-1321",
+        "at": 3550,
+        "expiresAt": 3560,
+        "closed": true
+      },
+      {
+        "gigId": "g298",
+        "driverId": "6m0h-0033",
+        "at": 3550,
+        "expiresAt": 3560,
+        "closed": true
+      },
+      {
+        "gigId": "g298",
+        "driverId": "6m0h-0471",
+        "at": 3551,
+        "expiresAt": 3561,
+        "closed": true
+      },
+      {
+        "gigId": "g298",
+        "driverId": "6m0h-0621",
+        "at": 3555,
+        "expiresAt": 3565,
+        "closed": true
+      },
+      {
+        "gigId": "g302",
+        "driverId": "6m0h-0844",
+        "at": 3555,
+        "expiresAt": 3565,
+        "closed": true
+      },
+      {
+        "gigId": "g304",
+        "driverId": "6m0h-1321",
+        "at": 3555,
+        "expiresAt": 3565,
+        "closed": true
+      },
+      {
+        "gigId": "g302",
+        "driverId": "6m0h-1361",
+        "at": 3556,
+        "expiresAt": 3566,
+        "closed": true
+      },
+      {
+        "gigId": "g304",
+        "driverId": "6m0h-2235",
+        "at": 3556,
+        "expiresAt": 3566,
+        "closed": true
+      },
+      {
+        "gigId": "g302",
+        "driverId": "6m0h-2488",
+        "at": 3557,
+        "expiresAt": 3567,
+        "closed": true
+      },
+      {
+        "gigId": "g304",
+        "driverId": "6m0h-2251",
+        "at": 3557,
+        "expiresAt": 3567,
+        "closed": true
+      },
+      {
+        "gigId": "g305",
+        "driverId": "6m0h-0588",
+        "at": 3565,
+        "expiresAt": 3575,
+        "closed": true
+      },
+      {
+        "gigId": "g308",
+        "driverId": "6m0h-0569",
+        "at": 3565,
+        "expiresAt": 3575,
+        "closed": true
+      },
+      {
+        "gigId": "g309",
+        "driverId": "6m0h-1361",
+        "at": 3565,
+        "expiresAt": 3575,
+        "closed": true
+      },
+      {
+        "gigId": "g305",
+        "driverId": "6m0h-2488",
+        "at": 3566,
+        "expiresAt": 3576,
+        "closed": true
+      },
+      {
+        "gigId": "g308",
+        "driverId": "6m0h-1657",
+        "at": 3566,
+        "expiresAt": 3576,
+        "closed": true
+      },
+      {
+        "gigId": "g309",
+        "driverId": "6m0h-0569",
+        "at": 3566,
+        "expiresAt": 3576,
+        "closed": true
+      },
+      {
+        "gigId": "g311",
+        "driverId": "6m0h-0588",
+        "at": 3566,
+        "expiresAt": 3576,
+        "closed": true
+      },
+      {
+        "gigId": "g305",
+        "driverId": "6m0h-1567",
+        "at": 3567,
+        "expiresAt": 3577,
+        "closed": true
+      },
+      {
+        "gigId": "g308",
+        "driverId": "6m0h-0481",
+        "at": 3567,
+        "expiresAt": 3577,
+        "closed": true
+      },
+      {
+        "gigId": "g309",
+        "driverId": "6m0h-1567",
+        "at": 3567,
+        "expiresAt": 3577,
+        "closed": true
+      },
+      {
+        "gigId": "g311",
+        "driverId": "6m0h-0641",
+        "at": 3567,
+        "expiresAt": 3577,
+        "closed": true
+      },
+      {
+        "gigId": "g311",
+        "driverId": "6m0h-0391",
+        "at": 3568,
+        "expiresAt": 3578,
+        "closed": true
+      },
+      {
+        "gigId": "g314",
+        "driverId": "6m0h-1567",
+        "at": 3570,
+        "expiresAt": 3580,
+        "closed": true
+      },
+      {
+        "gigId": "g314",
+        "driverId": "6m0h-1794",
+        "at": 3571,
+        "expiresAt": 3581,
+        "closed": true
+      },
+      {
+        "gigId": "g315",
+        "driverId": "6m0h-0428",
+        "at": 3571,
+        "expiresAt": 3581,
+        "closed": true
+      },
+      {
+        "gigId": "g314",
+        "driverId": "6m0h-1840",
+        "at": 3572,
+        "expiresAt": 3582,
+        "closed": true
+      },
+      {
+        "gigId": "g315",
+        "driverId": "6m0h-0476",
+        "at": 3572,
+        "expiresAt": 3582,
+        "closed": true
+      },
+      {
+        "gigId": "g315",
+        "driverId": "6m0h-0585",
+        "at": 3573,
+        "expiresAt": 3583,
+        "closed": true
+      },
+      {
+        "gigId": "g293",
+        "driverId": "6m0h-0043",
+        "at": 3577,
+        "expiresAt": 3587,
+        "closed": true
+      },
+      {
+        "gigId": "g317",
+        "driverId": "6m0h-0430",
+        "at": 3577,
+        "expiresAt": 3587,
+        "closed": true
+      },
+      {
+        "gigId": "g317",
+        "driverId": "6m0h-0036",
+        "at": 3581,
+        "expiresAt": 3591,
+        "closed": true
+      },
+      {
+        "gigId": "g317",
+        "driverId": "6m0h-1090",
+        "at": 3582,
+        "expiresAt": 3592,
+        "closed": true
+      },
+      {
+        "gigId": "g319",
+        "driverId": "6m0h-0597",
+        "at": 3586,
+        "expiresAt": 3596,
+        "closed": true
+      },
+      {
+        "gigId": "g319",
+        "driverId": "6m0h-2207",
+        "at": 3587,
+        "expiresAt": 3597,
+        "closed": true
+      },
+      {
+        "gigId": "g319",
+        "driverId": "6m0h-1643",
+        "at": 3588,
+        "expiresAt": 3598,
+        "closed": true
+      },
+      {
+        "gigId": "g320",
+        "driverId": "6m0h-1643",
+        "at": 3588,
+        "expiresAt": 3598,
+        "closed": true
+      },
+      {
+        "gigId": "g320",
+        "driverId": "6m0h-0500",
+        "at": 3589,
+        "expiresAt": 3599,
+        "closed": true
+      },
+      {
+        "gigId": "g320",
+        "driverId": "6m0h-2170",
+        "at": 3590,
+        "expiresAt": 3600,
+        "closed": true
+      },
+      {
+        "gigId": "g322",
+        "driverId": "6m0h-2189",
+        "at": 3600,
+        "expiresAt": 3610,
+        "closed": true
+      },
+      {
+        "gigId": "g322",
+        "driverId": "6m0h-2488",
+        "at": 3602,
+        "expiresAt": 3612,
+        "closed": true
+      },
+      {
+        "gigId": "g323",
+        "driverId": "6m0h-0901",
+        "at": 3602,
+        "expiresAt": 3612,
+        "closed": true
+      },
+      {
+        "gigId": "g322",
+        "driverId": "6m0h-0901",
+        "at": 3603,
+        "expiresAt": 3613,
+        "closed": true
+      },
+      {
+        "gigId": "g323",
+        "driverId": "6m0h-1885",
+        "at": 3603,
+        "expiresAt": 3613,
+        "closed": true
+      },
+      {
+        "gigId": "g323",
+        "driverId": "6m0h-0997",
+        "at": 3606,
+        "expiresAt": 3616,
+        "closed": true
+      },
+      {
+        "gigId": "g324",
+        "driverId": "6m0h-0588",
+        "at": 3612,
+        "expiresAt": 3622,
+        "closed": true
+      },
+      {
+        "gigId": "g324",
+        "driverId": "6m0h-2529",
+        "at": 3613,
+        "expiresAt": 3623,
+        "closed": true
+      },
+      {
+        "gigId": "g325",
+        "driverId": "6m0h-2289",
+        "at": 3613,
+        "expiresAt": 3623,
+        "closed": true
+      },
+      {
+        "gigId": "g324",
+        "driverId": "6m0h-1783",
+        "at": 3615,
+        "expiresAt": 3625,
+        "closed": true
+      },
+      {
+        "gigId": "g325",
+        "driverId": "6m0h-2478",
+        "at": 3615,
+        "expiresAt": 3625,
+        "closed": true
+      },
+      {
+        "gigId": "g326",
+        "driverId": "6m0h-0359",
+        "at": 3615,
+        "expiresAt": 3625,
+        "closed": true
+      },
+      {
+        "gigId": "g325",
+        "driverId": "6m0h-0350",
+        "at": 3617,
+        "expiresAt": 3627,
+        "closed": true
+      },
+      {
+        "gigId": "g326",
+        "driverId": "6m0h-0654",
+        "at": 3617,
+        "expiresAt": 3627,
+        "closed": true
+      },
+      {
+        "gigId": "g328",
+        "driverId": "6m0h-2066",
+        "at": 3617,
+        "expiresAt": 3627,
+        "closed": true
+      },
+      {
+        "gigId": "g326",
+        "driverId": "6m0h-1002",
+        "at": 3618,
+        "expiresAt": 3628,
+        "closed": true
+      },
+      {
+        "gigId": "g328",
+        "driverId": "6m0h-0172",
+        "at": 3618,
+        "expiresAt": 3628,
+        "closed": true
+      },
+      {
+        "gigId": "g328",
+        "driverId": "6m0h-1180",
+        "at": 3621,
+        "expiresAt": 3631,
+        "closed": true
+      },
+      {
+        "gigId": "g333",
+        "driverId": "6m0h-0172",
+        "at": 3630,
+        "expiresAt": 3640,
+        "closed": true
+      },
+      {
+        "gigId": "g333",
+        "driverId": "6m0h-0324",
+        "at": 3631,
+        "expiresAt": 3641,
+        "closed": true
+      },
+      {
+        "gigId": "g333",
+        "driverId": "6m0h-0571",
+        "at": 3632,
+        "expiresAt": 3642,
+        "closed": true
+      },
+      {
+        "gigId": "g342",
+        "driverId": "6m0h-0013",
+        "at": 3658,
+        "expiresAt": 3668,
+        "closed": true
+      },
+      {
+        "gigId": "g342",
+        "driverId": "6m0h-0175",
+        "at": 3661,
+        "expiresAt": 3671,
+        "closed": true
+      },
+      {
+        "gigId": "g344",
+        "driverId": "6m0h-0110",
+        "at": 3661,
+        "expiresAt": 3671,
+        "closed": true
+      },
+      {
+        "gigId": "g342",
+        "driverId": "6m0h-0254",
+        "at": 3662,
+        "expiresAt": 3672,
+        "closed": true
+      },
+      {
+        "gigId": "g344",
+        "driverId": "6m0h-0559",
+        "at": 3662,
+        "expiresAt": 3672,
+        "closed": true
+      },
+      {
+        "gigId": "g344",
+        "driverId": "6m0h-1090",
+        "at": 3665,
+        "expiresAt": 3675,
+        "closed": true
+      },
+      {
+        "gigId": "g345",
+        "driverId": "6m0h-0963",
+        "at": 3676,
+        "expiresAt": 3686,
+        "closed": true
+      },
+      {
+        "gigId": "g346",
+        "driverId": "6m0h-0388",
+        "at": 3689,
+        "expiresAt": 3699,
+        "closed": true
+      },
+      {
+        "gigId": "g346",
+        "driverId": "6m0h-0504",
+        "at": 3695,
+        "expiresAt": 3705,
+        "closed": true
+      },
+      {
+        "gigId": "g346",
+        "driverId": "6m0h-0865",
+        "at": 3704,
+        "expiresAt": 3714,
+        "closed": true
+      },
+      {
+        "gigId": "g347",
+        "driverId": "6m0h-1674",
+        "at": 3707,
+        "expiresAt": 3717,
+        "closed": true
+      },
+      {
+        "gigId": "g347",
+        "driverId": "6m0h-1366",
+        "at": 3713,
+        "expiresAt": 3723,
+        "closed": true
+      },
+      {
+        "gigId": "g348",
+        "driverId": "6m0h-1147",
+        "at": 3713,
+        "expiresAt": 3723,
+        "closed": true
+      },
+      {
+        "gigId": "g347",
+        "driverId": "6m0h-1147",
+        "at": 3714,
+        "expiresAt": 3724,
+        "closed": true
+      },
+      {
+        "gigId": "g348",
+        "driverId": "6m0h-1585",
+        "at": 3714,
+        "expiresAt": 3724,
+        "closed": true
+      },
+      {
+        "gigId": "g348",
+        "driverId": "6m0h-1620",
+        "at": 3718,
+        "expiresAt": 3728,
+        "closed": true
+      },
+      {
+        "gigId": "g350",
+        "driverId": "6m0h-0705",
+        "at": 3736,
+        "expiresAt": 3746,
+        "closed": true
+      },
+      {
+        "gigId": "g350",
+        "driverId": "6m0h-0821",
+        "at": 3744,
+        "expiresAt": 3754,
+        "closed": true
+      },
+      {
+        "gigId": "g350",
+        "driverId": "6m0h-0017",
+        "at": 3748,
+        "expiresAt": 3758,
+        "closed": true
+      },
+      {
+        "gigId": "g351",
+        "driverId": "6m0h-0652",
+        "at": 3757,
+        "expiresAt": 3767,
+        "closed": true
+      },
+      {
+        "gigId": "g351",
+        "driverId": "6m0h-2157",
+        "at": 3759,
+        "expiresAt": 3769,
+        "closed": true
+      },
+      {
+        "gigId": "g351",
+        "driverId": "6m0h-0729",
+        "at": 3763,
+        "expiresAt": 3773,
+        "closed": true
+      },
+      {
+        "gigId": "g356",
+        "driverId": "6m0h-0162",
+        "at": 3793,
+        "expiresAt": 3803,
+        "closed": true
+      },
+      {
+        "gigId": "g357",
+        "driverId": "6m0h-1125",
+        "at": 3793,
+        "expiresAt": 3803,
+        "closed": true
+      },
+      {
+        "gigId": "g356",
+        "driverId": "6m0h-0484",
+        "at": 3794,
+        "expiresAt": 3804,
+        "closed": true
+      },
+      {
+        "gigId": "g357",
+        "driverId": "6m0h-2254",
+        "at": 3794,
+        "expiresAt": 3804,
+        "closed": true
+      },
+      {
+        "gigId": "g357",
+        "driverId": "6m0h-0481",
+        "at": 3799,
+        "expiresAt": 3809,
+        "closed": true
+      },
+      {
+        "gigId": "g363",
+        "driverId": "6m0h-0016",
+        "at": 3847,
+        "expiresAt": 3857,
+        "closed": true
+      },
+      {
+        "gigId": "g363",
+        "driverId": "6m0h-0172",
+        "at": 3854,
+        "expiresAt": 3864,
+        "closed": true
+      },
+      {
+        "gigId": "g364",
+        "driverId": "6m0h-0382",
+        "at": 3854,
+        "expiresAt": 3864,
+        "closed": true
+      },
+      {
+        "gigId": "g363",
+        "driverId": "6m0h-1296",
+        "at": 3858,
+        "expiresAt": 3868,
+        "closed": true
+      },
+      {
+        "gigId": "g364",
+        "driverId": "6m0h-0610",
+        "at": 3858,
+        "expiresAt": 3868,
+        "closed": true
+      },
+      {
+        "gigId": "g364",
+        "driverId": "6m0h-0664",
+        "at": 3860,
+        "expiresAt": 3870,
+        "closed": true
+      },
+      {
+        "gigId": "g367",
+        "driverId": "6m0h-2032",
+        "at": 3886,
+        "expiresAt": 3896,
+        "closed": true
+      },
+      {
+        "gigId": "g367",
+        "driverId": "6m0h-2477",
+        "at": 3887,
+        "expiresAt": 3897,
+        "closed": true
+      },
+      {
+        "gigId": "g367",
+        "driverId": "6m0h-1922",
+        "at": 3888,
+        "expiresAt": 3898,
+        "closed": true
+      },
+      {
+        "gigId": "g368",
+        "driverId": "6m0h-1724",
+        "at": 3888,
+        "expiresAt": 3898,
+        "closed": true
+      },
+      {
+        "gigId": "g368",
+        "driverId": "6m0h-0440",
+        "at": 3889,
+        "expiresAt": 3899,
+        "closed": true
+      },
+      {
+        "gigId": "g368",
+        "driverId": "6m0h-1301",
+        "at": 3912,
+        "expiresAt": 3922,
+        "closed": true
+      },
+      {
+        "gigId": "g370",
+        "driverId": "6m0h-2363",
+        "at": 3912,
+        "expiresAt": 3922,
+        "closed": true
+      },
+      {
+        "gigId": "g371",
+        "driverId": "6m0h-0873",
+        "at": 3912,
+        "expiresAt": 3922,
+        "closed": true
+      },
+      {
+        "gigId": "g370",
+        "driverId": "6m0h-2154",
+        "at": 3914,
+        "expiresAt": 3924,
+        "closed": true
+      },
+      {
+        "gigId": "g371",
+        "driverId": "6m0h-0118",
+        "at": 3914,
+        "expiresAt": 3924,
+        "closed": true
+      },
+      {
+        "gigId": "g370",
+        "driverId": "6m0h-1288",
+        "at": 3918,
+        "expiresAt": 3928,
+        "closed": true
+      },
+      {
+        "gigId": "g371",
+        "driverId": "6m0h-0205",
+        "at": 3918,
+        "expiresAt": 3928,
+        "closed": true
+      },
+      {
+        "gigId": "g372",
+        "driverId": "6m0h-1353",
+        "at": 3918,
+        "expiresAt": 3928,
+        "closed": true
+      },
+      {
+        "gigId": "g373",
+        "driverId": "6m0h-1923",
+        "at": 3918,
+        "expiresAt": 3928,
+        "closed": true
+      },
+      {
+        "gigId": "g372",
+        "driverId": "6m0h-1257",
+        "at": 3919,
+        "expiresAt": 3929,
+        "closed": true
+      },
+      {
+        "gigId": "g373",
+        "driverId": "6m0h-2221",
+        "at": 3919,
+        "expiresAt": 3929,
+        "closed": true
+      },
+      {
+        "gigId": "g372",
+        "driverId": "6m0h-0077",
+        "at": 3921,
+        "expiresAt": 3931,
+        "closed": true
+      },
+      {
+        "gigId": "g373",
+        "driverId": "6m0h-2351",
+        "at": 3921,
+        "expiresAt": 3931,
+        "closed": true
+      },
+      {
+        "gigId": "g376",
+        "driverId": "6m0h-0546",
+        "at": 3967,
+        "expiresAt": 3977,
+        "closed": true
+      },
+      {
+        "gigId": "g376",
+        "driverId": "6m0h-0244",
+        "at": 3968,
+        "expiresAt": 3978,
+        "closed": true
+      },
+      {
+        "gigId": "g377",
+        "driverId": "6m0h-0320",
+        "at": 3968,
+        "expiresAt": 3978,
+        "closed": true
+      },
+      {
+        "gigId": "g376",
+        "driverId": "6m0h-0453",
+        "at": 3970,
+        "expiresAt": 3980,
+        "closed": true
+      },
+      {
+        "gigId": "g377",
+        "driverId": "6m0h-0423",
+        "at": 3970,
+        "expiresAt": 3980,
+        "closed": true
+      },
+      {
+        "gigId": "g377",
+        "driverId": "6m0h-1090",
+        "at": 3971,
+        "expiresAt": 3981,
+        "closed": true
+      },
+      {
+        "gigId": "g378",
+        "driverId": "6m0h-0316",
+        "at": 3982,
+        "expiresAt": 3992,
+        "closed": true
+      },
+      {
+        "gigId": "g379",
+        "driverId": "6m0h-0086",
+        "at": 3982,
+        "expiresAt": 3992,
+        "closed": true
+      },
+      {
+        "gigId": "g378",
+        "driverId": "6m0h-0374",
+        "at": 3985,
+        "expiresAt": 3995,
+        "closed": true
+      },
+      {
+        "gigId": "g379",
+        "driverId": "6m0h-0343",
+        "at": 3985,
+        "expiresAt": 3995,
+        "closed": true
+      },
+      {
+        "gigId": "g378",
+        "driverId": "6m0h-0282",
+        "at": 4015,
+        "expiresAt": 4025,
+        "closed": true
+      },
+      {
+        "gigId": "g379",
+        "driverId": "6m0h-0282",
+        "at": 4015,
+        "expiresAt": 4025,
+        "closed": true
+      },
+      {
+        "gigId": "g380",
+        "driverId": "6m0h-0043",
+        "at": 4015,
+        "expiresAt": 4025,
+        "closed": true
+      },
+      {
+        "gigId": "g382",
+        "driverId": "6m0h-0423",
+        "at": 4015,
+        "expiresAt": 4025,
+        "closed": true
+      },
+      {
+        "gigId": "g383",
+        "driverId": "6m0h-0016",
+        "at": 4015,
+        "expiresAt": 4025,
+        "closed": true
+      },
+      {
+        "gigId": "g384",
+        "driverId": "6m0h-1527",
+        "at": 4015,
+        "expiresAt": 4025,
+        "closed": true
+      },
+      {
+        "gigId": "g380",
+        "driverId": "6m0h-0059",
+        "at": 4045,
+        "expiresAt": 4055,
+        "closed": true
+      },
+      {
+        "gigId": "g384",
+        "driverId": "6m0h-0058",
+        "at": 4045,
+        "expiresAt": 4055,
+        "closed": true
+      },
+      {
+        "gigId": "g380",
+        "driverId": "6m0h-0295",
+        "at": 4075,
+        "expiresAt": 4085,
+        "closed": true
+      },
+      {
+        "gigId": "g384",
+        "driverId": "6m0h-0072",
+        "at": 4075,
+        "expiresAt": 4085,
+        "closed": true
+      },
+      {
+        "gigId": "g334",
+        "driverId": "6m0h-0050",
+        "at": 4804,
+        "expiresAt": 4814,
+        "closed": true
+      },
+      {
+        "gigId": "g381",
+        "driverId": "6m0h-1552",
+        "at": 4874,
+        "expiresAt": 4884,
+        "closed": true
+      },
+      {
+        "gigId": "g387",
+        "driverId": "6m0h-1894",
+        "at": 4891,
+        "expiresAt": 4901,
+        "closed": true
+      },
+      {
+        "gigId": "g388",
+        "driverId": "6m0h-1894",
+        "at": 4891,
+        "expiresAt": 4901,
+        "closed": true
+      },
+      {
+        "gigId": "g387",
+        "driverId": "6m0h-0070",
+        "at": 4892,
+        "expiresAt": 4902,
+        "closed": true
+      },
+      {
+        "gigId": "g388",
+        "driverId": "6m0h-1643",
+        "at": 4892,
+        "expiresAt": 4902,
+        "closed": true
+      },
+      {
+        "gigId": "g387",
+        "driverId": "6m0h-0085",
+        "at": 4893,
+        "expiresAt": 4903,
+        "closed": true
+      },
+      {
+        "gigId": "g388",
+        "driverId": "6m0h-0070",
+        "at": 4893,
+        "expiresAt": 4903,
+        "closed": true
+      },
+      {
+        "gigId": "g390",
+        "driverId": "6m0h-1098",
+        "at": 4914,
+        "expiresAt": 4924,
+        "closed": true
+      },
+      {
+        "gigId": "g390",
+        "driverId": "6m0h-2503",
+        "at": 4915,
+        "expiresAt": 4925,
+        "closed": true
+      },
+      {
+        "gigId": "g390",
+        "driverId": "6m0h-0017",
+        "at": 4916,
+        "expiresAt": 4926,
+        "closed": true
+      },
+      {
+        "gigId": "g391",
+        "driverId": "6m0h-0034",
+        "at": 4927,
+        "expiresAt": 4937,
+        "closed": true
+      },
+      {
+        "gigId": "g391",
+        "driverId": "6m0h-0868",
+        "at": 4929,
+        "expiresAt": 4939,
+        "closed": true
+      },
+      {
+        "gigId": "g392",
+        "driverId": "6m0h-0973",
+        "at": 4929,
+        "expiresAt": 4939,
+        "closed": true
+      },
+      {
+        "gigId": "g391",
+        "driverId": "6m0h-0987",
+        "at": 4931,
+        "expiresAt": 4941,
+        "closed": true
+      },
+      {
+        "gigId": "g392",
+        "driverId": "6m0h-0987",
+        "at": 4931,
+        "expiresAt": 4941,
+        "closed": true
+      },
+      {
+        "gigId": "g393",
+        "driverId": "6m0h-0003",
+        "at": 4931,
+        "expiresAt": 4941,
+        "closed": true
+      },
+      {
+        "gigId": "g392",
+        "driverId": "6m0h-1349",
+        "at": 4932,
+        "expiresAt": 4942,
+        "closed": true
+      },
+      {
+        "gigId": "g393",
+        "driverId": "6m0h-0034",
+        "at": 4932,
+        "expiresAt": 4942,
+        "closed": true
+      },
+      {
+        "gigId": "g393",
+        "driverId": "6m0h-0949",
+        "at": 4933,
+        "expiresAt": 4943,
+        "closed": true
+      },
+      {
+        "gigId": "g404",
+        "driverId": "6m0h-0086",
+        "at": 4969,
+        "expiresAt": 4979,
+        "closed": true
+      },
+      {
+        "gigId": "g404",
+        "driverId": "6m0h-0052",
+        "at": 4972,
+        "expiresAt": 4982,
+        "closed": true
+      },
+      {
+        "gigId": "g404",
+        "driverId": "6m0h-0296",
+        "at": 4975,
+        "expiresAt": 4985,
+        "closed": true
+      },
+      {
+        "gigId": "g405",
+        "driverId": "6m0h-0114",
+        "at": 4975,
+        "expiresAt": 4985,
+        "closed": true
+      },
+      {
+        "gigId": "g405",
+        "driverId": "6m0h-0138",
+        "at": 4976,
+        "expiresAt": 4986,
+        "closed": true
+      },
+      {
+        "gigId": "g405",
+        "driverId": "6m0h-0320",
+        "at": 4977,
+        "expiresAt": 4987,
+        "closed": true
+      },
+      {
+        "gigId": "g410",
+        "driverId": "6m0h-0123",
+        "at": 4996,
+        "expiresAt": 5006,
+        "closed": true
+      },
+      {
+        "gigId": "g410",
+        "driverId": "6m0h-0626",
+        "at": 4998,
+        "expiresAt": 5008,
+        "closed": true
+      },
+      {
+        "gigId": "g410",
+        "driverId": "6m0h-0949",
+        "at": 5001,
+        "expiresAt": 5011,
+        "closed": true
+      },
+      {
+        "gigId": "g415",
+        "driverId": "6m0h-0997",
+        "at": 5010,
+        "expiresAt": 5020,
+        "closed": true
+      },
+      {
+        "gigId": "g415",
+        "driverId": "6m0h-1361",
+        "at": 5011,
+        "expiresAt": 5021,
+        "closed": true
+      },
+      {
+        "gigId": "g415",
+        "driverId": "6m0h-0569",
+        "at": 5013,
+        "expiresAt": 5023,
+        "closed": true
+      },
+      {
+        "gigId": "g417",
+        "driverId": "6m0h-0162",
+        "at": 5022,
+        "expiresAt": 5032,
+        "closed": true
+      },
+      {
+        "gigId": "g418",
+        "driverId": "6m0h-1027",
+        "at": 5022,
+        "expiresAt": 5032,
+        "closed": true
+      },
+      {
+        "gigId": "g417",
+        "driverId": "6m0h-0235",
+        "at": 5025,
+        "expiresAt": 5035,
+        "closed": true
+      },
+      {
+        "gigId": "g418",
+        "driverId": "6m0h-1266",
+        "at": 5025,
+        "expiresAt": 5035,
+        "closed": true
+      },
+      {
+        "gigId": "g417",
+        "driverId": "6m0h-0254",
+        "at": 5026,
+        "expiresAt": 5036,
+        "closed": true
+      },
+      {
+        "gigId": "g418",
+        "driverId": "6m0h-0032",
+        "at": 5026,
+        "expiresAt": 5036,
+        "closed": true
+      },
+      {
+        "gigId": "g421",
+        "driverId": "6m0h-0038",
+        "at": 5031,
+        "expiresAt": 5041,
+        "closed": true
+      },
+      {
+        "gigId": "g421",
+        "driverId": "6m0h-0305",
+        "at": 5039,
+        "expiresAt": 5049,
+        "closed": true
+      },
+      {
+        "gigId": "g421",
+        "driverId": "6m0h-0868",
+        "at": 5042,
+        "expiresAt": 5052,
+        "closed": true
+      },
+      {
+        "gigId": "g424",
+        "driverId": "6m0h-0716",
+        "at": 5042,
+        "expiresAt": 5052,
+        "closed": true
+      },
+      {
+        "gigId": "g424",
+        "driverId": "6m0h-1878",
+        "at": 5043,
+        "expiresAt": 5053,
+        "closed": true
+      },
+      {
+        "gigId": "g424",
+        "driverId": "6m0h-1922",
+        "at": 5044,
+        "expiresAt": 5054,
+        "closed": true
+      },
+      {
+        "gigId": "g425",
+        "driverId": "6m0h-1605",
+        "at": 5054,
+        "expiresAt": 5064,
+        "closed": true
+      },
+      {
+        "gigId": "g425",
+        "driverId": "6m0h-2531",
+        "at": 5057,
+        "expiresAt": 5067,
+        "closed": true
+      },
+      {
+        "gigId": "g427",
+        "driverId": "6m0h-2289",
+        "at": 5057,
+        "expiresAt": 5067,
+        "closed": true
+      },
+      {
+        "gigId": "g425",
+        "driverId": "6m0h-0297",
+        "at": 5058,
+        "expiresAt": 5068,
+        "closed": true
+      },
+      {
+        "gigId": "g427",
+        "driverId": "6m0h-2531",
+        "at": 5058,
+        "expiresAt": 5068,
+        "closed": true
+      },
+      {
+        "gigId": "g428",
+        "driverId": "6m0h-0003",
+        "at": 5058,
+        "expiresAt": 5068,
+        "closed": true
+      },
+      {
+        "gigId": "g428",
+        "driverId": "6m0h-0048",
+        "at": 5061,
+        "expiresAt": 5071,
+        "closed": true
+      },
+      {
+        "gigId": "g428",
+        "driverId": "6m0h-0772",
+        "at": 5062,
+        "expiresAt": 5072,
+        "closed": true
+      },
+      {
+        "gigId": "g434",
+        "driverId": "6m0h-0048",
+        "at": 5088,
+        "expiresAt": 5098,
+        "closed": true
+      },
+      {
+        "gigId": "g434",
+        "driverId": "6m0h-0172",
+        "at": 5089,
+        "expiresAt": 5099,
+        "closed": true
+      },
+      {
+        "gigId": "g434",
+        "driverId": "6m0h-0419",
+        "at": 5091,
+        "expiresAt": 5101,
+        "closed": true
+      },
+      {
+        "gigId": "g435",
+        "driverId": "6m0h-0282",
+        "at": 5091,
+        "expiresAt": 5101,
+        "closed": true
+      },
+      {
+        "gigId": "g435",
+        "driverId": "6m0h-0305",
+        "at": 5094,
+        "expiresAt": 5104,
+        "closed": true
+      },
+      {
+        "gigId": "g436",
+        "driverId": "6m0h-0086",
+        "at": 5094,
+        "expiresAt": 5104,
+        "closed": true
+      },
+      {
+        "gigId": "g435",
+        "driverId": "6m0h-1690",
+        "at": 5095,
+        "expiresAt": 5105,
+        "closed": true
+      },
+      {
+        "gigId": "g436",
+        "driverId": "6m0h-0305",
+        "at": 5095,
+        "expiresAt": 5105,
+        "closed": true
+      },
+      {
+        "gigId": "g436",
+        "driverId": "6m0h-0343",
+        "at": 5097,
+        "expiresAt": 5107,
+        "closed": true
+      },
+      {
+        "gigId": "g441",
+        "driverId": "6m0h-0282",
+        "at": 5113,
+        "expiresAt": 5123,
+        "closed": true
+      },
+      {
+        "gigId": "g441",
+        "driverId": "6m0h-0701",
+        "at": 5117,
+        "expiresAt": 5127,
+        "closed": true
+      },
+      {
+        "gigId": "g442",
+        "driverId": "6m0h-0266",
+        "at": 5117,
+        "expiresAt": 5127,
+        "closed": true
+      },
+      {
+        "gigId": "g441",
+        "driverId": "6m0h-0987",
+        "at": 5118,
+        "expiresAt": 5128,
+        "closed": true
+      },
+      {
+        "gigId": "g442",
+        "driverId": "6m0h-0268",
+        "at": 5118,
+        "expiresAt": 5128,
+        "closed": true
+      },
+      {
+        "gigId": "g444",
+        "driverId": "6m0h-0038",
+        "at": 5118,
+        "expiresAt": 5128,
+        "closed": true
+      },
+      {
+        "gigId": "g442",
+        "driverId": "6m0h-0381",
+        "at": 5121,
+        "expiresAt": 5131,
+        "closed": true
+      },
+      {
+        "gigId": "g444",
+        "driverId": "6m0h-0048",
+        "at": 5121,
+        "expiresAt": 5131,
+        "closed": true
+      },
+      {
+        "gigId": "g444",
+        "driverId": "6m0h-0423",
+        "at": 5123,
+        "expiresAt": 5133,
+        "closed": true
+      },
+      {
+        "gigId": "g446",
+        "driverId": "6m0h-0170",
+        "at": 5128,
+        "expiresAt": 5138,
+        "closed": true
+      },
+      {
+        "gigId": "g447",
+        "driverId": "6m0h-0286",
+        "at": 5128,
+        "expiresAt": 5138,
+        "closed": true
+      },
+      {
+        "gigId": "g446",
+        "driverId": "6m0h-0364",
+        "at": 5132,
+        "expiresAt": 5142,
+        "closed": true
+      },
+      {
+        "gigId": "g447",
+        "driverId": "6m0h-0635",
+        "at": 5132,
+        "expiresAt": 5142,
+        "closed": true
+      },
+      {
+        "gigId": "g449",
+        "driverId": "6m0h-0036",
+        "at": 5132,
+        "expiresAt": 5142,
+        "closed": true
+      },
+      {
+        "gigId": "g450",
+        "driverId": "6m0h-0353",
+        "at": 5132,
+        "expiresAt": 5142,
+        "closed": true
+      },
+      {
+        "gigId": "g446",
+        "driverId": "6m0h-0447",
+        "at": 5134,
+        "expiresAt": 5144,
+        "closed": true
+      },
+      {
+        "gigId": "g447",
+        "driverId": "6m0h-0688",
+        "at": 5134,
+        "expiresAt": 5144,
+        "closed": true
+      },
+      {
+        "gigId": "g449",
+        "driverId": "6m0h-0831",
+        "at": 5134,
+        "expiresAt": 5144,
+        "closed": true
+      },
+      {
+        "gigId": "g450",
+        "driverId": "6m0h-1400",
+        "at": 5134,
+        "expiresAt": 5144,
+        "closed": true
+      },
+      {
+        "gigId": "g196",
+        "driverId": "6m0h-0058",
+        "at": 5140,
+        "expiresAt": 5150,
+        "closed": true
+      },
+      {
+        "gigId": "g449",
+        "driverId": "6m0h-2470",
+        "at": 5140,
+        "expiresAt": 5150,
+        "closed": true
+      },
+      {
+        "gigId": "g450",
+        "driverId": "6m0h-1609",
+        "at": 5140,
+        "expiresAt": 5150,
+        "closed": true
+      },
+      {
+        "gigId": "g452",
+        "driverId": "6m0h-0374",
+        "at": 5147,
+        "expiresAt": 5157,
+        "closed": true
+      },
+      {
+        "gigId": "g453",
+        "driverId": "6m0h-0038",
+        "at": 5147,
+        "expiresAt": 5157,
+        "closed": true
+      },
+      {
+        "gigId": "g452",
+        "driverId": "6m0h-0187",
+        "at": 5150,
+        "expiresAt": 5160,
+        "closed": true
+      },
+      {
+        "gigId": "g453",
+        "driverId": "6m0h-0342",
+        "at": 5150,
+        "expiresAt": 5160,
+        "closed": true
+      },
+      {
+        "gigId": "g452",
+        "driverId": "6m0h-0571",
+        "at": 5151,
+        "expiresAt": 5161,
+        "closed": true
+      },
+      {
+        "gigId": "g453",
+        "driverId": "6m0h-0374",
+        "at": 5151,
+        "expiresAt": 5161,
+        "closed": true
+      },
+      {
+        "gigId": "g455",
+        "driverId": "6m0h-0114",
+        "at": 5151,
+        "expiresAt": 5161,
+        "closed": true
+      },
+      {
+        "gigId": "g455",
+        "driverId": "6m0h-0419",
+        "at": 5152,
+        "expiresAt": 5162,
+        "closed": true
+      },
+      {
+        "gigId": "g455",
+        "driverId": "6m0h-0712",
+        "at": 5157,
+        "expiresAt": 5167,
+        "closed": true
+      },
+      {
+        "gigId": "g458",
+        "driverId": "6m0h-0588",
+        "at": 5202,
+        "expiresAt": 5212,
+        "closed": true
+      },
+      {
+        "gigId": "g458",
+        "driverId": "6m0h-0114",
+        "at": 5203,
+        "expiresAt": 5213,
+        "closed": true
+      },
+      {
+        "gigId": "g458",
+        "driverId": "6m0h-0753",
+        "at": 5217,
+        "expiresAt": 5227,
+        "closed": true
+      },
+      {
+        "gigId": "g460",
+        "driverId": "6m0h-0009",
+        "at": 5217,
+        "expiresAt": 5227,
+        "closed": true
+      },
+      {
+        "gigId": "g461",
+        "driverId": "6m0h-0110",
+        "at": 5217,
+        "expiresAt": 5227,
+        "closed": true
+      },
+      {
+        "gigId": "g462",
+        "driverId": "6m0h-0110",
+        "at": 5217,
+        "expiresAt": 5227,
+        "closed": true
+      },
+      {
+        "gigId": "g460",
+        "driverId": "6m0h-1280",
+        "at": 5218,
+        "expiresAt": 5228,
+        "closed": true
+      },
+      {
+        "gigId": "g461",
+        "driverId": "6m0h-0868",
+        "at": 5218,
+        "expiresAt": 5228,
+        "closed": true
+      },
+      {
+        "gigId": "g462",
+        "driverId": "6m0h-1090",
+        "at": 5218,
+        "expiresAt": 5228,
+        "closed": true
+      },
+      {
+        "gigId": "g460",
+        "driverId": "6m0h-0761",
+        "at": 5219,
+        "expiresAt": 5229,
+        "closed": true
+      },
+      {
+        "gigId": "g461",
+        "driverId": "6m0h-1296",
+        "at": 5219,
+        "expiresAt": 5229,
+        "closed": true
+      },
+      {
+        "gigId": "g462",
+        "driverId": "6m0h-1134",
+        "at": 5219,
+        "expiresAt": 5229,
+        "closed": true
+      },
+      {
+        "gigId": "g451",
+        "driverId": "6m0h-0000",
+        "at": 5221,
+        "expiresAt": 5231,
+        "closed": true
+      },
+      {
+        "gigId": "g468",
+        "driverId": "6m0h-0190",
+        "at": 5230,
+        "expiresAt": 5240,
+        "closed": true
+      },
+      {
+        "gigId": "g468",
+        "driverId": "6m0h-0198",
+        "at": 5233,
+        "expiresAt": 5243,
+        "closed": true
+      },
+      {
+        "gigId": "g468",
+        "driverId": "6m0h-0415",
+        "at": 5234,
+        "expiresAt": 5244,
+        "closed": true
+      },
+      {
+        "gigId": "g464",
+        "driverId": "6m0h-0022",
+        "at": 5248,
+        "expiresAt": 5258,
+        "closed": true
+      },
+      {
+        "gigId": "g471",
+        "driverId": "6m0h-2313",
+        "at": 5265,
+        "expiresAt": 5275,
+        "closed": true
+      },
+      {
+        "gigId": "g471",
+        "driverId": "6m0h-2272",
+        "at": 5267,
+        "expiresAt": 5277,
+        "closed": true
+      },
+      {
+        "gigId": "g471",
+        "driverId": "6m0h-0077",
+        "at": 5270,
+        "expiresAt": 5280,
+        "closed": true
+      },
+      {
+        "gigId": "g472",
+        "driverId": "6m0h-0569",
+        "at": 5276,
+        "expiresAt": 5286,
+        "closed": true
+      },
+      {
+        "gigId": "g475",
+        "driverId": "6m0h-0382",
+        "at": 5300,
+        "expiresAt": 5310,
+        "closed": true
+      },
+      {
+        "gigId": "g475",
+        "driverId": "6m0h-0610",
+        "at": 5302,
+        "expiresAt": 5312,
+        "closed": true
+      },
+      {
+        "gigId": "g475",
+        "driverId": "6m0h-0664",
+        "at": 5304,
+        "expiresAt": 5314,
+        "closed": true
+      },
+      {
+        "gigId": "g479",
+        "driverId": "6m0h-0043",
+        "at": 5319,
+        "expiresAt": 5329,
+        "closed": true
+      },
+      {
+        "gigId": "g479",
+        "driverId": "6m0h-0059",
+        "at": 5321,
+        "expiresAt": 5331,
+        "closed": true
+      },
+      {
+        "gigId": "g479",
+        "driverId": "6m0h-0295",
+        "at": 5322,
+        "expiresAt": 5332,
+        "closed": true
+      },
+      {
+        "gigId": "g354",
+        "driverId": "6m0h-0032",
+        "at": 5326,
+        "expiresAt": 5336,
+        "closed": true
+      },
+      {
+        "gigId": "g454",
+        "driverId": "6m0h-0077",
+        "at": 5329,
+        "expiresAt": 5339,
+        "closed": true
+      },
+      {
+        "gigId": "g481",
+        "driverId": "6m0h-0033",
+        "at": 5338,
+        "expiresAt": 5348,
+        "closed": true
+      },
+      {
+        "gigId": "g481",
+        "driverId": "6m0h-0440",
+        "at": 5339,
+        "expiresAt": 5349,
+        "closed": true
+      },
+      {
+        "gigId": "g481",
+        "driverId": "6m0h-0925",
+        "at": 5342,
+        "expiresAt": 5352,
+        "closed": true
+      },
+      {
+        "gigId": "g486",
+        "driverId": "6m0h-0497",
+        "at": 5352,
+        "expiresAt": 5362,
+        "closed": true
+      },
+      {
+        "gigId": "g486",
+        "driverId": "6m0h-1999",
+        "at": 5353,
+        "expiresAt": 5363,
+        "closed": true
+      },
+      {
+        "gigId": "g486",
+        "driverId": "6m0h-0500",
+        "at": 5354,
+        "expiresAt": 5364,
+        "closed": true
+      },
+      {
+        "gigId": "g490",
+        "driverId": "6m0h-0504",
+        "at": 5356,
+        "expiresAt": 5366,
+        "closed": true
+      },
+      {
+        "gigId": "g490",
+        "driverId": "6m0h-1349",
+        "at": 5358,
+        "expiresAt": 5368,
+        "closed": true
+      },
+      {
+        "gigId": "g490",
+        "driverId": "6m0h-1844",
+        "at": 5360,
+        "expiresAt": 5370,
+        "closed": true
+      },
+      {
+        "gigId": "g493",
+        "driverId": "6m0h-1361",
+        "at": 5383,
+        "expiresAt": 5393,
+        "closed": true
+      },
+      {
+        "gigId": "g493",
+        "driverId": "6m0h-0569",
+        "at": 5387,
+        "expiresAt": 5397,
+        "closed": true
+      },
+      {
+        "gigId": "g493",
+        "driverId": "6m0h-1885",
+        "at": 5389,
+        "expiresAt": 5399,
+        "closed": true
+      },
+      {
+        "gigId": "g496",
+        "driverId": "6m0h-0901",
+        "at": 5397,
+        "expiresAt": 5407,
+        "closed": true
+      },
+      {
+        "gigId": "g497",
+        "driverId": "6m0h-0297",
+        "at": 5397,
+        "expiresAt": 5407,
+        "closed": true
+      },
+      {
+        "gigId": "g496",
+        "driverId": "6m0h-0430",
+        "at": 5398,
+        "expiresAt": 5408,
+        "closed": true
+      },
+      {
+        "gigId": "g497",
+        "driverId": "6m0h-0388",
+        "at": 5398,
+        "expiresAt": 5408,
+        "closed": true
+      },
+      {
+        "gigId": "g496",
+        "driverId": "6m0h-2470",
+        "at": 5401,
+        "expiresAt": 5411,
+        "closed": true
+      },
+      {
+        "gigId": "g497",
+        "driverId": "6m0h-0750",
+        "at": 5401,
+        "expiresAt": 5411,
+        "closed": true
+      },
+      {
+        "gigId": "g498",
+        "driverId": "6m0h-0417",
+        "at": 5401,
+        "expiresAt": 5411,
+        "closed": true
+      },
+      {
+        "gigId": "g498",
+        "driverId": "6m0h-0177",
+        "at": 5411,
+        "expiresAt": 5421,
+        "closed": true
+      },
+      {
+        "gigId": "g498",
+        "driverId": "6m0h-2358",
+        "at": 5412,
+        "expiresAt": 5422,
+        "closed": true
+      },
+      {
+        "gigId": "g484",
+        "driverId": "6m0h-1724",
+        "at": 5531,
+        "expiresAt": 5541,
+        "closed": true
+      },
+      {
+        "gigId": "g457",
+        "driverId": "6m0h-0003",
+        "at": 5533,
+        "expiresAt": 5543,
+        "closed": true
+      },
+      {
+        "gigId": "g476",
+        "driverId": "6m0h-0050",
+        "at": 5568,
+        "expiresAt": 5578,
+        "closed": true
+      },
+      {
+        "gigId": "g335",
+        "driverId": "6m0h-2013",
+        "at": 5599,
+        "expiresAt": 5609,
+        "closed": true
+      },
+      {
+        "gigId": "g487",
+        "driverId": "6m0h-0016",
+        "at": 5628,
+        "expiresAt": 5638,
+        "closed": true
+      },
+      {
+        "gigId": "g487",
+        "driverId": "6m0h-0719",
+        "at": 5658,
+        "expiresAt": 5668,
+        "closed": true
+      },
+      {
+        "gigId": "g487",
+        "driverId": "6m0h-0571",
+        "at": 5688,
+        "expiresAt": 5698,
+        "closed": true
+      },
+      {
+        "gigId": "g503",
+        "driverId": "6m0h-0050",
+        "at": 6296,
+        "expiresAt": 6306,
+        "closed": true
+      },
+      {
+        "gigId": "g517",
+        "driverId": "6m0h-1341",
+        "at": 6361,
+        "expiresAt": 6371,
+        "closed": true
+      },
+      {
+        "gigId": "g517",
+        "driverId": "6m0h-0283",
+        "at": 6364,
+        "expiresAt": 6374,
+        "closed": true
+      },
+      {
+        "gigId": "g517",
+        "driverId": "6m0h-0022",
+        "at": 6366,
+        "expiresAt": 6376,
+        "closed": true
+      },
+      {
+        "gigId": "g431",
+        "driverId": "6m0h-0301",
+        "at": 6369,
+        "expiresAt": 6379,
+        "closed": true
+      },
+      {
+        "gigId": "g521",
+        "driverId": "6m0h-1266",
+        "at": 6381,
+        "expiresAt": 6391,
+        "closed": true
+      },
+      {
+        "gigId": "g521",
+        "driverId": "6m0h-1724",
+        "at": 6383,
+        "expiresAt": 6393,
+        "closed": true
+      },
+      {
+        "gigId": "g521",
+        "driverId": "6m0h-2291",
+        "at": 6385,
+        "expiresAt": 6395,
+        "closed": true
+      },
+      {
+        "gigId": "g525",
+        "driverId": "6m0h-2189",
+        "at": 6399,
+        "expiresAt": 6409,
+        "closed": true
+      },
+      {
+        "gigId": "g525",
+        "driverId": "6m0h-2289",
+        "at": 6400,
+        "expiresAt": 6410,
+        "closed": true
+      },
+      {
+        "gigId": "g525",
+        "driverId": "6m0h-2478",
+        "at": 6402,
+        "expiresAt": 6412,
+        "closed": true
+      },
+      {
+        "gigId": "g526",
+        "driverId": "6m0h-0494",
+        "at": 6402,
+        "expiresAt": 6412,
+        "closed": true
+      },
+      {
+        "gigId": "g527",
+        "driverId": "6m0h-0379",
+        "at": 6402,
+        "expiresAt": 6412,
+        "closed": true
+      },
+      {
+        "gigId": "g526",
+        "driverId": "6m0h-2484",
+        "at": 6413,
+        "expiresAt": 6423,
+        "closed": true
+      },
+      {
+        "gigId": "g527",
+        "driverId": "6m0h-0805",
+        "at": 6413,
+        "expiresAt": 6423,
+        "closed": true
+      },
+      {
+        "gigId": "g528",
+        "driverId": "6m0h-1505",
+        "at": 6413,
+        "expiresAt": 6423,
+        "closed": true
+      },
+      {
+        "gigId": "g530",
+        "driverId": "6m0h-0806",
+        "at": 6413,
+        "expiresAt": 6423,
+        "closed": true
+      },
+      {
+        "gigId": "g526",
+        "driverId": "6m0h-2359",
+        "at": 6424,
+        "expiresAt": 6434,
+        "closed": true
+      },
+      {
+        "gigId": "g527",
+        "driverId": "6m0h-2313",
+        "at": 6424,
+        "expiresAt": 6434,
+        "closed": true
+      },
+      {
+        "gigId": "g528",
+        "driverId": "6m0h-2086",
+        "at": 6424,
+        "expiresAt": 6434,
+        "closed": true
+      },
+      {
+        "gigId": "g530",
+        "driverId": "6m0h-1877",
+        "at": 6424,
+        "expiresAt": 6434,
+        "closed": true
+      },
+      {
+        "gigId": "g533",
+        "driverId": "6m0h-0035",
+        "at": 6424,
+        "expiresAt": 6434,
+        "closed": true
+      },
+      {
+        "gigId": "g535",
+        "driverId": "6m0h-0568",
+        "at": 6424,
+        "expiresAt": 6434,
+        "closed": true
+      },
+      {
+        "gigId": "g528",
+        "driverId": "6m0h-2235",
+        "at": 6432,
+        "expiresAt": 6442,
+        "closed": true
+      },
+      {
+        "gigId": "g530",
+        "driverId": "6m0h-1962",
+        "at": 6432,
+        "expiresAt": 6442,
+        "closed": true
+      },
+      {
+        "gigId": "g535",
+        "driverId": "6m0h-0877",
+        "at": 6432,
+        "expiresAt": 6442,
+        "closed": true
+      },
+      {
+        "gigId": "g535",
+        "driverId": "6m0h-0961",
+        "at": 6434,
+        "expiresAt": 6444,
+        "closed": true
+      },
+      {
+        "gigId": "g519",
+        "driverId": "6m0h-2065",
+        "at": 6469,
+        "expiresAt": 6479,
+        "closed": true
+      },
+      {
+        "gigId": "g538",
+        "driverId": "6m0h-0111",
+        "at": 6469,
+        "expiresAt": 6479,
+        "closed": true
+      },
+      {
+        "gigId": "g538",
+        "driverId": "6m0h-0437",
+        "at": 6478,
+        "expiresAt": 6488,
+        "closed": true
+      },
+      {
+        "gigId": "g538",
+        "driverId": "6m0h-0568",
+        "at": 6481,
+        "expiresAt": 6491,
+        "closed": true
+      },
+      {
+        "gigId": "g540",
+        "driverId": "6m0h-0360",
+        "at": 6481,
+        "expiresAt": 6491,
+        "closed": true
+      },
+      {
+        "gigId": "g540",
+        "driverId": "6m0h-0476",
+        "at": 6485,
+        "expiresAt": 6495,
+        "closed": true
+      },
+      {
+        "gigId": "g541",
+        "driverId": "6m0h-0437",
+        "at": 6485,
+        "expiresAt": 6495,
+        "closed": true
+      },
+      {
+        "gigId": "g541",
+        "driverId": "6m0h-0931",
+        "at": 6490,
+        "expiresAt": 6500,
+        "closed": true
+      },
+      {
+        "gigId": "g541",
+        "driverId": "6m0h-1505",
+        "at": 6495,
+        "expiresAt": 6505,
+        "closed": true
+      },
+      {
+        "gigId": "g543",
+        "driverId": "6m0h-2478",
+        "at": 6514,
+        "expiresAt": 6524,
+        "closed": true
+      },
+      {
+        "gigId": "g543",
+        "driverId": "6m0h-0569",
+        "at": 6520,
+        "expiresAt": 6530,
+        "closed": true
+      },
+      {
+        "gigId": "g543",
+        "driverId": "6m0h-2292",
+        "at": 6525,
+        "expiresAt": 6535,
+        "closed": true
+      },
+      {
+        "gigId": "g546",
+        "driverId": "6m0h-2642",
+        "at": 6568,
+        "expiresAt": 6578,
+        "closed": true
+      },
+      {
+        "gigId": "g546",
+        "driverId": "6m0h-2478",
+        "at": 6573,
+        "expiresAt": 6583,
+        "closed": true
+      },
+      {
+        "gigId": "g546",
+        "driverId": "6m0h-2529",
+        "at": 6575,
+        "expiresAt": 6585,
+        "closed": true
+      },
+      {
+        "gigId": "g547",
+        "driverId": "6m0h-2112",
+        "at": 6575,
+        "expiresAt": 6585,
+        "closed": true
+      },
+      {
+        "gigId": "g547",
+        "driverId": "6m0h-2455",
+        "at": 6576,
+        "expiresAt": 6586,
+        "closed": true
+      },
+      {
+        "gigId": "g547",
+        "driverId": "6m0h-2514",
+        "at": 6579,
+        "expiresAt": 6589,
+        "closed": true
+      },
+      {
+        "gigId": "g552",
+        "driverId": "6m0h-0712",
+        "at": 6629,
+        "expiresAt": 6639,
+        "closed": true
+      },
+      {
+        "gigId": "g553",
+        "driverId": "6m0h-1505",
+        "at": 6629,
+        "expiresAt": 6639,
+        "closed": true
+      },
+      {
+        "gigId": "g554",
+        "driverId": "6m0h-0158",
+        "at": 6629,
+        "expiresAt": 6639,
+        "closed": true
+      },
+      {
+        "gigId": "g552",
+        "driverId": "6m0h-2414",
+        "at": 6630,
+        "expiresAt": 6640,
+        "closed": true
+      },
+      {
+        "gigId": "g553",
+        "driverId": "6m0h-2484",
+        "at": 6630,
+        "expiresAt": 6640,
+        "closed": true
+      },
+      {
+        "gigId": "g554",
+        "driverId": "6m0h-1460",
+        "at": 6630,
+        "expiresAt": 6640,
+        "closed": true
+      },
+      {
+        "gigId": "g552",
+        "driverId": "6m0h-1125",
+        "at": 6631,
+        "expiresAt": 6641,
+        "closed": true
+      },
+      {
+        "gigId": "g553",
+        "driverId": "6m0h-0659",
+        "at": 6631,
+        "expiresAt": 6641,
+        "closed": true
+      },
+      {
+        "gigId": "g554",
+        "driverId": "6m0h-0616",
+        "at": 6631,
+        "expiresAt": 6641,
+        "closed": true
+      },
+      {
+        "gigId": "g555",
+        "driverId": "6m0h-1877",
+        "at": 6632,
+        "expiresAt": 6642,
+        "closed": true
+      },
+      {
+        "gigId": "g555",
+        "driverId": "6m0h-2621",
+        "at": 6634,
+        "expiresAt": 6644,
+        "closed": true
+      },
+      {
+        "gigId": "g556",
+        "driverId": "6m0h-0568",
+        "at": 6634,
+        "expiresAt": 6644,
+        "closed": true
+      },
+      {
+        "gigId": "g555",
+        "driverId": "6m0h-0310",
+        "at": 6635,
+        "expiresAt": 6645,
+        "closed": true
+      },
+      {
+        "gigId": "g556",
+        "driverId": "6m0h-1498",
+        "at": 6635,
+        "expiresAt": 6645,
+        "closed": true
+      },
+      {
+        "gigId": "g557",
+        "driverId": "6m0h-0048",
+        "at": 6635,
+        "expiresAt": 6645,
+        "closed": true
+      },
+      {
+        "gigId": "g556",
+        "driverId": "6m0h-2045",
+        "at": 6636,
+        "expiresAt": 6646,
+        "closed": true
+      },
+      {
+        "gigId": "g557",
+        "driverId": "6m0h-1630",
+        "at": 6636,
+        "expiresAt": 6646,
+        "closed": true
+      },
+      {
+        "gigId": "g557",
+        "driverId": "6m0h-2114",
+        "at": 6639,
+        "expiresAt": 6649,
+        "closed": true
+      },
+      {
+        "gigId": "g558",
+        "driverId": "6m0h-1125",
+        "at": 6639,
+        "expiresAt": 6649,
+        "closed": true
+      },
+      {
+        "gigId": "g558",
+        "driverId": "6m0h-1657",
+        "at": 6642,
+        "expiresAt": 6652,
+        "closed": true
+      },
+      {
+        "gigId": "g558",
+        "driverId": "6m0h-0282",
+        "at": 6643,
+        "expiresAt": 6653,
+        "closed": true
+      },
+      {
+        "gigId": "g560",
+        "driverId": "6m0h-1722",
+        "at": 6647,
+        "expiresAt": 6657,
+        "closed": true
+      },
+      {
+        "gigId": "g560",
+        "driverId": "6m0h-1090",
+        "at": 6649,
+        "expiresAt": 6659,
+        "closed": true
+      },
+      {
+        "gigId": "g560",
+        "driverId": "6m0h-2178",
+        "at": 6650,
+        "expiresAt": 6660,
+        "closed": true
+      },
+      {
+        "gigId": "g563",
+        "driverId": "6m0h-0138",
+        "at": 6682,
+        "expiresAt": 6692,
+        "closed": true
+      },
+      {
+        "gigId": "g566",
+        "driverId": "6m0h-0034",
+        "at": 6682,
+        "expiresAt": 6692,
+        "closed": true
+      },
+      {
+        "gigId": "g567",
+        "driverId": "6m0h-1225",
+        "at": 6682,
+        "expiresAt": 6692,
+        "closed": true
+      },
+      {
+        "gigId": "g563",
+        "driverId": "6m0h-0598",
+        "at": 6687,
+        "expiresAt": 6697,
+        "closed": true
+      },
+      {
+        "gigId": "g566",
+        "driverId": "6m0h-0973",
+        "at": 6687,
+        "expiresAt": 6697,
+        "closed": true
+      },
+      {
+        "gigId": "g567",
+        "driverId": "6m0h-1251",
+        "at": 6687,
+        "expiresAt": 6697,
+        "closed": true
+      },
+      {
+        "gigId": "g563",
+        "driverId": "6m0h-0868",
+        "at": 6690,
+        "expiresAt": 6700,
+        "closed": true
+      },
+      {
+        "gigId": "g566",
+        "driverId": "6m0h-1134",
+        "at": 6690,
+        "expiresAt": 6700,
+        "closed": true
+      },
+      {
+        "gigId": "g567",
+        "driverId": "6m0h-2502",
+        "at": 6690,
+        "expiresAt": 6700,
+        "closed": true
+      },
+      {
+        "gigId": "g569",
+        "driverId": "6m0h-0569",
+        "at": 6695,
+        "expiresAt": 6705,
+        "closed": true
+      },
+      {
+        "gigId": "g569",
+        "driverId": "6m0h-0298",
+        "at": 6697,
+        "expiresAt": 6707,
+        "closed": true
+      },
+      {
+        "gigId": "g569",
+        "driverId": "6m0h-0814",
+        "at": 6699,
+        "expiresAt": 6709,
+        "closed": true
+      },
+      {
+        "gigId": "g570",
+        "driverId": "6m0h-2637",
+        "at": 6699,
+        "expiresAt": 6709,
+        "closed": true
+      },
+      {
+        "gigId": "g570",
+        "driverId": "6m0h-0430",
+        "at": 6704,
+        "expiresAt": 6714,
+        "closed": true
+      },
+      {
+        "gigId": "g570",
+        "driverId": "6m0h-0147",
+        "at": 6705,
+        "expiresAt": 6715,
+        "closed": true
+      },
+      {
+        "gigId": "g565",
+        "driverId": "6m0h-1251",
+        "at": 6717,
+        "expiresAt": 6727,
+        "closed": true
+      },
+      {
+        "gigId": "g572",
+        "driverId": "6m0h-0038",
+        "at": 6737,
+        "expiresAt": 6747,
+        "closed": true
+      },
+      {
+        "gigId": "g572",
+        "driverId": "6m0h-0457",
+        "at": 6745,
+        "expiresAt": 6755,
+        "closed": true
+      },
+      {
+        "gigId": "g572",
+        "driverId": "6m0h-0719",
+        "at": 6746,
+        "expiresAt": 6756,
+        "closed": true
+      },
+      {
+        "gigId": "g574",
+        "driverId": "6m0h-2417",
+        "at": 6751,
+        "expiresAt": 6761,
+        "closed": true
+      },
+      {
+        "gigId": "g574",
+        "driverId": "6m0h-2484",
+        "at": 6752,
+        "expiresAt": 6762,
+        "closed": true
+      },
+      {
+        "gigId": "g574",
+        "driverId": "6m0h-1925",
+        "at": 6754,
+        "expiresAt": 6764,
+        "closed": true
+      },
+      {
+        "gigId": "g575",
+        "driverId": "6m0h-1284",
+        "at": 6760,
+        "expiresAt": 6770,
+        "closed": true
+      },
+      {
+        "gigId": "g575",
+        "driverId": "6m0h-0729",
+        "at": 6765,
+        "expiresAt": 6775,
+        "closed": true
+      },
+      {
+        "gigId": "g575",
+        "driverId": "6m0h-1159",
+        "at": 6767,
+        "expiresAt": 6777,
+        "closed": true
+      },
+      {
+        "gigId": "g576",
+        "driverId": "6m0h-0430",
+        "at": 6777,
+        "expiresAt": 6787,
+        "closed": true
+      },
+      {
+        "gigId": "g576",
+        "driverId": "6m0h-0298",
+        "at": 6779,
+        "expiresAt": 6789,
+        "closed": true
+      },
+      {
+        "gigId": "g576",
+        "driverId": "6m0h-0336",
+        "at": 6780,
+        "expiresAt": 6790,
+        "closed": true
+      },
+      {
+        "gigId": "g577",
+        "driverId": "6m0h-0641",
+        "at": 6784,
+        "expiresAt": 6794,
+        "closed": true
+      },
+      {
+        "gigId": "g577",
+        "driverId": "6m0h-1361",
+        "at": 6785,
+        "expiresAt": 6795,
+        "closed": true
+      },
+      {
+        "gigId": "g577",
+        "driverId": "6m0h-0569",
+        "at": 6787,
+        "expiresAt": 6797,
+        "closed": true
+      },
+      {
+        "gigId": "g578",
+        "driverId": "6m0h-0043",
+        "at": 6792,
+        "expiresAt": 6802,
+        "closed": true
+      },
+      {
+        "gigId": "g578",
+        "driverId": "6m0h-0059",
+        "at": 6793,
+        "expiresAt": 6803,
+        "closed": true
+      },
+      {
+        "gigId": "g578",
+        "driverId": "6m0h-0295",
+        "at": 6794,
+        "expiresAt": 6804,
+        "closed": true
+      },
+      {
+        "gigId": "g579",
+        "driverId": "6m0h-2289",
+        "at": 6799,
+        "expiresAt": 6809,
+        "closed": true
+      },
+      {
+        "gigId": "g579",
+        "driverId": "6m0h-0174",
+        "at": 6803,
+        "expiresAt": 6813,
+        "closed": true
+      },
+      {
+        "gigId": "g579",
+        "driverId": "6m0h-0712",
+        "at": 6804,
+        "expiresAt": 6814,
+        "closed": true
+      },
+      {
+        "gigId": "g580",
+        "driverId": "6m0h-0003",
+        "at": 6811,
+        "expiresAt": 6821,
+        "closed": true
+      },
+      {
+        "gigId": "g580",
+        "driverId": "6m0h-0016",
+        "at": 6813,
+        "expiresAt": 6823,
+        "closed": true
+      },
+      {
+        "gigId": "g580",
+        "driverId": "6m0h-0712",
+        "at": 6814,
+        "expiresAt": 6824,
+        "closed": true
+      },
+      {
+        "gigId": "g524",
+        "driverId": "6m0h-2228",
+        "at": 6824,
+        "expiresAt": 6834,
+        "closed": true
+      },
+      {
+        "gigId": "g584",
+        "driverId": "6m0h-0170",
+        "at": 6826,
+        "expiresAt": 6836,
+        "closed": true
+      },
+      {
+        "gigId": "g584",
+        "driverId": "6m0h-0292",
+        "at": 6828,
+        "expiresAt": 6838,
+        "closed": true
+      },
+      {
+        "gigId": "g584",
+        "driverId": "6m0h-0484",
+        "at": 6835,
+        "expiresAt": 6845,
+        "closed": true
+      },
+      {
+        "gigId": "g589",
+        "driverId": "6m0h-1296",
+        "at": 6880,
+        "expiresAt": 6890,
+        "closed": true
+      },
+      {
+        "gigId": "g591",
+        "driverId": "6m0h-1341",
+        "at": 6880,
+        "expiresAt": 6890,
+        "closed": true
+      },
+      {
+        "gigId": "g589",
+        "driverId": "6m0h-0504",
+        "at": 6910,
+        "expiresAt": 6920,
+        "closed": true
+      },
+      {
+        "gigId": "g591",
+        "driverId": "6m0h-0987",
+        "at": 6910,
+        "expiresAt": 6920,
+        "closed": true
+      },
+      {
+        "gigId": "g589",
+        "driverId": "6m0h-0457",
+        "at": 6940,
+        "expiresAt": 6950,
+        "closed": true
+      },
+      {
+        "gigId": "g591",
+        "driverId": "6m0h-1011",
+        "at": 6940,
+        "expiresAt": 6950,
+        "closed": true
+      },
+      {
+        "gigId": "g583",
+        "driverId": "6m0h-2221",
+        "at": 9459,
+        "expiresAt": 9469,
+        "closed": true
+      }
+    ],
+    "blockedDay": -1
+  },
+  "pendingAdvance": false,
+  "finishedAt": "2026-11-13T22:11:30.911Z",
+  "score": {
+    "marginCents": 665731,
+    "revenueCents": 3202800,
+    "marginShare": 0.20785906082178093,
+    "wonOrders": 582,
+    "onTimeShare": 1,
+    "undeliveredShare": 0,
+    "ranked": true
+  },
+  "stats": {
+    "quoted": 592,
+    "declined": {
+      "long route": 168,
+      "private appointment risk": 128,
+      "thin margin": 62,
+      "multi-car: Level 1 supports single-car gigs": 16,
+      "sparse driver coverage": 12,
+      "insufficient booking buffer": 22
+    },
+    "refused": [],
+    "chainsPosted": 0,
+    "complete": true
+  }
+}

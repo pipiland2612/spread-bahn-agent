@@ -1,0 +1,61 @@
+{
+  "worldId": "w4ecaf0a1a493bb8a8eeb",
+  "seed": "network-holdout-3",
+  "level": 3,
+  "feeMode": "legacy",
+  "networkMode": "baseline",
+  "board": false,
+  "season": null,
+  "boardRun": null,
+  "policy": {
+    "openingMultiplier": 0.75,
+    "maxReferenceShare": 1.2,
+    "maxDriveMinutes": 240,
+    "minLocalDrivers": 15,
+    "minSlackMinutes": 210
+  },
+  "originalSettings": {
+    "level": 3,
+    "feeMode": "legacy",
+    "networkMode": "baseline",
+    "seed": "network-holdout-3",
+    "policy": {
+      "openingMultiplier": 0.75,
+      "maxReferenceShare": 1.2,
+      "maxDriveMinutes": 240,
+      "minLocalDrivers": 15,
+      "minSlackMinutes": 210
+    }
+  },
+  "startedAt": "2026-11-13T22:08:09.289Z",
+  "resumes": [],
+  "networkState": {
+    "attempts": [],
+    "blockedDay": -1
+  },
+  "pendingAdvance": false,
+  "finishedAt": "2026-11-13T22:08:56.628Z",
+  "score": {
+    "marginCents": 642115,
+    "revenueCents": 3432000,
+    "marginShare": 0.18709644522144522,
+    "wonOrders": 607,
+    "onTimeShare": 0.9884678747940692,
+    "undeliveredShare": 0,
+    "ranked": true
+  },
+  "stats": {
+    "quoted": 611,
+    "declined": {
+      "long route": 197,
+      "private appointment risk": 114,
+      "multi-car: Level 1 supports single-car gigs": 19,
+      "insufficient booking buffer": 15,
+      "sparse driver coverage": 10,
+      "thin margin": 34
+    },
+    "refused": [],
+    "chainsPosted": 0,
+    "complete": true
+  }
+}

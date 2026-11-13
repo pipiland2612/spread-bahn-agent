@@ -82,3 +82,99 @@ test('restart derives the active scheduled fee from world time', () => {
   restored.tick()
   assert.deepEqual(restored.outbox, [])
 })
+
+function chainedDesk() {
+  const { desk: old, request, order, post } = fixture('legacy')
+  const desk = new Desk(old.model, 3, 'legacy', undefined, 'offers')
+  const second = { ...structuredClone(order), id: 'R2' }
+  desk.now = 550; desk.requests.set('R1', request); desk.requests.set('R2', { ...request, id: 'R2' })
+  desk.orders.set('R1', order); desk.orders.set('R2', second)
+  const action = { ...post, stops: [...post.stops, ...post.stops.map(s => ({ ...s, orderId: 'R2' }))] }
+  desk.results([action], [{ ok: true, id: 'chain' }]); desk.gigs.get('chain')!.status = 'working'
+  return { desk, order, second, request, action }
+}
+test('first delivery in a chain keeps gig working and reprices remain pruned', () => {
+  const { desk } = chainedDesk()
+  assert.equal(desk.stats.chainsPosted, 1)
+  desk.handle({ kind: 'delivered', seq: 50, at: 600, gigId: 'chain', orderId: 'R1', leg: 0 })
+  assert.equal(desk.gigs.get('chain')!.status, 'working')
+  desk.handle({ kind: 'delivered', seq: 51, at: 650, gigId: 'chain', orderId: 'R2', leg: 0 })
+  assert.equal(desk.gigs.get('chain')!.status, 'done')
+})
+test('withdrawn chain cancellation reposts surviving work but shortened chains retain coverage', () => {
+  const { desk } = chainedDesk(); desk.gigs.get('chain')!.status = 'open'
+  desk.handle({ kind: 'order_cancelled', seq: 50, at: 600, orderId: 'R1', gigs: [{ gigId: 'chain', outcome: 'withdrawn' }] })
+  assert.deepEqual(desk.outbox.filter(a => a.type === 'post').map(a => a.stops[0]!.orderId), ['R2'])
+  const other = chainedDesk().desk
+  other.handle({ kind: 'order_cancelled', seq: 50, at: 600, orderId: 'R1', gigs: [{ gigId: 'chain', outcome: 'shortened' }] })
+  assert.equal(other.gigs.get('chain')!.status, 'working')
+  assert.deepEqual(other.gigs.get('chain')!.action.stops.map(s => s.orderId), ['R2', 'R2'])
+  assert.deepEqual(other.outbox, [])
+})
+test('expired chain reposts every undelivered uncovered order', () => {
+  const { desk } = chainedDesk(); desk.gigs.get('chain')!.status = 'open'
+  desk.handle({ kind: 'gig_expired', seq: 50, at: 600, gigId: 'chain' })
+  assert.deepEqual(desk.outbox.filter(a => a.type === 'post').map(a => a.stops[0]!.orderId), ['R1', 'R2'])
+})
+test('rebuild recognizes a second order covered by an existing chain', () => {
+  const { desk, order, second, request, action } = chainedDesk()
+  const restored = new Desk(desk.model, 3, 'legacy')
+  restored.rebuild({ now: 550, endsAt: 14280, worldId: 'w', orders: [order, second], openRequests: [], driverPositions: [], score: {} as any,
+    gigs: [{ id: 'chain', ...action, feeCents: 15000, status: 'open', postedAt: 500, driverId: null }] },
+  [{ kind: 'price_request', seq: 1, at: 490, request }, { kind: 'price_request', seq: 2, at: 490, request: { ...request, id: 'R2' } }])
+  assert.deepEqual(restored.outbox, [])
+})
+test('booking prunes queued direct offers just like reprices', () => {
+  const { desk } = chainedDesk()
+  desk.outbox.push({ type: 'offer', gigId: 'chain', driverId: 'D1', feeCents: 15000 })
+  desk.handle({ kind: 'gig_booked', seq: 51, at: 550, gigId: 'chain', driverId: 'D1', feeCents: 15000 })
+  assert.deepEqual(desk.outbox, [])
+})
+
+test('chain mode collects posts for ten minutes and never duplicates held coverage', () => {
+  const { desk: old, request, order } = fixture('legacy')
+  const desk = new Desk(old.model, 3, 'legacy', undefined, 'chains')
+  desk.now = 505; desk.requests.set('R1', request); desk.orders.set('R1', order)
+  desk.post(order); desk.post(order); desk.tick()
+  assert.deepEqual(desk.outbox, [])
+  desk.now = 515; desk.tick()
+  assert.equal(desk.outbox.filter(a => a.type === 'post').length, 1)
+})
+test('cancellation clears held chain posts before they can be sent', () => {
+  const { desk: old, request, order } = fixture('legacy')
+  const desk = new Desk(old.model, 3, 'legacy', undefined, 'chains')
+  desk.now = 505; desk.requests.set('R1', request); desk.orders.set('R1', order); desk.post(order)
+  desk.handle({ kind: 'order_cancelled', seq: 99, at: 510, orderId: 'R1', gigs: [] })
+  desk.now = 515; desk.tick()
+  assert.deepEqual(desk.outbox, [])
+})
+
+test('Level 3 tick plans offers but only successful results consume offer limits', t => {
+  t.mock.method(console, 'error', () => {})
+  const { desk: old, order, request, post } = fixture('legacy')
+  old.model.drivers.push({ id: 'driver', homePlaceId: 'a', rating: 5, licence: 'manual', completedGigs: 100, drops: 0 })
+  old.model.roads.set('a/a', { from: 'a', to: 'a', minutes: 0, km: 0 })
+  const desk = new Desk(old.model, 3, 'legacy', undefined, 'offers')
+  desk.now = 505; desk.requests.set('R1', request); desk.orders.set('R1', order)
+  desk.results([post], [{ ok: true, id: 'g1' }]); desk.now = 550; desk.tick()
+  const actions = desk.outbox.splice(0)
+  assert.deepEqual(actions, [{ type: 'offer', gigId: 'g1', driverId: 'driver', feeCents: 9000 }])
+  assert.equal(desk.network.state.attempts.length, 0)
+  desk.results(actions, [{ ok: false, reason: 'example refusal' }])
+  assert.equal(desk.network.state.attempts.length, 0)
+  desk.tick(); desk.results(desk.outbox.splice(0), [{ ok: true, id: 'offer1' }])
+  assert.equal(desk.network.state.attempts.length, 1)
+  assert.equal(desk.gigs.get('g1')!.action.schedule[0]!.feeCents, 7500)
+})
+
+test('rebuild flushes uncovered accepted work without resetting an unknown collection deadline', () => {
+  const { desk: old, order, request } = fixture('legacy')
+  const original = new Desk(old.model, 3, 'legacy', undefined, 'chains')
+  original.now = 505; original.requests.set('R1', request); original.orders.set('R1', order); original.post(order)
+  assert.equal(original.nextWake(), 515)
+  const restored = new Desk(old.model, 3, 'legacy', undefined, 'chains')
+  restored.rebuild({ worldId: 'w', now: 514, endsAt: 14280, orders: [order], openRequests: [], gigs: [], driverPositions: [], score: {} as any },
+    [{ kind: 'price_request', seq: 1, at: 490, request }])
+  assert.equal(restored.outbox.filter(a => a.type === 'post').length, 1)
+  assert.equal(restored.heldPosts.length, 0)
+})
