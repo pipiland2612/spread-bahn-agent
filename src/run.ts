@@ -221,15 +221,16 @@ export class Desk {
   }
 }
 
-async function main() {
-  const { values: args } = parseArgs({ options: {
+export async function main(argv = process.argv.slice(2)) {
+  const { values: args } = parseArgs({ args: argv, options: {
     level: { type: 'string' }, seed: { type: 'string' },
     board: { type: 'boolean' }, runs: { type: 'string', default: '1' },
     world: { type: 'string' }, status: { type: 'boolean' },
     opening: { type: 'string' }, 'reference-share': { type: 'string' }, 'fee-mode': { type: 'string' },
     network: { type: 'string' },
   } })
-  let settings = resolveSettings(args)
+  // Resume overrides need the saved world's level before validating network features.
+  let settings = resolveSettings(args.world && !args.status ? { level: args.level } : args)
   const runs = Number(args.runs)
   if (!Number.isInteger(runs) || runs < 1 || runs > 5) throw new Error('--runs must be 1 to 5')
   const client = new Client()
