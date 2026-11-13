@@ -26,3 +26,9 @@ Two 1.10× tuning worlds rebuilt after interrupted advances and ended with incom
 Inspection exposed an existing conservative false negative: even an advance with zero actions marked action evidence uncertain. A full CLI regression failed (`false !== true`) before the fix and passed after it. Empty advances now preserve known evidence; nonempty interrupted batches retain the incomplete-evidence guard. This also avoids writing an in-flight action marker for an empty action list. Final suite: 71 passing. Network recovery still conservatively blocks offers for the current day. Running experiments retain their loaded code version; no historical evidence is relabeled.
 
 An authoritative snapshot audit of all 12 tuning worlds found no multi-leg or private-address wins, including cancelled orders. The per-leg rescue change therefore did not alter those experiment workloads. Counts are saved in `results/level4-tuning-order-audit.json`.
+
+## Promotion
+
+The eligible tuning winner was all-options quoting at list price. Four interrupted original holdouts were repeated with the same seeds and fixed policies, with originals preserved. Two repeats used idle slots while the remaining original candidate worlds finished; active experiment worlds never exceeded four. All six reported holdouts have complete evidence and zero refused actions. Selected margin €11,444.38 versus €11,334.01 baseline (+0.97%); worst selected on-time week 96.61%. The candidate lost on the second paired seed; no robust broad advantage is claimed from three weeks.
+
+Defaults were promoted only after those results. A consumer-level regression first failed because new Level 4 defaults declined a request with a feasible later option; after promotion it emitted the validated later-option quote. Saved first-option settings still restore unchanged. Full suite: 72 passing. Ranking runs receive explicit settings, so changing defaults does not change their configuration mid-run.

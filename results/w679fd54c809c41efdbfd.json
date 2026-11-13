@@ -1,0 +1,1086 @@
+{
+  "worldId": "w679fd54c809c41efdbfd",
+  "seed": "quotes-tune-3",
+  "level": 4,
+  "feeMode": "legacy",
+  "networkMode": "offers",
+  "quoteSettings": {
+    "mode": "options",
+    "multiplier": 1.1
+  },
+  "networkRevision": 2,
+  "board": false,
+  "season": null,
+  "boardRun": null,
+  "policy": {
+    "openingMultiplier": 0.75,
+    "maxReferenceShare": 1.2,
+    "maxDriveMinutes": 240,
+    "minLocalDrivers": 15,
+    "minSlackMinutes": 210
+  },
+  "originalSettings": {
+    "level": 4,
+    "feeMode": "legacy",
+    "networkMode": "offers",
+    "quoteSettings": {
+      "mode": "options",
+      "multiplier": 1.1
+    },
+    "seed": "quotes-tune-3",
+    "policy": {
+      "openingMultiplier": 0.75,
+      "maxReferenceShare": 1.2,
+      "maxDriveMinutes": 240,
+      "minLocalDrivers": 15,
+      "minSlackMinutes": 210
+    }
+  },
+  "startedAt": "2026-11-13T23:14:09.936Z",
+  "resumes": [],
+  "networkState": {
+    "attempts": [
+      {
+        "gigId": "g3",
+        "driverId": "ku6c-1353",
+        "at": 651,
+        "expiresAt": 661,
+        "closed": true
+      },
+      {
+        "gigId": "g3",
+        "driverId": "ku6c-1007",
+        "at": 654,
+        "expiresAt": 664,
+        "closed": true
+      },
+      {
+        "gigId": "g3",
+        "driverId": "ku6c-0538",
+        "at": 657,
+        "expiresAt": 667,
+        "closed": true
+      },
+      {
+        "gigId": "g4",
+        "driverId": "ku6c-1927",
+        "at": 689,
+        "expiresAt": 699,
+        "closed": true
+      },
+      {
+        "gigId": "g4",
+        "driverId": "ku6c-1309",
+        "at": 697,
+        "expiresAt": 707,
+        "closed": true
+      },
+      {
+        "gigId": "g4",
+        "driverId": "ku6c-1924",
+        "at": 698,
+        "expiresAt": 708,
+        "closed": true
+      },
+      {
+        "gigId": "g7",
+        "driverId": "ku6c-0773",
+        "at": 720,
+        "expiresAt": 730,
+        "closed": true
+      },
+      {
+        "gigId": "g7",
+        "driverId": "ku6c-0026",
+        "at": 721,
+        "expiresAt": 731,
+        "closed": true
+      },
+      {
+        "gigId": "g11",
+        "driverId": "ku6c-1251",
+        "at": 781,
+        "expiresAt": 791,
+        "closed": true
+      },
+      {
+        "gigId": "g11",
+        "driverId": "ku6c-1652",
+        "at": 783,
+        "expiresAt": 793,
+        "closed": true
+      },
+      {
+        "gigId": "g11",
+        "driverId": "ku6c-1130",
+        "at": 790,
+        "expiresAt": 800,
+        "closed": true
+      },
+      {
+        "gigId": "g15",
+        "driverId": "ku6c-0515",
+        "at": 827,
+        "expiresAt": 837,
+        "closed": true
+      },
+      {
+        "gigId": "g15",
+        "driverId": "ku6c-0572",
+        "at": 829,
+        "expiresAt": 839,
+        "closed": true
+      },
+      {
+        "gigId": "g17",
+        "driverId": "ku6c-0804",
+        "at": 829,
+        "expiresAt": 839,
+        "closed": true
+      },
+      {
+        "gigId": "g15",
+        "driverId": "ku6c-1836",
+        "at": 832,
+        "expiresAt": 842,
+        "closed": true
+      },
+      {
+        "gigId": "g17",
+        "driverId": "ku6c-1598",
+        "at": 832,
+        "expiresAt": 842,
+        "closed": true
+      },
+      {
+        "gigId": "g17",
+        "driverId": "ku6c-1581",
+        "at": 834,
+        "expiresAt": 844,
+        "closed": true
+      },
+      {
+        "gigId": "g18",
+        "driverId": "ku6c-1519",
+        "at": 850,
+        "expiresAt": 860,
+        "closed": true
+      },
+      {
+        "gigId": "g18",
+        "driverId": "ku6c-0303",
+        "at": 855,
+        "expiresAt": 865,
+        "closed": true
+      },
+      {
+        "gigId": "g18",
+        "driverId": "ku6c-1812",
+        "at": 856,
+        "expiresAt": 866,
+        "closed": true
+      },
+      {
+        "gigId": "g22",
+        "driverId": "ku6c-0738",
+        "at": 972,
+        "expiresAt": 982,
+        "closed": true
+      },
+      {
+        "gigId": "g24",
+        "driverId": "ku6c-1309",
+        "at": 1040,
+        "expiresAt": 1050,
+        "closed": true
+      },
+      {
+        "gigId": "g25",
+        "driverId": "ku6c-0495",
+        "at": 1040,
+        "expiresAt": 1050,
+        "closed": true
+      },
+      {
+        "gigId": "g24",
+        "driverId": "ku6c-0852",
+        "at": 1041,
+        "expiresAt": 1051,
+        "closed": true
+      },
+      {
+        "gigId": "g25",
+        "driverId": "ku6c-0515",
+        "at": 1041,
+        "expiresAt": 1051,
+        "closed": true
+      },
+      {
+        "gigId": "g24",
+        "driverId": "ku6c-1639",
+        "at": 1046,
+        "expiresAt": 1056,
+        "closed": true
+      },
+      {
+        "gigId": "g25",
+        "driverId": "ku6c-0764",
+        "at": 1046,
+        "expiresAt": 1056,
+        "closed": true
+      },
+      {
+        "gigId": "g27",
+        "driverId": "ku6c-0216",
+        "at": 1046,
+        "expiresAt": 1056,
+        "closed": true
+      },
+      {
+        "gigId": "g27",
+        "driverId": "ku6c-0616",
+        "at": 1049,
+        "expiresAt": 1059,
+        "closed": true
+      },
+      {
+        "gigId": "g27",
+        "driverId": "ku6c-1235",
+        "at": 1051,
+        "expiresAt": 1061,
+        "closed": true
+      },
+      {
+        "gigId": "g34",
+        "driverId": "ku6c-1233",
+        "at": 1973,
+        "expiresAt": 1983,
+        "closed": true
+      },
+      {
+        "gigId": "g34",
+        "driverId": "ku6c-0532",
+        "at": 1982,
+        "expiresAt": 1992,
+        "closed": true
+      },
+      {
+        "gigId": "g34",
+        "driverId": "ku6c-0043",
+        "at": 1989,
+        "expiresAt": 1999,
+        "closed": true
+      },
+      {
+        "gigId": "g40",
+        "driverId": "ku6c-0128",
+        "at": 2257,
+        "expiresAt": 2267,
+        "closed": true
+      },
+      {
+        "gigId": "g41",
+        "driverId": "ku6c-1145",
+        "at": 2257,
+        "expiresAt": 2267,
+        "closed": true
+      },
+      {
+        "gigId": "g40",
+        "driverId": "ku6c-0495",
+        "at": 2259,
+        "expiresAt": 2269,
+        "closed": true
+      },
+      {
+        "gigId": "g41",
+        "driverId": "ku6c-1625",
+        "at": 2259,
+        "expiresAt": 2269,
+        "closed": true
+      },
+      {
+        "gigId": "g40",
+        "driverId": "ku6c-0653",
+        "at": 2260,
+        "expiresAt": 2270,
+        "closed": true
+      },
+      {
+        "gigId": "g41",
+        "driverId": "ku6c-1320",
+        "at": 2260,
+        "expiresAt": 2270,
+        "closed": true
+      },
+      {
+        "gigId": "g42",
+        "driverId": "ku6c-0669",
+        "at": 2274,
+        "expiresAt": 2284,
+        "closed": true
+      },
+      {
+        "gigId": "g42",
+        "driverId": "ku6c-1942",
+        "at": 2276,
+        "expiresAt": 2286,
+        "closed": true
+      },
+      {
+        "gigId": "g48",
+        "driverId": "ku6c-0130",
+        "at": 2412,
+        "expiresAt": 2422,
+        "closed": true
+      },
+      {
+        "gigId": "g48",
+        "driverId": "ku6c-0274",
+        "at": 2419,
+        "expiresAt": 2429,
+        "closed": true
+      },
+      {
+        "gigId": "g48",
+        "driverId": "ku6c-0451",
+        "at": 2421,
+        "expiresAt": 2431,
+        "closed": true
+      },
+      {
+        "gigId": "g49",
+        "driverId": "ku6c-0635",
+        "at": 2436,
+        "expiresAt": 2446,
+        "closed": true
+      },
+      {
+        "gigId": "g49",
+        "driverId": "ku6c-0858",
+        "at": 2437,
+        "expiresAt": 2447,
+        "closed": true
+      },
+      {
+        "gigId": "g49",
+        "driverId": "ku6c-0933",
+        "at": 2444,
+        "expiresAt": 2454,
+        "closed": true
+      },
+      {
+        "gigId": "g50",
+        "driverId": "ku6c-0088",
+        "at": 2444,
+        "expiresAt": 2454,
+        "closed": true
+      },
+      {
+        "gigId": "g50",
+        "driverId": "ku6c-0817",
+        "at": 2445,
+        "expiresAt": 2455,
+        "closed": true
+      },
+      {
+        "gigId": "g50",
+        "driverId": "ku6c-0703",
+        "at": 2447,
+        "expiresAt": 2457,
+        "closed": true
+      },
+      {
+        "gigId": "g55",
+        "driverId": "ku6c-0109",
+        "at": 2556,
+        "expiresAt": 2566,
+        "closed": true
+      },
+      {
+        "gigId": "g55",
+        "driverId": "ku6c-0532",
+        "at": 2586,
+        "expiresAt": 2596,
+        "closed": true
+      },
+      {
+        "gigId": "g36",
+        "driverId": "ku6c-0003",
+        "at": 2615,
+        "expiresAt": 2625,
+        "closed": true
+      },
+      {
+        "gigId": "g61",
+        "driverId": "ku6c-0599",
+        "at": 3484,
+        "expiresAt": 3494,
+        "closed": true
+      },
+      {
+        "gigId": "g61",
+        "driverId": "ku6c-0616",
+        "at": 3486,
+        "expiresAt": 3496,
+        "closed": true
+      },
+      {
+        "gigId": "g66",
+        "driverId": "ku6c-1240",
+        "at": 3522,
+        "expiresAt": 3532,
+        "closed": true
+      },
+      {
+        "gigId": "g66",
+        "driverId": "ku6c-1007",
+        "at": 3523,
+        "expiresAt": 3533,
+        "closed": true
+      },
+      {
+        "gigId": "g66",
+        "driverId": "ku6c-1156",
+        "at": 3531,
+        "expiresAt": 3541,
+        "closed": true
+      },
+      {
+        "gigId": "g67",
+        "driverId": "ku6c-0043",
+        "at": 3544,
+        "expiresAt": 3554,
+        "closed": true
+      },
+      {
+        "gigId": "g67",
+        "driverId": "ku6c-1353",
+        "at": 3545,
+        "expiresAt": 3555,
+        "closed": true
+      },
+      {
+        "gigId": "g67",
+        "driverId": "ku6c-0126",
+        "at": 3550,
+        "expiresAt": 3560,
+        "closed": true
+      },
+      {
+        "gigId": "g75",
+        "driverId": "ku6c-0371",
+        "at": 3621,
+        "expiresAt": 3631,
+        "closed": true
+      },
+      {
+        "gigId": "g75",
+        "driverId": "ku6c-0581",
+        "at": 3625,
+        "expiresAt": 3635,
+        "closed": true
+      },
+      {
+        "gigId": "g75",
+        "driverId": "ku6c-1209",
+        "at": 3629,
+        "expiresAt": 3639,
+        "closed": true
+      },
+      {
+        "gigId": "g77",
+        "driverId": "ku6c-0355",
+        "at": 3730,
+        "expiresAt": 3740,
+        "closed": true
+      },
+      {
+        "gigId": "g77",
+        "driverId": "ku6c-0481",
+        "at": 3731,
+        "expiresAt": 3741,
+        "closed": true
+      },
+      {
+        "gigId": "g77",
+        "driverId": "ku6c-1164",
+        "at": 3733,
+        "expiresAt": 3743,
+        "closed": true
+      },
+      {
+        "gigId": "g83",
+        "driverId": "ku6c-0000",
+        "at": 3816,
+        "expiresAt": 3826,
+        "closed": true
+      },
+      {
+        "gigId": "g83",
+        "driverId": "ku6c-0030",
+        "at": 3824,
+        "expiresAt": 3834,
+        "closed": true
+      },
+      {
+        "gigId": "g85",
+        "driverId": "ku6c-0974",
+        "at": 3824,
+        "expiresAt": 3834,
+        "closed": true
+      },
+      {
+        "gigId": "g88",
+        "driverId": "ku6c-0000",
+        "at": 3824,
+        "expiresAt": 3834,
+        "closed": true
+      },
+      {
+        "gigId": "g83",
+        "driverId": "ku6c-0032",
+        "at": 3825,
+        "expiresAt": 3835,
+        "closed": true
+      },
+      {
+        "gigId": "g85",
+        "driverId": "ku6c-1747",
+        "at": 3825,
+        "expiresAt": 3835,
+        "closed": true
+      },
+      {
+        "gigId": "g88",
+        "driverId": "ku6c-0030",
+        "at": 3825,
+        "expiresAt": 3835,
+        "closed": true
+      },
+      {
+        "gigId": "g85",
+        "driverId": "ku6c-0000",
+        "at": 3830,
+        "expiresAt": 3840,
+        "closed": true
+      },
+      {
+        "gigId": "g88",
+        "driverId": "ku6c-0032",
+        "at": 3830,
+        "expiresAt": 3840,
+        "closed": true
+      },
+      {
+        "gigId": "g90",
+        "driverId": "ku6c-0022",
+        "at": 3848,
+        "expiresAt": 3858,
+        "closed": true
+      },
+      {
+        "gigId": "g90",
+        "driverId": "ku6c-0402",
+        "at": 3852,
+        "expiresAt": 3862,
+        "closed": true
+      },
+      {
+        "gigId": "g90",
+        "driverId": "ku6c-0493",
+        "at": 3854,
+        "expiresAt": 3864,
+        "closed": true
+      },
+      {
+        "gigId": "g93",
+        "driverId": "ku6c-0085",
+        "at": 3946,
+        "expiresAt": 3956,
+        "closed": true
+      },
+      {
+        "gigId": "g93",
+        "driverId": "ku6c-0173",
+        "at": 3948,
+        "expiresAt": 3958,
+        "closed": true
+      },
+      {
+        "gigId": "g93",
+        "driverId": "ku6c-0210",
+        "at": 3959,
+        "expiresAt": 3969,
+        "closed": true
+      },
+      {
+        "gigId": "g94",
+        "driverId": "ku6c-0710",
+        "at": 3959,
+        "expiresAt": 3969,
+        "closed": true
+      },
+      {
+        "gigId": "g94",
+        "driverId": "ku6c-0136",
+        "at": 3989,
+        "expiresAt": 3999,
+        "closed": true
+      },
+      {
+        "gigId": "g94",
+        "driverId": "ku6c-1419",
+        "at": 4019,
+        "expiresAt": 4029,
+        "closed": true
+      },
+      {
+        "gigId": "g102",
+        "driverId": "ku6c-0903",
+        "at": 4990,
+        "expiresAt": 5000,
+        "closed": true
+      },
+      {
+        "gigId": "g102",
+        "driverId": "ku6c-1457",
+        "at": 4992,
+        "expiresAt": 5002,
+        "closed": true
+      },
+      {
+        "gigId": "g102",
+        "driverId": "ku6c-0653",
+        "at": 4993,
+        "expiresAt": 5003,
+        "closed": true
+      },
+      {
+        "gigId": "g103",
+        "driverId": "ku6c-1767",
+        "at": 5005,
+        "expiresAt": 5015,
+        "closed": true
+      },
+      {
+        "gigId": "g103",
+        "driverId": "ku6c-1760",
+        "at": 5007,
+        "expiresAt": 5017,
+        "closed": true
+      },
+      {
+        "gigId": "g104",
+        "driverId": "ku6c-0322",
+        "at": 5007,
+        "expiresAt": 5017,
+        "closed": true
+      },
+      {
+        "gigId": "g105",
+        "driverId": "ku6c-1760",
+        "at": 5012,
+        "expiresAt": 5022,
+        "closed": true
+      },
+      {
+        "gigId": "g105",
+        "driverId": "ku6c-0322",
+        "at": 5017,
+        "expiresAt": 5027,
+        "closed": true
+      },
+      {
+        "gigId": "g105",
+        "driverId": "ku6c-0859",
+        "at": 5020,
+        "expiresAt": 5030,
+        "closed": true
+      },
+      {
+        "gigId": "g121",
+        "driverId": "ku6c-0225",
+        "at": 5175,
+        "expiresAt": 5185,
+        "closed": true
+      },
+      {
+        "gigId": "g121",
+        "driverId": "ku6c-0239",
+        "at": 5177,
+        "expiresAt": 5187,
+        "closed": true
+      },
+      {
+        "gigId": "g121",
+        "driverId": "ku6c-0085",
+        "at": 5183,
+        "expiresAt": 5193,
+        "closed": true
+      },
+      {
+        "gigId": "g125",
+        "driverId": "ku6c-0265",
+        "at": 5208,
+        "expiresAt": 5218,
+        "closed": true
+      },
+      {
+        "gigId": "g125",
+        "driverId": "ku6c-0463",
+        "at": 5210,
+        "expiresAt": 5220,
+        "closed": true
+      },
+      {
+        "gigId": "g125",
+        "driverId": "ku6c-0653",
+        "at": 5211,
+        "expiresAt": 5221,
+        "closed": true
+      },
+      {
+        "gigId": "g134",
+        "driverId": "ku6c-1460",
+        "at": 5366,
+        "expiresAt": 5376,
+        "closed": true
+      },
+      {
+        "gigId": "g134",
+        "driverId": "ku6c-1225",
+        "at": 5367,
+        "expiresAt": 5377,
+        "closed": true
+      },
+      {
+        "gigId": "g134",
+        "driverId": "ku6c-0381",
+        "at": 5373,
+        "expiresAt": 5383,
+        "closed": true
+      },
+      {
+        "gigId": "g141",
+        "driverId": "ku6c-0431",
+        "at": 6300,
+        "expiresAt": 6310,
+        "closed": true
+      },
+      {
+        "gigId": "g141",
+        "driverId": "ku6c-1360",
+        "at": 6301,
+        "expiresAt": 6311,
+        "closed": true
+      },
+      {
+        "gigId": "g141",
+        "driverId": "ku6c-1445",
+        "at": 6302,
+        "expiresAt": 6312,
+        "closed": true
+      },
+      {
+        "gigId": "g148",
+        "driverId": "ku6c-1652",
+        "at": 6446,
+        "expiresAt": 6456,
+        "closed": true
+      },
+      {
+        "gigId": "g149",
+        "driverId": "ku6c-1173",
+        "at": 6446,
+        "expiresAt": 6456,
+        "closed": true
+      },
+      {
+        "gigId": "g148",
+        "driverId": "ku6c-0235",
+        "at": 6447,
+        "expiresAt": 6457,
+        "closed": true
+      },
+      {
+        "gigId": "g149",
+        "driverId": "ku6c-0336",
+        "at": 6447,
+        "expiresAt": 6457,
+        "closed": true
+      },
+      {
+        "gigId": "g148",
+        "driverId": "ku6c-0163",
+        "at": 6448,
+        "expiresAt": 6458,
+        "closed": true
+      },
+      {
+        "gigId": "g149",
+        "driverId": "ku6c-0523",
+        "at": 6448,
+        "expiresAt": 6458,
+        "closed": true
+      },
+      {
+        "gigId": "g150",
+        "driverId": "ku6c-0721",
+        "at": 6457,
+        "expiresAt": 6467,
+        "closed": true
+      },
+      {
+        "gigId": "g151",
+        "driverId": "ku6c-1613",
+        "at": 6457,
+        "expiresAt": 6467,
+        "closed": true
+      },
+      {
+        "gigId": "g150",
+        "driverId": "ku6c-1623",
+        "at": 6459,
+        "expiresAt": 6469,
+        "closed": true
+      },
+      {
+        "gigId": "g151",
+        "driverId": "ku6c-0336",
+        "at": 6459,
+        "expiresAt": 6469,
+        "closed": true
+      },
+      {
+        "gigId": "g150",
+        "driverId": "ku6c-0235",
+        "at": 6463,
+        "expiresAt": 6473,
+        "closed": true
+      },
+      {
+        "gigId": "g151",
+        "driverId": "ku6c-0523",
+        "at": 6463,
+        "expiresAt": 6473,
+        "closed": true
+      },
+      {
+        "gigId": "g155",
+        "driverId": "ku6c-0090",
+        "at": 6514,
+        "expiresAt": 6524,
+        "closed": true
+      },
+      {
+        "gigId": "g157",
+        "driverId": "ku6c-1625",
+        "at": 6514,
+        "expiresAt": 6524,
+        "closed": true
+      },
+      {
+        "gigId": "g155",
+        "driverId": "ku6c-0381",
+        "at": 6521,
+        "expiresAt": 6531,
+        "closed": true
+      },
+      {
+        "gigId": "g155",
+        "driverId": "ku6c-1248",
+        "at": 6522,
+        "expiresAt": 6532,
+        "closed": true
+      },
+      {
+        "gigId": "g161",
+        "driverId": "ku6c-1073",
+        "at": 6531,
+        "expiresAt": 6541,
+        "closed": true
+      },
+      {
+        "gigId": "g161",
+        "driverId": "ku6c-1924",
+        "at": 6533,
+        "expiresAt": 6543,
+        "closed": true
+      },
+      {
+        "gigId": "g161",
+        "driverId": "ku6c-1649",
+        "at": 6534,
+        "expiresAt": 6544,
+        "closed": true
+      },
+      {
+        "gigId": "g166",
+        "driverId": "ku6c-0886",
+        "at": 6635,
+        "expiresAt": 6645,
+        "closed": true
+      },
+      {
+        "gigId": "g166",
+        "driverId": "ku6c-1432",
+        "at": 6636,
+        "expiresAt": 6646,
+        "closed": true
+      },
+      {
+        "gigId": "g166",
+        "driverId": "ku6c-1924",
+        "at": 6638,
+        "expiresAt": 6648,
+        "closed": true
+      },
+      {
+        "gigId": "g167",
+        "driverId": "ku6c-0260",
+        "at": 6666,
+        "expiresAt": 6676,
+        "closed": true
+      },
+      {
+        "gigId": "g167",
+        "driverId": "ku6c-1205",
+        "at": 6668,
+        "expiresAt": 6678,
+        "closed": true
+      },
+      {
+        "gigId": "g167",
+        "driverId": "ku6c-0793",
+        "at": 6670,
+        "expiresAt": 6680,
+        "closed": true
+      },
+      {
+        "gigId": "g172",
+        "driverId": "ku6c-0043",
+        "at": 6688,
+        "expiresAt": 6698,
+        "closed": true
+      },
+      {
+        "gigId": "g173",
+        "driverId": "ku6c-0498",
+        "at": 6688,
+        "expiresAt": 6698,
+        "closed": true
+      },
+      {
+        "gigId": "g172",
+        "driverId": "ku6c-1353",
+        "at": 6696,
+        "expiresAt": 6706,
+        "closed": true
+      },
+      {
+        "gigId": "g173",
+        "driverId": "ku6c-0650",
+        "at": 6696,
+        "expiresAt": 6706,
+        "closed": true
+      },
+      {
+        "gigId": "g172",
+        "driverId": "ku6c-0983",
+        "at": 6701,
+        "expiresAt": 6711,
+        "closed": true
+      },
+      {
+        "gigId": "g173",
+        "driverId": "ku6c-1873",
+        "at": 6701,
+        "expiresAt": 6711,
+        "closed": true
+      },
+      {
+        "gigId": "g180",
+        "driverId": "ku6c-1581",
+        "at": 6782,
+        "expiresAt": 6792,
+        "closed": true
+      },
+      {
+        "gigId": "g180",
+        "driverId": "ku6c-0746",
+        "at": 6789,
+        "expiresAt": 6799,
+        "closed": true
+      },
+      {
+        "gigId": "g181",
+        "driverId": "ku6c-0903",
+        "at": 6789,
+        "expiresAt": 6799,
+        "closed": true
+      },
+      {
+        "gigId": "g180",
+        "driverId": "ku6c-1283",
+        "at": 6793,
+        "expiresAt": 6803,
+        "closed": true
+      },
+      {
+        "gigId": "g181",
+        "driverId": "ku6c-1582",
+        "at": 6793,
+        "expiresAt": 6803,
+        "closed": true
+      },
+      {
+        "gigId": "g181",
+        "driverId": "ku6c-1156",
+        "at": 6798,
+        "expiresAt": 6808,
+        "closed": true
+      },
+      {
+        "gigId": "g182",
+        "driverId": "ku6c-1414",
+        "at": 6819,
+        "expiresAt": 6829,
+        "closed": true
+      },
+      {
+        "gigId": "g182",
+        "driverId": "ku6c-1670",
+        "at": 6820,
+        "expiresAt": 6830,
+        "closed": true
+      },
+      {
+        "gigId": "g182",
+        "driverId": "ku6c-0713",
+        "at": 6828,
+        "expiresAt": 6838,
+        "closed": true
+      }
+    ],
+    "blockedDay": 6
+  },
+  "pendingAdvance": false,
+  "finishedAt": "2026-11-13T23:21:25.666Z",
+  "score": {
+    "marginCents": 314605,
+    "revenueCents": 1085040,
+    "marginShare": 0.2899478360244784,
+    "wonOrders": 183,
+    "onTimeShare": 1,
+    "undeliveredShare": 0,
+    "ranked": true
+  },
+  "stats": {
+    "quoted": 1000,
+    "declined": {},
+    "refused": [],
+    "chainsPosted": 0,
+    "complete": false
+  }
+}

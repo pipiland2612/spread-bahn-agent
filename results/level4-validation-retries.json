@@ -1,0 +1,70 @@
+[
+  {
+    "config": "baseline",
+    "seed": "quotes-holdout-1",
+    "worldId": "wce84bedf986f59fc956d",
+    "exit": 0,
+    "score": {
+      "marginCents": 308434,
+      "revenueCents": 2189100,
+      "marginShare": 0.14089534511899868,
+      "wonOrders": 353,
+      "onTimeShare": 0.9660056657223796,
+      "undeliveredShare": 0,
+      "ranked": true
+    },
+    "refused": 0,
+    "complete": false
+  },
+  {
+    "config": "baseline",
+    "seed": "quotes-holdout-3",
+    "worldId": "wd48d458b0fcf3cf2dfc8",
+    "exit": 0,
+    "score": {
+      "marginCents": 307184,
+      "revenueCents": 1832000,
+      "marginShare": 0.1676768558951965,
+      "wonOrders": 301,
+      "onTimeShare": 0.9900332225913622,
+      "undeliveredShare": 0,
+      "ranked": true
+    },
+    "refused": 0,
+    "complete": false
+  },
+  {
+    "config": "baseline",
+    "seed": "quotes-holdout-2",
+    "worldId": "weab26a0e78d285a1a0a7",
+    "exit": 0,
+    "score": {
+      "marginCents": 479545,
+      "revenueCents": 2266400,
+      "marginShare": 0.2115888633956936,
+      "wonOrders": 414,
+      "onTimeShare": 0.9927536231884058,
+      "undeliveredShare": 0,
+      "ranked": true
+    },
+    "refused": 0,
+    "complete": false
+  },
+  {
+    "config": "options-100",
+    "seed": "quotes-holdout-1",
+    "worldId": "we1f142e7f029a022ed73",
+    "exit": 0,
+    "score": {
+      "marginCents": 298824,
+      "revenueCents": 2192900,
+      "marginShare": 0.13626886770942587,
+      "wonOrders": 354,
+      "onTimeShare": 0.9689265536723164,
+      "undeliveredShare": 0,
+      "ranked": true
+    },
+    "refused": 0,
+    "complete": false
+  }
+]
