@@ -13,6 +13,8 @@ A price change also changes which requests pass the reference/price filter. Thes
 | options-100 | €10,686.77 | 98.86% | 998 | 0 | 0 |
 | options-110 | €11,297.06 | 99.09% | 659 | 0 | 2 |
 
+`baseline` quotes the first option at 1.00× list price. `options-090`, `options-100` and `options-110` quote all feasible options at 0.90×, 1.00× and 1.10× respectively.
+
 Eligible tuning winner: **options-100**. The 1.10× candidate had the highest raw margin, but two connection-interrupted weeks had incomplete cumulative action evidence and therefore failed the predeclared gate. Tuning seeds were `quotes-tune-1` through `quotes-tune-3`.
 
 ## Independent validation
@@ -31,8 +33,21 @@ Selected policy: **options-100**, quote mode `options`, multiplier **1**. Explic
 
 ## Ranked round
 
-Sequential ranking weeks are in progress. No final rank is claimed yet.
+T2 rank **4**, round **Saturday 00:00** (season 4), checked at `2026-11-14T00:17:53.676Z`. Live standings can change.
 
+Total gross margin **€17,906.90**, **99.38%** on time. These secret weeks differ from the experiment seeds and do not measure a causal before/after gain.
+
+| Week | Margin | On time | Orders | World |
+| --- | ---: | ---: | ---: | --- |
+| 1 | €2,255.37 | 100.00% | 151 | `w618b5ba1222c77c14365` |
+| 2 | €3,384.95 | 99.31% | 291 | `w8629ed9dac170ba977ca` |
+| 3 | €5,011.23 | 99.75% | 396 | `w97199e77e89bd414ea72` |
+| 4 | €4,405.19 | 99.49% | 395 | `w06a2ffe61471fe851e1b` |
+| 5 | €2,850.16 | 98.26% | 230 | `w246c9c315cca339b736c` |
+
+[Saved leaderboard evidence](../results/leaderboard-level-4-season-4.json). Ranking worlds were not forked, revealed or deleted.
+
+All five attempts in this round are complete. Further ranked entry requires a new round. No unfinished Level 4 ranking world remained at the final check.
 
 ## Evidence index
 

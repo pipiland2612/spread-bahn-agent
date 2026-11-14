@@ -1,0 +1,3108 @@
+{
+  "checkedAt": "2026-11-14T00:18:09.507Z",
+  "level": 4,
+  "current": {
+    "season": 4,
+    "name": "Saturday 00:00",
+    "startedAt": "2026-11-13T22:00:17.082Z",
+    "teams": [
+      {
+        "rank": null,
+        "team": "house-strong",
+        "name": "House best",
+        "played": 5,
+        "ranked": true,
+        "marginCents": 4069087,
+        "onTimeShare": 0.9755201958384333,
+        "runs": [
+          {
+            "run": 1,
+            "marginCents": 520112,
+            "onTimeShare": 0.9770992366412213,
+            "wonOrders": 393,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 2,
+            "marginCents": 695475,
+            "onTimeShare": 0.9745222929936306,
+            "wonOrders": 471,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 3,
+            "marginCents": 1239481,
+            "onTimeShare": 0.979381443298969,
+            "wonOrders": 582,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 4,
+            "marginCents": 1052599,
+            "onTimeShare": 0.9731993299832495,
+            "wonOrders": 597,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 5,
+            "marginCents": 561420,
+            "onTimeShare": 0.9730392156862745,
+            "wonOrders": 408,
+            "ranked": true,
+            "deletedAt": null
+          }
+        ]
+      },
+      {
+        "rank": 1,
+        "team": "edge101",
+        "name": "Edge101",
+        "played": 5,
+        "ranked": true,
+        "marginCents": 3569254,
+        "onTimeShare": 0.9658349328214971,
+        "runs": [
+          {
+            "run": 1,
+            "marginCents": 509864,
+            "onTimeShare": 0.9572446555819477,
+            "wonOrders": 421,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 2,
+            "marginCents": 639825,
+            "onTimeShare": 0.9741035856573705,
+            "wonOrders": 502,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 3,
+            "marginCents": 1019525,
+            "onTimeShare": 0.9555921052631579,
+            "wonOrders": 608,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 4,
+            "marginCents": 794239,
+            "onTimeShare": 0.9667774086378738,
+            "wonOrders": 602,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 5,
+            "marginCents": 605801,
+            "onTimeShare": 0.9766949152542372,
+            "wonOrders": 472,
+            "ranked": true,
+            "deletedAt": null
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "team": "bready",
+        "name": "Bready",
+        "played": 5,
+        "ranked": true,
+        "marginCents": 2285903,
+        "onTimeShare": 0.9623342175066313,
+        "runs": [
+          {
+            "run": 1,
+            "marginCents": 281481,
+            "onTimeShare": 0.9584775086505191,
+            "wonOrders": 289,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 2,
+            "marginCents": 358956,
+            "onTimeShare": 0.9768115942028985,
+            "wonOrders": 345,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 3,
+            "marginCents": 750325,
+            "onTimeShare": 0.9539078156312625,
+            "wonOrders": 499,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 4,
+            "marginCents": 585670,
+            "onTimeShare": 0.9586056644880174,
+            "wonOrders": 459,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 5,
+            "marginCents": 309471,
+            "onTimeShare": 0.9692832764505119,
+            "wonOrders": 293,
+            "ranked": true,
+            "deletedAt": null
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "team": "alignas",
+        "name": "alignas",
+        "played": 5,
+        "ranked": true,
+        "marginCents": 1950391,
+        "onTimeShare": 0.9747081712062257,
+        "runs": [
+          {
+            "run": 1,
+            "marginCents": 211234,
+            "onTimeShare": 0.9512195121951219,
+            "wonOrders": 123,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 2,
+            "marginCents": 307653,
+            "onTimeShare": 0.96875,
+            "wonOrders": 192,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 3,
+            "marginCents": 709796,
+            "onTimeShare": 0.9899665551839465,
+            "wonOrders": 299,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 4,
+            "marginCents": 527326,
+            "onTimeShare": 0.9743589743589743,
+            "wonOrders": 273,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 5,
+            "marginCents": 194382,
+            "onTimeShare": 0.9716312056737588,
+            "wonOrders": 141,
+            "ranked": true,
+            "deletedAt": null
+          }
+        ]
+      },
+      {
+        "rank": 4,
+        "team": "t2",
+        "name": "T2",
+        "played": 5,
+        "ranked": true,
+        "marginCents": 1790690,
+        "onTimeShare": 0.9938482570061518,
+        "runs": [
+          {
+            "run": 1,
+            "marginCents": 225537,
+            "onTimeShare": 1,
+            "wonOrders": 151,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 2,
+            "marginCents": 338495,
+            "onTimeShare": 0.993127147766323,
+            "wonOrders": 291,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 3,
+            "marginCents": 501123,
+            "onTimeShare": 0.9974747474747475,
+            "wonOrders": 396,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 4,
+            "marginCents": 440519,
+            "onTimeShare": 0.9949367088607595,
+            "wonOrders": 395,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 5,
+            "marginCents": 285016,
+            "onTimeShare": 0.9826086956521739,
+            "wonOrders": 230,
+            "ranked": true,
+            "deletedAt": null
+          }
+        ]
+      },
+      {
+        "rank": 5,
+        "team": "bidcast",
+        "name": "Bidcast",
+        "played": 5,
+        "ranked": true,
+        "marginCents": 1467016,
+        "onTimeShare": 0.9755244755244755,
+        "runs": [
+          {
+            "run": 1,
+            "marginCents": 171735,
+            "onTimeShare": 0.9754601226993865,
+            "wonOrders": 163,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 2,
+            "marginCents": 178388,
+            "onTimeShare": 0.9773755656108597,
+            "wonOrders": 221,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 3,
+            "marginCents": 508581,
+            "onTimeShare": 0.9714285714285714,
+            "wonOrders": 280,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 4,
+            "marginCents": 399945,
+            "onTimeShare": 0.9708029197080292,
+            "wonOrders": 274,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 5,
+            "marginCents": 208367,
+            "onTimeShare": 0.9854368932038835,
+            "wonOrders": 206,
+            "ranked": true,
+            "deletedAt": null
+          }
+        ]
+      },
+      {
+        "rank": null,
+        "team": "house-starter",
+        "name": "House starter",
+        "played": 5,
+        "ranked": true,
+        "marginCents": -825888,
+        "onTimeShare": 0.9723661485319517,
+        "runs": [
+          {
+            "run": 1,
+            "marginCents": 5619,
+            "onTimeShare": 0.9758064516129032,
+            "wonOrders": 248,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 2,
+            "marginCents": -63273,
+            "onTimeShare": 0.9808153477218226,
+            "wonOrders": 417,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 3,
+            "marginCents": -241981,
+            "onTimeShare": 0.9648318042813455,
+            "wonOrders": 654,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 4,
+            "marginCents": -177177,
+            "onTimeShare": 0.9636963696369637,
+            "wonOrders": 606,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 5,
+            "marginCents": -349076,
+            "onTimeShare": 0.9872122762148338,
+            "wonOrders": 391,
+            "ranked": true,
+            "deletedAt": null
+          }
+        ]
+      },
+      {
+        "rank": null,
+        "team": "toasty",
+        "name": "Toasty",
+        "played": 1,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": [
+          {
+            "run": 1,
+            "marginCents": 281481,
+            "onTimeShare": 0.9584775086505191,
+            "wonOrders": 289,
+            "ranked": true,
+            "deletedAt": null
+          }
+        ]
+      },
+      {
+        "rank": null,
+        "team": "4-horses",
+        "name": "4-Horses",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "a1to",
+        "name": "A1To",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "abc",
+        "name": "abc",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "abquant",
+        "name": "ABQuant",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "adf",
+        "name": "adf",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "aetekni",
+        "name": "aetekni",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "afferent",
+        "name": "Afferent",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "aka",
+        "name": "aka",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "alex_te",
+        "name": "alex_te",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "antontan96",
+        "name": "antonTan96",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "auto-express",
+        "name": "Auto express",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "bahn-check",
+        "name": "Bahn check",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "bahn67",
+        "name": "bahn67",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "bahnana",
+        "name": "bahnana",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "blib_blib",
+        "name": "blib_blib",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "blib_blib4",
+        "name": "blib_blib4",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "blip_blip_2",
+        "name": "blip_blip_2",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "blip_blip_4",
+        "name": "blip_blip_4",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "bob-the-builders",
+        "name": "Bob the builders",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "bogoteam",
+        "name": "bogoteam",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "builder",
+        "name": "Builder",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "burger-han",
+        "name": "Burger Han",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "cat",
+        "name": "CAT",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "cazola-de-barro",
+        "name": "Cazola de Barro",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "claudin-it-2",
+        "name": "Claudin' it 2",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "cookiezi",
+        "name": "Cookiezi",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "cs-and-ds-greeks",
+        "name": "CS and DS greeks",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "da-vinci-claude",
+        "name": "Da Vinci Claude",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "davinci-s-night-shift",
+        "name": "DaVinci’s Night Shift",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "davincians",
+        "name": "Davincians",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "duoha-dispatch",
+        "name": "duoha-dispatch",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "elysa-s-secret",
+        "name": "Elysa's Secret",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "evil-club",
+        "name": "Evil Club",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "ex-actum",
+        "name": "EX-ACTUM",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "fluiidd",
+        "name": "Fluiidd",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "flyingtuna",
+        "name": "FlyingTuna",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "fourth-affair",
+        "name": "Fourth Affair",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "granmamas-belotas",
+        "name": "Granmamas Belotas",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "guardians-of-the-moonlight",
+        "name": "Guardians of the Moonlight",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "hack-to-the-future",
+        "name": "Hack to the future",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "hackandseek",
+        "name": "HackandSeek",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "halal-team",
+        "name": "Halal Team",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "hendunefc",
+        "name": "HenduneFC",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "hey",
+        "name": "hey",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "hiver-8s",
+        "name": "Hiver 8s",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "ho-s-nephews",
+        "name": "Ho's Nephews",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "honse",
+        "name": "Honse",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "hot-choco",
+        "name": "hot choco",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "house-bahn",
+        "name": "House dispatcher",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "house-rookie",
+        "name": "House rookie",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "iliada",
+        "name": "iliada",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "indubitably",
+        "name": "Indubitably",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "jaffa",
+        "name": "jaffa",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "jeppe",
+        "name": "jeppe",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "juhus",
+        "name": "Juhus",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "junctional-programming",
+        "name": "Junctional Programming",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "katalyst",
+        "name": "katalyst",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "kavo",
+        "name": "kavo",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "kiitos",
+        "name": "Kiitos",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "lafa",
+        "name": "LAFA",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "lightning-mcqueen",
+        "name": "Lightning McQueen",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "lizards",
+        "name": "lizards",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "lombok",
+        "name": "Lombok",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "matrix",
+        "name": "Matrix",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "mrekk",
+        "name": "mrekk",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "musta-helmi",
+        "name": "MUSTA HELMI",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "naturally_unintelligent",
+        "name": "naturally_unintelligent",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "newkaabi",
+        "name": "NewKaabi",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "no-empty-miles",
+        "name": "No Empty Miles",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "nobrainers",
+        "name": "noBrainers",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "noidea",
+        "name": "NoIdea",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "northbound-dispatch",
+        "name": "Northbound Dispatch",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "odyssey",
+        "name": "Odyssey",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "okapi",
+        "name": "okapi",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "olive-oil",
+        "name": "Olive Oil",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "one-boy",
+        "name": "one boy",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "pelaaja-juhlii",
+        "name": "pelaaja juhlii",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "predators",
+        "name": "Predators",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "progresful",
+        "name": "Progresful",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "rafis",
+        "name": "Rafis",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "rbc",
+        "name": "RBC",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "robobogosort",
+        "name": "robobogosort",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "robottika-sienheiluttelijat",
+        "name": "robottikäsienheiluttelijat",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "rome-wasn-t-built-in-48h",
+        "name": "Rome wasn't built in 48h",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "sauna-renaissance",
+        "name": "Sauna Renaissance",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "saunan-pojat",
+        "name": "saunan pojat",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "saymyname",
+        "name": "saymyname",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "seekers",
+        "name": "Seekers",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "semi-tired-finns",
+        "name": "semi-tired finns",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "shhh",
+        "name": "shhh",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "sl-lab",
+        "name": "SL Lab",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "softmax",
+        "name": "softmax",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "source-exp",
+        "name": "source-exp",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "spread-on-the-bread",
+        "name": "Spread on the Bread",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "stingman",
+        "name": "Stingman",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "swarm-dispatch",
+        "name": "Swarm Dispatch",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "team-alpha",
+        "name": "Team Alpha",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "team-anonymous",
+        "name": "Team Anonymous",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "team-avatar",
+        "name": "Team Avatar",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "team-co-tai",
+        "name": "Team co Tai",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "team-moonshot",
+        "name": "Team Moonshot",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "tekeva-t-toljottajat",
+        "name": "Tekevät Toljottajat",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "test",
+        "name": "test",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "test-team1114",
+        "name": "Test-Team1114",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "test12",
+        "name": "Test12",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "test1221",
+        "name": "test1221",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "testt",
+        "name": "testt",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "the-delusionals",
+        "name": "The Delusionals",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "the-nordics",
+        "name": "The Nordics",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "the-oracular-esoterics",
+        "name": "The Oracular Esoterics",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "the-small-duo",
+        "name": "The small duo",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "this-is-my-team",
+        "name": "this is my team",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "toro019",
+        "name": "toro019",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "ts",
+        "name": "TS",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "tunkkarit",
+        "name": "Tunkkarit",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "upsala",
+        "name": "Upsala",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "weight-space-vibecoder",
+        "name": "WEIGHT SPACE VIBECODER",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "what-are-we-not",
+        "name": "What are we not?",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "what-s-the-wifi",
+        "name": "What's the wifi?",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "while-3",
+        "name": "while(3)",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "wubwoofwolf",
+        "name": "WubWoofWolf",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      }
+    ]
+  },
+  "previous": {
+    "season": 3,
+    "name": "Friday 20:01",
+    "startedAt": "2026-11-13T18:01:18.518Z",
+    "teams": [
+      {
+        "rank": null,
+        "team": "house-strong",
+        "name": "House best",
+        "played": 5,
+        "ranked": true,
+        "marginCents": 3705966,
+        "onTimeShare": 0.9808131566925536,
+        "runs": [
+          {
+            "run": 1,
+            "marginCents": 916106,
+            "onTimeShare": 0.989406779661017,
+            "wonOrders": 472,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 2,
+            "marginCents": 759377,
+            "onTimeShare": 0.9625550660792952,
+            "wonOrders": 454,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 3,
+            "marginCents": 505566,
+            "onTimeShare": 0.978319783197832,
+            "wonOrders": 369,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 4,
+            "marginCents": 958724,
+            "onTimeShare": 0.988527724665392,
+            "wonOrders": 523,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 5,
+            "marginCents": 566193,
+            "onTimeShare": 0.9838274932614556,
+            "wonOrders": 371,
+            "ranked": true,
+            "deletedAt": null
+          }
+        ]
+      },
+      {
+        "rank": 1,
+        "team": "northbound-dispatch",
+        "name": "Northbound Dispatch",
+        "played": 5,
+        "ranked": true,
+        "marginCents": 2136677,
+        "onTimeShare": 0.9603869184707509,
+        "runs": [
+          {
+            "run": 1,
+            "marginCents": 607730,
+            "onTimeShare": 0.9692307692307692,
+            "wonOrders": 455,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 2,
+            "marginCents": 342585,
+            "onTimeShare": 0.9481981981981982,
+            "wonOrders": 444,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 3,
+            "marginCents": 306020,
+            "onTimeShare": 0.958904109589041,
+            "wonOrders": 365,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 4,
+            "marginCents": 554553,
+            "onTimeShare": 0.9542961608775137,
+            "wonOrders": 547,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 5,
+            "marginCents": 325789,
+            "onTimeShare": 0.975,
+            "wonOrders": 360,
+            "ranked": true,
+            "deletedAt": null
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "team": "team-alpha",
+        "name": "Team Alpha",
+        "played": 5,
+        "ranked": true,
+        "marginCents": 1295944,
+        "onTimeShare": 0.9919649379108838,
+        "runs": [
+          {
+            "run": 1,
+            "marginCents": 330304,
+            "onTimeShare": 0.9968354430379747,
+            "wonOrders": 316,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 2,
+            "marginCents": 310633,
+            "onTimeShare": 0.9863013698630136,
+            "wonOrders": 292,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 3,
+            "marginCents": 155510,
+            "onTimeShare": 0.9868421052631579,
+            "wonOrders": 152,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 4,
+            "marginCents": 351779,
+            "onTimeShare": 0.9953271028037384,
+            "wonOrders": 428,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 5,
+            "marginCents": 147718,
+            "onTimeShare": 0.988950276243094,
+            "wonOrders": 181,
+            "ranked": true,
+            "deletedAt": null
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "team": "team-anonymous",
+        "name": "Team Anonymous",
+        "played": 5,
+        "ranked": true,
+        "marginCents": 1295944,
+        "onTimeShare": 0.9919649379108838,
+        "runs": [
+          {
+            "run": 1,
+            "marginCents": 330304,
+            "onTimeShare": 0.9968354430379747,
+            "wonOrders": 316,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 2,
+            "marginCents": 310633,
+            "onTimeShare": 0.9863013698630136,
+            "wonOrders": 292,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 3,
+            "marginCents": 155510,
+            "onTimeShare": 0.9868421052631579,
+            "wonOrders": 152,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 4,
+            "marginCents": 351779,
+            "onTimeShare": 0.9953271028037384,
+            "wonOrders": 428,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 5,
+            "marginCents": 147718,
+            "onTimeShare": 0.988950276243094,
+            "wonOrders": 181,
+            "ranked": true,
+            "deletedAt": null
+          }
+        ]
+      },
+      {
+        "rank": null,
+        "team": "house-starter",
+        "name": "House starter",
+        "played": 5,
+        "ranked": true,
+        "marginCents": -735126,
+        "onTimeShare": 0.9689703808180536,
+        "runs": [
+          {
+            "run": 1,
+            "marginCents": 63304,
+            "onTimeShare": 0.9749430523917996,
+            "wonOrders": 439,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 2,
+            "marginCents": -506290,
+            "onTimeShare": 0.9492600422832981,
+            "wonOrders": 473,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 3,
+            "marginCents": 6899,
+            "onTimeShare": 0.9829351535836177,
+            "wonOrders": 293,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 4,
+            "marginCents": -129510,
+            "onTimeShare": 0.9788617886178862,
+            "wonOrders": 615,
+            "ranked": true,
+            "deletedAt": null
+          },
+          {
+            "run": 5,
+            "marginCents": -169529,
+            "onTimeShare": 0.9576547231270358,
+            "wonOrders": 307,
+            "ranked": true,
+            "deletedAt": null
+          }
+        ]
+      },
+      {
+        "rank": null,
+        "team": "abc",
+        "name": "abc",
+        "played": 1,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": [
+          {
+            "run": 1,
+            "marginCents": -927309,
+            "onTimeShare": 0.9739952718676123,
+            "wonOrders": 423,
+            "ranked": true,
+            "deletedAt": null
+          }
+        ]
+      },
+      {
+        "rank": null,
+        "team": "4-horses",
+        "name": "4-Horses",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "a1to",
+        "name": "A1To",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "abquant",
+        "name": "ABQuant",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "adf",
+        "name": "adf",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "aetekni",
+        "name": "aetekni",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "afferent",
+        "name": "Afferent",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "aka",
+        "name": "aka",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "alex_te",
+        "name": "alex_te",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "alignas",
+        "name": "alignas",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "antontan96",
+        "name": "antonTan96",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "auto-express",
+        "name": "Auto express",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "bahn-check",
+        "name": "Bahn check",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "bahn67",
+        "name": "bahn67",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "bahnana",
+        "name": "bahnana",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "bidcast",
+        "name": "Bidcast",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "blib_blib",
+        "name": "blib_blib",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "blib_blib4",
+        "name": "blib_blib4",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "blip_blip_2",
+        "name": "blip_blip_2",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "blip_blip_4",
+        "name": "blip_blip_4",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "bob-the-builders",
+        "name": "Bob the builders",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "bogoteam",
+        "name": "bogoteam",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "bready",
+        "name": "Bready",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "builder",
+        "name": "Builder",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "burger-han",
+        "name": "Burger Han",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "cat",
+        "name": "CAT",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "cazola-de-barro",
+        "name": "Cazola de Barro",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "claudin-it-2",
+        "name": "Claudin' it 2",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "cookiezi",
+        "name": "Cookiezi",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "cs-and-ds-greeks",
+        "name": "CS and DS greeks",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "da-vinci-claude",
+        "name": "Da Vinci Claude",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "davinci-s-night-shift",
+        "name": "DaVinci’s Night Shift",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "davincians",
+        "name": "Davincians",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "duoha-dispatch",
+        "name": "duoha-dispatch",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "edge101",
+        "name": "Edge101",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "elysa-s-secret",
+        "name": "Elysa's Secret",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "evil-club",
+        "name": "Evil Club",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "ex-actum",
+        "name": "EX-ACTUM",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "fluiidd",
+        "name": "Fluiidd",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "flyingtuna",
+        "name": "FlyingTuna",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "fourth-affair",
+        "name": "Fourth Affair",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "granmamas-belotas",
+        "name": "Granmamas Belotas",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "guardians-of-the-moonlight",
+        "name": "Guardians of the Moonlight",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "hack-to-the-future",
+        "name": "Hack to the future",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "hackandseek",
+        "name": "HackandSeek",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "halal-team",
+        "name": "Halal Team",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "hendunefc",
+        "name": "HenduneFC",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "hey",
+        "name": "hey",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "hiver-8s",
+        "name": "Hiver 8s",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "ho-s-nephews",
+        "name": "Ho's Nephews",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "honse",
+        "name": "Honse",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "hot-choco",
+        "name": "hot choco",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "house-bahn",
+        "name": "House dispatcher",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "house-rookie",
+        "name": "House rookie",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "iliada",
+        "name": "iliada",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "indubitably",
+        "name": "Indubitably",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "jaffa",
+        "name": "jaffa",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "jeppe",
+        "name": "jeppe",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "juhus",
+        "name": "Juhus",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "junctional-programming",
+        "name": "Junctional Programming",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "katalyst",
+        "name": "katalyst",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "kavo",
+        "name": "kavo",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "kiitos",
+        "name": "Kiitos",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "lafa",
+        "name": "LAFA",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "lightning-mcqueen",
+        "name": "Lightning McQueen",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "lizards",
+        "name": "lizards",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "lombok",
+        "name": "Lombok",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "matrix",
+        "name": "Matrix",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "mrekk",
+        "name": "mrekk",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "musta-helmi",
+        "name": "MUSTA HELMI",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "naturally_unintelligent",
+        "name": "naturally_unintelligent",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "newkaabi",
+        "name": "NewKaabi",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "no-empty-miles",
+        "name": "No Empty Miles",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "nobrainers",
+        "name": "noBrainers",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "noidea",
+        "name": "NoIdea",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "odyssey",
+        "name": "Odyssey",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "okapi",
+        "name": "okapi",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "olive-oil",
+        "name": "Olive Oil",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "one-boy",
+        "name": "one boy",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "pelaaja-juhlii",
+        "name": "pelaaja juhlii",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "predators",
+        "name": "Predators",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "progresful",
+        "name": "Progresful",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "rafis",
+        "name": "Rafis",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "rbc",
+        "name": "RBC",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "robobogosort",
+        "name": "robobogosort",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "robottika-sienheiluttelijat",
+        "name": "robottikäsienheiluttelijat",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "rome-wasn-t-built-in-48h",
+        "name": "Rome wasn't built in 48h",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "sauna-renaissance",
+        "name": "Sauna Renaissance",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "saunan-pojat",
+        "name": "saunan pojat",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "saymyname",
+        "name": "saymyname",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "seekers",
+        "name": "Seekers",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "semi-tired-finns",
+        "name": "semi-tired finns",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "shhh",
+        "name": "shhh",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "sl-lab",
+        "name": "SL Lab",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "softmax",
+        "name": "softmax",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "source-exp",
+        "name": "source-exp",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "spread-on-the-bread",
+        "name": "Spread on the Bread",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "stingman",
+        "name": "Stingman",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "swarm-dispatch",
+        "name": "Swarm Dispatch",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "t2",
+        "name": "T2",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "team-avatar",
+        "name": "Team Avatar",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "team-co-tai",
+        "name": "Team co Tai",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "team-moonshot",
+        "name": "Team Moonshot",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "tekeva-t-toljottajat",
+        "name": "Tekevät Toljottajat",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "test",
+        "name": "test",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "test-team1114",
+        "name": "Test-Team1114",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "test12",
+        "name": "Test12",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "test1221",
+        "name": "test1221",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "testt",
+        "name": "testt",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "the-delusionals",
+        "name": "The Delusionals",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "the-nordics",
+        "name": "The Nordics",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "the-oracular-esoterics",
+        "name": "The Oracular Esoterics",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "the-small-duo",
+        "name": "The small duo",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "this-is-my-team",
+        "name": "this is my team",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "toasty",
+        "name": "Toasty",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "toro019",
+        "name": "toro019",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "ts",
+        "name": "TS",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "tunkkarit",
+        "name": "Tunkkarit",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "upsala",
+        "name": "Upsala",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "weight-space-vibecoder",
+        "name": "WEIGHT SPACE VIBECODER",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "what-are-we-not",
+        "name": "What are we not?",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "what-s-the-wifi",
+        "name": "What's the wifi?",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "while-3",
+        "name": "while(3)",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      },
+      {
+        "rank": null,
+        "team": "wubwoofwolf",
+        "name": "WubWoofWolf",
+        "played": 0,
+        "ranked": false,
+        "marginCents": null,
+        "onTimeShare": null,
+        "runs": []
+      }
+    ]
+  }
+}

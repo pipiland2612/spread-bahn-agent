@@ -34,3 +34,10 @@ The eligible tuning winner was all-options quoting at list price. Four interrupt
 Defaults were promoted only after those results. A consumer-level regression first failed because new Level 4 defaults declined a request with a feasible later option; after promotion it emitted the validated later-option quote. Saved first-option settings still restore unchanged. Full suite: 72 passing. Ranking runs receive explicit settings, so changing defaults does not change their configuration mid-run.
 
 The original reviewer verified the subsequent recovery/default changes and reported evidence. It reconciled all six clean holdouts to €11,444.38 versus €11,334.01, confirmed originals and exclusions are disclosed, found no material remaining correctness/reporting issues, and detected no credentials in the tracked diff. Its full suite run passed all 72 tests. No second reviewer or API mutations were used for this verification.
+
+
+## Ranked result and final verification
+
+All five season-4 Level 4 ranking weeks qualified with complete evidence and zero refused actions. T2 was rank 4 in `Saturday 00:00`, checked at `2026-11-14T00:17:53.676Z` (02:17 Helsinki time). Total margin €17,906.90, 99.38% on time across 1,463 orders. All cars were eventually delivered. Ranking worlds were never forked, revealed or deleted. A second fresh API read agreed with all five scores and rank; no unfinished Level 4 ranking worlds remained.
+
+The 0.97% held-out gain remains a modest three-week aggregate improvement, with one losing pair. Ranking seeds differ from the holdouts and are not evidence of an isolated quote-policy gain. Levels 5–8 and the live final remain out of scope. The feature is published as PR #4 without merging it.

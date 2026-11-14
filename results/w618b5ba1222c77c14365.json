@@ -1,0 +1,1212 @@
+{
+  "worldId": "w618b5ba1222c77c14365",
+  "seed": null,
+  "level": 4,
+  "feeMode": "legacy",
+  "networkMode": "offers",
+  "quoteSettings": {
+    "mode": "options",
+    "multiplier": 1
+  },
+  "networkRevision": 2,
+  "board": true,
+  "season": 4,
+  "boardRun": 1,
+  "policy": {
+    "openingMultiplier": 0.75,
+    "maxReferenceShare": 1.2,
+    "maxDriveMinutes": 240,
+    "minLocalDrivers": 15,
+    "minSlackMinutes": 210
+  },
+  "originalSettings": {
+    "level": 4,
+    "feeMode": "legacy",
+    "networkMode": "offers",
+    "quoteSettings": {
+      "mode": "options",
+      "multiplier": 1
+    },
+    "seed": "spread-1-1",
+    "policy": {
+      "openingMultiplier": 0.75,
+      "maxReferenceShare": 1.2,
+      "maxDriveMinutes": 240,
+      "minLocalDrivers": 15,
+      "minSlackMinutes": 210
+    }
+  },
+  "startedAt": "2026-11-13T23:52:01.126Z",
+  "resumes": [],
+  "networkState": {
+    "attempts": [
+      {
+        "gigId": "g2",
+        "driverId": "moga-2239",
+        "at": 691,
+        "expiresAt": 701,
+        "closed": true
+      },
+      {
+        "gigId": "g2",
+        "driverId": "moga-2851",
+        "at": 694,
+        "expiresAt": 704,
+        "closed": true
+      },
+      {
+        "gigId": "g3",
+        "driverId": "moga-2615",
+        "at": 694,
+        "expiresAt": 704,
+        "closed": true
+      },
+      {
+        "gigId": "g4",
+        "driverId": "moga-1221",
+        "at": 694,
+        "expiresAt": 704,
+        "closed": true
+      },
+      {
+        "gigId": "g2",
+        "driverId": "moga-2583",
+        "at": 699,
+        "expiresAt": 709,
+        "closed": true
+      },
+      {
+        "gigId": "g3",
+        "driverId": "moga-2851",
+        "at": 699,
+        "expiresAt": 709,
+        "closed": true
+      },
+      {
+        "gigId": "g4",
+        "driverId": "moga-1484",
+        "at": 699,
+        "expiresAt": 709,
+        "closed": true
+      },
+      {
+        "gigId": "g3",
+        "driverId": "moga-0335",
+        "at": 700,
+        "expiresAt": 710,
+        "closed": true
+      },
+      {
+        "gigId": "g4",
+        "driverId": "moga-2339",
+        "at": 700,
+        "expiresAt": 710,
+        "closed": true
+      },
+      {
+        "gigId": "g12",
+        "driverId": "moga-0128",
+        "at": 848,
+        "expiresAt": 858,
+        "closed": true
+      },
+      {
+        "gigId": "g12",
+        "driverId": "moga-1673",
+        "at": 850,
+        "expiresAt": 860,
+        "closed": true
+      },
+      {
+        "gigId": "g12",
+        "driverId": "moga-0033",
+        "at": 851,
+        "expiresAt": 861,
+        "closed": true
+      },
+      {
+        "gigId": "g11",
+        "driverId": "moga-0256",
+        "at": 854,
+        "expiresAt": 864,
+        "closed": true
+      },
+      {
+        "gigId": "g11",
+        "driverId": "moga-0398",
+        "at": 857,
+        "expiresAt": 867,
+        "closed": true
+      },
+      {
+        "gigId": "g13",
+        "driverId": "moga-0910",
+        "at": 857,
+        "expiresAt": 867,
+        "closed": true
+      },
+      {
+        "gigId": "g11",
+        "driverId": "moga-1129",
+        "at": 858,
+        "expiresAt": 868,
+        "closed": true
+      },
+      {
+        "gigId": "g13",
+        "driverId": "moga-2009",
+        "at": 858,
+        "expiresAt": 868,
+        "closed": true
+      },
+      {
+        "gigId": "g13",
+        "driverId": "moga-1438",
+        "at": 860,
+        "expiresAt": 870,
+        "closed": true
+      },
+      {
+        "gigId": "g14",
+        "driverId": "moga-2799",
+        "at": 894,
+        "expiresAt": 904,
+        "closed": true
+      },
+      {
+        "gigId": "g14",
+        "driverId": "moga-1504",
+        "at": 897,
+        "expiresAt": 907,
+        "closed": true
+      },
+      {
+        "gigId": "g14",
+        "driverId": "moga-2690",
+        "at": 899,
+        "expiresAt": 909,
+        "closed": true
+      },
+      {
+        "gigId": "g18",
+        "driverId": "moga-2328",
+        "at": 982,
+        "expiresAt": 992,
+        "closed": true
+      },
+      {
+        "gigId": "g18",
+        "driverId": "moga-2482",
+        "at": 983,
+        "expiresAt": 993,
+        "closed": true
+      },
+      {
+        "gigId": "g18",
+        "driverId": "moga-1462",
+        "at": 987,
+        "expiresAt": 997,
+        "closed": true
+      },
+      {
+        "gigId": "g19",
+        "driverId": "moga-0545",
+        "at": 1037,
+        "expiresAt": 1047,
+        "closed": true
+      },
+      {
+        "gigId": "g19",
+        "driverId": "moga-0573",
+        "at": 1038,
+        "expiresAt": 1048,
+        "closed": true
+      },
+      {
+        "gigId": "g19",
+        "driverId": "moga-0719",
+        "at": 1043,
+        "expiresAt": 1053,
+        "closed": true
+      },
+      {
+        "gigId": "g21",
+        "driverId": "moga-0832",
+        "at": 1111,
+        "expiresAt": 1121,
+        "closed": true
+      },
+      {
+        "gigId": "g22",
+        "driverId": "moga-2383",
+        "at": 1111,
+        "expiresAt": 1121,
+        "closed": true
+      },
+      {
+        "gigId": "g21",
+        "driverId": "moga-1965",
+        "at": 1114,
+        "expiresAt": 1124,
+        "closed": true
+      },
+      {
+        "gigId": "g22",
+        "driverId": "moga-1577",
+        "at": 1114,
+        "expiresAt": 1124,
+        "closed": true
+      },
+      {
+        "gigId": "g21",
+        "driverId": "moga-2031",
+        "at": 1129,
+        "expiresAt": 1139,
+        "closed": true
+      },
+      {
+        "gigId": "g23",
+        "driverId": "moga-1018",
+        "at": 1227,
+        "expiresAt": 1237,
+        "closed": true
+      },
+      {
+        "gigId": "g23",
+        "driverId": "moga-2728",
+        "at": 1257,
+        "expiresAt": 1267,
+        "closed": true
+      },
+      {
+        "gigId": "g25",
+        "driverId": "moga-0008",
+        "at": 1973,
+        "expiresAt": 1983,
+        "closed": true
+      },
+      {
+        "gigId": "g26",
+        "driverId": "moga-2539",
+        "at": 2035,
+        "expiresAt": 2045,
+        "closed": true
+      },
+      {
+        "gigId": "g26",
+        "driverId": "moga-1290",
+        "at": 2043,
+        "expiresAt": 2053,
+        "closed": true
+      },
+      {
+        "gigId": "g26",
+        "driverId": "moga-1028",
+        "at": 2050,
+        "expiresAt": 2060,
+        "closed": true
+      },
+      {
+        "gigId": "g27",
+        "driverId": "moga-0204",
+        "at": 2059,
+        "expiresAt": 2069,
+        "closed": true
+      },
+      {
+        "gigId": "g27",
+        "driverId": "moga-0398",
+        "at": 2060,
+        "expiresAt": 2070,
+        "closed": true
+      },
+      {
+        "gigId": "g27",
+        "driverId": "moga-0945",
+        "at": 2061,
+        "expiresAt": 2071,
+        "closed": true
+      },
+      {
+        "gigId": "g31",
+        "driverId": "moga-1673",
+        "at": 2109,
+        "expiresAt": 2119,
+        "closed": true
+      },
+      {
+        "gigId": "g32",
+        "driverId": "moga-0329",
+        "at": 2109,
+        "expiresAt": 2119,
+        "closed": true
+      },
+      {
+        "gigId": "g31",
+        "driverId": "moga-1936",
+        "at": 2113,
+        "expiresAt": 2123,
+        "closed": true
+      },
+      {
+        "gigId": "g32",
+        "driverId": "moga-0530",
+        "at": 2113,
+        "expiresAt": 2123,
+        "closed": true
+      },
+      {
+        "gigId": "g31",
+        "driverId": "moga-1640",
+        "at": 2124,
+        "expiresAt": 2134,
+        "closed": true
+      },
+      {
+        "gigId": "g38",
+        "driverId": "moga-0044",
+        "at": 2206,
+        "expiresAt": 2216,
+        "closed": true
+      },
+      {
+        "gigId": "g38",
+        "driverId": "moga-0214",
+        "at": 2207,
+        "expiresAt": 2217,
+        "closed": true
+      },
+      {
+        "gigId": "g38",
+        "driverId": "moga-0410",
+        "at": 2208,
+        "expiresAt": 2218,
+        "closed": true
+      },
+      {
+        "gigId": "g42",
+        "driverId": "moga-0046",
+        "at": 2300,
+        "expiresAt": 2310,
+        "closed": true
+      },
+      {
+        "gigId": "g42",
+        "driverId": "moga-0047",
+        "at": 2304,
+        "expiresAt": 2314,
+        "closed": true
+      },
+      {
+        "gigId": "g42",
+        "driverId": "moga-0142",
+        "at": 2312,
+        "expiresAt": 2322,
+        "closed": true
+      },
+      {
+        "gigId": "g43",
+        "driverId": "moga-1399",
+        "at": 2312,
+        "expiresAt": 2322,
+        "closed": true
+      },
+      {
+        "gigId": "g44",
+        "driverId": "moga-0033",
+        "at": 2312,
+        "expiresAt": 2322,
+        "closed": true
+      },
+      {
+        "gigId": "g43",
+        "driverId": "moga-0967",
+        "at": 2320,
+        "expiresAt": 2330,
+        "closed": true
+      },
+      {
+        "gigId": "g47",
+        "driverId": "moga-0482",
+        "at": 2414,
+        "expiresAt": 2424,
+        "closed": true
+      },
+      {
+        "gigId": "g47",
+        "driverId": "moga-1277",
+        "at": 2418,
+        "expiresAt": 2428,
+        "closed": true
+      },
+      {
+        "gigId": "g48",
+        "driverId": "moga-0490",
+        "at": 2466,
+        "expiresAt": 2476,
+        "closed": true
+      },
+      {
+        "gigId": "g48",
+        "driverId": "moga-2287",
+        "at": 2468,
+        "expiresAt": 2478,
+        "closed": true
+      },
+      {
+        "gigId": "g49",
+        "driverId": "moga-0234",
+        "at": 2547,
+        "expiresAt": 2557,
+        "closed": true
+      },
+      {
+        "gigId": "g49",
+        "driverId": "moga-0943",
+        "at": 2560,
+        "expiresAt": 2570,
+        "closed": true
+      },
+      {
+        "gigId": "g49",
+        "driverId": "moga-0747",
+        "at": 2575,
+        "expiresAt": 2585,
+        "closed": true
+      },
+      {
+        "gigId": "g56",
+        "driverId": "moga-1290",
+        "at": 3552,
+        "expiresAt": 3562,
+        "closed": true
+      },
+      {
+        "gigId": "g56",
+        "driverId": "moga-0033",
+        "at": 3554,
+        "expiresAt": 3564,
+        "closed": true
+      },
+      {
+        "gigId": "g60",
+        "driverId": "moga-0507",
+        "at": 3667,
+        "expiresAt": 3677,
+        "closed": true
+      },
+      {
+        "gigId": "g60",
+        "driverId": "moga-0539",
+        "at": 3670,
+        "expiresAt": 3680,
+        "closed": true
+      },
+      {
+        "gigId": "g60",
+        "driverId": "moga-0592",
+        "at": 3682,
+        "expiresAt": 3692,
+        "closed": true
+      },
+      {
+        "gigId": "g61",
+        "driverId": "moga-1088",
+        "at": 3682,
+        "expiresAt": 3692,
+        "closed": true
+      },
+      {
+        "gigId": "g48",
+        "driverId": "moga-0014",
+        "at": 3684,
+        "expiresAt": 3694,
+        "closed": true
+      },
+      {
+        "gigId": "g61",
+        "driverId": "moga-1175",
+        "at": 3684,
+        "expiresAt": 3694,
+        "closed": true
+      },
+      {
+        "gigId": "g61",
+        "driverId": "moga-1277",
+        "at": 3686,
+        "expiresAt": 3696,
+        "closed": true
+      },
+      {
+        "gigId": "g65",
+        "driverId": "moga-2383",
+        "at": 3768,
+        "expiresAt": 3778,
+        "closed": true
+      },
+      {
+        "gigId": "g65",
+        "driverId": "moga-2482",
+        "at": 3770,
+        "expiresAt": 3780,
+        "closed": true
+      },
+      {
+        "gigId": "g68",
+        "driverId": "moga-0945",
+        "at": 3770,
+        "expiresAt": 3780,
+        "closed": true
+      },
+      {
+        "gigId": "g68",
+        "driverId": "moga-1277",
+        "at": 3777,
+        "expiresAt": 3787,
+        "closed": true
+      },
+      {
+        "gigId": "g68",
+        "driverId": "moga-2340",
+        "at": 3785,
+        "expiresAt": 3795,
+        "closed": true
+      },
+      {
+        "gigId": "g73",
+        "driverId": "moga-0204",
+        "at": 3941,
+        "expiresAt": 3951,
+        "closed": true
+      },
+      {
+        "gigId": "g73",
+        "driverId": "moga-0232",
+        "at": 3943,
+        "expiresAt": 3953,
+        "closed": true
+      },
+      {
+        "gigId": "g73",
+        "driverId": "moga-0484",
+        "at": 3946,
+        "expiresAt": 3956,
+        "closed": true
+      },
+      {
+        "gigId": "g87",
+        "driverId": "moga-2668",
+        "at": 4972,
+        "expiresAt": 4982,
+        "closed": true
+      },
+      {
+        "gigId": "g87",
+        "driverId": "moga-2624",
+        "at": 4974,
+        "expiresAt": 4984,
+        "closed": true
+      },
+      {
+        "gigId": "g87",
+        "driverId": "moga-0058",
+        "at": 4975,
+        "expiresAt": 4985,
+        "closed": true
+      },
+      {
+        "gigId": "g88",
+        "driverId": "moga-0274",
+        "at": 4996,
+        "expiresAt": 5006,
+        "closed": true
+      },
+      {
+        "gigId": "g88",
+        "driverId": "moga-0545",
+        "at": 4998,
+        "expiresAt": 5008,
+        "closed": true
+      },
+      {
+        "gigId": "g88",
+        "driverId": "moga-0661",
+        "at": 5002,
+        "expiresAt": 5012,
+        "closed": true
+      },
+      {
+        "gigId": "g95",
+        "driverId": "moga-2615",
+        "at": 5023,
+        "expiresAt": 5033,
+        "closed": true
+      },
+      {
+        "gigId": "g95",
+        "driverId": "moga-1243",
+        "at": 5025,
+        "expiresAt": 5035,
+        "closed": true
+      },
+      {
+        "gigId": "g97",
+        "driverId": "moga-2383",
+        "at": 5025,
+        "expiresAt": 5035,
+        "closed": true
+      },
+      {
+        "gigId": "g95",
+        "driverId": "moga-2851",
+        "at": 5035,
+        "expiresAt": 5045,
+        "closed": true
+      },
+      {
+        "gigId": "g99",
+        "driverId": "moga-0201",
+        "at": 5045,
+        "expiresAt": 5055,
+        "closed": true
+      },
+      {
+        "gigId": "g99",
+        "driverId": "moga-1823",
+        "at": 5046,
+        "expiresAt": 5056,
+        "closed": true
+      },
+      {
+        "gigId": "g99",
+        "driverId": "moga-2744",
+        "at": 5047,
+        "expiresAt": 5057,
+        "closed": true
+      },
+      {
+        "gigId": "g103",
+        "driverId": "moga-1836",
+        "at": 5080,
+        "expiresAt": 5090,
+        "closed": true
+      },
+      {
+        "gigId": "g103",
+        "driverId": "moga-1673",
+        "at": 5082,
+        "expiresAt": 5092,
+        "closed": true
+      },
+      {
+        "gigId": "g103",
+        "driverId": "moga-2114",
+        "at": 5085,
+        "expiresAt": 5095,
+        "closed": true
+      },
+      {
+        "gigId": "g105",
+        "driverId": "moga-1070",
+        "at": 5094,
+        "expiresAt": 5104,
+        "closed": true
+      },
+      {
+        "gigId": "g105",
+        "driverId": "moga-1367",
+        "at": 5095,
+        "expiresAt": 5105,
+        "closed": true
+      },
+      {
+        "gigId": "g105",
+        "driverId": "moga-2553",
+        "at": 5096,
+        "expiresAt": 5106,
+        "closed": true
+      },
+      {
+        "gigId": "g106",
+        "driverId": "moga-0965",
+        "at": 5096,
+        "expiresAt": 5106,
+        "closed": true
+      },
+      {
+        "gigId": "g106",
+        "driverId": "moga-1559",
+        "at": 5097,
+        "expiresAt": 5107,
+        "closed": true
+      },
+      {
+        "gigId": "g106",
+        "driverId": "moga-1050",
+        "at": 5099,
+        "expiresAt": 5109,
+        "closed": true
+      },
+      {
+        "gigId": "g107",
+        "driverId": "moga-0459",
+        "at": 5103,
+        "expiresAt": 5113,
+        "closed": true
+      },
+      {
+        "gigId": "g108",
+        "driverId": "moga-2266",
+        "at": 5103,
+        "expiresAt": 5113,
+        "closed": true
+      },
+      {
+        "gigId": "g109",
+        "driverId": "moga-1096",
+        "at": 5103,
+        "expiresAt": 5113,
+        "closed": true
+      },
+      {
+        "gigId": "g107",
+        "driverId": "moga-1445",
+        "at": 5108,
+        "expiresAt": 5118,
+        "closed": true
+      },
+      {
+        "gigId": "g108",
+        "driverId": "moga-1096",
+        "at": 5108,
+        "expiresAt": 5118,
+        "closed": true
+      },
+      {
+        "gigId": "g109",
+        "driverId": "moga-1973",
+        "at": 5108,
+        "expiresAt": 5118,
+        "closed": true
+      },
+      {
+        "gigId": "g110",
+        "driverId": "moga-0082",
+        "at": 5108,
+        "expiresAt": 5118,
+        "closed": true
+      },
+      {
+        "gigId": "g107",
+        "driverId": "moga-2093",
+        "at": 5110,
+        "expiresAt": 5120,
+        "closed": true
+      },
+      {
+        "gigId": "g109",
+        "driverId": "moga-2381",
+        "at": 5110,
+        "expiresAt": 5120,
+        "closed": true
+      },
+      {
+        "gigId": "g110",
+        "driverId": "moga-0249",
+        "at": 5110,
+        "expiresAt": 5120,
+        "closed": true
+      },
+      {
+        "gigId": "g110",
+        "driverId": "moga-0398",
+        "at": 5111,
+        "expiresAt": 5121,
+        "closed": true
+      },
+      {
+        "gigId": "g114",
+        "driverId": "moga-0108",
+        "at": 5146,
+        "expiresAt": 5156,
+        "closed": true
+      },
+      {
+        "gigId": "g114",
+        "driverId": "moga-0462",
+        "at": 5147,
+        "expiresAt": 5157,
+        "closed": true
+      },
+      {
+        "gigId": "g114",
+        "driverId": "moga-0473",
+        "at": 5148,
+        "expiresAt": 5158,
+        "closed": true
+      },
+      {
+        "gigId": "g115",
+        "driverId": "moga-2594",
+        "at": 5166,
+        "expiresAt": 5176,
+        "closed": true
+      },
+      {
+        "gigId": "g115",
+        "driverId": "moga-1377",
+        "at": 5168,
+        "expiresAt": 5178,
+        "closed": true
+      },
+      {
+        "gigId": "g115",
+        "driverId": "moga-1984",
+        "at": 5173,
+        "expiresAt": 5183,
+        "closed": true
+      },
+      {
+        "gigId": "g117",
+        "driverId": "moga-0791",
+        "at": 5224,
+        "expiresAt": 5234,
+        "closed": true
+      },
+      {
+        "gigId": "g117",
+        "driverId": "moga-1681",
+        "at": 5227,
+        "expiresAt": 5237,
+        "closed": true
+      },
+      {
+        "gigId": "g118",
+        "driverId": "moga-0459",
+        "at": 5227,
+        "expiresAt": 5237,
+        "closed": true
+      },
+      {
+        "gigId": "g117",
+        "driverId": "moga-2668",
+        "at": 5228,
+        "expiresAt": 5238,
+        "closed": true
+      },
+      {
+        "gigId": "g118",
+        "driverId": "moga-0530",
+        "at": 5228,
+        "expiresAt": 5238,
+        "closed": true
+      },
+      {
+        "gigId": "g120",
+        "driverId": "moga-0290",
+        "at": 5252,
+        "expiresAt": 5262,
+        "closed": true
+      },
+      {
+        "gigId": "g121",
+        "driverId": "moga-0174",
+        "at": 5252,
+        "expiresAt": 5262,
+        "closed": true
+      },
+      {
+        "gigId": "g111",
+        "driverId": "moga-1954",
+        "at": 5264,
+        "expiresAt": 5274,
+        "closed": true
+      },
+      {
+        "gigId": "g120",
+        "driverId": "moga-0552",
+        "at": 5264,
+        "expiresAt": 5274,
+        "closed": true
+      },
+      {
+        "gigId": "g121",
+        "driverId": "moga-0545",
+        "at": 5264,
+        "expiresAt": 5274,
+        "closed": true
+      },
+      {
+        "gigId": "g120",
+        "driverId": "moga-0699",
+        "at": 5265,
+        "expiresAt": 5275,
+        "closed": true
+      },
+      {
+        "gigId": "g121",
+        "driverId": "moga-0552",
+        "at": 5265,
+        "expiresAt": 5275,
+        "closed": true
+      },
+      {
+        "gigId": "g127",
+        "driverId": "moga-0659",
+        "at": 5431,
+        "expiresAt": 5441,
+        "closed": true
+      },
+      {
+        "gigId": "g127",
+        "driverId": "moga-1972",
+        "at": 5461,
+        "expiresAt": 5471,
+        "closed": true
+      },
+      {
+        "gigId": "g127",
+        "driverId": "moga-0314",
+        "at": 5462,
+        "expiresAt": 5472,
+        "closed": true
+      },
+      {
+        "gigId": "g132",
+        "driverId": "moga-1050",
+        "at": 6405,
+        "expiresAt": 6415,
+        "closed": true
+      },
+      {
+        "gigId": "g132",
+        "driverId": "moga-1578",
+        "at": 6417,
+        "expiresAt": 6427,
+        "closed": true
+      },
+      {
+        "gigId": "g132",
+        "driverId": "moga-0373",
+        "at": 6418,
+        "expiresAt": 6428,
+        "closed": true
+      },
+      {
+        "gigId": "g135",
+        "driverId": "moga-0837",
+        "at": 6435,
+        "expiresAt": 6445,
+        "closed": true
+      },
+      {
+        "gigId": "g135",
+        "driverId": "moga-1283",
+        "at": 6436,
+        "expiresAt": 6446,
+        "closed": true
+      },
+      {
+        "gigId": "g135",
+        "driverId": "moga-0841",
+        "at": 6437,
+        "expiresAt": 6447,
+        "closed": true
+      },
+      {
+        "gigId": "g136",
+        "driverId": "moga-0082",
+        "at": 6473,
+        "expiresAt": 6483,
+        "closed": true
+      },
+      {
+        "gigId": "g137",
+        "driverId": "moga-0082",
+        "at": 6473,
+        "expiresAt": 6483,
+        "closed": true
+      },
+      {
+        "gigId": "g138",
+        "driverId": "moga-0082",
+        "at": 6473,
+        "expiresAt": 6483,
+        "closed": true
+      },
+      {
+        "gigId": "g136",
+        "driverId": "moga-0214",
+        "at": 6475,
+        "expiresAt": 6485,
+        "closed": true
+      },
+      {
+        "gigId": "g137",
+        "driverId": "moga-0214",
+        "at": 6475,
+        "expiresAt": 6485,
+        "closed": true
+      },
+      {
+        "gigId": "g138",
+        "driverId": "moga-0136",
+        "at": 6475,
+        "expiresAt": 6485,
+        "closed": true
+      },
+      {
+        "gigId": "g136",
+        "driverId": "moga-0308",
+        "at": 6476,
+        "expiresAt": 6486,
+        "closed": true
+      },
+      {
+        "gigId": "g137",
+        "driverId": "moga-0308",
+        "at": 6476,
+        "expiresAt": 6486,
+        "closed": true
+      },
+      {
+        "gigId": "g138",
+        "driverId": "moga-0214",
+        "at": 6476,
+        "expiresAt": 6486,
+        "closed": true
+      },
+      {
+        "gigId": "g140",
+        "driverId": "moga-1765",
+        "at": 6494,
+        "expiresAt": 6504,
+        "closed": true
+      },
+      {
+        "gigId": "g140",
+        "driverId": "moga-0003",
+        "at": 6495,
+        "expiresAt": 6505,
+        "closed": true
+      },
+      {
+        "gigId": "g140",
+        "driverId": "moga-0119",
+        "at": 6497,
+        "expiresAt": 6507,
+        "closed": true
+      },
+      {
+        "gigId": "g142",
+        "driverId": "moga-0256",
+        "at": 6542,
+        "expiresAt": 6552,
+        "closed": true
+      },
+      {
+        "gigId": "g142",
+        "driverId": "moga-1130",
+        "at": 6545,
+        "expiresAt": 6555,
+        "closed": true
+      },
+      {
+        "gigId": "g142",
+        "driverId": "moga-1223",
+        "at": 6548,
+        "expiresAt": 6558,
+        "closed": true
+      },
+      {
+        "gigId": "g144",
+        "driverId": "moga-0116",
+        "at": 6598,
+        "expiresAt": 6608,
+        "closed": true
+      },
+      {
+        "gigId": "g144",
+        "driverId": "moga-0657",
+        "at": 6600,
+        "expiresAt": 6610,
+        "closed": true
+      },
+      {
+        "gigId": "g144",
+        "driverId": "moga-0156",
+        "at": 6607,
+        "expiresAt": 6617,
+        "closed": true
+      },
+      {
+        "gigId": "g108",
+        "driverId": "moga-0058",
+        "at": 6669,
+        "expiresAt": 6679,
+        "closed": true
+      },
+      {
+        "gigId": "g149",
+        "driverId": "moga-0116",
+        "at": 6746,
+        "expiresAt": 6756,
+        "closed": true
+      },
+      {
+        "gigId": "g149",
+        "driverId": "moga-1913",
+        "at": 6747,
+        "expiresAt": 6757,
+        "closed": true
+      },
+      {
+        "gigId": "g149",
+        "driverId": "moga-1372",
+        "at": 6748,
+        "expiresAt": 6758,
+        "closed": true
+      },
+      {
+        "gigId": "g152",
+        "driverId": "moga-1290",
+        "at": 6819,
+        "expiresAt": 6829,
+        "closed": true
+      },
+      {
+        "gigId": "g152",
+        "driverId": "moga-2742",
+        "at": 6824,
+        "expiresAt": 6834,
+        "closed": true
+      },
+      {
+        "gigId": "g152",
+        "driverId": "moga-1830",
+        "at": 6826,
+        "expiresAt": 6836,
+        "closed": true
+      }
+    ],
+    "blockedDay": -1
+  },
+  "pendingAdvance": false,
+  "finishedAt": "2026-11-13T23:56:50.480Z",
+  "score": {
+    "marginCents": 225537,
+    "revenueCents": 981400,
+    "marginShare": 0.22981149378438964,
+    "wonOrders": 151,
+    "onTimeShare": 1,
+    "undeliveredShare": 0,
+    "ranked": true
+  },
+  "stats": {
+    "quoted": 1000,
+    "declined": {},
+    "refused": [],
+    "chainsPosted": 0,
+    "complete": true
+  }
+}
