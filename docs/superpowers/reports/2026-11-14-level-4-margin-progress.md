@@ -1,0 +1,9 @@
+# Level 4 margin optimization in progress
+
+Target: rank 2 or better, around 98% on-time delivery. Current round4 score is fixed at €17,906.90, rank4, 99.38% on time; all5 attempts used. At the initial check rank2 had €22,859.03, requiring roughly27.7% more margin on that same round. Future rounds have different worlds and competitors' scores, so historical target is not a guaranteed threshold.
+
+Four configurations on three fresh seeds are running through `scripts/level4-margin-sweep.py`. They compare baseline against higher dealer quotes, lower opening driver fees and broader reference/price selection. Policies change jointly, so the experiment does not isolate one parameter. Selected candidates need >=98% aggregate on-time delivery, every week>=97.5%, positive margin, complete evidence and zero refused actions; promotion additionally requires an aggregate held-out gain over baseline on three untouched paired seeds.
+
+Current orchestration: `/workspace/work/margin4-sweep.py tune` and `margin4-pipeline.py`; outputs `margin4-tune.json`, `margin4-holdout.json`, `margin4-selection.json` in the repository parent. Preserve completed world manifests in `results/`. Never start duplicate jobs; inspect current processes and worlds first. No production defaults have been changed by these experiments.
+
+Authorized future-round follow-ups were created for14November09:05,12:05,15:05,18:05 and21:05 Europe/Helsinki. They inherit this task's environment selection, check actual standings/availability, require validated settings, and stop the pursuit if rank<=2 is confirmed. Environment/access availability is checked at execution; scheduling does not guarantee a rank. No credentials are in the scheduled prompt or repository. If rank2 has not been achieved by the final scheduled check, report that honestly rather than imply further checks exist.
