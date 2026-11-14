@@ -1,0 +1,239 @@
+{
+  "status": "partial sweep; no optimized default promoted",
+  "rows": [
+    {
+      "worldId": "w3415ee17b811a9653227",
+      "seed": "margin4-tune-1",
+      "quotes": {
+        "mode": "options",
+        "multiplier": 1.1
+      },
+      "policy": {
+        "openingMultiplier": 0.65,
+        "maxReferenceShare": 1.35,
+        "maxDriveMinutes": 240,
+        "minLocalDrivers": 15,
+        "minSlackMinutes": 210
+      },
+      "score": {
+        "marginCents": 128718,
+        "revenueCents": 534380,
+        "marginShare": 0.2408735356862158,
+        "wonOrders": 71,
+        "onTimeShare": 1,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "complete": true,
+      "refused": 0
+    },
+    {
+      "worldId": "w490899e4899910fdaaaf",
+      "seed": "margin4-tune-3",
+      "quotes": {
+        "mode": "options",
+        "multiplier": 1.15
+      },
+      "policy": {
+        "openingMultiplier": 0.65,
+        "maxReferenceShare": 1.5,
+        "maxDriveMinutes": 240,
+        "minLocalDrivers": 15,
+        "minSlackMinutes": 210
+      },
+      "score": {
+        "marginCents": 140648,
+        "revenueCents": 435160,
+        "marginShare": 0.3232098538468609,
+        "wonOrders": 69,
+        "onTimeShare": 1,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "complete": true,
+      "refused": 0
+    },
+    {
+      "worldId": "w5f5bed15fd68a1b65982",
+      "seed": "margin4-tune-2",
+      "quotes": {
+        "mode": "options",
+        "multiplier": 1
+      },
+      "policy": {
+        "openingMultiplier": 0.75,
+        "maxReferenceShare": 1.2,
+        "maxDriveMinutes": 240,
+        "minLocalDrivers": 15,
+        "minSlackMinutes": 210
+      },
+      "score": {
+        "marginCents": 203882,
+        "revenueCents": 1245800,
+        "marginShare": 0.16365548242093433,
+        "wonOrders": 194,
+        "onTimeShare": 0.9896907216494846,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "complete": false,
+      "refused": 0
+    },
+    {
+      "worldId": "w7749d3b5ef714624129f",
+      "seed": "margin4-tune-3",
+      "quotes": {
+        "mode": "options",
+        "multiplier": 1.1
+      },
+      "policy": {
+        "openingMultiplier": 0.65,
+        "maxReferenceShare": 1.35,
+        "maxDriveMinutes": 240,
+        "minLocalDrivers": 15,
+        "minSlackMinutes": 210
+      },
+      "score": {
+        "marginCents": 181223,
+        "revenueCents": 677820,
+        "marginShare": 0.26736154141217433,
+        "wonOrders": 119,
+        "onTimeShare": 1,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "complete": true,
+      "refused": 0
+    },
+    {
+      "worldId": "w9e39bc4d3b452b0a52ee",
+      "seed": "margin4-tune-3",
+      "quotes": {
+        "mode": "options",
+        "multiplier": 1
+      },
+      "policy": {
+        "openingMultiplier": 0.75,
+        "maxReferenceShare": 1.2,
+        "maxDriveMinutes": 240,
+        "minLocalDrivers": 15,
+        "minSlackMinutes": 210
+      },
+      "score": {
+        "marginCents": 318613,
+        "revenueCents": 1391500,
+        "marginShare": 0.22897089471793028,
+        "wonOrders": 264,
+        "onTimeShare": 0.9924242424242424,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "complete": true,
+      "refused": 0
+    },
+    {
+      "worldId": "waf86d640bb36d289ad6f",
+      "seed": "margin4-tune-2",
+      "quotes": {
+        "mode": "options",
+        "multiplier": 1.1
+      },
+      "policy": {
+        "openingMultiplier": 0.65,
+        "maxReferenceShare": 1.35,
+        "maxDriveMinutes": 240,
+        "minLocalDrivers": 15,
+        "minSlackMinutes": 210
+      },
+      "score": {
+        "marginCents": 140514,
+        "revenueCents": 699710,
+        "marginShare": 0.20081748152806161,
+        "wonOrders": 91,
+        "onTimeShare": 1,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "complete": true,
+      "refused": 0
+    },
+    {
+      "worldId": "wc85e3e68b32b2f1488a8",
+      "seed": "margin4-tune-1",
+      "quotes": {
+        "mode": "options",
+        "multiplier": 1
+      },
+      "policy": {
+        "openingMultiplier": 0.75,
+        "maxReferenceShare": 1.2,
+        "maxDriveMinutes": 240,
+        "minLocalDrivers": 15,
+        "minSlackMinutes": 210
+      },
+      "score": {
+        "marginCents": 224503,
+        "revenueCents": 1068700,
+        "marginShare": 0.21007111443810236,
+        "wonOrders": 167,
+        "onTimeShare": 0.9820359281437125,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "complete": true,
+      "refused": 0
+    },
+    {
+      "worldId": "wee8af49e6eb047b4cf44",
+      "seed": "margin4-tune-1",
+      "quotes": {
+        "mode": "options",
+        "multiplier": 1.15
+      },
+      "policy": {
+        "openingMultiplier": 0.65,
+        "maxReferenceShare": 1.5,
+        "maxDriveMinutes": 240,
+        "minLocalDrivers": 15,
+        "minSlackMinutes": 210
+      },
+      "score": {
+        "marginCents": 71190,
+        "revenueCents": 307165,
+        "marginShare": 0.23176468673188677,
+        "wonOrders": 38,
+        "onTimeShare": 1,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "complete": true,
+      "refused": 0
+    },
+    {
+      "worldId": "wf8eab0847ac21d80710d",
+      "seed": "margin4-tune-2",
+      "quotes": {
+        "mode": "options",
+        "multiplier": 1.15
+      },
+      "policy": {
+        "openingMultiplier": 0.65,
+        "maxReferenceShare": 1.5,
+        "maxDriveMinutes": 240,
+        "minLocalDrivers": 15,
+        "minSlackMinutes": 210
+      },
+      "score": {
+        "marginCents": 102312,
+        "revenueCents": 489325,
+        "marginShare": 0.20908802942829408,
+        "wonOrders": 61,
+        "onTimeShare": 0.9836065573770492,
+        "undeliveredShare": 0,
+        "ranked": true
+      },
+      "complete": true,
+      "refused": 0
+    }
+  ]
+}
