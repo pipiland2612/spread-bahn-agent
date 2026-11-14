@@ -1,3 +1,5 @@
+import { planQuote } from './quotes.ts'
+import type { QuoteSettings } from './quotes.ts'
 import { parseArgs } from 'node:util'
 import { resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
@@ -28,12 +30,14 @@ export class Desk {
   seen = new Set<number>()
   stats: Statistics
   model: Model
-  readonly level: 1 | 2 | 3
+  readonly level: 1 | 2 | 3 | 4
   readonly mode: FeeMode
   readonly networkMode: NetworkMode
+  readonly quoteSettings: QuoteSettings
   network: OfferPlanner
-  constructor(model: Model, level: 1 | 2 | 3 = 1, mode: FeeMode = level === 1 ? 'legacy' : 'stable', stats = restoreStats(), networkMode: NetworkMode = 'baseline', networkState?: NetworkState) {
+  constructor(model: Model, level: 1 | 2 | 3 | 4 = 1, mode: FeeMode = level === 1 ? 'legacy' : 'stable', stats = restoreStats(), networkMode: NetworkMode = 'baseline', networkState?: NetworkState, quoteSettings: QuoteSettings = { mode: 'first', multiplier: 1 }) {
     this.model = model; this.level = level; this.mode = mode
+    this.quoteSettings = quoteSettings
     this.stats = stats
     this.networkMode = networkMode; this.network = new OfferPlanner(networkState)
   }
@@ -42,10 +46,10 @@ export class Desk {
     return [...new Set(action.stops.map(s => s.orderId))].reduce((sum, id) => sum + (this.requests.get(id)?.referenceFeeCents ?? 0), 0)
   }
 
-  private covered(orderId: string): boolean {
-    return [...this.gigs.values()].some(g => ['open', 'booked', 'working'].includes(g.status) && g.action.stops.some(s => s.orderId === orderId)) ||
-      this.outbox.some(a => a.type === 'post' && a.stops.some(s => s.orderId === orderId)) ||
-      this.heldPosts.some(p => p.action.stops.some(s => s.orderId === orderId))
+  private covered(orderId: string, leg = 0): boolean {
+    const matches = (action: PostAction) => action.stops.some(s => s.orderId === orderId && s.leg === leg)
+    return [...this.gigs.values()].some(g => ['open', 'booked', 'working'].includes(g.status) && matches(g.action)) ||
+      this.outbox.some(a => a.type === 'post' && matches(a)) || this.heldPosts.some(p => matches(p.action))
   }
 
   nextWake(): number { return Math.min(this.now + 30, ...this.heldPosts.map(p => p.at + 10)) }
@@ -73,13 +77,18 @@ export class Desk {
     for (const request of snapshot.openRequests) this.quote(request, true)
     for (const order of snapshot.orders) {
       // Original collection timestamps may be unavailable after a crash: publish recovery work now.
-      if (order.status === 'waiting' && !this.covered(order.id)) this.post(order, undefined, false)
+      if (order.status === 'waiting') this.post(order, undefined, false)
     }
   }
 
   quote(request: PriceRequest, replay = false) {
     if (!replay && this.requests.has(request.id)) return
     this.requests.set(request.id, request)
+    if (this.level === 4) {
+      const action = planQuote(this.model, request, this.now, this.quoteSettings)
+      if (action) { this.stats.quoted++; this.outbox.push(action) }
+      return
+    }
     const decision = this.model.assess(request, this.now)
     if (!decision.accept) {
       this.stats.declined[decision.reason] = (this.stats.declined[decision.reason] ?? 0) + 1
@@ -92,13 +101,20 @@ export class Desk {
 
   post(order: Order, multiplier?: number, collect = true) {
     const request = this.requests.get(order.id)
-    if (!request || order.status === 'cancelled' || order.deliveredAt.every(t => t !== null) || this.covered(order.id)) return
-    const action = this.model.post(order, request.referenceFeeCents, this.now, multiplier)
-    action.schedule = feeSchedule(this.level, this.mode, this.now, request.referenceFeeCents, {
-      ...this.model.policy, openingMultiplier: multiplier ?? this.model.policy.openingMultiplier,
-    })
-    if (this.level === 3 && this.networkMode === 'chains' && collect) this.heldPosts.push({ action, at: this.now })
-    else this.outbox.push(action)
+    if (!request || order.status === 'cancelled') return
+    for (let leg = 0; leg < order.legs.length; leg++) {
+      if (order.deliveredAt[leg] !== null || this.covered(order.id, leg)) continue
+      // Deliberately losing quotes can theoretically win excluded multi-leg work.
+      // Dispatch each uncovered car separately at the full reference as a rescue.
+      const single = { ...order, legs: [order.legs[leg]!] }
+      const action = this.model.post(single, request.referenceFeeCents, this.now, multiplier)
+      action.stops = action.stops.map(stop => ({ ...stop, leg }))
+      action.schedule = feeSchedule(this.level, this.mode, this.now, request.referenceFeeCents, {
+        ...this.model.policy, openingMultiplier: multiplier ?? this.model.policy.openingMultiplier,
+      })
+      if (this.level >= 3 && this.networkMode === 'chains' && collect && order.legs.length === 1) this.heldPosts.push({ action, at: this.now })
+      else this.outbox.push(action)
+    }
   }
 
   handle(e: DeskEvent) {
@@ -187,11 +203,11 @@ export class Desk {
       const multiplier = targetMultiplier(this.mode, age, lastPickupAt - this.now, this.model.policy.openingMultiplier)
       this.raise(order.id, multiplier)
     }
-    if (this.level === 3 && this.networkMode === 'chains') {
+    if (this.level >= 3 && this.networkMode === 'chains') {
       const posts = this.outbox.filter((a): a is PostAction => a.type === 'post')
-      this.outbox = [...this.outbox.filter(a => a.type !== 'post'), ...chainPosts(posts, this.orders, this.requests, this.model, this.now, 3, this.mode)]
+      this.outbox = [...this.outbox.filter(a => a.type !== 'post'), ...chainPosts(posts, this.orders, this.requests, this.model, this.now, this.level as 3 | 4, this.mode)]
     }
-    if (this.level === 3 && this.networkMode !== 'baseline') {
+    if (this.level >= 3 && this.networkMode !== 'baseline') {
       const alreadyQueued = new Set(this.outbox.filter(a => a.type === 'offer').map(a => a.gigId))
       this.outbox.push(...this.network.plan(this.gigs, this.orders, this.requests, this.model, this.now).filter(a => !alreadyQueued.has(a.gigId)))
     }
@@ -228,7 +244,7 @@ export async function main(argv = process.argv.slice(2)) {
     board: { type: 'boolean' }, runs: { type: 'string', default: '1' },
     world: { type: 'string' }, status: { type: 'boolean' },
     opening: { type: 'string' }, 'reference-share': { type: 'string' }, 'fee-mode': { type: 'string' },
-    network: { type: 'string' },
+    network: { type: 'string' }, 'quote-mode': { type: 'string' }, 'quote-multiplier': { type: 'string' },
   } })
   // Resume overrides need the saved world's level before validating network features.
   let settings = resolveSettings(args.world && !args.status ? { level: args.level } : args)
@@ -254,7 +270,7 @@ export async function main(argv = process.argv.slice(2)) {
     settings = resolveSettings(args, saved, summary)
     if (args.board && !summary.boardRun) throw new Error('--board cannot resume an unranked practice world')
   }
-  const { level, mode, policy, network } = settings
+  const { level, mode, policy, network, quotes } = settings
   const before = args.board ? await client.board(level) : null
   if (args.board && !before?.current) throw new Error('No ranking round is open')
   const expectedSeason = args.board ? targetBoardSeason(before!.current!.season, args.world ? summaries.find(w => w.worldId === args.world) : undefined) : null
@@ -270,9 +286,9 @@ export async function main(argv = process.argv.slice(2)) {
     if (summary.level !== level || summary.kind !== 'practice') throw new Error(`Can only play Level ${level} practice or ranking worlds`)
     const resultPath = `results/${world.id}.json`
     const previous = resuming ? saved : undefined
-    const effectiveSettings = { level, feeMode: mode, networkMode: network, seed, policy }
-    const record = { ...previous, worldId: world.id, seed: summary.boardRun ? null : seed, level, feeMode: mode, networkMode: network, networkRevision: 2, board: Boolean(summary.boardRun), season: summary.season, boardRun: summary.boardRun, policy,
-      originalSettings: previous?.originalSettings ?? (previous ? { level: previous.level, feeMode: previous.feeMode, networkMode: previous.networkMode, networkRevision: previous.networkRevision, seed: previous.seed, policy: previous.policy } : effectiveSettings),
+    const effectiveSettings = { level, feeMode: mode, networkMode: network, quoteSettings: quotes, seed, policy }
+    const record = { ...previous, worldId: world.id, seed: summary.boardRun ? null : seed, level, feeMode: mode, networkMode: network, quoteSettings: quotes, networkRevision: 2, board: Boolean(summary.boardRun), season: summary.season, boardRun: summary.boardRun, policy,
+      originalSettings: previous?.originalSettings ?? (previous ? { level: previous.level, feeMode: previous.feeMode, networkMode: previous.networkMode, quoteSettings: previous.quoteSettings, networkRevision: previous.networkRevision, seed: previous.seed, policy: previous.policy } : effectiveSettings),
       startedAt: previous?.startedAt ?? new Date().toISOString(), resumes: resuming ? [...(previous?.resumes ?? []), { at: new Date().toISOString(), overrides: settings.overrides, settings: effectiveSettings }] : [] }
     let networkState: NetworkState | undefined = previous?.networkState
     const persist = async (stats: Statistics, pendingAdvance = false) => writeFile(resultPath, JSON.stringify({ ...record, stats, networkState, pendingAdvance }, null, 2) + '\n')
@@ -282,7 +298,7 @@ export async function main(argv = process.argv.slice(2)) {
     console.log(`${summary.boardRun ? `Ranking ${summary.boardRun}/5` : 'Practice'} world ${world.id}`)
     let snapshot = await world.snapshot()
     networkState = restoreNetwork(networkState, snapshot.now, resuming && (!networkState || Boolean(previous?.pendingAdvance)))
-    let desk = new Desk(new Model(map, await world.roster(), policy), level, mode, stats, network, networkState)
+    let desk = new Desk(new Model(map, await world.roster(), policy), level, mode, stats, network, networkState, quotes)
     networkState = desk.network.state
     // Only clear an in-flight marker once its conservative offer block is durably recorded.
     await persist(desk.stats)
@@ -291,7 +307,7 @@ export async function main(argv = process.argv.slice(2)) {
     while (desk.now < snapshot.endsAt) {
       desk.tick()
       const actions = desk.outbox.splice(0)
-      await persist(desk.stats, true)
+      await persist(desk.stats, actions.length > 0)
       try {
         const step = await world.advance({ untilEvent: WAKE, max: Math.min(snapshot.endsAt, desk.nextWake()), actions })
         desk.results(actions, step.results)
@@ -300,10 +316,10 @@ export async function main(argv = process.argv.slice(2)) {
         for (const e of step.events) desk.handle(e)
       } catch (error) {
         if (!(error instanceof Unreachable)) throw error
-        console.error(`Connection interrupted for ${world.id}; rebuilding state in 5 seconds`)
+        console.error(`Connection interrupted for ${world.id}: ${error.message}; rebuilding state in 5 seconds`)
         await new Promise(resolve => setTimeout(resolve, 5000))
         snapshot = await world.snapshot()
-        desk = new Desk(desk.model, level, mode, restoreStats({ stats: desk.stats }, true), network, restoreNetwork(desk.network.state, snapshot.now, true))
+        desk = new Desk(desk.model, level, mode, restoreStats({ stats: desk.stats }, actions.length > 0), network, restoreNetwork(desk.network.state, snapshot.now, true), quotes)
         networkState = desk.network.state
         desk.rebuild(snapshot, await world.events())
       }

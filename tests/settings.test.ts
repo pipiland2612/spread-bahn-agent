@@ -10,7 +10,7 @@ const manifest = { worldId: 'w1', level: 2, feeMode: 'delayed', seed: 'saved-see
 test('Level 2 can be selected while unsupported levels are refused', () => {
   assert.equal(settings.resolveSettings({ level: '2' }).level, 2)
   assert.equal(settings.resolveSettings({ level: '2', 'fee-mode': 'stable' }).mode, 'stable')
-  assert.throws(() => settings.resolveSettings({ level: '4' }), /level/i)
+  assert.throws(() => settings.resolveSettings({ level: '5' }), /level/i)
 })
 test('Level 3 preserves explicit network mode while older manifests remain baseline', () => {
   assert.equal(settings.resolveSettings({ level: '3', network: 'offers' }).network, 'offers')

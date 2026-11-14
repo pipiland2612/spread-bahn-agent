@@ -1,0 +1,130 @@
+{
+  "checkedAt": "2026-11-14T00:17:53.676Z",
+  "round": "Saturday 00:00",
+  "season": 4,
+  "teams": [
+    {
+      "rank": 4,
+      "team": "t2",
+      "name": "T2",
+      "played": 5,
+      "ranked": true,
+      "marginCents": 1790690,
+      "onTimeShare": 0.9938482570061518,
+      "runs": [
+        {
+          "run": 1,
+          "marginCents": 225537,
+          "onTimeShare": 1,
+          "wonOrders": 151,
+          "ranked": true,
+          "deletedAt": null
+        },
+        {
+          "run": 2,
+          "marginCents": 338495,
+          "onTimeShare": 0.993127147766323,
+          "wonOrders": 291,
+          "ranked": true,
+          "deletedAt": null
+        },
+        {
+          "run": 3,
+          "marginCents": 501123,
+          "onTimeShare": 0.9974747474747475,
+          "wonOrders": 396,
+          "ranked": true,
+          "deletedAt": null
+        },
+        {
+          "run": 4,
+          "marginCents": 440519,
+          "onTimeShare": 0.9949367088607595,
+          "wonOrders": 395,
+          "ranked": true,
+          "deletedAt": null
+        },
+        {
+          "run": 5,
+          "marginCents": 285016,
+          "onTimeShare": 0.9826086956521739,
+          "wonOrders": 230,
+          "ranked": true,
+          "deletedAt": null
+        }
+      ]
+    }
+  ],
+  "completed": [
+    {
+      "worldId": "w618b5ba1222c77c14365",
+      "season": 4,
+      "boardRun": 1,
+      "score": {
+        "marginCents": 225537,
+        "revenueCents": 981400,
+        "marginShare": 0.22981149378438964,
+        "wonOrders": 151,
+        "onTimeShare": 1,
+        "undeliveredShare": 0,
+        "ranked": true
+      }
+    },
+    {
+      "worldId": "w8629ed9dac170ba977ca",
+      "season": 4,
+      "boardRun": 2,
+      "score": {
+        "marginCents": 338495,
+        "revenueCents": 1633100,
+        "marginShare": 0.2072714469413998,
+        "wonOrders": 291,
+        "onTimeShare": 0.993127147766323,
+        "undeliveredShare": 0,
+        "ranked": true
+      }
+    },
+    {
+      "worldId": "w97199e77e89bd414ea72",
+      "season": 4,
+      "boardRun": 3,
+      "score": {
+        "marginCents": 501123,
+        "revenueCents": 2437700,
+        "marginShare": 0.20557205562620504,
+        "wonOrders": 396,
+        "onTimeShare": 0.9974747474747475,
+        "undeliveredShare": 0,
+        "ranked": true
+      }
+    },
+    {
+      "worldId": "w06a2ffe61471fe851e1b",
+      "season": 4,
+      "boardRun": 4,
+      "score": {
+        "marginCents": 440519,
+        "revenueCents": 2377500,
+        "marginShare": 0.18528664563617245,
+        "wonOrders": 395,
+        "onTimeShare": 0.9949367088607595,
+        "undeliveredShare": 0,
+        "ranked": true
+      }
+    },
+    {
+      "worldId": "w246c9c315cca339b736c",
+      "season": 4,
+      "boardRun": 5,
+      "score": {
+        "marginCents": 285016,
+        "revenueCents": 1379500,
+        "marginShare": 0.2066081913736861,
+        "wonOrders": 230,
+        "onTimeShare": 0.9826086956521739,
+        "undeliveredShare": 0,
+        "ranked": true
+      }
+    }
+  ]
+}

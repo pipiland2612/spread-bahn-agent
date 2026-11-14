@@ -58,3 +58,18 @@ test('failed startup keeps in-flight uncertainty until offer suppression is dura
   assert.equal(recovered.pendingAdvance, false)
   assert.equal(recovered.stats.complete, false)
 })
+
+test('connection loss on an empty advance preserves known action evidence', async t => {
+  const { fakeWorld, score } = await runnerFixture(t)
+  let snapshots = 0
+  t.mock.method(fakeWorld, 'snapshot', async () => ({ now: snapshots++ ? 481 : 480, endsAt: 481, orders: [], gigs: [], openRequests: [], driverPositions: [], score }))
+  const { Unreachable } = await import('../vendor/spread/spread.ts')
+  Object.assign(fakeWorld, { advance: async ({ actions }: any) => { assert.deepEqual(actions, []); throw new Unreachable(0, 'read-only advance interrupted') } })
+  const realTimeout = globalThis.setTimeout
+  t.mock.method(globalThis, 'setTimeout', ((callback: any) => realTimeout(callback, 0)) as any)
+  t.mock.method(console, 'error', () => {})
+  await main(['--world', 'w-test'])
+  const result = JSON.parse(await readFile('results/w-test.json', 'utf8'))
+  assert.equal(result.stats.complete, true)
+  assert.equal(result.stats.quoted, 42)
+})

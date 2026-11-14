@@ -3,7 +3,7 @@ import type { Model } from './policy.ts'
 import type { FeeMode } from './fees.ts'
 import { feeSchedule } from './fees.ts'
 
-export function chainPosts(posts: PostAction[], orders: Map<string, Order>, requests: Map<string, PriceRequest>, model: Model, now: number, level: 3, mode: FeeMode): PostAction[] {
+export function chainPosts(posts: PostAction[], orders: Map<string, Order>, requests: Map<string, PriceRequest>, model: Model, now: number, level: 3 | 4, mode: FeeMode): PostAction[] {
   const road = (from: string, to: string) => model.roads.get(`${from}/${to}`)?.minutes ?? Infinity
   const feasible = (stops: PostAction['stops'], start: number): boolean => {
     let time = start
